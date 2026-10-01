@@ -169,7 +169,7 @@ Order matters: the backend refuses to boot until it knows the frontend's https o
 8. **Brevo:** verify the sender address/domain. **Turn off "Authorised IPs"** (Security > Authorised IPs): Render's egress IPs are shared and change, so an allow-list yields `401 unauthorized` (logged as `email_send_failed brevo_code=unauthorized`). If you must keep it, allow Render's published outbound ranges for your region.
 9. **cron-job.org** (timeout 60 s; Render may need a minute to wake):
    * `GET https://<api>/health/live` every 14 minutes (keep-awake).
-   * `POST https://<api>/internal/cron/pregen_horoscopes` daily 18:00 UTC with header `X-Cron-Secret: <CRON_SECRET>`.
+   * `POST https://<api>/internal/cron/pregen_horoscopes` daily 18:00 UTC with header `X-Cron-Secret: <CRON_SECRET>`. It answers `{"status":"started"}` immediately and generates the 24 horoscopes in the background, so cron-job.org's 30 s timeout is not a problem.
    * `POST https://<api>/internal/cron/daily_maintenance` daily 22:00 UTC, same header (purges expired resets, old readings and LLM/usage rows). **Do not run it hourly** (it wakes Neon).
 10. **Smoke test:** `BASE_URL=https://<api> FRONTEND_ORIGIN=https://<frontend> EXPECT_PROD=1 scripts/smoke_prod.sh` (no secrets, mutates nothing).
 11. **By hand once:** register, verify the emailed code, create a chart, ask one chat question, sign in with Google, delete the test account.

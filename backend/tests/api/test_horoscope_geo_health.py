@@ -123,3 +123,28 @@ async def test_ready_reports_rag_as_information_only(client: AsyncClient, monkey
     assert r.json()["checks"]["rag"]["ok"] is False and r.json()["status"] == "ok"
     live = await client.get("/health/live")
     assert "rag" not in live.text  # liveness stays dependency-free
+
+
+async def test_pregen_cron_returns_immediately_and_finishes_in_background(client: AsyncClient, monkeypatch) -> None:
+    """cron-job.org times out after 30 s but 24 LLM generations take longer: the endpoint must answer at once."""
+    import asyncio
+
+    from app.services import cron_service, horoscope_service
+
+    started, release = asyncio.Event(), asyncio.Event()
+
+    async def slow_pregenerate(on):
+        started.set()
+        await release.wait()  # would block a synchronous endpoint until released
+        return {"generated_or_present": 24, "total": 24}
+
+    monkeypatch.setattr(horoscope_service, "pregenerate", slow_pregenerate)
+    r = await asyncio.wait_for(
+        client.post("/internal/cron/pregen_horoscopes", headers={"X-Cron-Secret": "test-cron-secret"}), timeout=5
+    )
+    assert r.status_code == 200 and r.json() == {"job": "pregen_horoscopes", "status": "started"}
+    await asyncio.wait_for(started.wait(), timeout=5)  # the work really runs in the background
+    assert cron_service._background  # held by a strong reference while running
+    release.set()
+    await asyncio.sleep(0.05)
+    assert not cron_service._background  # and cleaned up when done

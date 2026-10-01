@@ -1,6 +1,7 @@
 """Scheduled jobs triggered by cron-job.org (architecture.md section 8)."""
 from __future__ import annotations
 
+import asyncio
 import hmac
 import logging
 from datetime import UTC, datetime, timedelta
@@ -20,6 +21,18 @@ log = logging.getLogger("app.cron")
 JOBS = ("pregen_horoscopes", "daily_maintenance", "hourly")
 
 
+# Strong references so a fire-and-forget pregeneration task is not garbage-collected mid-run.
+_background: set[asyncio.Task] = set()
+
+
+async def _pregenerate_in_background(on) -> None:
+    try:
+        result = await horoscope_service.pregenerate(on)
+        log.info("cron_done", extra={"job": "pregen_horoscopes", **result})
+    except Exception:  # noqa: BLE001 - nobody awaits this task; log instead of losing the error
+        log.exception("cron_failed", extra={"job": "pregen_horoscopes"})
+
+
 def authorise(secret: str | None, job: str) -> None:
     expected = settings.CRON_SECRET
     if not expected or not secret or not hmac.compare_digest(secret.encode(), expected.encode()):
@@ -33,7 +46,12 @@ def authorise(secret: str | None, job: str) -> None:
 async def run(secret: str | None, job: str) -> dict:
     authorise(secret, job)
     if job == "pregen_horoscopes":
-        result = await horoscope_service.pregenerate((datetime.now(UTC) + timedelta(days=1)).date())
+        # 24 LLM generations take far longer than cron-job.org's 30 s limit, so answer immediately and
+        # finish the work in the background (the instance stays alive: single worker + keep-awake ping).
+        task = asyncio.create_task(_pregenerate_in_background((datetime.now(UTC) + timedelta(days=1)).date()))
+        _background.add(task)
+        task.add_done_callback(_background.discard)
+        return {"job": job, "status": "started"}
     else:
         resets = await auth_service.purge_expired_resets()
         async with SessionLocal() as s:
