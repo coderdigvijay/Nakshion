@@ -1,0 +1,210 @@
+{
+ "summary": {
+  "n": 10,
+  "errors": 0,
+  "grounded": "10/10",
+  "citation_valid": "9/10",
+  "cited_a_kb_note": "7/10",
+  "safety_hits": 0,
+  "leaked_tokens": 0,
+  "states_unverified_marker": 0,
+  "cost_usd": 0.0319
+ },
+ "answers": [
+  {
+   "q": "What does Mars mahadasha with Venus antardasha mean for me?",
+   "lang": "english",
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "kb_cited": 0,
+   "kb_provided": 4,
+   "factor_cites": 5,
+   "grounded": true,
+   "citation_valid": true,
+   "hedge_flag_in_context": true,
+   "hedge_present": false,
+   "safety_hits": [],
+   "leaked_tokens": [],
+   "mentions_unverified": false,
+   "excerpt": "Your question about a Mars and Venus sub-period touches on a combination that traditions view with nuance, but your current sidereal chart places you under the Moon Mahadasha and Venus Antardasha inst"
+  },
+  {
+   "q": "Is my Bhakoot dosha cancelled?",
+   "lang": "english",
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "kb_cited": 1,
+   "kb_provided": 4,
+   "factor_cites": 5,
+   "grounded": true,
+   "citation_valid": true,
+   "hedge_flag_in_context": true,
+   "hedge_present": true,
+   "safety_hits": [],
+   "leaked_tokens": [],
+   "mentions_unverified": false,
+   "excerpt": "Your chart features your sidereal Moon in Dhanu with the Purva Ashadha nakshatra and your Lagna in Tula, within the active period of your Moon Mahadasha and Venus Antardasha. When evaluating compatibi"
+  },
+  {
+   "q": "What is today's tithi and is it good for starting something new?",
+   "lang": "english",
+   "outcome": "repaired",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [
+    "safety:leak"
+   ],
+   "kb_cited": 0,
+   "kb_provided": 4,
+   "factor_cites": 4,
+   "grounded": true,
+   "citation_valid": true,
+   "hedge_flag_in_context": true,
+   "hedge_present": false,
+   "safety_hits": [],
+   "leaked_tokens": [],
+   "mentions_unverified": false,
+   "excerpt": "Your birth chart does not contain today's calendar tithi, as astrological charts show planetary positions rather than daily almanac data. With your sidereal Moon in Dhanu under Purva Ashadha nakshatra"
+  },
+  {
+   "q": "What is the result of the Moon in the 7th house?",
+   "lang": "english",
+   "outcome": "repaired",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [
+    "hedge"
+   ],
+   "kb_cited": 1,
+   "kb_provided": 5,
+   "factor_cites": 4,
+   "grounded": true,
+   "citation_valid": true,
+   "hedge_flag_in_context": true,
+   "hedge_present": true,
+   "safety_hits": [],
+   "leaked_tokens": [],
+   "mentions_unverified": false,
+   "excerpt": "Your sidereal Moon is located in Dhanu (Sagittarius) in the third house from your Tula (Libra) ascendant, rather than the seventh house. Traditions differ regarding house interpretations, but in your "
+  },
+  {
+   "q": "What is Yogini dasha and should I follow it?",
+   "lang": "english",
+   "outcome": "repaired",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [
+    "hedge"
+   ],
+   "kb_cited": 2,
+   "kb_provided": 5,
+   "factor_cites": 1,
+   "grounded": true,
+   "citation_valid": true,
+   "hedge_flag_in_context": true,
+   "hedge_present": true,
+   "safety_hits": [],
+   "leaked_tokens": [],
+   "mentions_unverified": false,
+   "excerpt": "Yogini dasha is an alternative nakshatra-based cycle of thirty-six years. Traditions differ on its application, and some sources note it is used as a supplementary perspective. Because your chart is r"
+  },
+  {
+   "q": "How is Rahu Kaal calculated and should I avoid it?",
+   "lang": "english",
+   "outcome": "repaired",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [
+    "citation",
+    "hedge"
+   ],
+   "kb_cited": 1,
+   "kb_provided": 5,
+   "factor_cites": 3,
+   "grounded": true,
+   "citation_valid": false,
+   "hedge_flag_in_context": true,
+   "hedge_present": true,
+   "safety_hits": [],
+   "leaked_tokens": [],
+   "mentions_unverified": false,
+   "excerpt": "Traditions differ on whether to avoid Rahu Kaal, which is calculated by dividing daylight into eight equal parts with a specific slot assigned to each weekday. Some sources say it is best to pause new"
+  },
+  {
+   "q": "मेरी साढ़ेसाती कैसी रहेगी और क्या सावधानी रखूं?",
+   "lang": "hindi",
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "kb_cited": 0,
+   "kb_provided": 4,
+   "factor_cites": 4,
+   "grounded": true,
+   "citation_valid": true,
+   "hedge_flag_in_context": true,
+   "hedge_present": false,
+   "safety_hits": [],
+   "leaked_tokens": [],
+   "mentions_unverified": false,
+   "excerpt": "आपकी वैदिक कुंडली के अनुसार आपका चंद्रमा धनु राशि में स्थित है और वर्तमान में चंद्रमा महादशा तथा शुक्र अंतर्दशा का प्रभाव चल रहा है। इस समय शनि कुंभ राशि में गोचर कर रहा है, जो आपकी धनु राशि से तीसरे "
+  },
+  {
+   "q": "Moon se Saturn ka gochar kab shubh mana jata hai?",
+   "lang": "hinglish",
+   "outcome": "repaired_soft",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [
+    "hedge"
+   ],
+   "kb_cited": 1,
+   "kb_provided": 4,
+   "factor_cites": 1,
+   "grounded": true,
+   "citation_valid": true,
+   "hedge_flag_in_context": true,
+   "hedge_present": true,
+   "safety_hits": [],
+   "leaked_tokens": [],
+   "mentions_unverified": false,
+   "excerpt": "Vedic astrology ke anusar, janm ke Chandra se Saturn ka gochar teesre, chhathe aur gyarahvein ghar mein hone par traditions differ karti hain, lekin aam taur par is sthiti ko anukool aur pragati shil "
+  },
+  {
+   "q": "What happens when the 7th lord sits in the 12th house?",
+   "lang": "english",
+   "outcome": "repaired",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [
+    "hedge"
+   ],
+   "kb_cited": 1,
+   "kb_provided": 5,
+   "factor_cites": 2,
+   "grounded": true,
+   "citation_valid": true,
+   "hedge_flag_in_context": true,
+   "hedge_present": true,
+   "safety_hits": [],
+   "leaked_tokens": [],
+   "mentions_unverified": false,
+   "excerpt": "When examining charts with your sidereal Tula Lagna, traditions differ on how specific house lord placements manifest, with some sources suggesting that relationship dynamics can occasionally connect "
+  },
+  {
+   "q": "Which remedies are traditionally suggested for a weak Saturn?",
+   "lang": "english",
+   "outcome": "repaired",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [
+    "hedge"
+   ],
+   "kb_cited": 1,
+   "kb_provided": 4,
+   "factor_cites": 1,
+   "grounded": true,
+   "citation_valid": true,
+   "hedge_flag_in_context": true,
+   "hedge_present": true,
+   "safety_hits": [],
+   "leaked_tokens": [],
+   "mentions_unverified": false,
+   "excerpt": "Traditional sources differ on how to navigate challenging Saturn placements, often suggesting practices like service to elders, acts of charity involving black sesame or oil on Saturdays, and maintain"
+  }
+ ]
+}

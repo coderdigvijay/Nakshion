@@ -1,0 +1,69 @@
+# Python
+backend/venv/
+backend/__pycache__/
+backend/**/__pycache__/
+*.pyc
+
+# Secrets
+.env
+backend/.env
+frontend/.env
+!.env.example
+!backend/.env.example
+!frontend/.env.example
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# Vector store / generated data (rebuild via app.services.rag_indexer)
+backend/data/chroma_db/
+
+# Code graph (rebuild locally with `graphify update .`, never pushed)
+graphify-out/
+
+# OS
+.DS_Store
+
+# Env files: never commit real ones; keep the examples
+.env.*
+!.env.example
+backend/.env.*
+!backend/.env.example
+frontend/.env.*
+!frontend/.env.example
+*.pem
+*.key
+
+# Python / test caches
+.pytest_cache/
+.hypothesis/
+backend/.pytest_cache/
+backend/.hypothesis/
+backend/evals/rag/.cache/
+*.egg-info/
+
+# Embedding model baked at build time on Render (rebuilt by scripts/build_check.py)
+backend/.fastembed_cache/
+
+# Frontend build / Vercel CLI link
+frontend/dist-ssr/
+.vercel/
+frontend/.vercel/
+
+# Logs, browser-automation output, agent-local state
+*.log
+logs/
+.playwright-mcp/
+.claude/settings.local.json
+.claude/scheduled_tasks.lock
+
+# NOT ignored on purpose: backend/app/astrology/ephe/*.se1 (Swiss Ephemeris data must ship with the deploy;
+# ~1.9 MB, redistributed under AGPL-3.0 together with this source; see docs/deployment.md)
+
+
+# Raw downloaded source texts for KB research (provenance in docs/kb-research/); not indexed, not committed
+backend/knowledge_sources/
+
+# Separate template-kit repo (has its own .git); not part of Nakshion
+Elite_SDE_Team/

@@ -1,0 +1,85 @@
+# Render Blueprint: BACKEND ONLY (the frontend is deployed on Vercel, see frontend/vercel.json).
+# Nothing here has been applied. Import it from the Render dashboard (New > Blueprint) after reading docs/deployment.md.
+#
+# Secrets use `sync: false` (Render prompts for them at creation, they never live in git) or
+# `generateValue: true` (Render invents a random value you can read in the dashboard).
+services:
+  - type: web
+    name: nakshion-api                  # public URL: https://nakshion-api.onrender.com (change CORS/API_PUBLIC_URL if the name differs)
+    runtime: python
+    plan: free                          # 0.1 vCPU, 512 MB RAM, spins down after 15 min idle, 750 instance-hours/month per workspace
+    region: singapore                   # nearest to India. Create Neon (aws-ap-southeast-1) and Upstash (ap-southeast-1) in the SAME region.
+    rootDir: backend
+    autoDeployTrigger: checksPass       # deploy only when the GitHub CI checks pass (set to `off` to deploy manually)
+    buildCommand: pip install -r requirements.txt && python scripts/build_check.py
+    startCommand: bash scripts/start.sh # alembic upgrade head (advisory-locked, direct Neon URL) then uvicorn --no-proxy-headers
+    # MUST be /health/live: it touches neither Postgres nor Redis, so Render's checks and the keep-awake
+    # pinger never wake Neon (100 CU-hours/month). /health/ready is for humans.
+    healthCheckPath: /health/live
+    envVars:
+      # ---- runtime ------------------------------------------------------------------------------------
+      - key: PYTHON_VERSION
+        value: 3.14.3                   # matches the tested venv. UNVERIFIED on Render: if the build says the version is unavailable, use the newest 3.x it lists and re-run the tests
+      - key: APP_ENV
+        value: production               # turns on the boot-time safety checks in app/core/config.py
+      - key: APP_NAME
+        value: Nakshion
+      - key: TRUSTED_PROXY_HOPS
+        value: "1"                      # Render's proxy appends the client IP; see BUG-007 / app/core/clientip.py
+      - key: SOURCE_CODE_URL
+        sync: false                     # AGPL: public link to the backend source (pyswisseph). Shown by /health/live
+      # ---- secrets Render can generate ----------------------------------------------------------------
+      - key: JWT_SECRET_KEY
+        generateValue: true
+      - key: OTP_PEPPER
+        generateValue: true
+      - key: CRON_SECRET
+        generateValue: true             # copy it into the cron-job.org header X-Cron-Secret
+      # ---- data stores --------------------------------------------------------------------------------
+      - key: DATABASE_URL
+        sync: false                     # Neon POOLED url, with ?sslmode=require (channel_binding is handled)
+      - key: MIGRATION_DATABASE_URL
+        sync: false                     # Neon DIRECT (unpooled) url, used only by `alembic upgrade head` at start
+      - key: REDIS_URL
+        sync: false                     # Upstash: rediss://default:...@<host>:6379
+      - key: DB_POOL_SIZE
+        value: "3"                      # Neon free allows few connections; one worker needs little
+      - key: DB_MAX_OVERFLOW
+        value: "2"
+      # ---- URLs / CORS (exact origins only) -----------------------------------------------------------
+      - key: API_PUBLIC_URL
+        sync: false                     # https://nakshion-api.onrender.com  (Google OAuth redirect base)
+      - key: FRONTEND_URL
+        sync: false                     # https://<your-project>.vercel.app or your custom domain
+      - key: CORS_ORIGINS
+        sync: false                     # same origin(s) as FRONTEND_URL, comma separated, https only
+      # ---- third-party keys ---------------------------------------------------------------------------
+      - key: GEMINI_API_KEY
+        sync: false                     # PAID-tier project (free tier may train on user data, llm-integration.md 1)
+      - key: ANTHROPIC_API_KEY
+        sync: false                     # optional fallback provider
+      - key: LOCATIONIQ_API_KEY
+        sync: false
+      - key: GEOAPIFY_API_KEY
+        sync: false                     # optional geocoder fallback
+      - key: BREVO_API_KEY
+        sync: false
+      - key: EMAIL_SENDER_ADDRESS
+        sync: false                     # a sender verified in Brevo
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      # ---- AI cost guard + memory ---------------------------------------------------------------------
+      - key: LLM_DAILY_BUDGET_USD
+        value: "1.50"
+      - key: LLM_MONTHLY_BUDGET_USD
+        value: "40"
+      - key: RAG_EXCLUDE_REVIEW
+        value: "0"                      # study project: every knowledge file is indexed (see docs/rag-runbook.md provenance note)
+      - key: EMBEDDINGS_RUNTIME
+        value: "off"                    # 512 MB plan: the local embedding model pushes RSS to ~420 MB (measured). Retrieval stays on full-text + pre-embedded keys. Set "local" on a 2 GB plan.
+      - key: FASTEMBED_CACHE_PATH
+        value: /opt/render/project/src/backend/.fastembed_cache   # only used when EMBEDDINGS_RUNTIME=local (baked during build)
+      - key: LLM_BUDGET_COUNTERS
+        value: redis                    # "memory" saves ~10 Upstash commands per LLM call (counters reset on restart)

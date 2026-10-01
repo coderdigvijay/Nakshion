@@ -1,0 +1,3977 @@
+{
+ "all": {
+  "hit@5": 0.1667,
+  "hit@10": 0.25,
+  "primary@5": 0.1078,
+  "recall@5": 0.0811,
+  "recall@10": 0.1407,
+  "mrr": 0.109,
+  "ndcg@10": 0.0827
+ },
+ "lang": {
+  "en": {
+   "hit@5": 0.2609,
+   "hit@10": 0.4348,
+   "primary@5": 0.1884,
+   "recall@5": 0.1266,
+   "recall@10": 0.2435,
+   "mrr": 0.1578,
+   "ndcg@10": 0.1375
+  },
+  "hg": {
+   "hit@5": 0.1493,
+   "hit@10": 0.209,
+   "primary@5": 0.0896,
+   "recall@5": 0.0619,
+   "recall@10": 0.0956,
+   "mrr": 0.1181,
+   "ndcg@10": 0.0659
+  },
+  "hi": {
+   "hit@5": 0.0882,
+   "hit@10": 0.1029,
+   "primary@5": 0.0441,
+   "recall@5": 0.0539,
+   "recall@10": 0.0809,
+   "mrr": 0.0505,
+   "ndcg@10": 0.0437
+  }
+ },
+ "source": {
+  "chart": {
+   "hit@5": 0.4375,
+   "hit@10": 0.5417,
+   "primary@5": 0.2708,
+   "recall@5": 0.2142,
+   "recall@10": 0.301,
+   "mrr": 0.3013,
+   "ndcg@10": 0.2017
+  },
+  "free": {
+   "hit@5": 0.0833,
+   "hit@10": 0.1603,
+   "primary@5": 0.0577,
+   "recall@5": 0.0402,
+   "recall@10": 0.0914,
+   "mrr": 0.0498,
+   "ndcg@10": 0.0461
+  }
+ },
+ "split": {
+  "dev": {
+   "hit@5": 0.2593,
+   "hit@10": 0.3519,
+   "primary@5": 0.1667,
+   "recall@5": 0.1335,
+   "recall@10": 0.1917,
+   "mrr": 0.18,
+   "ndcg@10": 0.1252
+  },
+  "holdout": {
+   "hit@5": 0.1,
+   "hit@10": 0.1833,
+   "primary@5": 0.0667,
+   "recall@5": 0.0356,
+   "recall@10": 0.1,
+   "mrr": 0.0422,
+   "ndcg@10": 0.0453
+  },
+  "holdout2": {
+   "hit@5": 0.0,
+   "hit@10": 0.0556,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0556,
+   "mrr": 0.0071,
+   "ndcg@10": 0.0176
+  }
+ },
+ "latency_ms": {
+  "p50": 9.2,
+  "p95": 15.5,
+  "mean": 9.9
+ },
+ "n": 204,
+ "per_query": [
+  {
+   "id": "delhi_1994:moon-nak:en",
+   "lang": "en",
+   "ms": 12.4,
+   "top": [
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "vedic_astrology#the-27-nakshatras-20-purva-ashadha-13-20-26-40-sagittarius-2#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.9639404333166532
+  },
+  {
+   "id": "delhi_1994:sun-sign:hi",
+   "lang": "hi",
+   "ms": 7.5,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#7-punarvasu-20-00-gemini-3-20-cancer#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "delhi_1994:dasha:hg",
+   "lang": "hg",
+   "ms": 10.8,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.3333333333333333,
+   "mrr": 0.14285714285714285,
+   "ndcg@10": 0.1564262420075855
+  },
+  {
+   "id": "delhi_1994:saturn-house:en",
+   "lang": "en",
+   "ms": 9.2,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "delhi_1994:aspect:hi",
+   "lang": "hi",
+   "ms": 8.4,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "mumbai_1988:moon-nak:hi",
+   "lang": "hi",
+   "ms": 7.2,
+   "top": [
+    "nakshatras_deep_dive#24-shatabhisha-6-40-20-00-aquarius#0",
+    "nakshatras_deep_dive#21-uttara-ashadha-26-40-sagittarius-10-00-capricorn#0",
+    "nakshatras_deep_dive#16-vishakha-20-00-libra-3-20-scorpio#0",
+    "vedic_astrology#the-27-nakshatras-24-shatabhisha-6-40-20-00-aquarius-25-purv#0",
+    "vedic_astrology#the-27-nakshatras-13-hasta-10-00-23-20-virgo-14-chitra-23-20#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 0.3333333333333333,
+   "ndcg@10": 0.5196610607458307
+  },
+  {
+   "id": "mumbai_1988:sun-sign:hg",
+   "lang": "hg",
+   "ms": 9.7,
+   "top": [
+    "vedic_astrology#the-27-nakshatras-24-shatabhisha-6-40-20-00-aquarius-25-purv#0",
+    "nakshatras_deep_dive#24-shatabhisha-6-40-20-00-aquarius#0",
+    "nakshatras_deep_dive#21-uttara-ashadha-26-40-sagittarius-10-00-capricorn#0",
+    "nakshatras_deep_dive#16-vishakha-20-00-libra-3-20-scorpio#0",
+    "vedic_astrology#the-27-nakshatras-17-anuradha-3-20-16-40-scorpio-18-jyeshtha#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "mumbai_1988:dasha:en",
+   "lang": "en",
+   "ms": 19.2,
+   "top": [
+    "planets#mercury-core-archetype-function-psychological-representation#0",
+    "vedic_astrology#the-27-nakshatras-17-anuradha-3-20-16-40-scorpio-18-jyeshtha#0",
+    "nakshatras_deep_dive#24-shatabhisha-6-40-20-00-aquarius#0",
+    "vedic_astrology#dasha-systems-vimshottari-dasha-120-year-cycle#0",
+    "nakshatras_deep_dive#21-uttara-ashadha-26-40-sagittarius-10-00-capricorn#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.3333333333333333,
+   "recall@10": 0.3333333333333333,
+   "mrr": 0.25,
+   "ndcg@10": 0.20210734650054762
+  },
+  {
+   "id": "mumbai_1988:saturn-house:hi",
+   "lang": "hi",
+   "ms": 6.5,
+   "top": [
+    "nakshatras_deep_dive#24-shatabhisha-6-40-20-00-aquarius#0",
+    "nakshatras_deep_dive#21-uttara-ashadha-26-40-sagittarius-10-00-capricorn#0",
+    "nakshatras_deep_dive#16-vishakha-20-00-libra-3-20-scorpio#0",
+    "vedic_astrology#the-27-nakshatras-24-shatabhisha-6-40-20-00-aquarius-25-purv#0",
+    "vedic_astrology#the-27-nakshatras-17-anuradha-3-20-16-40-scorpio-18-jyeshtha#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "mumbai_1988:aspect:hg",
+   "lang": "hg",
+   "ms": 9.3,
+   "top": [
+    "nakshatras_deep_dive#24-shatabhisha-6-40-20-00-aquarius#0",
+    "nakshatras_deep_dive#21-uttara-ashadha-26-40-sagittarius-10-00-capricorn#0",
+    "nakshatras_deep_dive#16-vishakha-20-00-libra-3-20-scorpio#0",
+    "vedic_astrology#the-27-nakshatras-24-shatabhisha-6-40-20-00-aquarius-25-purv#0",
+    "vedic_astrology#the-27-nakshatras-17-anuradha-3-20-16-40-scorpio-18-jyeshtha#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "chennai_1992_notime:moon-nak:hg",
+   "lang": "hg",
+   "ms": 10.3,
+   "top": [
+    "vedic_astrology#the-27-nakshatras-17-anuradha-3-20-16-40-scorpio-18-jyeshtha#0",
+    "vedic_astrology#the-27-nakshatras-20-purva-ashadha-13-20-26-40-sagittarius-2#0",
+    "vedic_astrology#the-27-nakshatras-13-hasta-10-00-23-20-virgo-14-chitra-23-20#0",
+    "vedic_astrology#the-27-nakshatras-9-ashlesha-16-40-30-00-cancer-10-magha-0-0#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.5,
+   "recall@10": 1.0,
+   "mrr": 0.5,
+   "ndcg@10": 0.4126007205321268
+  },
+  {
+   "id": "chennai_1992_notime:sun-sign:en",
+   "lang": "en",
+   "ms": 16.6,
+   "top": [
+    "vedic_astrology#the-27-nakshatras-17-anuradha-3-20-16-40-scorpio-18-jyeshtha#0",
+    "vedic_astrology#the-27-nakshatras-13-hasta-10-00-23-20-virgo-14-chitra-23-20#0",
+    "vedic_astrology#the-27-nakshatras-20-purva-ashadha-13-20-26-40-sagittarius-2#0",
+    "planets#the-sun-core-archetype-function-psychological-representation#0",
+    "vedic_astrology#the-27-nakshatras-9-ashlesha-16-40-30-00-cancer-10-magha-0-0#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.3333333333333333,
+   "recall@10": 0.3333333333333333,
+   "mrr": 0.25,
+   "ndcg@10": 0.10425656783464912
+  },
+  {
+   "id": "chennai_1992_notime:dasha:hi",
+   "lang": "hi",
+   "ms": 5.9,
+   "top": [
+    "vedic_astrology#the-27-nakshatras-17-anuradha-3-20-16-40-scorpio-18-jyeshtha#0",
+    "vedic_astrology#the-27-nakshatras-13-hasta-10-00-23-20-virgo-14-chitra-23-20#0",
+    "vedic_astrology#the-27-nakshatras-20-purva-ashadha-13-20-26-40-sagittarius-2#0",
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0",
+    "vedic_astrology#the-27-nakshatras-9-ashlesha-16-40-30-00-cancer-10-magha-0-0#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "chennai_1992_notime:aspect:en",
+   "lang": "en",
+   "ms": 15.9,
+   "top": [
+    "vedic_astrology#the-27-nakshatras-17-anuradha-3-20-16-40-scorpio-18-jyeshtha#0",
+    "vedic_astrology#the-27-nakshatras-13-hasta-10-00-23-20-virgo-14-chitra-23-20#0",
+    "vedic_astrology#the-27-nakshatras-20-purva-ashadha-13-20-26-40-sagittarius-2#0",
+    "vedic_astrology#the-27-nakshatras-9-ashlesha-16-40-30-00-cancer-10-magha-0-0#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "london_1975:moon-nak:en",
+   "lang": "en",
+   "ms": 16.7,
+   "top": [
+    "nakshatras_deep_dive#5-mrigashira-23-20-taurus-6-40-gemini#0",
+    "nakshatras_deep_dive#16-vishakha-20-00-libra-3-20-scorpio#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#7-punarvasu-20-00-gemini-3-20-cancer#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.5,
+   "mrr": 0.1111111111111111,
+   "ndcg@10": 0.24872141525284142
+  },
+  {
+   "id": "london_1975:sun-sign:hi",
+   "lang": "hi",
+   "ms": 6.9,
+   "top": [
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "zodiac_signs#capricorn-december-22-january-19-element-modality-ruling-pla#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "modern_techniques#hellenistic-astrology-revival-key-hellenistic-concepts-not-i#0",
+    "love_relationships#compatibility-by-element-fire-air-aries-leo-sagittarius-gemi#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.3333333333333333,
+   "recall@10": 0.3333333333333333,
+   "mrr": 0.5,
+   "ndcg@10": 0.45819933371607996
+  },
+  {
+   "id": "london_1975:dasha:hg",
+   "lang": "hg",
+   "ms": 9.3,
+   "top": [
+    "nakshatras_deep_dive#5-mrigashira-23-20-taurus-6-40-gemini#0",
+    "nakshatras_deep_dive#16-vishakha-20-00-libra-3-20-scorpio#0",
+    "nakshatras_deep_dive#23-dhanishta-23-20-capricorn-6-40-aquarius#0",
+    "vedic_astrology#mangal-dosha-mars-affliction#0",
+    "planets#mars-core-archetype-function-psychological-representation-di#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.3333333333333333,
+   "mrr": 0.1,
+   "ndcg@10": 0.13565197343244778
+  },
+  {
+   "id": "london_1975:saturn-house:en",
+   "lang": "en",
+   "ms": 12.6,
+   "top": [
+    "books_greene_saturn#saturn-through-the-houses-saturn-in-the-1st-house-saturn-in-#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "houses#first-house-the-ascendant-life-area-natural-sign-ruler-class#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "zodiac_signs#aries-march-21-april-19-element-modality-ruling-planet-core-#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "london_1975:aspect:hi",
+   "lang": "hi",
+   "ms": 7.8,
+   "top": [
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0",
+    "love_relationships#mars-your-sexual-energy-mars-sign-interpretations#0",
+    "planets#mars-core-archetype-function-psychological-representation-di#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "newyork_2001:moon-nak:hi",
+   "lang": "hi",
+   "ms": 7.1,
+   "top": [
+    "vedic_astrology#the-27-nakshatras-24-shatabhisha-6-40-20-00-aquarius-25-purv#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#7-punarvasu-20-00-gemini-3-20-cancer#0",
+    "nakshatras_deep_dive#17-anuradha-3-20-16-40-scorpio#0",
+    "vedic_astrology#the-27-nakshatras-17-anuradha-3-20-16-40-scorpio-18-jyeshtha#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.5,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.5360595666833466
+  },
+  {
+   "id": "newyork_2001:sun-sign:hg",
+   "lang": "hg",
+   "ms": 10.5,
+   "top": [
+    "zodiac_signs#aries-march-21-april-19-element-modality-ruling-planet-core-#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "zodiac_signs#leo-july-23-august-22-element-modality-ruling-planet-core-ar#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "zodiac_signs#taurus-april-20-may-20-element-modality-ruling-planet-core-a#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.3333333333333333,
+   "recall@10": 0.3333333333333333,
+   "mrr": 0.2,
+   "ndcg@10": 0.2809436351950179
+  },
+  {
+   "id": "newyork_2001:dasha:en",
+   "lang": "en",
+   "ms": 14.3,
+   "top": [
+    "vedic_astrology#dasha-systems-vimshottari-dasha-120-year-cycle#0",
+    "vedic_astrology#the-27-nakshatras-17-anuradha-3-20-16-40-scorpio-18-jyeshtha#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#7-punarvasu-20-00-gemini-3-20-cancer#0",
+    "nakshatras_deep_dive#17-anuradha-3-20-16-40-scorpio#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.3333333333333333,
+   "recall@10": 0.3333333333333333,
+   "mrr": 1.0,
+   "ndcg@10": 0.4692787260227565
+  },
+  {
+   "id": "newyork_2001:saturn-house:hi",
+   "lang": "hi",
+   "ms": 6.7,
+   "top": [
+    "zodiac_signs#aries-march-21-april-19-element-modality-ruling-planet-core-#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "houses#first-house-the-ascendant-life-area-natural-sign-ruler-class#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "newyork_2001:aspect:hg",
+   "lang": "hg",
+   "ms": 10.5,
+   "top": [
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#aries-march-21-april-19-element-modality-ruling-planet-core-#0",
+    "houses#first-house-the-ascendant-life-area-natural-sign-ruler-class#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "sydney_1990:moon-nak:hg",
+   "lang": "hg",
+   "ms": 12.6,
+   "top": [
+    "vedic_astrology#the-27-nakshatras-20-purva-ashadha-13-20-26-40-sagittarius-2#0",
+    "vedic_astrology#the-27-nakshatras-6-ardra-6-40-20-00-gemini-7-punarvasu-20-0#0",
+    "vedic_astrology#the-27-nakshatras-24-shatabhisha-6-40-20-00-aquarius-25-purv#0",
+    "vedic_astrology#the-27-nakshatras-13-hasta-10-00-23-20-virgo-14-chitra-23-20#0",
+    "vedic_astrology#the-27-nakshatras-17-anuradha-3-20-16-40-scorpio-18-jyeshtha#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.5,
+   "recall@10": 0.5,
+   "mrr": 1.0,
+   "ndcg@10": 0.27541155237618664
+  },
+  {
+   "id": "sydney_1990:sun-sign:en",
+   "lang": "en",
+   "ms": 13.6,
+   "top": [
+    "houses#tenth-house-the-midheaven-mc-life-area-natural-sign-ruler-cl#0",
+    "zodiac_signs#pisces-february-19-march-20-element-modality-ruling-planets-#0",
+    "zodiac_signs#capricorn-december-22-january-19-element-modality-ruling-pla#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "planets#jupiter-core-archetype-function-psychological-representation#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.3333333333333333,
+   "mrr": 0.16666666666666666,
+   "ndcg@10": 0.25868790443608336
+  },
+  {
+   "id": "sydney_1990:dasha:hi",
+   "lang": "hi",
+   "ms": 6.4,
+   "top": [
+    "vedic_astrology#the-27-nakshatras-20-purva-ashadha-13-20-26-40-sagittarius-2#0",
+    "vedic_astrology#the-27-nakshatras-6-ardra-6-40-20-00-gemini-7-punarvasu-20-0#0",
+    "vedic_astrology#the-27-nakshatras-13-hasta-10-00-23-20-virgo-14-chitra-23-20#0",
+    "vedic_astrology#remedies-upayas-gemstones-mantras#0",
+    "vedic_astrology#the-27-nakshatras-17-anuradha-3-20-16-40-scorpio-18-jyeshtha#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "sydney_1990:saturn-house:hg",
+   "lang": "hg",
+   "ms": 10.1,
+   "top": [
+    "houses#tenth-house-the-midheaven-mc-life-area-natural-sign-ruler-cl#0",
+    "planets#jupiter-core-archetype-function-psychological-representation#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "career_astrology#10th-house-ruler-placement-analysis#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.25,
+   "recall@10": 0.25,
+   "mrr": 1.0,
+   "ndcg@10": 0.515157140670655
+  },
+  {
+   "id": "sydney_1990:aspect:en",
+   "lang": "en",
+   "ms": 13.8,
+   "top": [
+    "houses#tenth-house-the-midheaven-mc-life-area-natural-sign-ruler-cl#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "planets#jupiter-core-archetype-function-psychological-representation#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "aspects#major-aspects-conjunction-0-sextile-60#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.3333333333333333,
+   "recall@10": 0.6666666666666666,
+   "mrr": 0.2,
+   "ndcg@10": 0.35381584886646106
+  },
+  {
+   "id": "tromso_1985_highlat:moon-nak:en",
+   "lang": "en",
+   "ms": 8.4,
+   "top": [
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#16-vishakha-20-00-libra-3-20-scorpio#0",
+    "vedic_astrology#the-27-nakshatras-17-anuradha-3-20-16-40-scorpio-18-jyeshtha#0",
+    "nakshatras_deep_dive#5-mrigashira-23-20-taurus-6-40-gemini#0",
+    "vedic_astrology#the-27-nakshatras-13-hasta-10-00-23-20-virgo-14-chitra-23-20#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.5,
+   "recall@10": 0.5,
+   "mrr": 0.3333333333333333,
+   "ndcg@10": 0.13770577618809332
+  },
+  {
+   "id": "tromso_1985_highlat:sun-sign:hi",
+   "lang": "hi",
+   "ms": 7.2,
+   "top": [
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#leo-july-23-august-22-element-modality-ruling-planet-core-ar#0",
+    "compatibility_synastry_advanced#timing-relationships-with-transits-meeting-timing-relationsh#0",
+    "planets#the-sun-core-archetype-function-psychological-representation#0",
+    "zodiac_signs#aries-march-21-april-19-element-modality-ruling-planet-core-#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.3333333333333333,
+   "recall@10": 1.0,
+   "mrr": 0.25,
+   "ndcg@10": 0.3905503143494395
+  },
+  {
+   "id": "tromso_1985_highlat:dasha:hg",
+   "lang": "hg",
+   "ms": 10.0,
+   "top": [
+    "vedic_astrology#dasha-systems-vimshottari-dasha-120-year-cycle#0",
+    "vedic_astrology#the-27-nakshatras-13-hasta-10-00-23-20-virgo-14-chitra-23-20#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "vedic_astrology#the-27-nakshatras-17-anuradha-3-20-16-40-scorpio-18-jyeshtha#0",
+    "nakshatras_deep_dive#16-vishakha-20-00-libra-3-20-scorpio#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.3333333333333333,
+   "recall@10": 0.3333333333333333,
+   "mrr": 1.0,
+   "ndcg@10": 0.4692787260227565
+  },
+  {
+   "id": "tromso_1985_highlat:saturn-house:en",
+   "lang": "en",
+   "ms": 8.6,
+   "top": [
+    "zodiac_signs#leo-july-23-august-22-element-modality-ruling-planet-core-ar#0",
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0",
+    "houses#tenth-house-the-midheaven-mc-life-area-natural-sign-ruler-cl#0",
+    "books_greene_saturn#saturn-through-the-houses-saturn-in-the-7th-house-saturn-in-#0",
+    "books_greene_saturn#saturn-through-the-houses-saturn-in-the-1st-house-saturn-in-#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "tromso_1985_highlat:aspect:hi",
+   "lang": "hi",
+   "ms": 7.8,
+   "top": [
+    "zodiac_signs#leo-july-23-august-22-element-modality-ruling-planet-core-ar#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#aries-march-21-april-19-element-modality-ruling-planet-core-#0",
+    "houses#tenth-house-the-midheaven-mc-life-area-natural-sign-ruler-cl#0",
+    "compatibility_synastry_advanced#timing-relationships-with-transits-meeting-timing-relationsh#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "berlin_1980_notime:moon-nak:hi",
+   "lang": "hi",
+   "ms": 6.9,
+   "top": [
+    "vedic_astrology#the-27-nakshatras-13-hasta-10-00-23-20-virgo-14-chitra-23-20#0",
+    "vedic_astrology#the-27-nakshatras-17-anuradha-3-20-16-40-scorpio-18-jyeshtha#0",
+    "vedic_astrology#the-27-nakshatras-9-ashlesha-16-40-30-00-cancer-10-magha-0-0#0",
+    "vedic_astrology#the-27-nakshatras-20-purva-ashadha-13-20-26-40-sagittarius-2#0",
+    "nakshatras_deep_dive#16-vishakha-20-00-libra-3-20-scorpio#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.5950427489208391
+  },
+  {
+   "id": "berlin_1980_notime:sun-sign:hg",
+   "lang": "hg",
+   "ms": 10.6,
+   "top": [
+    "zodiac_signs#leo-july-23-august-22-element-modality-ruling-planet-core-ar#0",
+    "zodiac_signs#virgo-august-23-september-22-element-modality-ruling-planet-#0",
+    "aspects#aspect-interpretation-between-specific-planet-pairs-sun-moon#0",
+    "planets#mercury-core-archetype-function-psychological-representation#0",
+    "planets#jupiter-core-archetype-function-psychological-representation#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.3333333333333333,
+   "recall@10": 0.6666666666666666,
+   "mrr": 0.5,
+   "ndcg@10": 0.5444286351947745
+  },
+  {
+   "id": "berlin_1980_notime:dasha:en",
+   "lang": "en",
+   "ms": 9.0,
+   "top": [
+    "vedic_astrology#the-27-nakshatras-17-anuradha-3-20-16-40-scorpio-18-jyeshtha#0",
+    "vedic_astrology#dasha-systems-vimshottari-dasha-120-year-cycle#0",
+    "vedic_astrology#the-27-nakshatras-9-ashlesha-16-40-30-00-cancer-10-magha-0-0#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "vedic_astrology#the-27-nakshatras-13-hasta-10-00-23-20-virgo-14-chitra-23-20#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.3333333333333333,
+   "recall@10": 0.3333333333333333,
+   "mrr": 0.5,
+   "ndcg@10": 0.2960819109658653
+  },
+  {
+   "id": "berlin_1980_notime:aspect:hg",
+   "lang": "hg",
+   "ms": 11.0,
+   "top": [
+    "aspects#aspect-interpretation-between-specific-planet-pairs-sun-moon#0",
+    "planets#mercury-core-archetype-function-psychological-representation#0",
+    "zodiac_signs#leo-july-23-august-22-element-modality-ruling-planet-core-ar#0",
+    "planets#jupiter-core-archetype-function-psychological-representation#0",
+    "zodiac_signs#virgo-august-23-september-22-element-modality-ruling-planet-#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.2,
+   "recall@10": 0.2,
+   "mrr": 1.0,
+   "ndcg@10": 0.13869012617430843
+  },
+  {
+   "id": "kolkata_1969:moon-nak:hg",
+   "lang": "hg",
+   "ms": 13.0,
+   "top": [
+    "vedic_astrology#the-27-nakshatras-9-ashlesha-16-40-30-00-cancer-10-magha-0-0#0",
+    "vedic_astrology#the-27-nakshatras-6-ardra-6-40-20-00-gemini-7-punarvasu-20-0#0",
+    "vedic_astrology#the-27-nakshatras-20-purva-ashadha-13-20-26-40-sagittarius-2#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.5,
+   "recall@10": 0.5,
+   "mrr": 1.0,
+   "ndcg@10": 0.27541155237618664
+  },
+  {
+   "id": "kolkata_1969:sun-sign:en",
+   "lang": "en",
+   "ms": 14.0,
+   "top": [
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "vedic_astrology#the-27-nakshatras-9-ashlesha-16-40-30-00-cancer-10-magha-0-0#0",
+    "vedic_astrology#the-27-nakshatras-13-hasta-10-00-23-20-virgo-14-chitra-23-20#0",
+    "vedic_astrology#the-27-nakshatras-6-ardra-6-40-20-00-gemini-7-punarvasu-20-0#0",
+    "vedic_astrology#the-27-nakshatras-17-anuradha-3-20-16-40-scorpio-18-jyeshtha#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "kolkata_1969:dasha:hi",
+   "lang": "hi",
+   "ms": 6.4,
+   "top": [
+    "vedic_astrology#the-27-nakshatras-6-ardra-6-40-20-00-gemini-7-punarvasu-20-0#0",
+    "vedic_astrology#the-27-nakshatras-20-purva-ashadha-13-20-26-40-sagittarius-2#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#7-punarvasu-20-00-gemini-3-20-cancer#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "kolkata_1969:saturn-house:hg",
+   "lang": "hg",
+   "ms": 10.0,
+   "top": [
+    "vedic_astrology#the-27-nakshatras-6-ardra-6-40-20-00-gemini-7-punarvasu-20-0#0",
+    "vedic_astrology#the-27-nakshatras-20-purva-ashadha-13-20-26-40-sagittarius-2#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#7-punarvasu-20-00-gemini-3-20-cancer#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "kolkata_1969:aspect:en",
+   "lang": "en",
+   "ms": 13.6,
+   "top": [
+    "vedic_astrology#the-27-nakshatras-6-ardra-6-40-20-00-gemini-7-punarvasu-20-0#0",
+    "vedic_astrology#the-27-nakshatras-20-purva-ashadha-13-20-26-40-sagittarius-2#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#7-punarvasu-20-00-gemini-3-20-cancer#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "bengaluru_2003:moon-nak:en",
+   "lang": "en",
+   "ms": 13.2,
+   "top": [
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#4-rohini-10-00-23-20-taurus#0",
+    "nakshatras_deep_dive#22-shravana-10-00-23-20-capricorn#0",
+    "nakshatras_deep_dive#18-jyeshtha-16-40-30-00-scorpio#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.7967075809905066
+  },
+  {
+   "id": "bengaluru_2003:sun-sign:hi",
+   "lang": "hi",
+   "ms": 6.3,
+   "top": [
+    "vedic_astrology#the-27-nakshatras-24-shatabhisha-6-40-20-00-aquarius-25-purv#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#22-shravana-10-00-23-20-capricorn#0",
+    "vedic_astrology#the-27-nakshatras-20-purva-ashadha-13-20-26-40-sagittarius-2#0",
+    "nakshatras_deep_dive#4-rohini-10-00-23-20-taurus#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "bengaluru_2003:dasha:hg",
+   "lang": "hg",
+   "ms": 8.9,
+   "top": [
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#22-shravana-10-00-23-20-capricorn#0",
+    "nakshatras_deep_dive#4-rohini-10-00-23-20-taurus#0",
+    "nakshatras_deep_dive#18-jyeshtha-16-40-30-00-scorpio#0",
+    "vedic_astrology#the-27-nakshatras-24-shatabhisha-6-40-20-00-aquarius-25-purv#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.3333333333333333,
+   "mrr": 0.125,
+   "ndcg@10": 0.14804095548293264
+  },
+  {
+   "id": "bengaluru_2003:saturn-house:en",
+   "lang": "en",
+   "ms": 12.3,
+   "top": [
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#22-shravana-10-00-23-20-capricorn#0",
+    "nakshatras_deep_dive#4-rohini-10-00-23-20-taurus#0",
+    "nakshatras_deep_dive#18-jyeshtha-16-40-30-00-scorpio#0",
+    "vedic_astrology#the-27-nakshatras-24-shatabhisha-6-40-20-00-aquarius-25-purv#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "bengaluru_2003:aspect:hi",
+   "lang": "hi",
+   "ms": 7.0,
+   "top": [
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#22-shravana-10-00-23-20-capricorn#0",
+    "nakshatras_deep_dive#4-rohini-10-00-23-20-taurus#0",
+    "nakshatras_deep_dive#18-jyeshtha-16-40-30-00-scorpio#0",
+    "vedic_astrology#the-27-nakshatras-24-shatabhisha-6-40-20-00-aquarius-25-purv#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "houses-7th:en",
+   "lang": "en",
+   "ms": 14.7,
+   "top": [
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "remedial_astrology#western-remedial-approaches-flower-essences-bach-flowers-cry#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "houses-7th:hi",
+   "lang": "hi",
+   "ms": 6.4,
+   "top": [
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "remedial_astrology#western-remedial-approaches-flower-essences-bach-flowers-cry#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "houses-7th:hg",
+   "lang": "hg",
+   "ms": 12.2,
+   "top": [
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "remedial_astrology#western-remedial-approaches-flower-essences-bach-flowers-cry#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "nakshatra-rohini:en",
+   "lang": "en",
+   "ms": 12.9,
+   "top": [
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#4-rohini-10-00-23-20-taurus#0",
+    "vedic_astrology#the-27-nakshatras-1-ashwini-0-00-13-20-aries-2-bharani-13-20#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.631251450669265
+  },
+  {
+   "id": "nakshatra-rohini:hi",
+   "lang": "hi",
+   "ms": 5.1,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.5,
+   "recall@10": 1.0,
+   "mrr": 0.25,
+   "ndcg@10": 0.36733471468386747
+  },
+  {
+   "id": "nakshatra-rohini:hg",
+   "lang": "hg",
+   "ms": 8.6,
+   "top": [
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#4-rohini-10-00-23-20-taurus#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.6885288809404666
+  },
+  {
+   "id": "dasha-vimshottari:en",
+   "lang": "en",
+   "ms": 13.1,
+   "top": [
+    "vedic_astrology#dasha-systems-vimshottari-dasha-120-year-cycle#0",
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.3333333333333333,
+   "recall@10": 0.3333333333333333,
+   "mrr": 1.0,
+   "ndcg@10": 0.4692787260227565
+  },
+  {
+   "id": "dasha-vimshottari:hi",
+   "lang": "hi",
+   "ms": 5.2,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "dasha-vimshottari:hg",
+   "lang": "hg",
+   "ms": 7.7,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.3333333333333333,
+   "mrr": 0.14285714285714285,
+   "ndcg@10": 0.1564262420075855
+  },
+  {
+   "id": "yogas-raja-dhana:en",
+   "lang": "en",
+   "ms": 13.7,
+   "top": [
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "vedic_astrology#overview#0",
+    "vedic_astrology#the-27-nakshatras-20-purva-ashadha-13-20-26-40-sagittarius-2#0",
+    "vedic_astrology#remedies-upayas-gemstones-mantras#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "yogas-raja-dhana:hi",
+   "lang": "hi",
+   "ms": 5.1,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "yogas-raja-dhana:hg",
+   "lang": "hg",
+   "ms": 9.3,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "vedic_astrology#the-27-nakshatras-20-purva-ashadha-13-20-26-40-sagittarius-2#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "sade-sati:en",
+   "lang": "en",
+   "ms": 12.4,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#21-uttara-ashadha-26-40-sagittarius-10-00-capricorn#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "vedic_astrology#the-27-nakshatras-20-purva-ashadha-13-20-26-40-sagittarius-2#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "sade-sati:hi",
+   "lang": "hi",
+   "ms": 5.1,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "sade-sati:hg",
+   "lang": "hg",
+   "ms": 8.1,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "remedies-saturn:en",
+   "lang": "en",
+   "ms": 13.6,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "remedies-saturn:hi",
+   "lang": "hi",
+   "ms": 6.1,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "remedies-saturn:hg",
+   "lang": "hg",
+   "ms": 9.2,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "compat-kundli-milan:en",
+   "lang": "en",
+   "ms": 14.2,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.1111111111111111,
+   "mrr": 0.1111111111111111,
+   "ndcg@10": 0.07832188312203052
+  },
+  {
+   "id": "compat-kundli-milan:hi",
+   "lang": "hi",
+   "ms": 5.1,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "compat-kundli-milan:hg",
+   "lang": "hg",
+   "ms": 7.0,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "career-factors:en",
+   "lang": "en",
+   "ms": 15.5,
+   "top": [
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.2,
+   "recall@10": 0.14285714285714285,
+   "mrr": 0.5,
+   "ndcg@10": 0.06157014704892473
+  },
+  {
+   "id": "career-factors:hi",
+   "lang": "hi",
+   "ms": 6.7,
+   "top": [
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "remedial_astrology#western-remedial-approaches-flower-essences-bach-flowers-cry#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "career-factors:hg",
+   "lang": "hg",
+   "ms": 15.9,
+   "top": [
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "remedial_astrology#western-remedial-approaches-flower-essences-bach-flowers-cry#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "love-venus:en",
+   "lang": "en",
+   "ms": 15.5,
+   "top": [
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "love_relationships#venus-your-love-style-venus-sign-interpretations#0",
+    "planets#venus-core-archetype-function-psychological-representation-d#0",
+    "love_relationships#venus-your-love-style#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.6,
+   "recall@10": 0.6666666666666666,
+   "mrr": 0.3333333333333333,
+   "ndcg@10": 0.49358285471453583
+  },
+  {
+   "id": "love-venus:hi",
+   "lang": "hi",
+   "ms": 7.6,
+   "top": [
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.16666666666666666,
+   "mrr": 0.1,
+   "ndcg@10": 0.10289593457983448
+  },
+  {
+   "id": "love-venus:hg",
+   "lang": "hg",
+   "ms": 13.7,
+   "top": [
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "zodiac_signs#sagittarius-november-22-december-21-element-modality-ruling-#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "health-body-parts:en",
+   "lang": "en",
+   "ms": 15.2,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#aries-march-21-april-19-love-relationship-style-health-vulne#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "health-body-parts:hi",
+   "lang": "hi",
+   "ms": 6.6,
+   "top": [
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "remedial_astrology#western-remedial-approaches-flower-essences-bach-flowers-cry#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "health-body-parts:hg",
+   "lang": "hg",
+   "ms": 12.6,
+   "top": [
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "daily-moon-phases:en",
+   "lang": "en",
+   "ms": 16.6,
+   "top": [
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.5,
+   "recall@10": 0.5,
+   "mrr": 0.3333333333333333,
+   "ndcg@10": 0.3065735963827292
+  },
+  {
+   "id": "daily-moon-phases:hi",
+   "lang": "hi",
+   "ms": 7.8,
+   "top": [
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "daily-moon-phases:hg",
+   "lang": "hg",
+   "ms": 12.7,
+   "top": [
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "mercury-retro:en",
+   "lang": "en",
+   "ms": 14.2,
+   "top": [
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "mercury-retro:hi",
+   "lang": "hi",
+   "ms": 7.6,
+   "top": [
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "remedial_astrology#western-remedial-approaches-flower-essences-bach-flowers-cry#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "mercury-retro:hg",
+   "lang": "hg",
+   "ms": 11.5,
+   "top": [
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "remedial_astrology#western-remedial-approaches-flower-essences-bach-flowers-cry#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "mangal-dosha:en",
+   "lang": "en",
+   "ms": 12.7,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "mangal-dosha:hi",
+   "lang": "hi",
+   "ms": 5.1,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "mangal-dosha:hg",
+   "lang": "hg",
+   "ms": 8.2,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#4-rohini-10-00-23-20-taurus#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "rahu-ketu:en",
+   "lang": "en",
+   "ms": 12.5,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#16-vishakha-20-00-libra-3-20-scorpio#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "rahu-ketu:hi",
+   "lang": "hi",
+   "ms": 6.2,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "rahu-ketu:hg",
+   "lang": "hg",
+   "ms": 8.7,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "sidereal-vs-tropical:en",
+   "lang": "en",
+   "ms": 14.4,
+   "top": [
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "zodiac_signs#aries-march-21-april-19-love-relationship-style-health-vulne#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "zodiac_signs#capricorn-december-22-january-19-element-modality-ruling-pla#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "sidereal-vs-tropical:hi",
+   "lang": "hi",
+   "ms": 6.4,
+   "top": [
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "remedial_astrology#western-remedial-approaches-flower-essences-bach-flowers-cry#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "sidereal-vs-tropical:hg",
+   "lang": "hg",
+   "ms": 9.6,
+   "top": [
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "zodiac_signs#aries-march-21-april-19-love-relationship-style-health-vulne#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "zodiac_signs#capricorn-december-22-january-19-element-modality-ruling-pla#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "aspects-trine-square:en",
+   "lang": "en",
+   "ms": 15.1,
+   "top": [
+    "aspects#aspect-interpretation-between-specific-planet-pairs-sun-moon#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "aspects#major-aspects-conjunction-0-sextile-60#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "aspects-trine-square:hi",
+   "lang": "hi",
+   "ms": 6.1,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "aspects-trine-square:hg",
+   "lang": "hg",
+   "ms": 11.2,
+   "top": [
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "aspects#aspect-interpretation-between-specific-planet-pairs-sun-moon#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "navamsa-d9:en",
+   "lang": "en",
+   "ms": 12.6,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0",
+    "nakshatras_deep_dive#21-uttara-ashadha-26-40-sagittarius-10-00-capricorn#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "navamsa-d9:hi",
+   "lang": "hi",
+   "ms": 5.1,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "navamsa-d9:hg",
+   "lang": "hg",
+   "ms": 7.9,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "saturn-return:en",
+   "lang": "en",
+   "ms": 12.8,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "houses#first-house-the-ascendant-life-area-natural-sign-ruler-class#0",
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.5,
+   "mrr": 0.1111111111111111,
+   "ndcg@10": 0.24872141525284142
+  },
+  {
+   "id": "saturn-return:hi",
+   "lang": "hi",
+   "ms": 6.6,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "saturn-return:hg",
+   "lang": "hg",
+   "ms": 9.1,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "houses#first-house-the-ascendant-life-area-natural-sign-ruler-class#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "shadbala:en",
+   "lang": "en",
+   "ms": 15.4,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "vedic_astrology#the-27-nakshatras-20-purva-ashadha-13-20-26-40-sagittarius-2#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "vedic_astrology#remedies-upayas-gemstones-mantras#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "shadbala:hi",
+   "lang": "hi",
+   "ms": 5.4,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "shadbala:hg",
+   "lang": "hg",
+   "ms": 10.1,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "jaimini-atmakaraka:en",
+   "lang": "en",
+   "ms": 13.6,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "vedic_astrology#the-27-nakshatras-20-purva-ashadha-13-20-26-40-sagittarius-2#0",
+    "nakshatras_deep_dive#21-uttara-ashadha-26-40-sagittarius-10-00-capricorn#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.5,
+   "mrr": 0.1,
+   "ndcg@10": 0.2388353776606868
+  },
+  {
+   "id": "jaimini-atmakaraka:hi",
+   "lang": "hi",
+   "ms": 5.1,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "jaimini-atmakaraka:hg",
+   "lang": "hg",
+   "ms": 8.6,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "vedic_astrology#the-27-nakshatras-20-purva-ashadha-13-20-26-40-sagittarius-2#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-mars-retro:en",
+   "lang": "en",
+   "ms": 14.3,
+   "top": [
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-mars-retro:hi",
+   "lang": "hi",
+   "ms": 7.6,
+   "top": [
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-mars-retro:hg",
+   "lang": "hg",
+   "ms": 14.6,
+   "top": [
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-gem-jupiter:en",
+   "lang": "en",
+   "ms": 12.9,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "vedic_astrology#remedies-upayas-gemstones-mantras#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.2,
+   "recall@10": 0.2857142857142857,
+   "mrr": 0.5,
+   "ndcg@10": 0.18963935998729167
+  },
+  {
+   "id": "h-gem-jupiter:hi",
+   "lang": "hi",
+   "ms": 5.8,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-gem-jupiter:hg",
+   "lang": "hg",
+   "ms": 9.0,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-voc-moon:en",
+   "lang": "en",
+   "ms": 14.1,
+   "top": [
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#1",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-voc-moon:hi",
+   "lang": "hi",
+   "ms": 6.7,
+   "top": [
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-voc-moon:hg",
+   "lang": "hg",
+   "ms": 11.0,
+   "top": [
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-solar-return:en",
+   "lang": "en",
+   "ms": 12.6,
+   "top": [
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "predictive_techniques_advanced#solar-arc-directions-the-principle-why-solar-arcs-matter-key#0",
+    "health_astrology#preventive-guidance-by-chart-analysis-reading-health-in-the-#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 1.0,
+   "mrr": 0.1111111111111111,
+   "ndcg@10": 0.3618149835636159
+  },
+  {
+   "id": "h-solar-return:hi",
+   "lang": "hi",
+   "ms": 5.9,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-solar-return:hg",
+   "lang": "hg",
+   "ms": 9.2,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-profections:en",
+   "lang": "en",
+   "ms": 11.7,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "houses#sixth-house-life-area-natural-sign-ruler-classification-plan#0",
+    "career_astrology#10th-house-ruler-placement-analysis#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.6666666666666666,
+   "mrr": 0.14285714285714285,
+   "ndcg@10": 0.30446719749051815
+  },
+  {
+   "id": "h-profections:hi",
+   "lang": "hi",
+   "ms": 5.6,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-profections:hg",
+   "lang": "hg",
+   "ms": 7.8,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-eclipses:en",
+   "lang": "en",
+   "ms": 12.4,
+   "top": [
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "books_rudhyar_humanistic#the-birth-chart-as-a-mandala-of-potential#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-eclipses:hi",
+   "lang": "hi",
+   "ms": 5.7,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-eclipses:hg",
+   "lang": "hg",
+   "ms": 7.9,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-chiron:en",
+   "lang": "en",
+   "ms": 12.4,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "health_astrology#preventive-guidance-by-chart-analysis-reading-health-in-the-#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "books_rudhyar_humanistic#holistic-chart-interpretation-the-chart-as-mandala-interpret#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-chiron:hi",
+   "lang": "hi",
+   "ms": 5.8,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-chiron:hg",
+   "lang": "hg",
+   "ms": 7.4,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-pancha-mahapurusha:en",
+   "lang": "en",
+   "ms": 11.4,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0",
+    "nakshatras_deep_dive#21-uttara-ashadha-26-40-sagittarius-10-00-capricorn#0",
+    "nakshatras_deep_dive#15-swati-6-40-20-00-libra#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-pancha-mahapurusha:hi",
+   "lang": "hi",
+   "ms": 4.8,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-pancha-mahapurusha:hg",
+   "lang": "hg",
+   "ms": 6.7,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-argala:en",
+   "lang": "en",
+   "ms": 11.8,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#7-punarvasu-20-00-gemini-3-20-cancer#0",
+    "vedic_astrology#the-27-nakshatras-1-ashwini-0-00-13-20-aries-2-bharani-13-20#0",
+    "vedic_astrology#the-27-nakshatras-20-purva-ashadha-13-20-26-40-sagittarius-2#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-argala:hi",
+   "lang": "hi",
+   "ms": 5.0,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-argala:hg",
+   "lang": "hg",
+   "ms": 7.0,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-ashtakavarga:en",
+   "lang": "en",
+   "ms": 11.7,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "vedic_astrology#dasha-systems-vimshottari-dasha-120-year-cycle#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-ashtakavarga:hi",
+   "lang": "hi",
+   "ms": 5.1,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-ashtakavarga:hg",
+   "lang": "hg",
+   "ms": 7.1,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-midheaven:en",
+   "lang": "en",
+   "ms": 13.1,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "houses#tenth-house-the-midheaven-mc-life-area-natural-sign-ruler-cl#0",
+    "zodiac_signs#capricorn-december-22-january-19-element-modality-ruling-pla#0",
+    "career_astrology#planets-in-the-10th-house#0",
+    "zodiac_signs#gemini-may-21-june-20-element-modality-ruling-planet-core-ar#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-midheaven:hi",
+   "lang": "hi",
+   "ms": 5.7,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-midheaven:hg",
+   "lang": "hg",
+   "ms": 9.9,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "houses#tenth-house-the-midheaven-mc-life-area-natural-sign-ruler-cl#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-element-compat:en",
+   "lang": "en",
+   "ms": 13.6,
+   "top": [
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "love_relationships#compatibility-by-element-fire-air-aries-leo-sagittarius-gemi#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#aries-march-21-april-19-love-relationship-style-health-vulne#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.4,
+   "recall@10": 0.42857142857142855,
+   "mrr": 0.5,
+   "ndcg@10": 0.3904165576711806
+  },
+  {
+   "id": "h-element-compat:hi",
+   "lang": "hi",
+   "ms": 6.0,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-element-compat:hg",
+   "lang": "hg",
+   "ms": 13.0,
+   "top": [
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "love_relationships#compatibility-by-element-fire-air-aries-leo-sagittarius-gemi#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.2,
+   "recall@10": 0.2857142857142857,
+   "mrr": 0.2,
+   "ndcg@10": 0.21982559014831837
+  },
+  {
+   "id": "h-health-houses:en",
+   "lang": "en",
+   "ms": 16.1,
+   "top": [
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "health_astrology#preventive-guidance-by-chart-analysis-reading-health-in-the-#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "health_astrology#planets-and-health-associations#0",
+    "houses#sixth-house-life-area-natural-sign-ruler-classification-plan#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.5,
+   "recall@10": 0.5,
+   "mrr": 0.25,
+   "ndcg@10": 0.11861329943102608
+  },
+  {
+   "id": "h-health-houses:hi",
+   "lang": "hi",
+   "ms": 6.7,
+   "top": [
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "remedial_astrology#western-remedial-approaches-flower-essences-bach-flowers-cry#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-health-houses:hg",
+   "lang": "hg",
+   "ms": 14.4,
+   "top": [
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "remedial_astrology#western-remedial-approaches-flower-essences-bach-flowers-cry#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-stellium:en",
+   "lang": "en",
+   "ms": 13.6,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "houses#first-house-the-ascendant-life-area-natural-sign-ruler-class#0",
+    "health_astrology#preventive-guidance-by-chart-analysis-reading-health-in-the-#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-stellium:hi",
+   "lang": "hi",
+   "ms": 5.9,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-stellium:hg",
+   "lang": "hg",
+   "ms": 9.2,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-uranus-opposition:en",
+   "lang": "en",
+   "ms": 11.9,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "timing_transits#uranus-opposition-midlife-crisis-age-42#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.3333333333333333,
+   "recall@10": 0.3333333333333333,
+   "mrr": 0.2,
+   "ndcg@10": 0.2809436351950179
+  },
+  {
+   "id": "h-uranus-opposition:hi",
+   "lang": "hi",
+   "ms": 5.8,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-uranus-opposition:hg",
+   "lang": "hg",
+   "ms": 8.1,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "aspects#aspect-interpretation-between-specific-planet-pairs-sun-moon#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-planetary-hours:en",
+   "lang": "en",
+   "ms": 14.7,
+   "top": [
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "books_lilly_christian_astrology#planetary-hours-calculation-method-radicality-check#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "compatibility_synastry_advanced#timing-relationships-with-transits-meeting-timing-relationsh#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.5,
+   "mrr": 0.125,
+   "ndcg@10": 0.1934264036172708
+  },
+  {
+   "id": "h-planetary-hours:hi",
+   "lang": "hi",
+   "ms": 6.0,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-planetary-hours:hg",
+   "lang": "hg",
+   "ms": 9.0,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-jupiter-return:en",
+   "lang": "en",
+   "ms": 13.0,
+   "top": [
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0",
+    "love_relationships#timing-love-with-transits-venus-transits-jupiter-transits-sa#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 1.0,
+   "mrr": 0.1111111111111111,
+   "ndcg@10": 0.3010299956639812
+  },
+  {
+   "id": "h-jupiter-return:hi",
+   "lang": "hi",
+   "ms": 6.7,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "aspects#aspect-interpretation-between-specific-planet-pairs-sun-moon#0",
+    "books_ptolemy_tetrabiblos#planetary-natures-and-temperaments-the-seven-classical-plane#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-jupiter-return:hg",
+   "lang": "hg",
+   "ms": 9.2,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "aspects#aspect-interpretation-between-specific-planet-pairs-sun-moon#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-dasha-results:en",
+   "lang": "en",
+   "ms": 12.0,
+   "top": [
+    "vedic_astrology#dasha-systems-vimshottari-dasha-120-year-cycle#0",
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-dasha-results:hi",
+   "lang": "hi",
+   "ms": 4.8,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-dasha-results:hg",
+   "lang": "hg",
+   "ms": 7.3,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-venus-retro:en",
+   "lang": "en",
+   "ms": 13.5,
+   "top": [
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "love_relationships#venus-your-love-style-venus-sign-interpretations#0",
+    "love_relationships#timing-love-with-transits-venus-transits-jupiter-transits-sa#0",
+    "planets#venus-core-archetype-function-psychological-representation-d#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.5,
+   "mrr": 0.14285714285714285,
+   "ndcg@10": 0.09180385079206221
+  },
+  {
+   "id": "h-venus-retro:hi",
+   "lang": "hi",
+   "ms": 7.6,
+   "top": [
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-venus-retro:hg",
+   "lang": "hg",
+   "ms": 11.3,
+   "top": [
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-moon-dignity:en",
+   "lang": "en",
+   "ms": 15.0,
+   "top": [
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "zodiac_signs#aries-march-21-april-19-love-relationship-style-health-vulne#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.5,
+   "recall@10": 0.5,
+   "mrr": 0.25,
+   "ndcg@10": 0.26406812257259094
+  },
+  {
+   "id": "h-moon-dignity:hi",
+   "lang": "hi",
+   "ms": 7.6,
+   "top": [
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "h-moon-dignity:hg",
+   "lang": "hg",
+   "ms": 11.1,
+   "top": [
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-yod:en",
+   "lang": "en",
+   "ms": 13.2,
+   "top": [
+    "aspects#aspect-interpretation-between-specific-planet-pairs-sun-moon#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "aspects#major-aspects-conjunction-0-sextile-60#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-yod:hi",
+   "lang": "hi",
+   "ms": 5.8,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-yod:hg",
+   "lang": "hg",
+   "ms": 9.2,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "aspects#aspect-interpretation-between-specific-planet-pairs-sun-moon#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-hellenistic:en",
+   "lang": "en",
+   "ms": 12.9,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "books_ptolemy_tetrabiblos#planetary-natures-and-temperaments-the-seven-classical-plane#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 1.0,
+   "mrr": 0.14285714285714285,
+   "ndcg@10": 0.3333333333333333
+  },
+  {
+   "id": "g-hellenistic:hi",
+   "lang": "hi",
+   "ms": 5.7,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-hellenistic:hg",
+   "lang": "hg",
+   "ms": 9.1,
+   "top": [
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-bach-crystals:en",
+   "lang": "en",
+   "ms": 13.0,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "houses#sixth-house-life-area-natural-sign-ruler-classification-plan#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-bach-crystals:hi",
+   "lang": "hi",
+   "ms": 5.6,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-bach-crystals:hg",
+   "lang": "hg",
+   "ms": 8.7,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "books_ptolemy_tetrabiblos#planetary-natures-and-temperaments-the-seven-classical-plane#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-capricorn-careers:en",
+   "lang": "en",
+   "ms": 13.5,
+   "top": [
+    "zodiac_signs#capricorn-december-22-january-19-element-modality-ruling-pla#0",
+    "houses#tenth-house-the-midheaven-mc-life-area-natural-sign-ruler-cl#0",
+    "planets#the-sun-core-archetype-function-psychological-representation#0",
+    "career_astrology#planets-in-the-10th-house#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-capricorn-careers:hi",
+   "lang": "hi",
+   "ms": 7.6,
+   "top": [
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "zodiac_signs#capricorn-december-22-january-19-element-modality-ruling-pla#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-capricorn-careers:hg",
+   "lang": "hg",
+   "ms": 11.2,
+   "top": [
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "zodiac_signs#capricorn-december-22-january-19-element-modality-ruling-pla#0",
+    "houses#tenth-house-the-midheaven-mc-life-area-natural-sign-ruler-cl#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-karakamsha:en",
+   "lang": "en",
+   "ms": 12.0,
+   "top": [
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-1-ashwini-0-00-13-20-aries-2-bharani-13-20#0",
+    "nakshatras_deep_dive#7-punarvasu-20-00-gemini-3-20-cancer#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-karakamsha:hi",
+   "lang": "hi",
+   "ms": 5.1,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-karakamsha:hg",
+   "lang": "hg",
+   "ms": 6.3,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-neptune-transit:en",
+   "lang": "en",
+   "ms": 11.7,
+   "top": [
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "love_relationships#timing-love-with-transits-venus-transits-jupiter-transits-sa#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-the-transit-hi#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 1.0,
+   "mrr": 0.1111111111111111,
+   "ndcg@10": 0.3010299956639812
+  },
+  {
+   "id": "g-neptune-transit:hi",
+   "lang": "hi",
+   "ms": 5.7,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-neptune-transit:hg",
+   "lang": "hg",
+   "ms": 16.9,
+   "top": [
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-mars-sexual:en",
+   "lang": "en",
+   "ms": 14.1,
+   "top": [
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "aspects#aspect-interpretation-between-specific-planet-pairs-sun-moon#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "health_astrology#preventive-guidance-by-chart-analysis-reading-health-in-the-#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-mars-sexual:hi",
+   "lang": "hi",
+   "ms": 7.1,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "aspects#aspect-interpretation-between-specific-planet-pairs-sun-moon#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-mars-sexual:hg",
+   "lang": "hg",
+   "ms": 10.1,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-empty-8th:en",
+   "lang": "en",
+   "ms": 15.5,
+   "top": [
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "houses#first-house-the-ascendant-life-area-natural-sign-ruler-class#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-empty-8th:hi",
+   "lang": "hi",
+   "ms": 6.7,
+   "top": [
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "remedial_astrology#western-remedial-approaches-flower-essences-bach-flowers-cry#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-empty-8th:hg",
+   "lang": "hg",
+   "ms": 12.7,
+   "top": [
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "remedial_astrology#western-remedial-approaches-flower-essences-bach-flowers-cry#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-fasting:en",
+   "lang": "en",
+   "ms": 13.8,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-fasting:hi",
+   "lang": "hi",
+   "ms": 5.4,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-fasting:hg",
+   "lang": "hg",
+   "ms": 9.1,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-avasthas:en",
+   "lang": "en",
+   "ms": 14.1,
+   "top": [
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "vedic_astrology#the-27-nakshatras-20-purva-ashadha-13-20-26-40-sagittarius-2#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-avasthas:hi",
+   "lang": "hi",
+   "ms": 5.1,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-avasthas:hg",
+   "lang": "hg",
+   "ms": 8.2,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-pluto-houses:en",
+   "lang": "en",
+   "ms": 12.3,
+   "top": [
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "houses#first-house-the-ascendant-life-area-natural-sign-ruler-class#0",
+    "spiritual_astrology#pluto-and-soul-transformation#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-pluto-houses:hi",
+   "lang": "hi",
+   "ms": 5.9,
+   "top": [
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-pluto-houses:hg",
+   "lang": "hg",
+   "ms": 9.6,
+   "top": [
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-color-therapy:en",
+   "lang": "en",
+   "ms": 11.9,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "remedial_astrology#western-remedial-approaches-flower-essences-bach-flowers-cry#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-color-therapy:hi",
+   "lang": "hi",
+   "ms": 5.1,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-color-therapy:hg",
+   "lang": "hg",
+   "ms": 7.7,
+   "top": [
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  }
+ ],
+ "label": "A0-legacy-like",
+ "config": "A0-legacy-like",
+ "embedder": "BAAI/bge-small-en-v1.5",
+ "chunks": 354
+}

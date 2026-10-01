@@ -1,0 +1,20 @@
+# LLM-judge rubric and release gates (docs/llm-integration.md §9.2-9.3).
+# Judge: LLM_MODEL_JUDGE (default claude-sonnet-5-5), prompt app/llm/prompts/judge/v1.j2.
+criteria:
+  personalisation: "Uses >= 2 user-specific factors from CHART FACTS meaningfully."
+  specificity: "Concrete themes and windows from the facts, not generic sun-sign filler."
+  actionability: "At least one practical, safe suggestion."
+  tone: "Warm, calibrated, non-fatalistic."
+  coherence: "Consistent with REFERENCE NOTES' classical meanings and with CHART FACTS."
+gates:
+  judge_mean_min: 4.0            # per criterion
+  judge_low_share_max: 0.10      # share of scores <= 2 per criterion
+  first_draft_grounding_max: 0.03
+  final_grounding_max: 0.0
+  citation_validity_min: 1.0
+  premise_correction_min: 0.95
+  adversarial_handled_min: 1.0
+  language_compliance_min: 0.98
+  length_format_min: 0.98
+  chat_p95_latency_s_max: 12.0
+length_words: {min: 120, max: 300}

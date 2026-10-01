@@ -1,0 +1,131 @@
+{
+ "summary": {
+  "n": 10,
+  "errors": 5,
+  "grounded": "5/5",
+  "citation_valid": "5/5",
+  "cited_a_kb_note": "2/5",
+  "safety_hits": 0,
+  "leaked_tokens": 0,
+  "states_unverified_marker": 0,
+  "cost_usd": 0.0155
+ },
+ "answers": [
+  {
+   "q": "What does Mars mahadasha with Venus antardasha mean for me?",
+   "lang": "english",
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "kb_cited": 0,
+   "kb_provided": 4,
+   "factor_cites": 5,
+   "grounded": true,
+   "citation_valid": true,
+   "hedge_flag_in_context": true,
+   "hedge_present": false,
+   "safety_hits": [],
+   "leaked_tokens": [],
+   "mentions_unverified": false,
+   "excerpt": "Your question about a Mars and Venus sub-period touches on a combination that traditions view with nuance, but your current sidereal planetary timeline is actually running through the Moon Mahadasha w"
+  },
+  {
+   "q": "Is my Bhakoot dosha cancelled?",
+   "lang": "english",
+   "outcome": "repaired",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [
+    "hedge"
+   ],
+   "kb_cited": 1,
+   "kb_provided": 4,
+   "factor_cites": 4,
+   "grounded": true,
+   "citation_valid": true,
+   "hedge_flag_in_context": true,
+   "hedge_present": true,
+   "safety_hits": [],
+   "leaked_tokens": [],
+   "mentions_unverified": false,
+   "excerpt": "Your sidereal Moon in Dhanu and your Tula Lagna form part of your personal chart, but traditions differ on how bhakoot cancellations apply because evaluating sign distances requires comparing two sepa"
+  },
+  {
+   "q": "What is today's tithi and is it good for starting something new?",
+   "lang": "english",
+   "outcome": "repaired",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [
+    "safety:leak"
+   ],
+   "kb_cited": 0,
+   "kb_provided": 4,
+   "factor_cites": 4,
+   "grounded": true,
+   "citation_valid": true,
+   "hedge_flag_in_context": true,
+   "hedge_present": false,
+   "safety_hits": [],
+   "leaked_tokens": [],
+   "mentions_unverified": false,
+   "excerpt": "Your birth chart does not contain daily planetary positions or tithis, so a daily almanac reading is not available here. We can focus instead on your current Vedic Moon Mahadasha paired with your Venu"
+  },
+  {
+   "q": "What is the result of the Moon in the 7th house?",
+   "lang": "english",
+   "outcome": "repaired",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [
+    "hedge"
+   ],
+   "kb_cited": 0,
+   "kb_provided": 5,
+   "factor_cites": 4,
+   "grounded": true,
+   "citation_valid": true,
+   "hedge_flag_in_context": true,
+   "hedge_present": false,
+   "safety_hits": [],
+   "leaked_tokens": [],
+   "mentions_unverified": false,
+   "excerpt": "Your sidereal Moon is located in Dhanu (Sagittarius) in the third house from your Tula Lagna rather than the seventh house. This placement connects your emotional expression with curiosity and communi"
+  },
+  {
+   "q": "What is Yogini dasha and should I follow it?",
+   "lang": "english",
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "kb_cited": 2,
+   "kb_provided": 5,
+   "factor_cites": 2,
+   "grounded": true,
+   "citation_valid": true,
+   "hedge_flag_in_context": true,
+   "hedge_present": true,
+   "safety_hits": [],
+   "leaked_tokens": [],
+   "mentions_unverified": false,
+   "excerpt": "Yogini dasha is an alternative nakshatra-based cycle spanning thirty-six years that traditions sometimes use for shorter-term timing and cross-checking. Your sidereal Moon rests in Purva Ashadha withi"
+  },
+  {
+   "q": "How is Rahu Kaal calculated and should I avoid it?",
+   "error": "LLMUnavailable"
+  },
+  {
+   "q": "मेरी साढ़ेसाती कैसी रहेगी और क्या सावधानी रखूं?",
+   "error": "LLMUnavailable"
+  },
+  {
+   "q": "Moon se Saturn ka gochar kab shubh mana jata hai?",
+   "error": "LLMUnavailable"
+  },
+  {
+   "q": "What happens when the 7th lord sits in the 12th house?",
+   "error": "LLMUnavailable"
+  },
+  {
+   "q": "Which remedies are traditionally suggested for a weak Saturn?",
+   "error": "LLMUnavailable"
+  }
+ ]
+}

@@ -1,0 +1,474 @@
+/* =============================================================================
+   NAKSHION DESIGN TOKENS — v1.0 (2026-10-01)
+   Source of truth: design-system/nakshion/MASTER.md
+   Target: Tailwind CSS v4 (@tailwindcss/vite). Drop-in for frontend/src/index.css.
+
+   HOW TO INSTALL
+   1. Copy this file to frontend/src/styles/tokens.css
+   2. frontend/src/index.css becomes:
+        @import "tailwindcss";
+        @import "./styles/tokens.css";
+      (delete the old @theme block — section 6 below aliases the old names)
+   3. frontend/index.html — replace the Google Fonts <link> with:
+        <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..600,0..100&family=Inter:wght@400..700&family=Noto+Sans+Devanagari:wght@400..600&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet" />
+      Google Fonts serves Devanagari as a separate unicode-range subset, so the
+      Devanagari files download ONLY when Hindi text is actually rendered.
+   4. <html lang="en" data-theme="dark">  — "dark" | "light" | (absent = follow OS)
+
+   THEME MODEL
+   - Raw values live in --nk-* custom properties (switch per theme).
+   - @theme inline maps them to Tailwind utilities, so `bg-surface`, `text-fg`,
+     `border-border`, `bg-accent/20` all re-theme automatically.
+   - Components never use `dark:` variants. If a value differs per theme it is a token.
+   ============================================================================= */
+
+
+/* -----------------------------------------------------------------------------
+   1. THEME VALUES — DARK ("Night") is the default
+   -------------------------------------------------------------------------- */
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Surfaces — tonal layering, darkest at the bottom */
+  --nk-bg:            #0B0D1A;  /* page canvas */
+  --nk-bg-sunken:     #070812;  /* wells, code, chart backdrop */
+  --nk-surface:       #12152A;  /* cards */
+  --nk-elevated:      #1A1E38;  /* nested blocks, hover rows, menus */
+  --nk-overlay:       #232847;  /* dialogs, sheets, toasts, popovers */
+  --nk-field:         #0E1124;  /* input wells */
+  --nk-scrim:         rgb(5 6 14 / 0.72);
+
+  /* Lines */
+  --nk-border:        #262B4A;  /* decorative hairlines (no contrast requirement) */
+  --nk-border-strong: #6B73A8;  /* control boundaries — >=3:1 on every surface */
+
+  /* Text */
+  --nk-fg:            #EEF0FA;  /* text-primary   12.61:1 worst case */
+  --nk-fg-secondary:  #B4B9D6;  /* text-secondary  7.40:1 worst case */
+  --nk-fg-muted:      #8F95B8;  /* text-muted      4.88:1 worst case */
+  --nk-fg-disabled:   #5C6188;  /* disabled only — exempt from contrast */
+
+  /* Accent — "Diya gold": primary action, Lagna, current period, auspicious */
+  --nk-accent:         #F2B544;
+  --nk-accent-hover:   #F7C66A;
+  --nk-accent-pressed: #E0A030;
+  --nk-accent-text:    #F2B544;  /* gold used AS text (7.82:1 worst) */
+  --nk-on-accent:      #1A1204;  /* text on gold fill (10.13:1) */
+  --nk-accent-subtle:  rgb(242 181 68 / 0.12);
+
+  /* AI — "Moonlit violet": Nakshion's voice, chat, AI-generated content */
+  --nk-ai:             #A99BFF;  /* as text / icon (6.02:1 worst) */
+  --nk-ai-fill:        #6A5AE0;  /* as solid fill */
+  --nk-on-ai:          #FFFFFF;  /* text on ai-fill (5.06:1) */
+  --nk-ai-subtle:      rgb(169 155 255 / 0.12);
+
+  /* Status */
+  --nk-success:        #4FD1A5;
+  --nk-success-subtle: rgb(79 209 165 / 0.12);
+  --nk-warning:        #FB923C;
+  --nk-warning-subtle: rgb(251 146 60 / 0.12);
+  --nk-danger:         #FF6B81;
+  --nk-danger-fill:    #FF6B81;
+  --nk-on-danger:      #1A0508;  /* 7.18:1 */
+  --nk-danger-subtle:  rgb(255 107 129 / 0.12);
+  --nk-info:           #7CC4FF;
+  --nk-info-subtle:    rgb(124 196 255 / 0.12);
+
+  --nk-focus:          #C9BFFF;  /* focus ring, 8.44:1 worst */
+
+  /* Elements (tattva) */
+  --nk-el-fire:  #FF8A65;
+  --nk-el-earth: #B5C97A;
+  --nk-el-air:   #7FD3E8;
+  --nk-el-water: #8FB0FF;
+
+  /* Grahas (planets) — all >=4.5:1 on every surface, usable as text */
+  --nk-pl-sun:     #FF9E57;
+  --nk-pl-moon:    #DCE3F2;
+  --nk-pl-mars:    #FF6B6B;
+  --nk-pl-mercury: #6FD39B;
+  --nk-pl-jupiter: #FFD166;
+  --nk-pl-venus:   #F3A6D8;
+  --nk-pl-saturn:  #8EA2FF;
+  --nk-pl-rahu:    #A8AEC8;
+  --nk-pl-ketu:    #D0A884;
+
+  /* Elevation */
+  --nk-shadow-e1: 0 1px 2px rgb(0 0 0 / 0.50);
+  --nk-shadow-e2: 0 8px 24px -6px rgb(0 0 0 / 0.55);
+  --nk-shadow-e3: 0 24px 64px -12px rgb(0 0 0 / 0.70);
+  --nk-shadow-highlight: inset 0 1px 0 rgb(255 255 255 / 0.05);
+  --nk-glow-accent: 0 8px 28px -6px rgb(242 181 68 / 0.45);
+  --nk-glow-ai:     0 8px 32px -8px rgb(124 108 240 / 0.55);
+
+  /* Atmosphere */
+  --nk-nebula-a: rgb(106 90 224 / 0.14);  /* violet wash, top-left */
+  --nk-nebula-b: rgb(242 181 68 / 0.06);  /* gold wash, bottom-right */
+  --nk-star-opacity: 0.55;
+  --nk-glass-bg:     rgb(35 40 71 / 0.72);
+  --nk-glass-border: rgb(255 255 255 / 0.08);
+  --nk-shimmer:      rgb(255 255 255 / 0.06);
+}
+
+
+/* -----------------------------------------------------------------------------
+   2. THEME VALUES — LIGHT ("Dawn" / parchment)
+   Duplicated for explicit opt-in and for OS preference (when no data-theme set).
+   -------------------------------------------------------------------------- */
+[data-theme="light"] {
+  color-scheme: light;
+  --nk-bg: #FAF7F0; --nk-bg-sunken: #EFE9DC; --nk-surface: #FFFFFF; --nk-elevated: #F3EEE3;
+  --nk-overlay: #FFFFFF; --nk-field: #FFFFFF; --nk-scrim: rgb(26 24 48 / 0.40);
+  --nk-border: #E6DECD; --nk-border-strong: #8A7D60;
+  --nk-fg: #1A1830; --nk-fg-secondary: #46435F; --nk-fg-muted: #625F7C; --nk-fg-disabled: #A9A4B8;
+  --nk-accent: #E3A63A; --nk-accent-hover: #EBB552; --nk-accent-pressed: #D0922A;
+  --nk-accent-text: #8A5A00; --nk-on-accent: #1A1204; --nk-accent-subtle: rgb(227 166 58 / 0.16);
+  --nk-ai: #5443CF; --nk-ai-fill: #5443CF; --nk-on-ai: #FFFFFF; --nk-ai-subtle: rgb(84 67 207 / 0.10);
+  --nk-success: #0B7354; --nk-success-subtle: rgb(11 115 84 / 0.10);
+  --nk-warning: #A8410A; --nk-warning-subtle: rgb(168 65 10 / 0.10);
+  --nk-danger: #C0263F; --nk-danger-fill: #C0263F; --nk-on-danger: #FFFFFF; --nk-danger-subtle: rgb(192 38 63 / 0.10);
+  --nk-info: #1D66AA; --nk-info-subtle: rgb(29 102 170 / 0.10);
+  --nk-focus: #5443CF;
+  --nk-el-fire: #B23A0A; --nk-el-earth: #52701A; --nk-el-air: #0E6C86; --nk-el-water: #2952C7;
+  --nk-pl-sun: #9C4706; --nk-pl-moon: #55607A; --nk-pl-mars: #C81E1E; --nk-pl-mercury: #167A47;
+  --nk-pl-jupiter: #7A5A00; --nk-pl-venus: #B0307F; --nk-pl-saturn: #3F51C7; --nk-pl-rahu: #5A5F78; --nk-pl-ketu: #8A5B30;
+  --nk-shadow-e1: 0 1px 2px rgb(26 24 48 / 0.06);
+  --nk-shadow-e2: 0 8px 24px -8px rgb(26 24 48 / 0.14);
+  --nk-shadow-e3: 0 24px 56px -12px rgb(26 24 48 / 0.22);
+  --nk-shadow-highlight: inset 0 1px 0 rgb(255 255 255 / 0.70);
+  --nk-glow-accent: 0 8px 24px -8px rgb(201 138 30 / 0.45);
+  --nk-glow-ai: 0 8px 24px -8px rgb(84 67 207 / 0.35);
+  --nk-nebula-a: rgb(84 67 207 / 0.06); --nk-nebula-b: rgb(227 166 58 / 0.10); --nk-star-opacity: 0;
+  --nk-glass-bg: rgb(255 255 255 / 0.78); --nk-glass-border: rgb(26 24 48 / 0.08); --nk-shimmer: rgb(255 255 255 / 0.70);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    color-scheme: light;
+    --nk-bg: #FAF7F0; --nk-bg-sunken: #EFE9DC; --nk-surface: #FFFFFF; --nk-elevated: #F3EEE3;
+    --nk-overlay: #FFFFFF; --nk-field: #FFFFFF; --nk-scrim: rgb(26 24 48 / 0.40);
+    --nk-border: #E6DECD; --nk-border-strong: #8A7D60;
+    --nk-fg: #1A1830; --nk-fg-secondary: #46435F; --nk-fg-muted: #625F7C; --nk-fg-disabled: #A9A4B8;
+    --nk-accent: #E3A63A; --nk-accent-hover: #EBB552; --nk-accent-pressed: #D0922A;
+    --nk-accent-text: #8A5A00; --nk-on-accent: #1A1204; --nk-accent-subtle: rgb(227 166 58 / 0.16);
+    --nk-ai: #5443CF; --nk-ai-fill: #5443CF; --nk-on-ai: #FFFFFF; --nk-ai-subtle: rgb(84 67 207 / 0.10);
+    --nk-success: #0B7354; --nk-success-subtle: rgb(11 115 84 / 0.10);
+    --nk-warning: #A8410A; --nk-warning-subtle: rgb(168 65 10 / 0.10);
+    --nk-danger: #C0263F; --nk-danger-fill: #C0263F; --nk-on-danger: #FFFFFF; --nk-danger-subtle: rgb(192 38 63 / 0.10);
+    --nk-info: #1D66AA; --nk-info-subtle: rgb(29 102 170 / 0.10);
+    --nk-focus: #5443CF;
+    --nk-el-fire: #B23A0A; --nk-el-earth: #52701A; --nk-el-air: #0E6C86; --nk-el-water: #2952C7;
+    --nk-pl-sun: #9C4706; --nk-pl-moon: #55607A; --nk-pl-mars: #C81E1E; --nk-pl-mercury: #167A47;
+    --nk-pl-jupiter: #7A5A00; --nk-pl-venus: #B0307F; --nk-pl-saturn: #3F51C7; --nk-pl-rahu: #5A5F78; --nk-pl-ketu: #8A5B30;
+    --nk-shadow-e1: 0 1px 2px rgb(26 24 48 / 0.06);
+    --nk-shadow-e2: 0 8px 24px -8px rgb(26 24 48 / 0.14);
+    --nk-shadow-e3: 0 24px 56px -12px rgb(26 24 48 / 0.22);
+    --nk-shadow-highlight: inset 0 1px 0 rgb(255 255 255 / 0.70);
+    --nk-glow-accent: 0 8px 24px -8px rgb(201 138 30 / 0.45);
+    --nk-glow-ai: 0 8px 24px -8px rgb(84 67 207 / 0.35);
+    --nk-nebula-a: rgb(84 67 207 / 0.06); --nk-nebula-b: rgb(227 166 58 / 0.10); --nk-star-opacity: 0;
+  --nk-glass-bg: rgb(255 255 255 / 0.78); --nk-glass-border: rgb(26 24 48 / 0.08); --nk-shimmer: rgb(255 255 255 / 0.70);
+  }
+}
+
+
+/* -----------------------------------------------------------------------------
+   3. THEMED TOKENS -> TAILWIND UTILITIES  (@theme inline keeps the var() reference)
+   -------------------------------------------------------------------------- */
+@theme inline {
+  --color-bg:            var(--nk-bg);
+  --color-bg-sunken:     var(--nk-bg-sunken);
+  --color-surface:       var(--nk-surface);
+  --color-elevated:      var(--nk-elevated);
+  --color-overlay:       var(--nk-overlay);
+  --color-field:         var(--nk-field);
+  --color-scrim:         var(--nk-scrim);
+
+  --color-border:        var(--nk-border);
+  --color-border-strong: var(--nk-border-strong);
+
+  --color-fg:            var(--nk-fg);
+  --color-fg-secondary:  var(--nk-fg-secondary);
+  --color-fg-muted:      var(--nk-fg-muted);
+  --color-fg-disabled:   var(--nk-fg-disabled);
+
+  --color-accent:         var(--nk-accent);
+  --color-accent-hover:   var(--nk-accent-hover);
+  --color-accent-pressed: var(--nk-accent-pressed);
+  --color-accent-text:    var(--nk-accent-text);
+  --color-on-accent:      var(--nk-on-accent);
+  --color-accent-subtle:  var(--nk-accent-subtle);
+
+  --color-ai:        var(--nk-ai);
+  --color-ai-fill:   var(--nk-ai-fill);
+  --color-on-ai:     var(--nk-on-ai);
+  --color-ai-subtle: var(--nk-ai-subtle);
+
+  --color-success:        var(--nk-success);
+  --color-success-subtle: var(--nk-success-subtle);
+  --color-warning:        var(--nk-warning);
+  --color-warning-subtle: var(--nk-warning-subtle);
+  --color-danger:         var(--nk-danger);
+  --color-danger-fill:    var(--nk-danger-fill);
+  --color-on-danger:      var(--nk-on-danger);
+  --color-danger-subtle:  var(--nk-danger-subtle);
+  --color-info:           var(--nk-info);
+  --color-info-subtle:    var(--nk-info-subtle);
+  --color-focus:          var(--nk-focus);
+
+  --color-fire:  var(--nk-el-fire);
+  --color-earth: var(--nk-el-earth);
+  --color-air:   var(--nk-el-air);
+  --color-water: var(--nk-el-water);
+
+  --color-sun:     var(--nk-pl-sun);
+  --color-moon:    var(--nk-pl-moon);
+  --color-mars:    var(--nk-pl-mars);
+  --color-mercury: var(--nk-pl-mercury);
+  --color-jupiter: var(--nk-pl-jupiter);
+  --color-venus:   var(--nk-pl-venus);
+  --color-saturn:  var(--nk-pl-saturn);
+  --color-rahu:    var(--nk-pl-rahu);
+  --color-ketu:    var(--nk-pl-ketu);
+
+  --shadow-e1: var(--nk-shadow-e1);
+  --shadow-e2: var(--nk-shadow-e2);
+  --shadow-e3: var(--nk-shadow-e3);
+  --shadow-highlight: var(--nk-shadow-highlight);
+  --shadow-glow-accent: var(--nk-glow-accent);
+  --shadow-glow-ai: var(--nk-glow-ai);
+}
+
+
+/* -----------------------------------------------------------------------------
+   4. STATIC TOKENS (theme-independent)
+   -------------------------------------------------------------------------- */
+@theme {
+  /* Typography — families */
+  --font-display: "Fraunces", "Tiro Devanagari Hindi", "Noto Serif Devanagari", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", "Noto Sans Devanagari", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+
+  /* Typography — semantic scale. Utilities: text-display, text-h1 ... text-overline */
+  --text-display: clamp(2.5rem, 1.6rem + 3.6vw, 4rem);
+  --text-display--line-height: 1.05;
+  --text-display--letter-spacing: -0.02em;
+  --text-display--font-weight: 500;
+
+  --text-h1: clamp(2rem, 1.55rem + 1.8vw, 2.75rem);
+  --text-h1--line-height: 1.12;
+  --text-h1--letter-spacing: -0.015em;
+  --text-h1--font-weight: 500;
+
+  --text-h2: clamp(1.5rem, 1.3rem + 0.8vw, 2rem);
+  --text-h2--line-height: 1.2;
+  --text-h2--letter-spacing: -0.01em;
+  --text-h2--font-weight: 500;
+
+  --text-h3: clamp(1.25rem, 1.18rem + 0.3vw, 1.5rem);
+  --text-h3--line-height: 1.3;
+  --text-h3--font-weight: 500;
+
+  --text-title: 1.125rem;          /* 18px — card titles (Inter 600) */
+  --text-title--line-height: 1.4;
+  --text-title--font-weight: 600;
+
+  --text-body-lg: 1.0625rem;       /* 17px — readings, AI replies */
+  --text-body-lg--line-height: 1.7;
+
+  --text-body: 1rem;               /* 16px — default UI text, all inputs */
+  --text-body--line-height: 1.6;
+
+  --text-body-sm: 0.875rem;        /* 14px — secondary UI text */
+  --text-body-sm--line-height: 1.55;
+
+  --text-caption: 0.8125rem;       /* 13px — floor for any sentence */
+  --text-caption--line-height: 1.45;
+
+  --text-overline: 0.75rem;        /* 12px — badges & Latin-only overlines. Absolute floor. */
+  --text-overline--line-height: 1.3;
+  --text-overline--letter-spacing: 0.08em;
+  --text-overline--font-weight: 600;
+
+  --text-stat: clamp(2.5rem, 2rem + 2vw, 3.5rem); /* scores, big numerals (Fraunces, tabular) */
+  --text-stat--line-height: 1;
+  --text-stat--font-weight: 500;
+
+  /* Radius — semantic names so Tailwind's rounded-sm/md/lg/xl keep their defaults */
+  --radius-control: 0.75rem;  /* 12px buttons, inputs, selects, segmented */
+  --radius-card:    1rem;     /* 16px cards, menus, popovers */
+  --radius-sheet:   1.5rem;   /* 24px dialogs, sheets, chat input */
+  --radius-bubble:  1.25rem;  /* 20px user chat bubble */
+  --radius-chip:    9999px;   /* chips, badges, avatars */
+
+  /* Containers -> max-w-reading etc. */
+  --container-form:    30rem;  /* 480 */
+  --container-reading: 42rem;  /* 672 — ~68ch at body-lg */
+  --container-chat:    48rem;  /* 768 */
+  --container-app:     75rem;  /* 1200 */
+
+  /* Easing -> ease-standard, ease-enter, ease-exit, ease-emphasized */
+  --ease-standard:   cubic-bezier(0.2, 0, 0, 1);
+  --ease-enter:      cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-exit:       cubic-bezier(0.4, 0, 1, 1);
+  --ease-emphasized: cubic-bezier(0.3, 0, 0, 1.2);
+
+  /* Animations */
+  --animate-shimmer: nk-shimmer 1.6s linear infinite;
+  --animate-caret:   nk-caret 1s steps(1, end) infinite;
+  --animate-twinkle: nk-twinkle 5s ease-in-out infinite;
+  --animate-spin-slow: spin 24s linear infinite;
+
+  @keyframes nk-shimmer {
+    from { background-position: 150% 0; }
+    to   { background-position: -50% 0; }
+  }
+  @keyframes nk-caret {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0; }
+  }
+  @keyframes nk-twinkle {
+    0%, 100% { opacity: var(--nk-star-opacity); }
+    50%      { opacity: calc(var(--nk-star-opacity) * 0.35); }
+  }
+}
+
+/* Non-utility tokens (read via var() in CSS or mirrored in src/lib/motion.ts) */
+:root {
+  --nk-dur-instant: 100ms;
+  --nk-dur-fast:    150ms;
+  --nk-dur-base:    250ms;
+  --nk-dur-slow:    400ms;
+  --nk-dur-slower:  600ms;
+  --nk-dur-ambient: 2400ms;
+
+  --nk-z-raised: 10;  --nk-z-sticky: 20;  --nk-z-header: 30;  --nk-z-dropdown: 40;
+  --nk-z-scrim: 50;   --nk-z-modal: 60;   --nk-z-toast: 70;   --nk-z-tooltip: 80;
+
+  --nk-header-h: 64px;
+  --nk-bottom-nav-h: 64px;
+  --nk-gradient-aurora: linear-gradient(135deg, #6A5AE0 0%, #A99BFF 45%, #F2B544 100%);
+}
+
+
+/* -----------------------------------------------------------------------------
+   5. BASE + UTILITIES
+   -------------------------------------------------------------------------- */
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    background-color: var(--nk-bg);
+    color: var(--nk-fg);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+  #root { min-height: 100svh; isolation: isolate; }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    font-variation-settings: "SOFT" 50;
+    text-wrap: balance;
+  }
+  p { text-wrap: pretty; }
+
+  ::selection { background: var(--nk-ai-subtle); color: var(--nk-fg); }
+
+  /* Devanagari: no tracking (breaks conjuncts), no uppercase, taller lines for matras */
+  :lang(hi), :lang(mr), :lang(sa) {
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+    line-height: 1.75;
+  }
+  :lang(hi) :is(h1, h2, h3) { line-height: 1.35; }
+
+  /* Default focus treatment for anything focusable that has no component styling */
+  :focus-visible {
+    outline: 2px solid var(--nk-focus);
+    outline-offset: 2px;
+  }
+
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--nk-border); border-radius: 9999px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--nk-border-strong); }
+}
+
+/* Focus ring for components that draw their own (buttons, chips, cards) */
+@utility focus-ring {
+  outline: none;
+  &:focus-visible {
+    outline: 2px solid var(--nk-focus);
+    outline-offset: 2px;
+  }
+}
+
+/* Glass — ONLY for layers floating over imagery or the starfield */
+@utility surface-glass {
+  background-color: var(--nk-glass-bg);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid var(--nk-glass-border);
+  @supports not (backdrop-filter: blur(1px)) {
+    background-color: var(--nk-overlay);
+  }
+}
+
+/* Skeleton block */
+@utility skeleton {
+  background-color: var(--nk-elevated);
+  background-image: linear-gradient(90deg, transparent 0%, var(--nk-shimmer) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: var(--animate-shimmer);
+}
+
+/* The night sky. One fixed layer behind the app; no JS particles. */
+@utility bg-night {
+  background-color: var(--nk-bg);
+  background-image:
+    radial-gradient(60rem 40rem at 10% -10%, var(--nk-nebula-a), transparent 60%),
+    radial-gradient(50rem 36rem at 100% 110%, var(--nk-nebula-b), transparent 60%);
+  background-attachment: fixed;
+}
+
+/* Star tile (decorative). Apply to an aria-hidden, pointer-events-none fixed div. */
+@utility starfield {
+  opacity: var(--nk-star-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cg fill='%23EEF0FA'%3E%3Ccircle cx='23' cy='41' r='.8'/%3E%3Ccircle cx='97' cy='12' r='.5'/%3E%3Ccircle cx='151' cy='88' r='1.1'/%3E%3Ccircle cx='212' cy='29' r='.6'/%3E%3Ccircle cx='287' cy='64' r='.9'/%3E%3Ccircle cx='361' cy='18' r='.5'/%3E%3Ccircle cx='48' cy='147' r='.6'/%3E%3Ccircle cx='132' cy='196' r='.8'/%3E%3Ccircle cx='243' cy='161' r='.5'/%3E%3Ccircle cx='318' cy='133' r='1.2'/%3E%3Ccircle cx='384' cy='201' r='.6'/%3E%3Ccircle cx='71' cy='252' r='1'/%3E%3Ccircle cx='176' cy='271' r='.5'/%3E%3Ccircle cx='262' cy='238' r='.7'/%3E%3Ccircle cx='343' cy='287' r='.5'/%3E%3Ccircle cx='19' cy='329' r='.6'/%3E%3Ccircle cx='118' cy='352' r='.9'/%3E%3Ccircle cx='207' cy='331' r='.5'/%3E%3Ccircle cx='296' cy='372' r='1'/%3E%3Ccircle cx='377' cy='349' r='.6'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 400px 400px;
+}
+
+@utility tabular { font-variant-numeric: tabular-nums lining-nums; }
+
+/* Visually hidden but available to screen readers (Tailwind has sr-only; this adds focusable reveal) */
+@utility sr-only-focusable {
+  &:not(:focus):not(:focus-within) {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  }
+}
+
+
+/* 6. LEGACY ALIASES — removed: no usages remain in src (MASTER §12 step 7). */
+
+
+/* -----------------------------------------------------------------------------
+   7. REDUCED MOTION — global safety net (components ALSO branch via useReducedMotion)
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .skeleton { background-image: none; }
+}

@@ -1,0 +1,211 @@
+{
+  "source": "NASA/JPL Horizons API, DE441, QUANTITIES=31 (apparent geocentric ecliptic-of-date)",
+  "source_settings": "CENTER=500@399, EXTRA_PREC=YES, ANG_FORMAT=DEG",
+  "retrieved_at": "2026-10-01T05:14:52Z",
+  "cases": {
+    "modern_1994": {
+      "jd": 2449554.857638889,
+      "time_scale": "UT",
+      "description": "1994-07-21 08:35 UT (spec section 9 example instant)",
+      "longitudes": {
+        "Sun": 118.3656641,
+        "Moon": 278.9298136,
+        "Mercury": 98.4726272,
+        "Venus": 161.3128382,
+        "Mars": 72.2022019,
+        "Jupiter": 215.3165296,
+        "Saturn": 341.7636023,
+        "Uranus": 294.1948593,
+        "Neptune": 291.7822811,
+        "Pluto": 235.342875
+      }
+    },
+    "einstein_1879": {
+      "jd": 2407422.951435185,
+      "time_scale": "UT",
+      "description": "1879-03-14 10:50:04 UT = 11:30 LMT Ulm (+0:39:56)",
+      "longitudes": {
+        "Sun": 353.5077099,
+        "Moon": 254.5264749,
+        "Mercury": 3.1438916,
+        "Venus": 16.984983,
+        "Mars": 296.9141721,
+        "Jupiter": 327.4840265,
+        "Saturn": 4.1897496,
+        "Uranus": 151.2885135,
+        "Neptune": 37.8718811,
+        "Pluto": 54.7254773
+      }
+    },
+    "gandhi_1869": {
+      "jd": 2403972.605972222,
+      "time_scale": "UT",
+      "description": "1869-10-02 02:32:36 UT = 07:11 LMT Porbandar (+4:38:24)",
+      "longitudes": {
+        "Sun": 188.9269226,
+        "Moon": 139.9632742,
+        "Mercury": 213.769187,
+        "Venus": 226.4328503,
+        "Mars": 228.3994439,
+        "Jupiter": 50.1728004,
+        "Saturn": 252.3619247,
+        "Uranus": 111.6897094,
+        "Neptune": 18.4169019,
+        "Pluto": 47.6569371
+      }
+    },
+    "india_wartime_1943": {
+      "jd": 2430890.479166667,
+      "time_scale": "UT",
+      "description": "1943-06-14 23:30 UT = 1943-06-15 06:00 IST war time (+6:30)",
+      "longitudes": {
+        "Sun": 83.0137282,
+        "Moon": 219.3730962,
+        "Mercury": 60.6530634,
+        "Venus": 127.8590119,
+        "Mars": 13.6564329,
+        "Jupiter": 116.6844864,
+        "Saturn": 76.9523301,
+        "Uranus": 65.7648712,
+        "Neptune": 179.2815718,
+        "Pluto": 125.6159627
+      }
+    },
+    "sydney_1985": {
+      "jd": 2446424.791666667,
+      "time_scale": "UT",
+      "description": "1985-12-25 07:00 UT = 18:00 AEDT Sydney",
+      "longitudes": {
+        "Sun": 273.4317179,
+        "Moon": 71.0274131,
+        "Mercury": 253.5468283,
+        "Venus": 267.363368,
+        "Mars": 216.4627888,
+        "Jupiter": 316.8515225,
+        "Saturn": 244.4426226,
+        "Uranus": 259.1048007,
+        "Neptune": 273.3327721,
+        "Pluto": 216.7492164
+      }
+    },
+    "tromso_1990": {
+      "jd": 2448063.916666667,
+      "time_scale": "UT",
+      "description": "1990-06-21 10:00 UT = 12:00 CEST Tromso (69.65N)",
+      "longitudes": {
+        "Sun": 89.7793508,
+        "Moon": 70.5105194,
+        "Mercury": 76.6176563,
+        "Venus": 55.7510812,
+        "Mars": 15.2740225,
+        "Jupiter": 107.180583,
+        "Saturn": 293.6683325,
+        "Uranus": 277.9313734,
+        "Neptune": 283.5659012,
+        "Pluto": 225.2891803
+      }
+    },
+    "ny_fold_2021": {
+      "jd": 2459525.729166667,
+      "time_scale": "UT",
+      "description": "2021-11-07 05:30 UT = 01:30 EDT (fold=0) New York",
+      "longitudes": {
+        "Sun": 225.0217627,
+        "Moon": 257.9087492,
+        "Mercury": 212.0532299,
+        "Venus": 271.6822873,
+        "Mars": 215.1391623,
+        "Jupiter": 322.99307,
+        "Saturn": 307.4917589,
+        "Uranus": 42.691546,
+        "Neptune": 350.5667069,
+        "Pluto": 294.5565056
+      }
+    },
+    "kiritimati_1999": {
+      "jd": 2451543.9375,
+      "time_scale": "UT",
+      "description": "1999-12-31 10:30 UT = 2000-01-01 00:30 +14 Kiritimati",
+      "longitudes": {
+        "Sun": 279.2858196,
+        "Moon": 210.4549474,
+        "Mercury": 270.2387015,
+        "Venus": 240.2818248,
+        "Mars": 327.1391579,
+        "Jupiter": 25.2116751,
+        "Saturn": 40.4178704,
+        "Uranus": 314.7559374,
+        "Neptune": 303.1553305,
+        "Pluto": 251.4172755
+      }
+    },
+    "eclipse_2025": {
+      "jd": 2460763.956944444,
+      "time_scale": "UT",
+      "description": "2025-03-29 10:58 UT",
+      "longitudes": {
+        "Sun": 9.0016172,
+        "Moon": 9.0032631,
+        "Mercury": 0.4770545,
+        "Venus": 358.8156598,
+        "Mars": 112.789421,
+        "Jupiter": 75.5904064,
+        "Saturn": 354.1832206,
+        "Uranus": 54.6418242,
+        "Neptune": 359.9609111,
+        "Pluto": 303.5127478
+      }
+    },
+    "today_2026": {
+      "jd": 2461314.5,
+      "time_scale": "UT",
+      "description": "2026-10-01 00:00 UT",
+      "longitudes": {
+        "Sun": 187.8387422,
+        "Moon": 63.9065631,
+        "Mercury": 210.6793595,
+        "Venus": 218.3896891,
+        "Mars": 121.6882724,
+        "Jupiter": 139.5913052,
+        "Saturn": 11.5784356,
+        "Uranus": 65.5258398,
+        "Neptune": 2.8620274,
+        "Pluto": 303.1223872
+      }
+    },
+    "edge_1800_tt": {
+      "jd": 2378511.0,
+      "time_scale": "TT",
+      "description": "1800-01-15 12:00 TT (ephemeris range floor)",
+      "longitudes": {
+        "Sun": 295.2019104,
+        "Moon": 169.0048242,
+        "Mercury": 271.1294564,
+        "Venus": 249.299296,
+        "Mars": 254.455433,
+        "Jupiter": 82.8974959,
+        "Saturn": 127.7342268,
+        "Uranus": 177.0348474,
+        "Neptune": 226.9359727,
+        "Pluto": 331.7188742
+      }
+    },
+    "edge_2399_tt": {
+      "jd": 2597428.0,
+      "time_scale": "TT",
+      "description": "2399-06-01 12:00 TT (ephemeris range ceiling)",
+      "longitudes": {
+        "Sun": 70.8634447,
+        "Moon": 24.362826,
+        "Mercury": 53.5279373,
+        "Venus": 33.1230923,
+        "Mars": 110.7990056,
+        "Jupiter": 281.6019395,
+        "Saturn": 260.5942923,
+        "Uranus": 234.2702684,
+        "Neptune": 102.7164503,
+        "Pluto": 85.6913495
+      }
+    }
+  }
+}

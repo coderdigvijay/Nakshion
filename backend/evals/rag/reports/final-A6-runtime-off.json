@@ -1,0 +1,3964 @@
+{
+ "all": {
+  "hit@5": 0.9069,
+  "hit@10": 0.9657,
+  "primary@5": 0.8627,
+  "recall@5": 0.7228,
+  "recall@10": 0.8127,
+  "mrr": 0.7979,
+  "ndcg@10": 0.7282
+ },
+ "lang": {
+  "en": {
+   "hit@5": 0.913,
+   "hit@10": 0.971,
+   "primary@5": 0.8986,
+   "recall@5": 0.7353,
+   "recall@10": 0.8372,
+   "mrr": 0.8315,
+   "ndcg@10": 0.7671
+  },
+  "hg": {
+   "hit@5": 0.9552,
+   "hit@10": 0.9701,
+   "primary@5": 0.9104,
+   "recall@5": 0.76,
+   "recall@10": 0.8386,
+   "mrr": 0.8318,
+   "ndcg@10": 0.7638
+  },
+  "hi": {
+   "hit@5": 0.8529,
+   "hit@10": 0.9559,
+   "primary@5": 0.7794,
+   "recall@5": 0.6735,
+   "recall@10": 0.7622,
+   "mrr": 0.7304,
+   "ndcg@10": 0.6537
+  }
+ },
+ "source": {
+  "chart": {
+   "hit@5": 0.8333,
+   "hit@10": 1.0,
+   "primary@5": 0.6458,
+   "recall@5": 0.4535,
+   "recall@10": 0.7378,
+   "mrr": 0.686,
+   "ndcg@10": 0.5361
+  },
+  "free": {
+   "hit@5": 0.9295,
+   "hit@10": 0.9551,
+   "primary@5": 0.9295,
+   "recall@5": 0.8057,
+   "recall@10": 0.8357,
+   "mrr": 0.8323,
+   "ndcg@10": 0.7873
+  }
+ },
+ "split": {
+  "dev": {
+   "hit@5": 0.8981,
+   "hit@10": 0.9815,
+   "primary@5": 0.8148,
+   "recall@5": 0.6344,
+   "recall@10": 0.763,
+   "mrr": 0.7757,
+   "ndcg@10": 0.6669
+  },
+  "holdout": {
+   "hit@5": 0.9667,
+   "hit@10": 1.0,
+   "primary@5": 0.9667,
+   "recall@5": 0.8239,
+   "recall@10": 0.8813,
+   "mrr": 0.8443,
+   "ndcg@10": 0.8014
+  },
+  "holdout2": {
+   "hit@5": 0.8333,
+   "hit@10": 0.8611,
+   "primary@5": 0.8333,
+   "recall@5": 0.8194,
+   "recall@10": 0.8472,
+   "mrr": 0.787,
+   "ndcg@10": 0.7903
+  }
+ },
+ "latency_ms": {
+  "p50": 7.1,
+  "p95": 14.0,
+  "mean": 8.0
+ },
+ "n": 204,
+ "per_query": [
+  {
+   "id": "delhi_1994:moon-nak:en",
+   "lang": "en",
+   "ms": 16.3,
+   "top": [
+    "vedic_astrology#the-27-nakshatras-20-purva-ashadha-13-20-26-40-sagittarius-2#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0",
+    "nakshatras_deep_dive#21-uttara-ashadha-26-40-sagittarius-10-00-capricorn#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.7967075809905066
+  },
+  {
+   "id": "delhi_1994:sun-sign:hi",
+   "lang": "hi",
+   "ms": 12.0,
+   "top": [
+    "career_astrology#best-careers-by-sun-sign-aries-taurus-gemini-cancer-leo-virg#0",
+    "planets#the-sun-core-archetype-function-psychological-representation#0",
+    "vedic_astrology#the-27-nakshatras-6-ardra-6-40-20-00-gemini-7-punarvasu-20-0#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.6666666666666666,
+   "recall@10": 0.6666666666666666,
+   "mrr": 0.5,
+   "ndcg@10": 0.43367674643371124
+  },
+  {
+   "id": "delhi_1994:dasha:hg",
+   "lang": "hg",
+   "ms": 11.6,
+   "top": [
+    "vedic_astrology#dasha-systems-vimshottari-dasha-120-year-cycle#0",
+    "indian_bphs#dasha-systems-vimshottari-dasha-120-year-cycle-ashtottari-da#0",
+    "daily_guidance#void-of-course-moon-timing-voc-moon-rules-monthly-voc-moon-p#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.6666666666666666,
+   "recall@10": 0.6666666666666666,
+   "mrr": 1.0,
+   "ndcg@10": 0.7653606369886218
+  },
+  {
+   "id": "delhi_1994:saturn-house:en",
+   "lang": "en",
+   "ms": 6.3,
+   "top": [
+    "houses#fourth-house-the-ic-imum-coeli-empty-fourth-house-derivative#0",
+    "timing_transits#saturn-return-ages-28-30-57-59-86-88-first-saturn-return-age#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-5-saturn-in-syna#0",
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0",
+    "planets#saturn-core-archetype-function-psychological-representation-#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.5,
+   "recall@10": 0.5,
+   "mrr": 1.0,
+   "ndcg@10": 0.5815871360157758
+  },
+  {
+   "id": "delhi_1994:aspect:hi",
+   "lang": "hi",
+   "ms": 7.8,
+   "top": [
+    "vedic_astrology#rahu-and-ketu-in-vedic-context-rahu-north-node-ketu-south-no#0",
+    "planets#the-north-node-rahu-core-archetype-function-psychological-re#0",
+    "spiritual_astrology#north-node-south-node-life-purpose-north-node-by-house#0",
+    "spiritual_astrology#north-node-south-node-life-purpose-north-node-by-sign#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-5-saturn-in-syna#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.2,
+   "mrr": 0.1,
+   "ndcg@10": 0.12027131170374726
+  },
+  {
+   "id": "mumbai_1988:moon-nak:hi",
+   "lang": "hi",
+   "ms": 12.9,
+   "top": [
+    "vedic_astrology#the-27-nakshatras-13-hasta-10-00-23-20-virgo-14-chitra-23-20#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "daily_guidance#void-of-course-moon-timing-voc-moon-rules-monthly-voc-moon-p#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.5,
+   "recall@10": 0.5,
+   "mrr": 1.0,
+   "ndcg@10": 0.27541155237618664
+  },
+  {
+   "id": "mumbai_1988:sun-sign:hg",
+   "lang": "hg",
+   "ms": 9.7,
+   "top": [
+    "planets#the-sun-core-archetype-function-psychological-representation#0",
+    "vedic_astrology#the-27-nakshatras-24-shatabhisha-6-40-20-00-aquarius-25-purv#0",
+    "career_astrology#best-careers-by-sun-sign-capricorn-aquarius-pisces#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-1-elemental-comp#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.25,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.5671196363530284
+  },
+  {
+   "id": "mumbai_1988:dasha:en",
+   "lang": "en",
+   "ms": 8.7,
+   "top": [
+    "timing_transits#mercury-retrograde-what-it-actually-means-what-happens-actua#0",
+    "vedic_astrology#dasha-systems-vimshottari-dasha-120-year-cycle#0",
+    "planets#mercury-core-archetype-function-psychological-representation#0",
+    "daily_guidance#mercury-retrograde-survival-guide-before-mercury-retrograde-#0",
+    "planets#mercury-retrograde-transit-effects-speed-orbital-period#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.3333333333333333,
+   "recall@10": 1.0,
+   "mrr": 0.5,
+   "ndcg@10": 0.6045093387918966
+  },
+  {
+   "id": "mumbai_1988:saturn-house:hi",
+   "lang": "hi",
+   "ms": 6.6,
+   "top": [
+    "timing_transits#saturn-return-ages-28-30-57-59-86-88-first-saturn-return-age#0",
+    "houses#tenth-house-the-midheaven-mc-empty-tenth-house-derivative-ho#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-5-saturn-in-syna#0",
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0",
+    "planets#saturn-core-archetype-function-psychological-representation-#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.5,
+   "recall@10": 0.75,
+   "mrr": 0.5,
+   "ndcg@10": 0.5631770100492522
+  },
+  {
+   "id": "mumbai_1988:aspect:hg",
+   "lang": "hg",
+   "ms": 11.4,
+   "top": [
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-waning-gibbous-disseminating#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-1-elemental-comp#0",
+    "planets#the-sun-core-archetype-function-psychological-representation#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.25,
+   "mrr": 0.1111111111111111,
+   "ndcg@10": 0.15507775182235625
+  },
+  {
+   "id": "chennai_1992_notime:moon-nak:hg",
+   "lang": "hg",
+   "ms": 13.3,
+   "top": [
+    "planets#the-moon-core-archetype-function-psychological-representatio#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "nakshatras_deep_dive#22-shravana-10-00-23-20-capricorn#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "daily_guidance#void-of-course-moon-timing-voc-moon-rules-monthly-voc-moon-p#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.5,
+   "recall@10": 1.0,
+   "mrr": 0.3333333333333333,
+   "ndcg@10": 0.49272912111784223
+  },
+  {
+   "id": "chennai_1992_notime:sun-sign:en",
+   "lang": "en",
+   "ms": 9.5,
+   "top": [
+    "planets#the-sun-core-archetype-function-psychological-representation#0",
+    "career_astrology#best-careers-by-sun-sign-aries-taurus-gemini-cancer-leo-virg#0",
+    "zodiac_signs#scorpio-october-23-november-21-element-modality-ruling-plane#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-1-elemental-comp#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.6666666666666666,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.6815571904488514
+  },
+  {
+   "id": "chennai_1992_notime:dasha:hi",
+   "lang": "hi",
+   "ms": 8.0,
+   "top": [
+    "vedic_astrology#dasha-systems-vimshottari-dasha-120-year-cycle#0",
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0",
+    "planets#jupiter-retrograde-transit-effects-speed-orbital-period#0",
+    "planets#jupiter-core-archetype-function-psychological-representation#0",
+    "timing_transits#jupiter-return-every-12-years#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.3333333333333333,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.7529716549381369
+  },
+  {
+   "id": "chennai_1992_notime:aspect:en",
+   "lang": "en",
+   "ms": 6.1,
+   "top": [
+    "love_relationships#mars-your-sexual-energy-mars-sign-interpretations#0",
+    "timing_transits#pluto-transit-through-houses#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "spiritual_astrology#pluto-and-soul-transformation#0",
+    "planets#pluto-core-archetype-function-psychological-representation-d#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.5,
+   "mrr": 0.16666666666666666,
+   "ndcg@10": 0.3460166599038622
+  },
+  {
+   "id": "london_1975:moon-nak:en",
+   "lang": "en",
+   "ms": 11.1,
+   "top": [
+    "planets#the-moon-core-archetype-function-psychological-representatio#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "daily_guidance#void-of-course-moon-timing-voc-moon-rules-monthly-voc-moon-p#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-waning-gibbous-disseminating#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 1.0,
+   "mrr": 0.125,
+   "ndcg@10": 0.3257180490964068
+  },
+  {
+   "id": "london_1975:sun-sign:hi",
+   "lang": "hi",
+   "ms": 11.5,
+   "top": [
+    "planets#the-sun-core-archetype-function-psychological-representation#0",
+    "zodiac_signs#capricorn-december-22-january-19-element-modality-ruling-pla#0",
+    "career_astrology#best-careers-by-sun-sign-capricorn-aquarius-pisces#0",
+    "houses#first-house-the-ascendant-life-area-natural-sign-ruler-class#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-1-elemental-comp#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.6666666666666666,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.770251317946363
+  },
+  {
+   "id": "london_1975:dasha:hg",
+   "lang": "hg",
+   "ms": 10.3,
+   "top": [
+    "planets#mars-core-archetype-function-psychological-representation-di#0",
+    "vedic_astrology#mangal-dosha-mars-affliction#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "love_relationships#mars-your-sexual-energy-mars-sign-interpretations#0",
+    "vedic_astrology#dasha-systems-vimshottari-dasha-120-year-cycle#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.3333333333333333,
+   "recall@10": 1.0,
+   "mrr": 0.2,
+   "ndcg@10": 0.4584607388296295
+  },
+  {
+   "id": "london_1975:saturn-house:en",
+   "lang": "en",
+   "ms": 6.3,
+   "top": [
+    "houses#eleventh-house-life-area-natural-sign-ruler-classification-p#0",
+    "timing_transits#saturn-return-ages-28-30-57-59-86-88-first-saturn-return-age#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-5-saturn-in-syna#0",
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0",
+    "books_greene_saturn#saturn-through-the-houses-saturn-in-the-7th-house-saturn-in-#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.3333333333333333,
+   "recall@10": 0.3333333333333333,
+   "mrr": 1.0,
+   "ndcg@10": 0.7262287617954056
+  },
+  {
+   "id": "london_1975:aspect:hi",
+   "lang": "hi",
+   "ms": 12.2,
+   "top": [
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "aspects#aspect-interpretation-between-specific-planet-pairs-sun-moon#0",
+    "love_relationships#mars-your-sexual-energy-mars-sign-interpretations#0",
+    "planets#mars-core-archetype-function-psychological-representation-di#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.3333333333333333,
+   "recall@10": 0.6666666666666666,
+   "mrr": 0.5,
+   "ndcg@10": 0.362660302134137
+  },
+  {
+   "id": "newyork_2001:moon-nak:hi",
+   "lang": "hi",
+   "ms": 14.0,
+   "top": [
+    "vedic_astrology#the-27-nakshatras-24-shatabhisha-6-40-20-00-aquarius-25-purv#0",
+    "nakshatras_deep_dive#25-purva-bhadrapada-20-00-aquarius-3-20-pisces#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "daily_guidance#void-of-course-moon-timing-voc-moon-rules-monthly-voc-moon-p#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.7967075809905066
+  },
+  {
+   "id": "newyork_2001:sun-sign:hg",
+   "lang": "hg",
+   "ms": 10.7,
+   "top": [
+    "planets#the-sun-core-archetype-function-psychological-representation#0",
+    "zodiac_signs#taurus-april-20-may-20-element-modality-ruling-planet-core-a#0",
+    "career_astrology#best-careers-by-sun-sign-aries-taurus-gemini-cancer-leo-virg#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "planets#the-sun-retrograde-transit-effects-speed-orbital-period#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.7939234660462212
+  },
+  {
+   "id": "newyork_2001:dasha:en",
+   "lang": "en",
+   "ms": 9.3,
+   "top": [
+    "vedic_astrology#dasha-systems-vimshottari-dasha-120-year-cycle#0",
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0",
+    "planets#saturn-retrograde-transit-effects-speed-orbital-period#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-5-saturn-in-syna#0",
+    "planets#saturn-core-archetype-function-psychological-representation-#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.3333333333333333,
+   "recall@10": 0.3333333333333333,
+   "mrr": 1.0,
+   "ndcg@10": 0.4692787260227565
+  },
+  {
+   "id": "newyork_2001:saturn-house:hi",
+   "lang": "hi",
+   "ms": 9.0,
+   "top": [
+    "timing_transits#saturn-return-ages-28-30-57-59-86-88-first-saturn-return-age#0",
+    "books_greene_saturn#the-saturn-return-as-initiation-first-saturn-return-ages-28-#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-5-saturn-in-syna#0",
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0",
+    "books_greene_saturn#saturn-through-the-houses-saturn-in-the-7th-house-saturn-in-#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.5,
+   "mrr": 0.14285714285714285,
+   "ndcg@10": 0.22589037485920388
+  },
+  {
+   "id": "newyork_2001:aspect:hg",
+   "lang": "hg",
+   "ms": 9.3,
+   "top": [
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-waning-gibbous-disseminating#0",
+    "aspects#aspect-interpretation-between-specific-planet-pairs-sun-moon#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#1",
+    "daily_guidance#void-of-course-moon-timing-voc-moon-rules-monthly-voc-moon-p#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.2,
+   "recall@10": 0.4,
+   "mrr": 0.3333333333333333,
+   "ndcg@10": 0.20060065378208036
+  },
+  {
+   "id": "sydney_1990:moon-nak:hg",
+   "lang": "hg",
+   "ms": 14.9,
+   "top": [
+    "vedic_astrology#the-27-nakshatras-20-purva-ashadha-13-20-26-40-sagittarius-2#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "daily_guidance#void-of-course-moon-timing-voc-moon-rules-monthly-voc-moon-p#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.7967075809905066
+  },
+  {
+   "id": "sydney_1990:sun-sign:en",
+   "lang": "en",
+   "ms": 11.0,
+   "top": [
+    "zodiac_signs#aquarius-january-20-february-18-element-modality-ruling-plan#0",
+    "planets#the-sun-core-archetype-function-psychological-representation#0",
+    "career_astrology#best-careers-by-sun-sign-capricorn-aquarius-pisces#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "zodiac_signs#pisces-february-19-march-20-element-modality-ruling-planets-#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.6666666666666666,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.9518340867055421
+  },
+  {
+   "id": "sydney_1990:dasha:hi",
+   "lang": "hi",
+   "ms": 8.1,
+   "top": [
+    "vedic_astrology#rahu-and-ketu-in-vedic-context-rahu-north-node-ketu-south-no#0",
+    "vedic_astrology#dasha-systems-vimshottari-dasha-120-year-cycle#0",
+    "indian_bphs#dasha-systems-vimshottari-dasha-120-year-cycle-ashtottari-da#0",
+    "indian_jaimini_sutras#jaimini-dasha-systems-chara-dasha-movable-period-system-sthi#0",
+    "indian_bphs#dasha-systems-interpreting-dasha-results#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 0.5,
+   "ndcg@10": 0.7122630665145961
+  },
+  {
+   "id": "sydney_1990:saturn-house:hg",
+   "lang": "hg",
+   "ms": 7.1,
+   "top": [
+    "timing_transits#saturn-return-ages-28-30-57-59-86-88-first-saturn-return-age#0",
+    "houses#tenth-house-the-midheaven-mc-empty-tenth-house-derivative-ho#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-5-saturn-in-syna#0",
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0",
+    "books_greene_saturn#saturn-through-the-houses-saturn-in-the-7th-house-saturn-in-#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.25,
+   "recall@10": 0.25,
+   "mrr": 0.5,
+   "ndcg@10": 0.325027967813913
+  },
+  {
+   "id": "sydney_1990:aspect:en",
+   "lang": "en",
+   "ms": 8.8,
+   "top": [
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "daily_guidance#void-of-course-moon-timing-voc-moon-rules-monthly-voc-moon-p#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-waning-gibbous-disseminating#0",
+    "timing_transits#eclipse-interpretation-solar-eclipse-new-moon-near-north-nod#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.3333333333333333,
+   "mrr": 0.125,
+   "ndcg@10": 0.22909966685803998
+  },
+  {
+   "id": "tromso_1985_highlat:moon-nak:en",
+   "lang": "en",
+   "ms": 12.7,
+   "top": [
+    "planets#the-moon-core-archetype-function-psychological-representatio#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "daily_guidance#void-of-course-moon-timing-voc-moon-rules-monthly-voc-moon-p#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-waning-gibbous-disseminating#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 1.0,
+   "mrr": 0.125,
+   "ndcg@10": 0.3257180490964068
+  },
+  {
+   "id": "tromso_1985_highlat:sun-sign:hi",
+   "lang": "hi",
+   "ms": 13.3,
+   "top": [
+    "planets#the-sun-core-archetype-function-psychological-representation#0",
+    "planets#the-sun-retrograde-transit-effects-speed-orbital-period#0",
+    "zodiac_signs#gemini-may-21-june-20-element-modality-ruling-planet-core-ar#0",
+    "career_astrology#best-careers-by-sun-sign-aries-taurus-gemini-cancer-leo-virg#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.7579237460681981
+  },
+  {
+   "id": "tromso_1985_highlat:dasha:hg",
+   "lang": "hg",
+   "ms": 11.3,
+   "top": [
+    "vedic_astrology#dasha-systems-vimshottari-dasha-120-year-cycle#0",
+    "planets#the-sun-core-archetype-function-psychological-representation#0",
+    "planets#the-sun-retrograde-transit-effects-speed-orbital-period#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-1-elemental-comp#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.3333333333333333,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.7737459235132746
+  },
+  {
+   "id": "tromso_1985_highlat:saturn-house:en",
+   "lang": "en",
+   "ms": 6.5,
+   "top": [
+    "houses#fourth-house-the-ic-imum-coeli-empty-fourth-house-derivative#0",
+    "timing_transits#saturn-return-ages-28-30-57-59-86-88-first-saturn-return-age#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-5-saturn-in-syna#0",
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0",
+    "books_greene_saturn#saturn-through-the-houses-saturn-in-the-1st-house-saturn-in-#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.25,
+   "recall@10": 0.25,
+   "mrr": 1.0,
+   "ndcg@10": 0.515157140670655
+  },
+  {
+   "id": "tromso_1985_highlat:aspect:hi",
+   "lang": "hi",
+   "ms": 7.3,
+   "top": [
+    "books_rudhyar_humanistic#planetary-cycles-as-development-stages-jupiter-cycle-12-year#0",
+    "timing_transits#pluto-transit-through-houses#0",
+    "spiritual_astrology#pluto-and-soul-transformation#0",
+    "planets#pluto-core-archetype-function-psychological-representation-d#0",
+    "spiritual_astrology#neptune-and-spiritual-awakening#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.4,
+   "mrr": 0.16666666666666666,
+   "ndcg@10": 0.27345692341528854
+  },
+  {
+   "id": "berlin_1980_notime:moon-nak:hi",
+   "lang": "hi",
+   "ms": 12.7,
+   "top": [
+    "vedic_astrology#the-27-nakshatras-13-hasta-10-00-23-20-virgo-14-chitra-23-20#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "daily_guidance#void-of-course-moon-timing-voc-moon-rules-monthly-voc-moon-p#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.5,
+   "recall@10": 0.5,
+   "mrr": 1.0,
+   "ndcg@10": 0.27541155237618664
+  },
+  {
+   "id": "berlin_1980_notime:sun-sign:hg",
+   "lang": "hg",
+   "ms": 10.0,
+   "top": [
+    "planets#the-sun-core-archetype-function-psychological-representation#0",
+    "zodiac_signs#virgo-august-23-september-22-element-modality-ruling-planet-#0",
+    "career_astrology#best-careers-by-sun-sign-aries-taurus-gemini-cancer-leo-virg#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-1-elemental-comp#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.6666666666666666,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.7809676722918159
+  },
+  {
+   "id": "berlin_1980_notime:dasha:en",
+   "lang": "en",
+   "ms": 9.0,
+   "top": [
+    "timing_transits#mercury-retrograde-what-it-actually-means-what-happens-actua#0",
+    "vedic_astrology#dasha-systems-vimshottari-dasha-120-year-cycle#0",
+    "planets#mercury-core-archetype-function-psychological-representation#0",
+    "daily_guidance#mercury-retrograde-survival-guide-before-mercury-retrograde-#0",
+    "planets#mercury-retrograde-transit-effects-speed-orbital-period#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.3333333333333333,
+   "recall@10": 1.0,
+   "mrr": 0.5,
+   "ndcg@10": 0.6045093387918966
+  },
+  {
+   "id": "berlin_1980_notime:aspect:hg",
+   "lang": "hg",
+   "ms": 9.4,
+   "top": [
+    "aspects#aspect-interpretation-between-specific-planet-pairs-sun-moon#0",
+    "timing_transits#mercury-retrograde-what-it-actually-means-what-happens-actua#0",
+    "daily_guidance#mercury-retrograde-survival-guide-before-mercury-retrograde-#0",
+    "planets#mercury-core-archetype-function-psychological-representation#0",
+    "planets#mercury-retrograde-transit-effects-speed-orbital-period#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.2,
+   "recall@10": 0.4,
+   "mrr": 1.0,
+   "ndcg@10": 0.27738025234861685
+  },
+  {
+   "id": "kolkata_1969:moon-nak:hg",
+   "lang": "hg",
+   "ms": 14.5,
+   "top": [
+    "vedic_astrology#the-27-nakshatras-9-ashlesha-16-40-30-00-cancer-10-magha-0-0#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0",
+    "nakshatras_deep_dive#11-purva-phalguni-13-20-26-40-leo#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.6885288809404666
+  },
+  {
+   "id": "kolkata_1969:sun-sign:en",
+   "lang": "en",
+   "ms": 11.5,
+   "top": [
+    "vedic_astrology#the-27-nakshatras-9-ashlesha-16-40-30-00-cancer-10-magha-0-0#0",
+    "planets#the-sun-core-archetype-function-psychological-representation#0",
+    "zodiac_signs#leo-july-23-august-22-element-modality-ruling-planet-core-ar#0",
+    "career_astrology#best-careers-by-sun-sign-aries-taurus-gemini-cancer-leo-virg#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.6666666666666666,
+   "recall@10": 1.0,
+   "mrr": 0.5,
+   "ndcg@10": 0.5858232224348774
+  },
+  {
+   "id": "kolkata_1969:dasha:hi",
+   "lang": "hi",
+   "ms": 8.0,
+   "top": [
+    "vedic_astrology#dasha-systems-vimshottari-dasha-120-year-cycle#0",
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0",
+    "planets#jupiter-retrograde-transit-effects-speed-orbital-period#0",
+    "planets#jupiter-core-archetype-function-psychological-representation#0",
+    "timing_transits#jupiter-return-every-12-years#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.3333333333333333,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.7529716549381369
+  },
+  {
+   "id": "kolkata_1969:saturn-house:hg",
+   "lang": "hg",
+   "ms": 7.7,
+   "top": [
+    "timing_transits#saturn-return-ages-28-30-57-59-86-88-first-saturn-return-age#0",
+    "houses#second-house-life-area-natural-sign-ruler-classification-pla#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-5-saturn-in-syna#0",
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0",
+    "planets#saturn-core-archetype-function-psychological-representation-#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.5,
+   "recall@10": 0.75,
+   "mrr": 0.5,
+   "ndcg@10": 0.5631770100492522
+  },
+  {
+   "id": "kolkata_1969:aspect:en",
+   "lang": "en",
+   "ms": 7.0,
+   "top": [
+    "aspects#aspect-interpretation-between-specific-planet-pairs-sun-moon#0",
+    "timing_transits#mercury-retrograde-what-it-actually-means-what-happens-actua#0",
+    "daily_guidance#mercury-retrograde-survival-guide-before-mercury-retrograde-#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "love_relationships#venus-your-love-style-venus-sign-interpretations#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.2,
+   "recall@10": 0.6,
+   "mrr": 1.0,
+   "ndcg@10": 0.407168697050677
+  },
+  {
+   "id": "bengaluru_2003:moon-nak:en",
+   "lang": "en",
+   "ms": 11.8,
+   "top": [
+    "nakshatras_deep_dive#4-rohini-10-00-23-20-taurus#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "bengaluru_2003:sun-sign:hi",
+   "lang": "hi",
+   "ms": 10.0,
+   "top": [
+    "planets#the-sun-core-archetype-function-psychological-representation#0",
+    "career_astrology#best-careers-by-sun-sign-capricorn-aquarius-pisces#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-1-elemental-comp#0",
+    "vedic_astrology#sidereal-vs-tropical-zodiac#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.3333333333333333,
+   "recall@10": 0.6666666666666666,
+   "mrr": 1.0,
+   "ndcg@10": 0.5007641583678852
+  },
+  {
+   "id": "bengaluru_2003:dasha:hg",
+   "lang": "hg",
+   "ms": 8.4,
+   "top": [
+    "vedic_astrology#rahu-and-ketu-in-vedic-context-rahu-north-node-ketu-south-no#0",
+    "vedic_astrology#dasha-systems-vimshottari-dasha-120-year-cycle#0",
+    "indian_bphs#dasha-systems-vimshottari-dasha-120-year-cycle-ashtottari-da#0",
+    "planets#the-north-node-rahu-core-archetype-function-psychological-re#0",
+    "indian_jaimini_sutras#jaimini-dasha-systems-chara-dasha-movable-period-system-sthi#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.6666666666666666,
+   "recall@10": 1.0,
+   "mrr": 0.5,
+   "ndcg@10": 0.6978817289434458
+  },
+  {
+   "id": "bengaluru_2003:saturn-house:en",
+   "lang": "en",
+   "ms": 6.5,
+   "top": [
+    "timing_transits#saturn-return-ages-28-30-57-59-86-88-first-saturn-return-age#0",
+    "houses#seventh-house-the-descendant-life-area-natural-sign-ruler-cl#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-5-saturn-in-syna#0",
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0",
+    "planets#saturn-core-archetype-function-psychological-representation-#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.5,
+   "recall@10": 0.75,
+   "mrr": 0.5,
+   "ndcg@10": 0.5631770100492522
+  },
+  {
+   "id": "bengaluru_2003:aspect:hi",
+   "lang": "hi",
+   "ms": 10.8,
+   "top": [
+    "planets#the-sun-core-archetype-function-psychological-representation#0",
+    "aspects#aspect-interpretation-between-specific-planet-pairs-saturn-u#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-1-elemental-comp#0",
+    "predictive_techniques_advanced#return-charts-solar-return-birthday-chart-lunar-return-month#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.25,
+   "recall@10": 0.25,
+   "mrr": 0.5,
+   "ndcg@10": 0.10834265593797102
+  },
+  {
+   "id": "houses-7th:en",
+   "lang": "en",
+   "ms": 8.4,
+   "top": [
+    "houses#seventh-house-the-descendant-life-area-natural-sign-ruler-cl#0",
+    "compatibility_synastry_advanced#synastry-vs-composite-vs-davison-charts-synastry-composite-c#0",
+    "love_relationships#the-relationship-houses-5th-house-romance-and-dating-7th-hou#0",
+    "houses#overview-house-classification-system#0",
+    "houses#first-house-the-ascendant-multiple-planets-house-cusp-sign-i#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.25,
+   "recall@10": 0.25,
+   "mrr": 1.0,
+   "ndcg@10": 0.515157140670655
+  },
+  {
+   "id": "houses-7th:hi",
+   "lang": "hi",
+   "ms": 8.8,
+   "top": [
+    "houses#seventh-house-the-descendant-life-area-natural-sign-ruler-cl#0",
+    "compatibility_synastry_advanced#synastry-vs-composite-vs-davison-charts-synastry-composite-c#0",
+    "love_relationships#the-relationship-houses-5th-house-romance-and-dating-7th-hou#0",
+    "houses#first-house-the-ascendant-multiple-planets-house-cusp-sign-i#0",
+    "houses#overview-house-classification-system#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.25,
+   "recall@10": 0.25,
+   "mrr": 1.0,
+   "ndcg@10": 0.515157140670655
+  },
+  {
+   "id": "houses-7th:hg",
+   "lang": "hg",
+   "ms": 7.8,
+   "top": [
+    "houses#seventh-house-the-descendant-life-area-natural-sign-ruler-cl#0",
+    "compatibility_synastry_advanced#synastry-vs-composite-vs-davison-charts-synastry-composite-c#0",
+    "love_relationships#the-relationship-houses-5th-house-romance-and-dating-7th-hou#0",
+    "houses#overview-house-classification-system#0",
+    "houses#first-house-the-ascendant-multiple-planets-house-cusp-sign-i#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.25,
+   "recall@10": 0.25,
+   "mrr": 1.0,
+   "ndcg@10": 0.515157140670655
+  },
+  {
+   "id": "nakshatra-rohini:en",
+   "lang": "en",
+   "ms": 6.3,
+   "top": [
+    "nakshatras_deep_dive#4-rohini-10-00-23-20-taurus#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#nakshatra-compatibility-kuta-system#0",
+    "vedic_astrology#the-27-nakshatras-1-ashwini-0-00-13-20-aries-2-bharani-13-20#0",
+    "nakshatras_deep_dive#8-pushya-3-20-16-40-cancer#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "nakshatra-rohini:hi",
+   "lang": "hi",
+   "ms": 9.0,
+   "top": [
+    "nakshatras_deep_dive#4-rohini-10-00-23-20-taurus#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#overview#0",
+    "zodiac_signs#aries-march-21-april-19-element-modality-ruling-planet-core-#0",
+    "zodiac_signs#virgo-august-23-september-22-element-modality-ruling-planet-#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "nakshatra-rohini:hg",
+   "lang": "hg",
+   "ms": 8.9,
+   "top": [
+    "nakshatras_deep_dive#4-rohini-10-00-23-20-taurus#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#nakshatra-compatibility-kuta-system#0",
+    "vedic_astrology#the-27-nakshatras-1-ashwini-0-00-13-20-aries-2-bharani-13-20#0",
+    "nakshatras_deep_dive#overview#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "dasha-vimshottari:en",
+   "lang": "en",
+   "ms": 6.0,
+   "top": [
+    "vedic_astrology#dasha-systems-vimshottari-dasha-120-year-cycle#0",
+    "indian_bphs#dasha-systems-vimshottari-dasha-120-year-cycle-ashtottari-da#0",
+    "indian_bphs#ashtakavarga-system-how-it-works-key-thresholds-practical-ap#0",
+    "indian_jaimini_sutras#jaimini-dasha-systems-chara-dasha-movable-period-system-sthi#0",
+    "indian_bphs#dasha-systems-interpreting-dasha-results#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.9469024295259745
+  },
+  {
+   "id": "dasha-vimshottari:hi",
+   "lang": "hi",
+   "ms": 4.6,
+   "top": [
+    "vedic_astrology#dasha-systems-vimshottari-dasha-120-year-cycle#0",
+    "indian_bphs#dasha-systems-vimshottari-dasha-120-year-cycle-ashtottari-da#0",
+    "indian_jaimini_sutras#jaimini-dasha-systems-chara-dasha-movable-period-system-sthi#0",
+    "indian_bphs#dasha-systems-interpreting-dasha-results#0",
+    "compatibility_synastry_advanced#timing-relationships-with-transits-meeting-timing-relationsh#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.9674679834891694
+  },
+  {
+   "id": "dasha-vimshottari:hg",
+   "lang": "hg",
+   "ms": 5.6,
+   "top": [
+    "vedic_astrology#dasha-systems-vimshottari-dasha-120-year-cycle#0",
+    "indian_bphs#dasha-systems-vimshottari-dasha-120-year-cycle-ashtottari-da#0",
+    "indian_jaimini_sutras#jaimini-dasha-systems-chara-dasha-movable-period-system-sthi#0",
+    "indian_bphs#dasha-systems-interpreting-dasha-results#0",
+    "predictive_techniques_advanced#firdaria-persian-time-lord-system-the-principle-sub-periods-#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.9674679834891694
+  },
+  {
+   "id": "yogas-raja-dhana:en",
+   "lang": "en",
+   "ms": 11.3,
+   "top": [
+    "vedic_astrology#important-yogas-raja-yoga-royal-combination-dhana-yoga-wealt#0",
+    "vedic_astrology#the-27-nakshatras-6-ardra-6-40-20-00-gemini-7-punarvasu-20-0#0",
+    "indian_bphs#yoga-formations-pancha-mahapurusha-yogas-five-great-person-y#0",
+    "vedic_astrology#the-27-nakshatras-9-ashlesha-16-40-30-00-cancer-10-magha-0-0#0",
+    "remedial_astrology#gemstone-therapy-vedic-gemstone-principles#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.6666666666666666,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.9334961902400011
+  },
+  {
+   "id": "yogas-raja-dhana:hi",
+   "lang": "hi",
+   "ms": 11.3,
+   "top": [
+    "vedic_astrology#important-yogas-raja-yoga-royal-combination-dhana-yoga-wealt#0",
+    "vedic_astrology#the-27-nakshatras-6-ardra-6-40-20-00-gemini-7-punarvasu-20-0#0",
+    "indian_bphs#yoga-formations-pancha-mahapurusha-yogas-five-great-person-y#0",
+    "vedic_astrology#the-27-nakshatras-9-ashlesha-16-40-30-00-cancer-10-magha-0-0#0",
+    "remedial_astrology#gemstone-therapy-vedic-gemstone-principles#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.6666666666666666,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.9334961902400011
+  },
+  {
+   "id": "yogas-raja-dhana:hg",
+   "lang": "hg",
+   "ms": 11.5,
+   "top": [
+    "vedic_astrology#important-yogas-raja-yoga-royal-combination-dhana-yoga-wealt#0",
+    "vedic_astrology#the-27-nakshatras-6-ardra-6-40-20-00-gemini-7-punarvasu-20-0#0",
+    "indian_bphs#yoga-formations-pancha-mahapurusha-yogas-five-great-person-y#0",
+    "vedic_astrology#the-27-nakshatras-9-ashlesha-16-40-30-00-cancer-10-magha-0-0#0",
+    "remedial_astrology#gemstone-therapy-vedic-gemstone-principles#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.6666666666666666,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.9334961902400011
+  },
+  {
+   "id": "sade-sati:en",
+   "lang": "en",
+   "ms": 7.7,
+   "top": [
+    "vedic_astrology#sade-sati-saturn-s-7-5-year-transit#0",
+    "timing_transits#saturn-return-ages-28-30-57-59-86-88-first-saturn-return-age#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-5-saturn-in-syna#0",
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0",
+    "spiritual_astrology#karmic-relationships-saturn-aspects-in-synastry#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "sade-sati:hi",
+   "lang": "hi",
+   "ms": 7.3,
+   "top": [
+    "vedic_astrology#sade-sati-saturn-s-7-5-year-transit#0",
+    "timing_transits#saturn-return-ages-28-30-57-59-86-88-first-saturn-return-age#0",
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0",
+    "love_relationships#timing-love-with-transits-venus-transits-jupiter-transits-sa#0",
+    "planets#saturn-retrograde-transit-effects-speed-orbital-period#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "sade-sati:hg",
+   "lang": "hg",
+   "ms": 7.1,
+   "top": [
+    "vedic_astrology#sade-sati-saturn-s-7-5-year-transit#0",
+    "timing_transits#saturn-return-ages-28-30-57-59-86-88-first-saturn-return-age#0",
+    "career_astrology#timing-career-moves-with-transits-best-times-to-start-a-new-#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-5-saturn-in-syna#0",
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "remedies-saturn:en",
+   "lang": "en",
+   "ms": 7.9,
+   "top": [
+    "timing_transits#saturn-return-ages-28-30-57-59-86-88-first-saturn-return-age#0",
+    "remedial_astrology#practical-guidelines-for-ai-assisted-remedies#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-5-saturn-in-syna#0",
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0",
+    "planets#saturn-core-archetype-function-psychological-representation-#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "remedies-saturn:hi",
+   "lang": "hi",
+   "ms": 6.5,
+   "top": [
+    "timing_transits#saturn-return-ages-28-30-57-59-86-88-first-saturn-return-age#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-5-saturn-in-syna#0",
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0",
+    "remedial_astrology#practical-guidelines-for-ai-assisted-remedies#0",
+    "planets#saturn-core-archetype-function-psychological-representation-#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.1,
+   "mrr": 0.1,
+   "ndcg@10": 0.07775512242353888
+  },
+  {
+   "id": "remedies-saturn:hg",
+   "lang": "hg",
+   "ms": 7.1,
+   "top": [
+    "timing_transits#saturn-return-ages-28-30-57-59-86-88-first-saturn-return-age#0",
+    "remedial_astrology#practical-guidelines-for-ai-assisted-remedies#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-5-saturn-in-syna#0",
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0",
+    "planets#saturn-core-archetype-function-psychological-representation-#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "compat-kundli-milan:en",
+   "lang": "en",
+   "ms": 7.3,
+   "top": [
+    "compatibility_synastry_advanced#synastry-vs-composite-vs-davison-charts-synastry-composite-c#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-1-elemental-comp#0",
+    "nakshatras_deep_dive#nakshatra-compatibility-kuta-system#0",
+    "compatibility_synastry_advanced#practical-guidance-for-ai-consultation#0",
+    "predictive_techniques_advanced#return-charts-solar-return-birthday-chart-lunar-return-month#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.4,
+   "recall@10": 0.2222222222222222,
+   "mrr": 0.5,
+   "ndcg@10": 0.294244923277753
+  },
+  {
+   "id": "compat-kundli-milan:hi",
+   "lang": "hi",
+   "ms": 9.2,
+   "top": [
+    "indian_jaimini_sutras#pada-arudha-lagna-and-arudha-padas-arudha-lagna-al-arudha-pa#0",
+    "compatibility_synastry_advanced#synastry-vs-composite-vs-davison-charts-synastry-composite-c#0",
+    "nakshatras_deep_dive#nakshatra-compatibility-kuta-system#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-1-elemental-comp#0",
+    "indian_bphs#functional-benefics-and-malefics-by-ascendant#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.4,
+   "recall@10": 0.4444444444444444,
+   "mrr": 0.3333333333333333,
+   "ndcg@10": 0.36372983196652325
+  },
+  {
+   "id": "compat-kundli-milan:hg",
+   "lang": "hg",
+   "ms": 6.4,
+   "top": [
+    "nakshatras_deep_dive#nakshatra-compatibility-kuta-system#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-1-elemental-comp#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-7-ascendant-and-#0",
+    "love_relationships#synastry-relationship-compatibility-most-important-synastry-#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 0.6666666666666666,
+   "mrr": 1.0,
+   "ndcg@10": 0.7261355749391493
+  },
+  {
+   "id": "career-factors:en",
+   "lang": "en",
+   "ms": 9.7,
+   "top": [
+    "predictive_techniques_advanced#secondary-progressions-the-principle-key-progressed-factors#0",
+    "predictive_techniques_advanced#solar-arc-directions-the-principle-why-solar-arcs-matter-key#0",
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0",
+    "career_astrology#planets-in-the-10th-house#0",
+    "compatibility_synastry_advanced#synastry-vs-composite-vs-davison-charts-synastry-composite-c#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.4,
+   "recall@10": 0.42857142857142855,
+   "mrr": 0.3333333333333333,
+   "ndcg@10": 0.2791605820317354
+  },
+  {
+   "id": "career-factors:hi",
+   "lang": "hi",
+   "ms": 14.0,
+   "top": [
+    "career_astrology#10th-house-ruler-placement-analysis#0",
+    "career_astrology#planets-in-the-10th-house#0",
+    "compatibility_synastry_advanced#synastry-vs-composite-vs-davison-charts-synastry-composite-c#0",
+    "career_astrology#timing-career-moves-with-transits-best-times-to-start-a-new-#0",
+    "houses#tenth-house-the-midheaven-mc-life-area-natural-sign-ruler-cl#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.4,
+   "recall@10": 0.2857142857142857,
+   "mrr": 1.0,
+   "ndcg@10": 0.47746956385607325
+  },
+  {
+   "id": "career-factors:hg",
+   "lang": "hg",
+   "ms": 10.4,
+   "top": [
+    "houses#tenth-house-the-midheaven-mc-life-area-natural-sign-ruler-cl#0",
+    "houses#first-house-the-ascendant-multiple-planets-house-cusp-sign-i#0",
+    "houses#first-house-the-ascendant-life-area-natural-sign-ruler-class#0",
+    "career_astrology#planets-in-the-10th-house#0",
+    "love_relationships#the-relationship-houses-5th-house-romance-and-dating-7th-hou#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.2,
+   "recall@10": 0.2857142857142857,
+   "mrr": 0.25,
+   "ndcg@10": 0.21843971188641415
+  },
+  {
+   "id": "love-venus:en",
+   "lang": "en",
+   "ms": 10.2,
+   "top": [
+    "love_relationships#venus-your-love-style-venus-sign-interpretations#0",
+    "planets#venus-core-archetype-function-psychological-representation-d#0",
+    "love_relationships#timing-love-with-transits-venus-transits-jupiter-transits-sa#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "love_relationships#venus-your-love-style#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.8,
+   "recall@10": 0.6666666666666666,
+   "mrr": 1.0,
+   "ndcg@10": 0.7465090834918677
+  },
+  {
+   "id": "love-venus:hi",
+   "lang": "hi",
+   "ms": 9.7,
+   "top": [
+    "love_relationships#venus-your-love-style-venus-sign-interpretations#0",
+    "planets#venus-core-archetype-function-psychological-representation-d#0",
+    "love_relationships#timing-love-with-transits-venus-transits-jupiter-transits-sa#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "love_relationships#venus-your-love-style#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.8,
+   "recall@10": 0.6666666666666666,
+   "mrr": 1.0,
+   "ndcg@10": 0.7465090834918677
+  },
+  {
+   "id": "love-venus:hg",
+   "lang": "hg",
+   "ms": 11.7,
+   "top": [
+    "love_relationships#venus-your-love-style-venus-sign-interpretations#0",
+    "love_relationships#venus-your-love-style#0",
+    "planets#venus-core-archetype-function-psychological-representation-d#0",
+    "love_relationships#timing-love-with-transits-venus-transits-jupiter-transits-sa#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.8,
+   "recall@10": 0.6666666666666666,
+   "mrr": 1.0,
+   "ndcg@10": 0.7931792792742371
+  },
+  {
+   "id": "health-body-parts:en",
+   "lang": "en",
+   "ms": 8.1,
+   "top": [
+    "health_astrology#body-parts-ruled-by-each-sign#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "books_lilly_christian_astrology#the-part-of-fortune-and-arabic-parts#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-the-transit-hi#0",
+    "predictive_techniques_advanced#zodiacal-releasing-the-principle-how-it-works-peak-periods-a#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.3333333333333333,
+   "recall@10": 0.3333333333333333,
+   "mrr": 1.0,
+   "ndcg@10": 0.5562983930884396
+  },
+  {
+   "id": "health-body-parts:hi",
+   "lang": "hi",
+   "ms": 7.3,
+   "top": [
+    "health_astrology#body-parts-ruled-by-each-sign#0",
+    "books_lilly_christian_astrology#the-part-of-fortune-and-arabic-parts#0",
+    "predictive_techniques_advanced#zodiacal-releasing-the-principle-how-it-works-peak-periods-a#0",
+    "compatibility_synastry_advanced#same-sign-vs-complementary-sign-dynamics#0",
+    "indian_jaimini_sutras#jaimini-dasha-systems-chara-dasha-movable-period-system-sthi#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.3333333333333333,
+   "recall@10": 0.3333333333333333,
+   "mrr": 1.0,
+   "ndcg@10": 0.5562983930884396
+  },
+  {
+   "id": "health-body-parts:hg",
+   "lang": "hg",
+   "ms": 8.4,
+   "top": [
+    "health_astrology#body-parts-ruled-by-each-sign#0",
+    "zodiac_signs#cancer-june-21-july-22-element-modality-ruling-planet-core-a#0",
+    "books_lilly_christian_astrology#the-part-of-fortune-and-arabic-parts#0",
+    "zodiac_signs#taurus-april-20-may-20-element-modality-ruling-planet-core-a#0",
+    "zodiac_signs#libra-september-23-october-22-element-modality-ruling-planet#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.3333333333333333,
+   "recall@10": 0.3333333333333333,
+   "mrr": 1.0,
+   "ndcg@10": 0.5562983930884396
+  },
+  {
+   "id": "daily-moon-phases:en",
+   "lang": "en",
+   "ms": 12.1,
+   "top": [
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0",
+    "daily_guidance#void-of-course-moon-timing-voc-moon-rules-monthly-voc-moon-p#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-waning-gibbous-disseminating#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.8503449055347546
+  },
+  {
+   "id": "daily-moon-phases:hi",
+   "lang": "hi",
+   "ms": 11.0,
+   "top": [
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#1",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0",
+    "daily_guidance#void-of-course-moon-timing-voc-moon-rules-monthly-voc-moon-p#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-waning-gibbous-disseminating#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.8503449055347546
+  },
+  {
+   "id": "daily-moon-phases:hg",
+   "lang": "hg",
+   "ms": 12.5,
+   "top": [
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0",
+    "daily_guidance#void-of-course-moon-timing-voc-moon-rules-monthly-voc-moon-p#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-waning-gibbous-disseminating#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.8503449055347546
+  },
+  {
+   "id": "mercury-retro:en",
+   "lang": "en",
+   "ms": 6.7,
+   "top": [
+    "timing_transits#mercury-retrograde-what-it-actually-means-what-happens-actua#0",
+    "daily_guidance#mercury-retrograde-survival-guide-before-mercury-retrograde-#0",
+    "planets#mercury-retrograde-transit-effects-speed-orbital-period#0",
+    "planets#mercury-core-archetype-function-psychological-representation#0",
+    "timing_transits#venus-retrograde-in-relationships#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "mercury-retro:hi",
+   "lang": "hi",
+   "ms": 6.6,
+   "top": [
+    "timing_transits#mercury-retrograde-what-it-actually-means-what-happens-actua#0",
+    "daily_guidance#mercury-retrograde-survival-guide-before-mercury-retrograde-#0",
+    "planets#mercury-retrograde-transit-effects-speed-orbital-period#0",
+    "planets#mercury-core-archetype-function-psychological-representation#0",
+    "timing_transits#venus-retrograde-in-relationships#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "mercury-retro:hg",
+   "lang": "hg",
+   "ms": 8.0,
+   "top": [
+    "timing_transits#mercury-retrograde-what-it-actually-means-what-happens-actua#0",
+    "daily_guidance#mercury-retrograde-survival-guide-before-mercury-retrograde-#0",
+    "planets#mercury-retrograde-transit-effects-speed-orbital-period#0",
+    "planets#mercury-core-archetype-function-psychological-representation#0",
+    "timing_transits#venus-retrograde-in-relationships#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "mangal-dosha:en",
+   "lang": "en",
+   "ms": 6.1,
+   "top": [
+    "vedic_astrology#mangal-dosha-mars-affliction#0",
+    "love_relationships#mars-your-sexual-energy-mars-sign-interpretations#0",
+    "love_relationships#juno-the-marriage-asteroid-juno-sign-interpretations#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "love_relationships#juno-the-marriage-asteroid-juno-house-placement-juno-aspects#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "mangal-dosha:hi",
+   "lang": "hi",
+   "ms": 7.7,
+   "top": [
+    "vedic_astrology#mangal-dosha-mars-affliction#0",
+    "love_relationships#mars-your-sexual-energy-mars-sign-interpretations#0",
+    "love_relationships#juno-the-marriage-asteroid-juno-sign-interpretations#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "love_relationships#juno-the-marriage-asteroid-juno-house-placement-juno-aspects#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "mangal-dosha:hg",
+   "lang": "hg",
+   "ms": 8.8,
+   "top": [
+    "vedic_astrology#mangal-dosha-mars-affliction#0",
+    "love_relationships#mars-your-sexual-energy-mars-sign-interpretations#0",
+    "love_relationships#juno-the-marriage-asteroid-juno-sign-interpretations#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "love_relationships#juno-the-marriage-asteroid-juno-house-placement-juno-aspects#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "rahu-ketu:en",
+   "lang": "en",
+   "ms": 5.6,
+   "top": [
+    "vedic_astrology#rahu-and-ketu-in-vedic-context-rahu-north-node-ketu-south-no#0",
+    "planets#the-south-node-ketu-core-archetype-function-psychological-re#0",
+    "planets#the-north-node-rahu-core-archetype-function-psychological-re#0",
+    "compatibility_synastry_advanced#synastry-vs-composite-vs-davison-charts-synastry-composite-c#0",
+    "predictive_techniques_advanced#return-charts-solar-return-birthday-chart-lunar-return-month#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "rahu-ketu:hi",
+   "lang": "hi",
+   "ms": 6.8,
+   "top": [
+    "vedic_astrology#rahu-and-ketu-in-vedic-context-rahu-north-node-ketu-south-no#0",
+    "planets#the-north-node-rahu-core-archetype-function-psychological-re#0",
+    "planets#the-south-node-ketu-core-archetype-function-psychological-re#0",
+    "compatibility_synastry_advanced#synastry-vs-composite-vs-davison-charts-synastry-composite-c#0",
+    "predictive_techniques_advanced#return-charts-solar-return-birthday-chart-lunar-return-month#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "rahu-ketu:hg",
+   "lang": "hg",
+   "ms": 5.6,
+   "top": [
+    "vedic_astrology#rahu-and-ketu-in-vedic-context-rahu-north-node-ketu-south-no#0",
+    "planets#the-south-node-ketu-core-archetype-function-psychological-re#0",
+    "planets#the-north-node-rahu-core-archetype-function-psychological-re#0",
+    "compatibility_synastry_advanced#synastry-vs-composite-vs-davison-charts-synastry-composite-c#0",
+    "predictive_techniques_advanced#return-charts-solar-return-birthday-chart-lunar-return-month#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "sidereal-vs-tropical:en",
+   "lang": "en",
+   "ms": 6.4,
+   "top": [
+    "vedic_astrology#sidereal-vs-tropical-zodiac#0",
+    "vedic_astrology#key-differences-from-western-astrology#0",
+    "zodiac_signs#pisces-february-19-march-20-element-modality-ruling-planets-#0",
+    "predictive_techniques_advanced#zodiacal-releasing-the-principle-how-it-works-peak-periods-a#0",
+    "zodiac_signs#aries-march-21-april-19-love-relationship-style-health-vulne#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "sidereal-vs-tropical:hi",
+   "lang": "hi",
+   "ms": 6.0,
+   "top": [
+    "vedic_astrology#sidereal-vs-tropical-zodiac#0",
+    "vedic_astrology#key-differences-from-western-astrology#0",
+    "zodiac_signs#pisces-february-19-march-20-element-modality-ruling-planets-#0",
+    "predictive_techniques_advanced#zodiacal-releasing-the-principle-how-it-works-peak-periods-a#0",
+    "zodiac_signs#aries-march-21-april-19-love-relationship-style-health-vulne#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "sidereal-vs-tropical:hg",
+   "lang": "hg",
+   "ms": 5.9,
+   "top": [
+    "vedic_astrology#sidereal-vs-tropical-zodiac#0",
+    "vedic_astrology#key-differences-from-western-astrology#0",
+    "zodiac_signs#pisces-february-19-march-20-element-modality-ruling-planets-#0",
+    "predictive_techniques_advanced#zodiacal-releasing-the-principle-how-it-works-peak-periods-a#0",
+    "zodiac_signs#aries-march-21-april-19-love-relationship-style-health-vulne#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "aspects-trine-square:en",
+   "lang": "en",
+   "ms": 6.5,
+   "top": [
+    "books_arroyo_chart_interpretation#psychological-dimensions-of-aspects-conjunction-0-degrees-or#0",
+    "aspects#aspect-patterns-t-square-grand-cross-grand-square#0",
+    "aspects#aspect-patterns-stellium-grand-trine#0",
+    "aspects#major-aspects-trine-120#0",
+    "compatibility_synastry_advanced#challenging-aspects-that-can-work#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.6,
+   "recall@10": 0.6,
+   "mrr": 0.5,
+   "ndcg@10": 0.5296347172140421
+  },
+  {
+   "id": "aspects-trine-square:hi",
+   "lang": "hi",
+   "ms": 6.2,
+   "top": [
+    "books_arroyo_chart_interpretation#psychological-dimensions-of-aspects-conjunction-0-degrees-or#0",
+    "aspects#aspect-patterns-t-square-grand-cross-grand-square#0",
+    "aspects#aspect-patterns-stellium-grand-trine#0",
+    "aspects#major-aspects-trine-120#0",
+    "compatibility_synastry_advanced#challenging-aspects-that-can-work#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.6,
+   "recall@10": 0.6,
+   "mrr": 0.5,
+   "ndcg@10": 0.5296347172140421
+  },
+  {
+   "id": "aspects-trine-square:hg",
+   "lang": "hg",
+   "ms": 7.1,
+   "top": [
+    "books_arroyo_chart_interpretation#psychological-dimensions-of-aspects-conjunction-0-degrees-or#0",
+    "aspects#aspect-patterns-t-square-grand-cross-grand-square#0",
+    "aspects#aspect-patterns-stellium-grand-trine#0",
+    "aspects#major-aspects-trine-120#0",
+    "compatibility_synastry_advanced#challenging-aspects-that-can-work#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.6,
+   "recall@10": 0.6,
+   "mrr": 0.5,
+   "ndcg@10": 0.5296347172140421
+  },
+  {
+   "id": "navamsa-d9:en",
+   "lang": "en",
+   "ms": 5.2,
+   "top": [
+    "vedic_astrology#the-navamsa-chart-d9#0",
+    "indian_bphs#divisional-charts-varga-charts-the-navamsha-d-9-the-most-imp#0",
+    "compatibility_synastry_advanced#synastry-vs-composite-vs-davison-charts-synastry-composite-c#0",
+    "predictive_techniques_advanced#return-charts-solar-return-birthday-chart-lunar-return-month#0",
+    "compatibility_synastry_advanced#timing-relationships-with-transits-meeting-timing-relationsh#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "navamsa-d9:hi",
+   "lang": "hi",
+   "ms": 5.4,
+   "top": [
+    "vedic_astrology#the-navamsa-chart-d9#0",
+    "indian_bphs#divisional-charts-varga-charts-the-navamsha-d-9-the-most-imp#0",
+    "compatibility_synastry_advanced#synastry-vs-composite-vs-davison-charts-synastry-composite-c#0",
+    "predictive_techniques_advanced#return-charts-solar-return-birthday-chart-lunar-return-month#0",
+    "health_astrology#preventive-guidance-by-chart-analysis-reading-health-in-the-#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "navamsa-d9:hg",
+   "lang": "hg",
+   "ms": 5.2,
+   "top": [
+    "indian_bphs#divisional-charts-varga-charts-the-navamsha-d-9-the-most-imp#0",
+    "vedic_astrology#the-navamsa-chart-d9#0",
+    "compatibility_synastry_advanced#synastry-vs-composite-vs-davison-charts-synastry-composite-c#0",
+    "predictive_techniques_advanced#electional-astrology-basics-the-natal-chart-override#0",
+    "vedic_astrology#key-differences-from-western-astrology#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "saturn-return:en",
+   "lang": "en",
+   "ms": 6.1,
+   "top": [
+    "timing_transits#saturn-return-ages-28-30-57-59-86-88-first-saturn-return-age#0",
+    "books_greene_saturn#the-saturn-return-as-initiation-first-saturn-return-ages-28-#0",
+    "predictive_techniques_advanced#return-charts-solar-return-birthday-chart-lunar-return-month#0",
+    "timing_transits#solar-and-lunar-returns-solar-return-lunar-return#0",
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "saturn-return:hi",
+   "lang": "hi",
+   "ms": 5.0,
+   "top": [
+    "predictive_techniques_advanced#return-charts-solar-return-birthday-chart-lunar-return-month#0",
+    "timing_transits#saturn-return-ages-28-30-57-59-86-88-first-saturn-return-age#0",
+    "books_greene_saturn#the-saturn-return-as-initiation-first-saturn-return-ages-28-#0",
+    "timing_transits#solar-and-lunar-returns-solar-return-lunar-return#0",
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 0.5,
+   "ndcg@10": 0.6590018048024133
+  },
+  {
+   "id": "saturn-return:hg",
+   "lang": "hg",
+   "ms": 5.4,
+   "top": [
+    "timing_transits#saturn-return-ages-28-30-57-59-86-88-first-saturn-return-age#0",
+    "books_greene_saturn#the-saturn-return-as-initiation-first-saturn-return-ages-28-#0",
+    "predictive_techniques_advanced#return-charts-solar-return-birthday-chart-lunar-return-month#0",
+    "timing_transits#solar-and-lunar-returns-solar-return-lunar-return#0",
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "shadbala:en",
+   "lang": "en",
+   "ms": 5.1,
+   "top": [
+    "remedial_astrology#mantra-practices-for-planetary-strengthening-daily-mantra-pr#0",
+    "indian_bphs#shadbala-six-fold-strength-the-six-components#0",
+    "indian_bphs#graha-drishti-planetary-aspects-in-bphs-all-planets-special-#0",
+    "indian_bphs#shadbala-six-fold-strength-required-minimum-shadbala#0",
+    "daily_guidance#planetary-hours-calculating-planetary-hours-planetary-days-a#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 0.5,
+   "ndcg@10": 0.6509209298071326
+  },
+  {
+   "id": "shadbala:hi",
+   "lang": "hi",
+   "ms": 6.5,
+   "top": [
+    "remedial_astrology#mantra-practices-for-planetary-strengthening-daily-mantra-pr#0",
+    "indian_bphs#shadbala-six-fold-strength-the-six-components#0",
+    "indian_bphs#graha-drishti-planetary-aspects-in-bphs-all-planets-special-#0",
+    "indian_bphs#shadbala-six-fold-strength-required-minimum-shadbala#0",
+    "daily_guidance#planetary-hours-calculating-planetary-hours-planetary-days-a#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 0.5,
+   "ndcg@10": 0.6509209298071326
+  },
+  {
+   "id": "shadbala:hg",
+   "lang": "hg",
+   "ms": 6.7,
+   "top": [
+    "indian_bphs#graha-drishti-planetary-aspects-in-bphs-all-planets-special-#0",
+    "remedial_astrology#mantra-practices-for-planetary-strengthening-daily-mantra-pr#0",
+    "indian_bphs#shadbala-six-fold-strength-the-six-components#0",
+    "indian_bphs#shadbala-six-fold-strength-required-minimum-shadbala#0",
+    "daily_guidance#planetary-hours-calculating-planetary-hours-planetary-days-a#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 0.3333333333333333,
+   "ndcg@10": 0.5706417189553201
+  },
+  {
+   "id": "jaimini-atmakaraka:en",
+   "lang": "en",
+   "ms": 6.3,
+   "top": [
+    "indian_jaimini_sutras#atmakaraka-and-karakamsha-atmakaraka-the-soul-s-indicator-ka#0",
+    "indian_jaimini_sutras#chara-karakas-variable-significators-the-seven-or-eight-kara#0",
+    "vedic_astrology#the-27-nakshatras-20-purva-ashadha-13-20-26-40-sagittarius-2#0",
+    "career_astrology#best-careers-by-sun-sign-capricorn-aquarius-pisces#0",
+    "zodiac_signs#capricorn-december-22-january-19-element-modality-ruling-pla#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "jaimini-atmakaraka:hi",
+   "lang": "hi",
+   "ms": 5.9,
+   "top": [
+    "indian_jaimini_sutras#atmakaraka-and-karakamsha-atmakaraka-the-soul-s-indicator-ka#0",
+    "indian_jaimini_sutras#chara-karakas-variable-significators-the-seven-or-eight-kara#0",
+    "vedic_astrology#the-27-nakshatras-20-purva-ashadha-13-20-26-40-sagittarius-2#0",
+    "career_astrology#best-careers-by-sun-sign-capricorn-aquarius-pisces#0",
+    "zodiac_signs#capricorn-december-22-january-19-element-modality-ruling-pla#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "jaimini-atmakaraka:hg",
+   "lang": "hg",
+   "ms": 5.8,
+   "top": [
+    "indian_jaimini_sutras#atmakaraka-and-karakamsha-atmakaraka-the-soul-s-indicator-ka#0",
+    "indian_jaimini_sutras#chara-karakas-variable-significators-the-seven-or-eight-kara#0",
+    "vedic_astrology#the-27-nakshatras-20-purva-ashadha-13-20-26-40-sagittarius-2#0",
+    "career_astrology#best-careers-by-sun-sign-capricorn-aquarius-pisces#0",
+    "zodiac_signs#capricorn-december-22-january-19-element-modality-ruling-pla#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "h-mars-retro:en",
+   "lang": "en",
+   "ms": 6.1,
+   "top": [
+    "timing_transits#mars-retrograde-for-energy-action#0",
+    "love_relationships#mars-your-sexual-energy-mars-sign-interpretations#0",
+    "planets#mars-retrograde-transit-effects-speed-orbital-period#0",
+    "planets#mars-core-archetype-function-psychological-representation-di#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.9639404333166532
+  },
+  {
+   "id": "h-mars-retro:hi",
+   "lang": "hi",
+   "ms": 6.4,
+   "top": [
+    "planets#chiron-core-archetype-function-psychological-representation-#0",
+    "planets#mars-retrograde-transit-effects-speed-orbital-period#0",
+    "timing_transits#mars-retrograde-for-energy-action#0",
+    "timing_transits#mercury-retrograde-what-it-actually-means-what-happens-actua#0",
+    "love_relationships#mars-your-sexual-energy-mars-sign-interpretations#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 0.5,
+   "ndcg@10": 0.58688267143572
+  },
+  {
+   "id": "h-mars-retro:hg",
+   "lang": "hg",
+   "ms": 8.0,
+   "top": [
+    "timing_transits#mars-retrograde-for-energy-action#0",
+    "love_relationships#mars-your-sexual-energy-mars-sign-interpretations#0",
+    "planets#mars-retrograde-transit-effects-speed-orbital-period#0",
+    "planets#mars-core-archetype-function-psychological-representation-di#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.9639404333166532
+  },
+  {
+   "id": "h-gem-jupiter:en",
+   "lang": "en",
+   "ms": 5.1,
+   "top": [
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0",
+    "remedial_astrology#gemstone-therapy-gemstone-recommendations-by-planet#0",
+    "planets#jupiter-core-archetype-function-psychological-representation#0",
+    "vedic_astrology#remedies-upayas-gemstones-mantras#0",
+    "remedial_astrology#gemstone-therapy-vedic-gemstone-principles#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.6,
+   "recall@10": 0.42857142857142855,
+   "mrr": 0.5,
+   "ndcg@10": 0.4410235899017261
+  },
+  {
+   "id": "h-gem-jupiter:hi",
+   "lang": "hi",
+   "ms": 5.4,
+   "top": [
+    "planets#jupiter-core-archetype-function-psychological-representation#0",
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0",
+    "remedial_astrology#gemstone-therapy-gemstone-recommendations-by-planet#0",
+    "vedic_astrology#remedies-upayas-gemstones-mantras#0",
+    "remedial_astrology#gemstone-therapy-vedic-gemstone-principles#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.6,
+   "recall@10": 0.5714285714285714,
+   "mrr": 0.3333333333333333,
+   "ndcg@10": 0.4294082859641278
+  },
+  {
+   "id": "h-gem-jupiter:hg",
+   "lang": "hg",
+   "ms": 5.2,
+   "top": [
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0",
+    "planets#jupiter-core-archetype-function-psychological-representation#0",
+    "remedial_astrology#gemstone-therapy-gemstone-recommendations-by-planet#0",
+    "remedial_astrology#gemstone-therapy-vedic-gemstone-principles#0",
+    "vedic_astrology#remedies-upayas-gemstones-mantras#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.6,
+   "recall@10": 0.42857142857142855,
+   "mrr": 0.3333333333333333,
+   "ndcg@10": 0.4023973620944538
+  },
+  {
+   "id": "h-voc-moon:en",
+   "lang": "en",
+   "ms": 9.7,
+   "top": [
+    "daily_guidance#void-of-course-moon-timing-voc-moon-rules-monthly-voc-moon-p#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "timing_transits#void-of-course-moon#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#1"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.9197207891481876
+  },
+  {
+   "id": "h-voc-moon:hi",
+   "lang": "hi",
+   "ms": 8.3,
+   "top": [
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#1",
+    "daily_guidance#moon-phase-meanings-and-rituals-waning-gibbous-disseminating#0",
+    "planets#the-moon-retrograde-transit-effects-speed-orbital-period#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.5,
+   "mrr": 0.14285714285714285,
+   "ndcg@10": 0.20438239758848614
+  },
+  {
+   "id": "h-voc-moon:hg",
+   "lang": "hg",
+   "ms": 9.5,
+   "top": [
+    "daily_guidance#void-of-course-moon-timing-voc-moon-rules-monthly-voc-moon-p#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "timing_transits#void-of-course-moon#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#1",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.9197207891481876
+  },
+  {
+   "id": "h-solar-return:en",
+   "lang": "en",
+   "ms": 5.8,
+   "top": [
+    "predictive_techniques_advanced#return-charts-solar-return-birthday-chart-lunar-return-month#0",
+    "timing_transits#solar-and-lunar-returns-solar-return-lunar-return#0",
+    "predictive_techniques_advanced#solar-arc-directions-the-principle-why-solar-arcs-matter-key#0",
+    "timing_transits#saturn-return-ages-28-30-57-59-86-88-first-saturn-return-age#0",
+    "health_astrology#preventive-guidance-by-chart-analysis-reading-health-in-the-#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "h-solar-return:hi",
+   "lang": "hi",
+   "ms": 4.2,
+   "top": [
+    "predictive_techniques_advanced#return-charts-solar-return-birthday-chart-lunar-return-month#0",
+    "timing_transits#solar-and-lunar-returns-solar-return-lunar-return#0",
+    "predictive_techniques_advanced#solar-arc-directions-the-principle-why-solar-arcs-matter-key#0",
+    "timing_transits#saturn-return-ages-28-30-57-59-86-88-first-saturn-return-age#0",
+    "timing_transits#eclipse-interpretation-solar-eclipse-new-moon-near-north-nod#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "h-solar-return:hg",
+   "lang": "hg",
+   "ms": 5.0,
+   "top": [
+    "predictive_techniques_advanced#return-charts-solar-return-birthday-chart-lunar-return-month#0",
+    "timing_transits#solar-and-lunar-returns-solar-return-lunar-return#0",
+    "predictive_techniques_advanced#solar-arc-directions-the-principle-why-solar-arcs-matter-key#0",
+    "timing_transits#saturn-return-ages-28-30-57-59-86-88-first-saturn-return-age#0",
+    "timing_transits#eclipse-interpretation-solar-eclipse-new-moon-near-north-nod#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "h-profections:en",
+   "lang": "en",
+   "ms": 4.8,
+   "top": [
+    "modern_techniques#profections-annual-profections-how-it-works-how-to-use#0",
+    "predictive_techniques_advanced#annual-profections-the-time-lord-integration-with-transits#0",
+    "predictive_techniques_advanced#annual-profections-the-principle#0",
+    "predictive_techniques_advanced#zodiacal-releasing-the-principle-how-it-works-peak-periods-a#0",
+    "compatibility_synastry_advanced#challenging-aspects-that-can-work#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "h-profections:hi",
+   "lang": "hi",
+   "ms": 4.9,
+   "top": [
+    "predictive_techniques_advanced#annual-profections-the-time-lord-integration-with-transits#0",
+    "modern_techniques#profections-annual-profections-how-it-works-how-to-use#0",
+    "predictive_techniques_advanced#annual-profections-the-principle#0",
+    "books_lilly_christian_astrology#key-rules-for-horary-judgment-perfection-of-the-matter-frust#0",
+    "predictive_techniques_advanced#secondary-progressions-the-principle-key-progressed-factors#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "h-profections:hg",
+   "lang": "hg",
+   "ms": 3.5,
+   "top": [
+    "predictive_techniques_advanced#annual-profections-the-time-lord-integration-with-transits#0",
+    "predictive_techniques_advanced#annual-profections-the-principle#0",
+    "modern_techniques#profections-annual-profections-how-it-works-how-to-use#0",
+    "predictive_techniques_advanced#firdaria-persian-time-lord-system-the-principle-sub-periods-#0",
+    "modern_techniques#hellenistic-astrology-revival-key-hellenistic-concepts-not-i#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "h-eclipses:en",
+   "lang": "en",
+   "ms": 4.9,
+   "top": [
+    "predictive_techniques_advanced#eclipse-interpretation-and-activation-solar-eclipses-lunar-e#0",
+    "books_ptolemy_tetrabiblos#mundane-astrology-geographic-rulership-eclipses-in-mundane-w#0",
+    "timing_transits#eclipse-interpretation-solar-eclipse-new-moon-near-north-nod#0",
+    "compatibility_synastry_advanced#synastry-vs-composite-vs-davison-charts-synastry-composite-c#0",
+    "predictive_techniques_advanced#return-charts-solar-return-birthday-chart-lunar-return-month#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.9197207891481876
+  },
+  {
+   "id": "h-eclipses:hi",
+   "lang": "hi",
+   "ms": 5.5,
+   "top": [
+    "predictive_techniques_advanced#eclipse-interpretation-and-activation-solar-eclipses-lunar-e#0",
+    "timing_transits#eclipse-interpretation-solar-eclipse-new-moon-near-north-nod#0",
+    "books_ptolemy_tetrabiblos#mundane-astrology-geographic-rulership-eclipses-in-mundane-w#0",
+    "compatibility_synastry_advanced#synastry-vs-composite-vs-davison-charts-synastry-composite-c#0",
+    "predictive_techniques_advanced#return-charts-solar-return-birthday-chart-lunar-return-month#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "h-eclipses:hg",
+   "lang": "hg",
+   "ms": 10.4,
+   "top": [
+    "predictive_techniques_advanced#eclipse-interpretation-and-activation-solar-eclipses-lunar-e#0",
+    "timing_transits#eclipse-interpretation-solar-eclipse-new-moon-near-north-nod#0",
+    "books_ptolemy_tetrabiblos#mundane-astrology-geographic-rulership-eclipses-in-mundane-w#0",
+    "compatibility_synastry_advanced#synastry-vs-composite-vs-davison-charts-synastry-composite-c#0",
+    "predictive_techniques_advanced#return-charts-solar-return-birthday-chart-lunar-return-month#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "h-chiron:en",
+   "lang": "en",
+   "ms": 5.3,
+   "top": [
+    "spiritual_astrology#chiron-the-wounded-healer-chiron-by-sign#0",
+    "planets#chiron-core-archetype-function-psychological-representation-#0",
+    "predictive_techniques_advanced#electional-astrology-basics-the-natal-chart-override#0",
+    "health_astrology#preventive-guidance-by-chart-analysis-reading-health-in-the-#0",
+    "spiritual_astrology#past-life-indicators-in-the-natal-chart#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 0.5,
+   "ndcg@10": 0.6309297535714574
+  },
+  {
+   "id": "h-chiron:hi",
+   "lang": "hi",
+   "ms": 5.3,
+   "top": [
+    "spiritual_astrology#chiron-the-wounded-healer-chiron-by-sign#0",
+    "planets#chiron-core-archetype-function-psychological-representation-#0",
+    "spiritual_astrology#chiron-the-wounded-healer-chiron-return-age-49-51#0",
+    "compatibility_synastry_advanced#synastry-vs-composite-vs-davison-charts-synastry-composite-c#0",
+    "predictive_techniques_advanced#return-charts-solar-return-birthday-chart-lunar-return-month#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 0.5,
+   "ndcg@10": 0.6309297535714574
+  },
+  {
+   "id": "h-chiron:hg",
+   "lang": "hg",
+   "ms": 8.9,
+   "top": [
+    "spiritual_astrology#chiron-the-wounded-healer-chiron-by-sign#0",
+    "planets#chiron-core-archetype-function-psychological-representation-#0",
+    "spiritual_astrology#chiron-the-wounded-healer-chiron-return-age-49-51#0",
+    "compatibility_synastry_advanced#synastry-vs-composite-vs-davison-charts-synastry-composite-c#0",
+    "predictive_techniques_advanced#return-charts-solar-return-birthday-chart-lunar-return-month#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 0.5,
+   "ndcg@10": 0.6309297535714574
+  },
+  {
+   "id": "h-pancha-mahapurusha:en",
+   "lang": "en",
+   "ms": 6.4,
+   "top": [
+    "indian_bphs#yoga-formations-pancha-mahapurusha-yogas-five-great-person-y#0",
+    "vedic_astrology#important-yogas-raja-yoga-royal-combination-dhana-yoga-wealt#0",
+    "indian_bphs#yoga-formations-significant-named-yogas#0",
+    "nakshatras_deep_dive#15-swati-6-40-20-00-libra#0",
+    "nakshatras_deep_dive#26-uttara-bhadrapada-3-20-16-40-pisces#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.9197207891481876
+  },
+  {
+   "id": "h-pancha-mahapurusha:hi",
+   "lang": "hi",
+   "ms": 6.2,
+   "top": [
+    "indian_bphs#yoga-formations-pancha-mahapurusha-yogas-five-great-person-y#0",
+    "vedic_astrology#important-yogas-raja-yoga-royal-combination-dhana-yoga-wealt#0",
+    "indian_bphs#yoga-formations-significant-named-yogas#0",
+    "indian_bphs#bhava-house-significations-yoga-karaka-concept#0",
+    "nakshatras_deep_dive#15-swati-6-40-20-00-libra#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.9197207891481876
+  },
+  {
+   "id": "h-pancha-mahapurusha:hg",
+   "lang": "hg",
+   "ms": 3.9,
+   "top": [
+    "indian_bphs#yoga-formations-pancha-mahapurusha-yogas-five-great-person-y#0",
+    "vedic_astrology#important-yogas-raja-yoga-royal-combination-dhana-yoga-wealt#0",
+    "indian_bphs#yoga-formations-significant-named-yogas#0",
+    "indian_bphs#bhava-house-significations-yoga-karaka-concept#0",
+    "nakshatras_deep_dive#15-swati-6-40-20-00-libra#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.9197207891481876
+  },
+  {
+   "id": "h-argala:en",
+   "lang": "en",
+   "ms": 5.0,
+   "top": [
+    "indian_jaimini_sutras#argala-planetary-intervention-primary-argala-obstruction-vir#0",
+    "indian_jaimini_sutras#jaimini-dasha-systems-chara-dasha-movable-period-system-sthi#0",
+    "indian_jaimini_sutras#overview#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "spiritual_astrology#evolutionary-astrology-jeffrey-wolf-green-s-approach#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "h-argala:hi",
+   "lang": "hi",
+   "ms": 8.6,
+   "top": [
+    "indian_jaimini_sutras#argala-planetary-intervention-primary-argala-obstruction-vir#0",
+    "indian_jaimini_sutras#jaimini-dasha-systems-chara-dasha-movable-period-system-sthi#0",
+    "indian_jaimini_sutras#overview#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "spiritual_astrology#evolutionary-astrology-jeffrey-wolf-green-s-approach#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "h-argala:hg",
+   "lang": "hg",
+   "ms": 2.9,
+   "top": [
+    "indian_jaimini_sutras#argala-planetary-intervention-primary-argala-obstruction-vir#0",
+    "indian_jaimini_sutras#jaimini-dasha-systems-chara-dasha-movable-period-system-sthi#0",
+    "indian_jaimini_sutras#overview#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "h-ashtakavarga:en",
+   "lang": "en",
+   "ms": 5.1,
+   "top": [
+    "indian_bphs#ashtakavarga-system-how-it-works-key-thresholds-practical-ap#0",
+    "vedic_astrology#dasha-systems-vimshottari-dasha-120-year-cycle#0",
+    "predictive_techniques_advanced#firdaria-persian-time-lord-system-the-principle-sub-periods-#0",
+    "predictive_techniques_advanced#zodiacal-releasing-the-principle-how-it-works-peak-periods-a#0",
+    "compatibility_synastry_advanced#challenging-aspects-that-can-work#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "h-ashtakavarga:hi",
+   "lang": "hi",
+   "ms": 4.1,
+   "top": [
+    "indian_bphs#ashtakavarga-system-how-it-works-key-thresholds-practical-ap#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "h-ashtakavarga:hg",
+   "lang": "hg",
+   "ms": 7.9,
+   "top": [
+    "indian_bphs#ashtakavarga-system-how-it-works-key-thresholds-practical-ap#0",
+    "predictive_techniques_advanced#firdaria-persian-time-lord-system-the-principle-sub-periods-#0",
+    "vedic_astrology#dasha-systems-vimshottari-dasha-120-year-cycle#0",
+    "houses#overview-house-classification-system#0",
+    "nakshatras_deep_dive#nakshatra-compatibility-kuta-system#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "h-midheaven:en",
+   "lang": "en",
+   "ms": 6.2,
+   "top": [
+    "career_astrology#the-midheaven-mc-your-public-calling-mc-sign-interpretations#0",
+    "career_astrology#the-midheaven-mc-your-public-calling#0",
+    "houses#tenth-house-the-midheaven-mc-life-area-natural-sign-ruler-cl#0",
+    "houses#tenth-house-the-midheaven-mc-empty-tenth-house-derivative-ho#0",
+    "career_astrology#planets-in-the-10th-house#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.6666666666666666,
+   "recall@10": 0.6666666666666666,
+   "mrr": 1.0,
+   "ndcg@10": 0.7653606369886218
+  },
+  {
+   "id": "h-midheaven:hi",
+   "lang": "hi",
+   "ms": 6.7,
+   "top": [
+    "career_astrology#the-midheaven-mc-your-public-calling-mc-sign-interpretations#0",
+    "houses#tenth-house-the-midheaven-mc-life-area-natural-sign-ruler-cl#0",
+    "career_astrology#the-midheaven-mc-your-public-calling#0",
+    "houses#tenth-house-the-midheaven-mc-empty-tenth-house-derivative-ho#0",
+    "career_astrology#planets-in-the-10th-house#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.6666666666666666,
+   "recall@10": 0.6666666666666666,
+   "mrr": 1.0,
+   "ndcg@10": 0.7039180890341348
+  },
+  {
+   "id": "h-midheaven:hg",
+   "lang": "hg",
+   "ms": 12.3,
+   "top": [
+    "career_astrology#the-midheaven-mc-your-public-calling-mc-sign-interpretations#0",
+    "career_astrology#the-midheaven-mc-your-public-calling#0",
+    "houses#tenth-house-the-midheaven-mc-life-area-natural-sign-ruler-cl#0",
+    "houses#tenth-house-the-midheaven-mc-empty-tenth-house-derivative-ho#0",
+    "career_astrology#planets-in-the-10th-house#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.6666666666666666,
+   "recall@10": 0.6666666666666666,
+   "mrr": 1.0,
+   "ndcg@10": 0.7653606369886218
+  },
+  {
+   "id": "h-element-compat:en",
+   "lang": "en",
+   "ms": 6.5,
+   "top": [
+    "love_relationships#compatibility-by-element-fire-air-aries-leo-sagittarius-gemi#0",
+    "zodiac_signs#aries-march-21-april-19-love-relationship-style-health-vulne#0",
+    "planets#venus-core-archetype-function-psychological-representation-d#0",
+    "love_relationships#compatibility-by-element-air-air-water-water#0",
+    "zodiac_signs#pisces-february-19-march-20-love-relationship-style-health-v#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.4,
+   "recall@10": 0.5714285714285714,
+   "mrr": 1.0,
+   "ndcg@10": 0.7096607732685958
+  },
+  {
+   "id": "h-element-compat:hi",
+   "lang": "hi",
+   "ms": 8.0,
+   "top": [
+    "love_relationships#venus-your-love-style-venus-sign-interpretations#0",
+    "love_relationships#timing-love-with-transits-venus-transits-jupiter-transits-sa#0",
+    "planets#venus-core-archetype-function-psychological-representation-d#0",
+    "compatibility_synastry_advanced#timing-relationships-with-transits-meeting-timing-relationsh#0",
+    "love_relationships#synastry-relationship-compatibility-challenging-synastry-asp#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.14285714285714285,
+   "mrr": 0.1,
+   "ndcg@10": 0.04189430830135718
+  },
+  {
+   "id": "h-element-compat:hg",
+   "lang": "hg",
+   "ms": 6.5,
+   "top": [
+    "love_relationships#compatibility-by-element-fire-air-aries-leo-sagittarius-gemi#0",
+    "zodiac_signs#aries-march-21-april-19-love-relationship-style-health-vulne#0",
+    "planets#venus-core-archetype-function-psychological-representation-d#0",
+    "love_relationships#compatibility-by-element-air-air-water-water#0",
+    "zodiac_signs#pisces-february-19-march-20-love-relationship-style-health-v#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.4,
+   "recall@10": 0.5714285714285714,
+   "mrr": 1.0,
+   "ndcg@10": 0.7096607732685958
+  },
+  {
+   "id": "h-health-houses:en",
+   "lang": "en",
+   "ms": 9.9,
+   "top": [
+    "houses#sixth-house-life-area-natural-sign-ruler-classification-plan#0",
+    "health_astrology#planets-and-health-associations#0",
+    "houses#first-house-the-ascendant-multiple-planets-house-cusp-sign-i#0",
+    "houses#first-house-the-ascendant-life-area-natural-sign-ruler-class#0",
+    "health_astrology#6th-house-health-indicators#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 0.5,
+   "ndcg@10": 0.4933965394160924
+  },
+  {
+   "id": "h-health-houses:hi",
+   "lang": "hi",
+   "ms": 14.2,
+   "top": [
+    "health_astrology#6th-house-health-indicators#0",
+    "houses#sixth-house-life-area-natural-sign-ruler-classification-plan#0",
+    "love_relationships#the-relationship-houses-5th-house-romance-and-dating-7th-hou#0",
+    "houses#overview-house-classification-system#0",
+    "health_astrology#preventive-guidance-by-chart-analysis-reading-health-in-the-#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.5,
+   "recall@10": 0.5,
+   "mrr": 1.0,
+   "ndcg@10": 0.8262346571285599
+  },
+  {
+   "id": "h-health-houses:hg",
+   "lang": "hg",
+   "ms": 9.0,
+   "top": [
+    "health_astrology#6th-house-health-indicators#0",
+    "love_relationships#the-relationship-houses-5th-house-romance-and-dating-7th-hou#0",
+    "houses#sixth-house-life-area-natural-sign-ruler-classification-plan#0",
+    "houses#overview-house-classification-system#0",
+    "health_astrology#preventive-guidance-by-chart-analysis-reading-health-in-the-#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.5,
+   "recall@10": 0.5,
+   "mrr": 1.0,
+   "ndcg@10": 0.8262346571285599
+  },
+  {
+   "id": "h-stellium:en",
+   "lang": "en",
+   "ms": 5.7,
+   "top": [
+    "aspects#aspect-patterns-stellium-grand-trine#0",
+    "compatibility_synastry_advanced#synastry-vs-composite-vs-davison-charts-synastry-composite-c#0",
+    "predictive_techniques_advanced#return-charts-solar-return-birthday-chart-lunar-return-month#0",
+    "love_relationships#composite-charts#0",
+    "predictive_techniques_advanced#electional-astrology-basics-the-natal-chart-override#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "h-stellium:hi",
+   "lang": "hi",
+   "ms": 5.8,
+   "top": [
+    "aspects#aspect-patterns-stellium-grand-trine#0",
+    "compatibility_synastry_advanced#synastry-vs-composite-vs-davison-charts-synastry-composite-c#0",
+    "predictive_techniques_advanced#return-charts-solar-return-birthday-chart-lunar-return-month#0",
+    "predictive_techniques_advanced#electional-astrology-basics-the-natal-chart-override#0",
+    "health_astrology#preventive-guidance-by-chart-analysis-reading-health-in-the-#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "h-stellium:hg",
+   "lang": "hg",
+   "ms": 5.3,
+   "top": [
+    "aspects#aspect-patterns-stellium-grand-trine#0",
+    "compatibility_synastry_advanced#synastry-vs-composite-vs-davison-charts-synastry-composite-c#0",
+    "predictive_techniques_advanced#return-charts-solar-return-birthday-chart-lunar-return-month#0",
+    "health_astrology#preventive-guidance-by-chart-analysis-reading-health-in-the-#0",
+    "predictive_techniques_advanced#electional-astrology-basics-the-natal-chart-override#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "h-uranus-opposition:en",
+   "lang": "en",
+   "ms": 5.2,
+   "top": [
+    "timing_transits#uranus-opposition-midlife-crisis-age-42#0",
+    "planets#uranus-core-archetype-function-psychological-representation-#0",
+    "aspects#major-aspects-opposition-180#0",
+    "aspects#aspect-interpretation-between-specific-planet-pairs-saturn-u#0",
+    "books_rudhyar_humanistic#planetary-cycles-as-development-stages-jupiter-cycle-12-year#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.3333333333333333,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.893150147918034
+  },
+  {
+   "id": "h-uranus-opposition:hi",
+   "lang": "hi",
+   "ms": 4.6,
+   "top": [
+    "planets#uranus-core-archetype-function-psychological-representation-#0",
+    "timing_transits#uranus-opposition-midlife-crisis-age-42#0",
+    "aspects#aspect-interpretation-between-specific-planet-pairs-saturn-u#0",
+    "books_rudhyar_humanistic#planetary-cycles-as-development-stages-jupiter-cycle-12-year#0",
+    "books_arroyo_chart_interpretation#cycles-of-transformation-saturn-cycle-29-5-years-uranus-cycl#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.6666666666666666,
+   "recall@10": 0.6666666666666666,
+   "mrr": 0.5,
+   "ndcg@10": 0.5518472121144192
+  },
+  {
+   "id": "h-uranus-opposition:hg",
+   "lang": "hg",
+   "ms": 5.0,
+   "top": [
+    "timing_transits#uranus-opposition-midlife-crisis-age-42#0",
+    "planets#uranus-core-archetype-function-psychological-representation-#0",
+    "aspects#major-aspects-opposition-180#0",
+    "aspects#aspect-interpretation-between-specific-planet-pairs-saturn-u#0",
+    "books_rudhyar_humanistic#planetary-cycles-as-development-stages-jupiter-cycle-12-year#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.3333333333333333,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.893150147918034
+  },
+  {
+   "id": "h-planetary-hours:en",
+   "lang": "en",
+   "ms": 9.9,
+   "top": [
+    "daily_guidance#planetary-hours-calculating-planetary-hours-planetary-days-a#0",
+    "books_lilly_christian_astrology#planetary-hours-calculation-method-radicality-check#0",
+    "career_astrology#timing-career-moves-with-transits-best-times-to-start-a-new-#0",
+    "daily_guidance#best-days-for-activities-planetary-days#0",
+    "predictive_techniques_advanced#annual-profections-the-time-lord-integration-with-transits#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.8772153153380493
+  },
+  {
+   "id": "h-planetary-hours:hi",
+   "lang": "hi",
+   "ms": 6.7,
+   "top": [
+    "daily_guidance#planetary-hours-calculating-planetary-hours-planetary-days-a#0",
+    "books_lilly_christian_astrology#planetary-hours-calculation-method-radicality-check#0",
+    "compatibility_synastry_advanced#timing-relationships-with-transits-meeting-timing-relationsh#0",
+    "predictive_techniques_advanced#zodiacal-releasing-the-principle-how-it-works-peak-periods-a#0",
+    "career_astrology#timing-career-moves-with-transits-best-times-to-start-a-new-#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.5,
+   "recall@10": 0.5,
+   "mrr": 1.0,
+   "ndcg@10": 0.6131471927654584
+  },
+  {
+   "id": "h-planetary-hours:hg",
+   "lang": "hg",
+   "ms": 5.9,
+   "top": [
+    "daily_guidance#planetary-hours-calculating-planetary-hours-planetary-days-a#0",
+    "books_lilly_christian_astrology#planetary-hours-calculation-method-radicality-check#0",
+    "career_astrology#timing-career-moves-with-transits-best-times-to-start-a-new-#0",
+    "predictive_techniques_advanced#annual-profections-the-time-lord-integration-with-transits#0",
+    "predictive_techniques_advanced#firdaria-persian-time-lord-system-the-principle-sub-periods-#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.5,
+   "recall@10": 0.5,
+   "mrr": 1.0,
+   "ndcg@10": 0.6131471927654584
+  },
+  {
+   "id": "h-jupiter-return:en",
+   "lang": "en",
+   "ms": 7.6,
+   "top": [
+    "timing_transits#jupiter-return-every-12-years#0",
+    "predictive_techniques_advanced#return-charts-solar-return-birthday-chart-lunar-return-month#0",
+    "books_rudhyar_humanistic#planetary-cycles-as-development-stages-jupiter-cycle-12-year#0",
+    "timing_transits#solar-and-lunar-returns-solar-return-lunar-return#0",
+    "timing_transits#saturn-return-ages-28-30-57-59-86-88-first-saturn-return-age#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "h-jupiter-return:hi",
+   "lang": "hi",
+   "ms": 7.5,
+   "top": [
+    "predictive_techniques_advanced#return-charts-solar-return-birthday-chart-lunar-return-month#0",
+    "timing_transits#jupiter-return-every-12-years#0",
+    "timing_transits#solar-and-lunar-returns-solar-return-lunar-return#0",
+    "timing_transits#saturn-return-ages-28-30-57-59-86-88-first-saturn-return-age#0",
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 0.5,
+   "ndcg@10": 0.6309297535714574
+  },
+  {
+   "id": "h-jupiter-return:hg",
+   "lang": "hg",
+   "ms": 8.7,
+   "top": [
+    "predictive_techniques_advanced#return-charts-solar-return-birthday-chart-lunar-return-month#0",
+    "timing_transits#jupiter-return-every-12-years#0",
+    "timing_transits#solar-and-lunar-returns-solar-return-lunar-return#0",
+    "timing_transits#saturn-return-ages-28-30-57-59-86-88-first-saturn-return-age#0",
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 0.5,
+   "ndcg@10": 0.6309297535714574
+  },
+  {
+   "id": "h-dasha-results:en",
+   "lang": "en",
+   "ms": 9.5,
+   "top": [
+    "indian_bphs#dasha-systems-interpreting-dasha-results#0",
+    "indian_jaimini_sutras#jaimini-dasha-systems-chara-dasha-movable-period-system-sthi#0",
+    "vedic_astrology#dasha-systems-vimshottari-dasha-120-year-cycle#0",
+    "predictive_techniques_advanced#firdaria-persian-time-lord-system-the-principle-sub-periods-#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "h-dasha-results:hi",
+   "lang": "hi",
+   "ms": 6.2,
+   "top": [
+    "vedic_astrology#dasha-systems-vimshottari-dasha-120-year-cycle#0",
+    "indian_jaimini_sutras#jaimini-dasha-systems-chara-dasha-movable-period-system-sthi#0",
+    "indian_bphs#dasha-systems-vimshottari-dasha-120-year-cycle-ashtottari-da#0",
+    "indian_bphs#dasha-systems-interpreting-dasha-results#0",
+    "compatibility_synastry_advanced#timing-relationships-with-transits-meeting-timing-relationsh#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 0.25,
+   "ndcg@10": 0.4306765580733931
+  },
+  {
+   "id": "h-dasha-results:hg",
+   "lang": "hg",
+   "ms": 8.2,
+   "top": [
+    "indian_bphs#dasha-systems-interpreting-dasha-results#0",
+    "indian_jaimini_sutras#jaimini-dasha-systems-chara-dasha-movable-period-system-sthi#0",
+    "vedic_astrology#dasha-systems-vimshottari-dasha-120-year-cycle#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-the-transit-hi#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "h-venus-retro:en",
+   "lang": "en",
+   "ms": 15.6,
+   "top": [
+    "timing_transits#venus-retrograde-in-relationships#0",
+    "love_relationships#timing-love-with-transits-venus-transits-jupiter-transits-sa#0",
+    "love_relationships#venus-your-love-style-venus-sign-interpretations#0",
+    "planets#venus-retrograde-transit-effects-speed-orbital-period#0",
+    "love_relationships#venus-your-love-style#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.944847956559586
+  },
+  {
+   "id": "h-venus-retro:hi",
+   "lang": "hi",
+   "ms": 12.6,
+   "top": [
+    "planets#venus-retrograde-transit-effects-speed-orbital-period#0",
+    "timing_transits#venus-retrograde-in-relationships#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "love_relationships#venus-your-love-style-venus-sign-interpretations#0",
+    "love_relationships#timing-love-with-transits-venus-transits-jupiter-transits-sa#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.7967075809905066
+  },
+  {
+   "id": "h-venus-retro:hg",
+   "lang": "hg",
+   "ms": 13.1,
+   "top": [
+    "timing_transits#venus-retrograde-in-relationships#0",
+    "love_relationships#timing-love-with-transits-venus-transits-jupiter-transits-sa#0",
+    "love_relationships#venus-your-love-style-venus-sign-interpretations#0",
+    "planets#venus-retrograde-transit-effects-speed-orbital-period#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.944847956559586
+  },
+  {
+   "id": "h-moon-dignity:en",
+   "lang": "en",
+   "ms": 12.3,
+   "top": [
+    "planets#the-moon-core-archetype-function-psychological-representatio#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "daily_guidance#void-of-course-moon-timing-voc-moon-rules-monthly-voc-moon-p#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.5,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.8065735963827292
+  },
+  {
+   "id": "h-moon-dignity:hi",
+   "lang": "hi",
+   "ms": 11.3,
+   "top": [
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "daily_guidance#void-of-course-moon-timing-voc-moon-rules-monthly-voc-moon-p#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.5,
+   "recall@10": 1.0,
+   "mrr": 0.5,
+   "ndcg@10": 0.6052602440527058
+  },
+  {
+   "id": "h-moon-dignity:hg",
+   "lang": "hg",
+   "ms": 14.9,
+   "top": [
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "planets#the-moon-core-archetype-function-psychological-representatio#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "daily_guidance#void-of-course-moon-timing-voc-moon-rules-monthly-voc-moon-p#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-waning-gibbous-disseminating#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.5,
+   "recall@10": 1.0,
+   "mrr": 0.5,
+   "ndcg@10": 0.6052602440527058
+  },
+  {
+   "id": "g-yod:en",
+   "lang": "en",
+   "ms": 6.5,
+   "top": [
+    "aspects#aspect-patterns-yod-finger-of-god-kite#0",
+    "aspects#aspect-patterns-stellium-grand-trine#0",
+    "aspects#aspect-patterns-mystic-rectangle-cradle-grand-sextile-star-o#0",
+    "books_arroyo_chart_interpretation#practical-counseling-techniques-the-element-conversation-the#0",
+    "compatibility_synastry_advanced#challenging-aspects-that-can-work#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "g-yod:hi",
+   "lang": "hi",
+   "ms": 5.8,
+   "top": [
+    "aspects#aspect-patterns-yod-finger-of-god-kite#0",
+    "aspects#aspect-patterns-stellium-grand-trine#0",
+    "aspects#aspect-patterns-t-square-grand-cross-grand-square#0",
+    "books_arroyo_chart_interpretation#practical-counseling-techniques-the-element-conversation-the#0",
+    "compatibility_synastry_advanced#challenging-aspects-that-can-work#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "g-yod:hg",
+   "lang": "hg",
+   "ms": 6.8,
+   "top": [
+    "aspects#aspect-patterns-yod-finger-of-god-kite#0",
+    "aspects#aspect-patterns-stellium-grand-trine#0",
+    "aspects#aspect-patterns-mystic-rectangle-cradle-grand-sextile-star-o#0",
+    "books_arroyo_chart_interpretation#practical-counseling-techniques-the-element-conversation-the#0",
+    "compatibility_synastry_advanced#challenging-aspects-that-can-work#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "g-hellenistic:en",
+   "lang": "en",
+   "ms": 6.5,
+   "top": [
+    "modern_techniques#hellenistic-astrology-revival-key-hellenistic-concepts-not-i#0",
+    "modern_techniques#psychological-astrology-core-principles-key-concepts#0",
+    "predictive_techniques_advanced#secondary-progressions-the-principle-key-progressed-factors#0",
+    "predictive_techniques_advanced#solar-arc-directions-the-principle-why-solar-arcs-matter-key#0",
+    "books_ptolemy_tetrabiblos#planetary-natures-and-temperaments-sect-day-and-night-teams#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "g-hellenistic:hi",
+   "lang": "hi",
+   "ms": 5.4,
+   "top": [
+    "modern_techniques#hellenistic-astrology-revival-key-hellenistic-concepts-not-i#0",
+    "books_ptolemy_tetrabiblos#planetary-natures-and-temperaments-sect-day-and-night-teams#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "spiritual_astrology#evolutionary-astrology-jeffrey-wolf-green-s-approach#0",
+    "books_lilly_christian_astrology#horary-astrology-principles-the-moment-of-understanding-cons#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "g-hellenistic:hg",
+   "lang": "hg",
+   "ms": 6.0,
+   "top": [
+    "modern_techniques#hellenistic-astrology-revival-key-hellenistic-concepts-not-i#0",
+    "modern_techniques#psychological-astrology-core-principles-key-concepts#0",
+    "books_ptolemy_tetrabiblos#planetary-natures-and-temperaments-sect-day-and-night-teams#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "spiritual_astrology#evolutionary-astrology-jeffrey-wolf-green-s-approach#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "g-bach-crystals:en",
+   "lang": "en",
+   "ms": 6.3,
+   "top": [
+    "predictive_techniques_advanced#zodiacal-releasing-the-principle-how-it-works-peak-periods-a#0",
+    "compatibility_synastry_advanced#challenging-aspects-that-can-work#0",
+    "modern_techniques#zodiacal-releasing-how-it-works-peak-periods-loosing-of-the-#0",
+    "books_lilly_christian_astrology#common-horary-question-types-will-i-get-the-job-10th-house-q#0",
+    "books_ptolemy_tetrabiblos#mundane-astrology-geographic-rulership-eclipses-in-mundane-w#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-bach-crystals:hi",
+   "lang": "hi",
+   "ms": 4.1,
+   "top": [
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "compatibility_synastry_advanced#timing-relationships-with-transits-meeting-timing-relationsh#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "timing_transits#eclipse-interpretation-solar-eclipse-new-moon-near-north-nod#0",
+    "books_ptolemy_tetrabiblos#weather-prediction-through-astrology-seasonal-prediction-mon#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-bach-crystals:hg",
+   "lang": "hg",
+   "ms": 3.5,
+   "top": [
+    "compatibility_synastry_advanced#timing-relationships-with-transits-meeting-timing-relationsh#0",
+    "books_ptolemy_tetrabiblos#planetary-natures-and-temperaments-the-seven-classical-plane#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-capricorn-careers:en",
+   "lang": "en",
+   "ms": 14.4,
+   "top": [
+    "career_astrology#best-careers-by-sun-sign-capricorn-aquarius-pisces#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "planets#the-sun-core-archetype-function-psychological-representation#0",
+    "zodiac_signs#capricorn-december-22-january-19-element-modality-ruling-pla#0",
+    "career_astrology#best-careers-by-sun-sign-aries-taurus-gemini-cancer-leo-virg#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "g-capricorn-careers:hi",
+   "lang": "hi",
+   "ms": 14.9,
+   "top": [
+    "planets#the-sun-core-archetype-function-psychological-representation#0",
+    "zodiac_signs#capricorn-december-22-january-19-element-modality-ruling-pla#0",
+    "career_astrology#best-careers-by-sun-sign-capricorn-aquarius-pisces#0",
+    "houses#tenth-house-the-midheaven-mc-life-area-natural-sign-ruler-cl#0",
+    "career_astrology#planets-in-the-10th-house#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 0.3333333333333333,
+   "ndcg@10": 0.5
+  },
+  {
+   "id": "g-capricorn-careers:hg",
+   "lang": "hg",
+   "ms": 16.0,
+   "top": [
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "planets#the-sun-core-archetype-function-psychological-representation#0",
+    "career_astrology#best-careers-by-sun-sign-capricorn-aquarius-pisces#0",
+    "zodiac_signs#capricorn-december-22-january-19-element-modality-ruling-pla#0",
+    "houses#tenth-house-the-midheaven-mc-life-area-natural-sign-ruler-cl#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 0.3333333333333333,
+   "ndcg@10": 0.5
+  },
+  {
+   "id": "g-karakamsha:en",
+   "lang": "en",
+   "ms": 5.3,
+   "top": [
+    "indian_jaimini_sutras#atmakaraka-and-karakamsha-atmakaraka-the-soul-s-indicator-ka#0",
+    "indian_jaimini_sutras#jaimini-dasha-systems-chara-dasha-movable-period-system-sthi#0",
+    "indian_jaimini_sutras#overview#0",
+    "daily_guidance#seasonal-astrology-equinoxes-and-solstices-vernal-equinox-sp#0",
+    "spiritual_astrology#evolutionary-astrology-jeffrey-wolf-green-s-approach#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "g-karakamsha:hi",
+   "lang": "hi",
+   "ms": 7.2,
+   "top": [
+    "nakshatras_deep_dive#5-mrigashira-23-20-taurus-6-40-gemini#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "love_relationships#venus-your-love-style-venus-sign-interpretations#0",
+    "nakshatras_deep_dive#13-hasta-10-00-23-20-virgo#0",
+    "planets#venus-core-archetype-function-psychological-representation-d#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-karakamsha:hg",
+   "lang": "hg",
+   "ms": 2.4,
+   "top": [
+    "indian_jaimini_sutras#atmakaraka-and-karakamsha-atmakaraka-the-soul-s-indicator-ka#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "g-neptune-transit:en",
+   "lang": "en",
+   "ms": 5.9,
+   "top": [
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "timing_transits#neptune-transit-effects#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-the-transit-hi#0",
+    "timing_transits#eclipse-interpretation-solar-eclipse-new-moon-near-north-nod#0",
+    "love_relationships#timing-love-with-transits-venus-transits-jupiter-transits-sa#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 0.5,
+   "ndcg@10": 0.6309297535714574
+  },
+  {
+   "id": "g-neptune-transit:hi",
+   "lang": "hi",
+   "ms": 5.5,
+   "top": [
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "love_relationships#timing-love-with-transits-venus-transits-jupiter-transits-sa#0",
+    "compatibility_synastry_advanced#timing-relationships-with-transits-meeting-timing-relationsh#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-the-transit-hi#0",
+    "planets#mercury-retrograde-transit-effects-speed-orbital-period#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 1.0,
+   "mrr": 0.16666666666666666,
+   "ndcg@10": 0.3562071871080222
+  },
+  {
+   "id": "g-neptune-transit:hg",
+   "lang": "hg",
+   "ms": 5.8,
+   "top": [
+    "timing_transits#neptune-transit-effects#0",
+    "planets#neptune-core-archetype-function-psychological-representation#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "love_relationships#timing-love-with-transits-venus-transits-jupiter-transits-sa#0",
+    "spiritual_astrology#neptune-and-spiritual-awakening#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "g-mars-sexual:en",
+   "lang": "en",
+   "ms": 6.5,
+   "top": [
+    "love_relationships#mars-your-sexual-energy-mars-sign-interpretations#0",
+    "timing_transits#mars-retrograde-for-energy-action#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "planets#mars-core-archetype-function-psychological-representation-di#0",
+    "health_astrology#preventive-guidance-by-chart-analysis-reading-health-in-the-#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "g-mars-sexual:hi",
+   "lang": "hi",
+   "ms": 6.4,
+   "top": [
+    "love_relationships#mars-your-sexual-energy-mars-sign-interpretations#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "planets#mars-core-archetype-function-psychological-representation-di#0",
+    "planets#mars-retrograde-transit-effects-speed-orbital-period#0",
+    "compatibility_synastry_advanced#synastry-vs-composite-vs-davison-charts-synastry-composite-c#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "g-mars-sexual:hg",
+   "lang": "hg",
+   "ms": 6.6,
+   "top": [
+    "love_relationships#mars-your-sexual-energy-mars-sign-interpretations#0",
+    "timing_transits#mars-retrograde-for-energy-action#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "planets#mars-core-archetype-function-psychological-representation-di#0",
+    "planets#mars-retrograde-transit-effects-speed-orbital-period#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "g-empty-8th:en",
+   "lang": "en",
+   "ms": 5.5,
+   "top": [
+    "houses#eighth-house-empty-eighth-house#0",
+    "houses#twelfth-house-empty-twelfth-house-derivative-house-meaning#0",
+    "houses#tenth-house-the-midheaven-mc-empty-tenth-house-derivative-ho#0",
+    "love_relationships#the-relationship-houses-5th-house-romance-and-dating-7th-hou#0",
+    "modern_techniques#whole-sign-houses-vs-placidus-debate-whole-sign-houses-placi#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "g-empty-8th:hi",
+   "lang": "hi",
+   "ms": 5.1,
+   "top": [
+    "houses#eighth-house-empty-eighth-house#0",
+    "love_relationships#the-relationship-houses-5th-house-romance-and-dating-7th-hou#0",
+    "houses#first-house-the-ascendant-multiple-planets-house-cusp-sign-i#0",
+    "houses#overview-house-classification-system#0",
+    "timing_transits#pluto-transit-through-houses#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "g-empty-8th:hg",
+   "lang": "hg",
+   "ms": 5.8,
+   "top": [
+    "houses#eighth-house-empty-eighth-house#0",
+    "love_relationships#the-relationship-houses-5th-house-romance-and-dating-7th-hou#0",
+    "houses#first-house-the-ascendant-multiple-planets-house-cusp-sign-i#0",
+    "houses#overview-house-classification-system#0",
+    "timing_transits#pluto-transit-through-houses#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "g-fasting:en",
+   "lang": "en",
+   "ms": 6.1,
+   "top": [
+    "remedial_astrology#fasting-practices#0",
+    "remedial_astrology#mantra-practices-for-planetary-strengthening-daily-mantra-pr#0",
+    "indian_bphs#graha-drishti-planetary-aspects-in-bphs-all-planets-special-#0",
+    "remedial_astrology#planetary-meditation-practices-sun-meditation-moon-meditatio#0",
+    "zodiac_signs#aquarius-january-20-february-18-element-modality-ruling-plan#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "g-fasting:hi",
+   "lang": "hi",
+   "ms": 16.4,
+   "top": [
+    "zodiac_signs#taurus-april-20-may-20-element-modality-ruling-planet-core-a#0",
+    "indian_jaimini_sutras#atmakaraka-and-karakamsha-atmakaraka-the-soul-s-indicator-ka#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-5-saturn-in-syna#0",
+    "aspects#aspect-patterns-t-square-grand-cross-grand-square#0",
+    "aspects#aspect-patterns-yod-finger-of-god-kite#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "g-fasting:hg",
+   "lang": "hg",
+   "ms": 6.6,
+   "top": [
+    "remedial_astrology#fasting-practices#0",
+    "remedial_astrology#mantra-practices-for-planetary-strengthening-daily-mantra-pr#0",
+    "indian_bphs#graha-drishti-planetary-aspects-in-bphs-all-planets-special-#0",
+    "remedial_astrology#planetary-meditation-practices-sun-meditation-moon-meditatio#0",
+    "zodiac_signs#aquarius-january-20-february-18-element-modality-ruling-plan#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "g-avasthas:en",
+   "lang": "en",
+   "ms": 6.3,
+   "top": [
+    "indian_bphs#planetary-avasthas-states-baladi-avasthas-age-states-jagrada#0",
+    "indian_bphs#planetary-avasthas-states-deeptadi-avasthas-luminosity-state#0",
+    "timing_transits#saturn-return-ages-28-30-57-59-86-88-first-saturn-return-age#0",
+    "houses#first-house-the-ascendant-life-area-natural-sign-ruler-class#0",
+    "indian_bphs#graha-drishti-planetary-aspects-in-bphs-all-planets-special-#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "g-avasthas:hi",
+   "lang": "hi",
+   "ms": 7.8,
+   "top": [
+    "indian_bphs#planetary-avasthas-states-baladi-avasthas-age-states-jagrada#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-5-saturn-in-syna#0",
+    "aspects#aspect-patterns-t-square-grand-cross-grand-square#0",
+    "aspects#aspect-patterns-yod-finger-of-god-kite#0",
+    "aspects#aspect-patterns-stellium-grand-trine#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.5,
+   "recall@10": 0.5,
+   "mrr": 1.0,
+   "ndcg@10": 0.6131471927654584
+  },
+  {
+   "id": "g-avasthas:hg",
+   "lang": "hg",
+   "ms": 5.2,
+   "top": [
+    "indian_bphs#planetary-avasthas-states-baladi-avasthas-age-states-jagrada#0",
+    "indian_bphs#graha-drishti-planetary-aspects-in-bphs-all-planets-special-#0",
+    "planets#the-sun-retrograde-transit-effects-speed-orbital-period#0",
+    "houses#first-house-the-ascendant-life-area-natural-sign-ruler-class#0",
+    "indian_bphs#planetary-avasthas-states-deeptadi-avasthas-luminosity-state#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.8503449055347546
+  },
+  {
+   "id": "g-pluto-houses:en",
+   "lang": "en",
+   "ms": 5.6,
+   "top": [
+    "timing_transits#pluto-transit-through-houses#0",
+    "love_relationships#timing-love-with-transits-venus-transits-jupiter-transits-sa#0",
+    "books_greene_saturn#saturn-through-the-houses-saturn-in-the-1st-house-saturn-in-#0",
+    "planets#pluto-core-archetype-function-psychological-representation-d#0",
+    "books_greene_saturn#saturn-through-the-houses-saturn-in-the-7th-house-saturn-in-#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "g-pluto-houses:hi",
+   "lang": "hi",
+   "ms": 10.3,
+   "top": [
+    "timing_transits#pluto-transit-through-houses#0",
+    "love_relationships#timing-love-with-transits-venus-transits-jupiter-transits-sa#0",
+    "planets#pluto-core-archetype-function-psychological-representation-d#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "compatibility_synastry_advanced#timing-relationships-with-transits-meeting-timing-relationsh#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "g-pluto-houses:hg",
+   "lang": "hg",
+   "ms": 5.9,
+   "top": [
+    "timing_transits#pluto-transit-through-houses#0",
+    "love_relationships#timing-love-with-transits-venus-transits-jupiter-transits-sa#0",
+    "planets#pluto-core-archetype-function-psychological-representation-d#0",
+    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
+    "compatibility_synastry_advanced#timing-relationships-with-transits-meeting-timing-relationsh#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "g-color-therapy:en",
+   "lang": "en",
+   "ms": 6.5,
+   "top": [
+    "remedial_astrology#color-therapy-and-planetary-colors-practical-application#0",
+    "indian_jaimini_sutras#argala-planetary-intervention-primary-argala-obstruction-vir#0",
+    "daily_guidance#planetary-hours-calculating-planetary-hours-planetary-days-a#0",
+    "remedial_astrology#daily-routines-aligned-with-planetary-hours-optimal-activiti#0",
+    "remedial_astrology#western-remedial-approaches-flower-essences-bach-flowers-cry#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "g-color-therapy:hi",
+   "lang": "hi",
+   "ms": 9.5,
+   "top": [
+    "remedial_astrology#color-therapy-and-planetary-colors-practical-application#0",
+    "remedial_astrology#gemstone-therapy-gemstone-recommendations-by-planet#1",
+    "remedial_astrology#gemstone-therapy-vedic-gemstone-principles#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-5-saturn-in-syna#0",
+    "aspects#aspect-patterns-t-square-grand-cross-grand-square#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "g-color-therapy:hg",
+   "lang": "hg",
+   "ms": 4.9,
+   "top": [
+    "remedial_astrology#color-therapy-and-planetary-colors-practical-application#0",
+    "daily_guidance#planetary-hours-calculating-planetary-hours-planetary-days-a#0",
+    "remedial_astrology#daily-routines-aligned-with-planetary-hours-optimal-activiti#0",
+    "remedial_astrology#western-remedial-approaches-flower-essences-bach-flowers-cry#0",
+    "daily_guidance#best-days-for-activities-planetary-days#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  }
+ ],
+ "label": "final-A6-runtime-off",
+ "config": "A6-phonetic",
+ "embedder": "BAAI/bge-small-en-v1.5",
+ "chunks": 354
+}

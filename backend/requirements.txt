@@ -1,0 +1,40 @@
+# Nakshion backend runtime dependencies.
+# Pinned to versions verified to install and import on Python 3.14 (backend/venv), 2026-10-01.
+# Owner: backend-elite (single editor). Dev/test deps live in requirements-dev.txt.
+
+# Web
+fastapi==0.135.2
+uvicorn[standard]==0.42.0
+python-multipart==0.0.32
+httpx==0.28.1
+
+# Data
+sqlalchemy[asyncio]==2.0.48
+greenlet==3.3.2
+asyncpg==0.31.0
+alembic==1.18.4
+psycopg[binary]==3.3.6          # sync driver for Alembic (env.py strips +asyncpg)
+psycopg2-binary==2.9.11         # env.py's default "postgresql://" URL resolves to psycopg2
+pgvector==0.5.0
+redis[hiredis]==7.4.0
+
+# Config / validation
+pydantic[email]==2.12.5
+pydantic-settings==2.13.1
+python-dotenv==1.2.2
+
+# Auth
+PyJWT[crypto]==2.15.1           # replaces python-jose (which hard-requires the ecdsa package)
+bcrypt==5.0.0                   # used directly (no passlib); >72-byte passwords are rejected before hashing
+
+# Astrology engine
+pyswisseph==2.10.3.2
+timezonefinder==8.2.2
+tzdata==2026.4                  # pinned IANA data, independent of the host OS
+
+# AI / RAG (google-generativeai and chromadb removed: EOL / replaced by pgvector)
+google-genai==2.26.0
+anthropic==1.11.0
+fastembed==0.8.1
+jinja2==3.1.6
+PyYAML==6.0.3                   # prompt registry (app/llm)

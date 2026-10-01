@@ -1,0 +1,112 @@
+# CI for Nakshion. Runs on pull requests and on pushes to main. Nothing here deploys: Render deploys the
+# backend when these checks pass (autoDeployTrigger: checksPass) and Vercel builds the frontend from git.
+# No deployment tokens or production secrets are used or needed. Tests never call real LLM/Brevo/LocationIQ.
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16       # Postgres 16 with the pgvector extension (migration 004)
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: nakshion_ci
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+      redis:
+        image: redis:7
+        ports: ["6379:6379"]
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      DATABASE_URL: postgresql+asyncpg://postgres:postgres@localhost:5432/nakshion_ci
+      TEST_DATABASE_URL: postgresql+asyncpg://postgres:postgres@localhost:5432/nakshion_ci
+      REDIS_URL: redis://localhost:6379/0
+      JWT_SECRET_KEY: ci-only-secret-ci-only-secret-0123456789
+      APP_ENV: test
+      EMBEDDINGS_RUNTIME: "off"
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+          cache: pip
+          cache-dependency-path: backend/requirements-dev.txt
+      - name: Install dependencies
+        run: pip install -r requirements-dev.txt
+      - name: Build checks (Swiss Ephemeris files present, single Alembic head)
+        run: python scripts/build_check.py
+      - name: Migrations upgrade, downgrade, upgrade
+        run: |
+          alembic upgrade head
+          alembic downgrade base
+          alembic upgrade head
+      - name: Models match migrations (fails on drift)
+        run: alembic check
+      - name: Tests (live-provider smoke tests excluded)
+        run: pytest -q -p no:cacheprovider -k "not live_smoke and not live"
+      - name: Dependency audit (informational)
+        continue-on-error: true
+        run: pip install pip-audit && pip-audit -r requirements.txt
+
+  frontend:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build
+      - name: CSP in vercel.json allows the built inline script
+        working-directory: .
+        run: python3 scripts/check_csp_hash.py
+      - name: Dependency audit (production deps, informational)
+        continue-on-error: true
+        run: npm audit --omit=dev
+
+  config-files:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: render.yaml and vercel.json parse
+        run: |
+          python3 -m pip install --quiet pyyaml
+          python3 -c "import yaml,sys; d=yaml.safe_load(open('render.yaml')); assert d['services'][0]['healthCheckPath']=='/health/live'"
+          python3 -c "import json; json.load(open('frontend/vercel.json'))"
+      - name: No secrets committed (pattern scan, prints locations only)
+        run: |
+          if grep -rIEl --exclude-dir=node_modules --exclude-dir=.git --exclude='*.md' \
+             -e 'AIza[0-9A-Za-z_-]{35}' -e 'xkeysib-[0-9a-f]{20,}' -e 'GOCSPX-[0-9A-Za-z_-]{20,}' \
+             -e 'sk-ant-[0-9A-Za-z_-]{20,}' -e '-----BEGIN (RSA |EC )?PRIVATE KEY-----' .; then
+            echo "Possible secret in the files listed above"; exit 1
+          fi

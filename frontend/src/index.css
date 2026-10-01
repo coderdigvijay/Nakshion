@@ -1,0 +1,52 @@
+@import "tailwindcss";
+@import "./styles/tokens.css";
+
+/* App-level additions on top of the Nakshion tokens (MASTER §12 step 1). */
+
+@layer base {
+  /* Hidden native dialog must not render; open dialogs are styled per component. */
+  dialog::backdrop {
+    background: var(--nk-scrim);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+  }
+}
+
+/* Horizontal scroller with edge fades (tabs, chip rows). */
+@utility scroll-fade-x {
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 16px, #000 calc(100% - 24px), transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 16px, #000 calc(100% - 24px), transparent 100%);
+  &::-webkit-scrollbar { display: none; }
+}
+
+/* Feature card: 1px aurora hairline (COMPONENTS.md Card / feature). Max one per page. */
+@utility card-feature {
+  background:
+    linear-gradient(var(--nk-surface), var(--nk-surface)) padding-box,
+    var(--nk-gradient-aurora) border-box;
+  border: 1px solid transparent;
+}
+
+/* Hatched fill for approximate Lagna (no birth time). */
+@utility hatch {
+  background-image: repeating-linear-gradient(135deg, var(--nk-border-strong) 0 1px, transparent 1px 8px);
+}
+
+@keyframes nk-dialog-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Route change: opacity only, 300 ms (MASTER §8.1: no slide, avoids disorientation and layout shift). */
+@keyframes nk-page-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Bottom sheet: gentle spring-like rise (overshoot from --ease-emphasized). */
+@keyframes nk-sheet-in {
+  from { transform: translateY(100%); }
+  to   { transform: none; }
+}

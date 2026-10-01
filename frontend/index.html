@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="Nakshion reads your Vedic birth chart with Swiss Ephemeris precision and answers your questions in English, हिंदी or Hinglish." />
+    <meta name="theme-color" content="#0B0D1A" />
+    <title>Nakshion — your sky, read with care</title>
+    <script>
+      // Apply the saved theme before first paint (no flash). "system" removes the attribute.
+      try {
+        var t = localStorage.getItem("nk-theme");
+        if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+        else if (t === "system") document.documentElement.removeAttribute("data-theme");
+      } catch (e) { /* storage unavailable: keep dark default */ }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..600,0..100&family=Inter:wght@400..700&family=Noto+Sans+Devanagari:wght@400..600&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-night">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

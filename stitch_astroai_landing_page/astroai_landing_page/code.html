@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AstroAI - Decode Your Future with AI-Powered Astrology</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'astro-dark': '#0a0e1a',
+            'astro-purple': '#ca98ff',
+            'astro-gold': '#d4af37',
+            'astro-blue-glow': '#4facfe',
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-animations">
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+    .animate-float {
+      animation: float 4s ease-in-out infinite;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(202, 152, 255, 0.3);
+    }
+    .zodiac-glow {
+      filter: drop-shadow(0 0 15px rgba(202, 152, 255, 0.4));
+    }
+    body {
+      background-color: #0a0e1a;
+      color: white;
+      overflow-x: hidden;
+    }
+    .hero-gradient {
+      background: radial-gradient(circle at 70% 30%, rgba(79, 172, 254, 0.15) 0%, transparent 50%),
+                  radial-gradient(circle at 20% 80%, rgba(202, 152, 255, 0.1) 0%, transparent 50%);
+    }
+  </style>
+</head>
+<body class="font-sans">
+<!-- BEGIN: TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-astro-dark/80 backdrop-blur-md border-b border-white/10" data-purpose="main-navigation">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-2xl">🪐</span>
+<span class="text-xl font-extrabold tracking-tight">AstroAI</span>
+</div>
+<div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+<a class="hover:text-astro-purple transition-colors" href="#">Birth Chart</a>
+<a class="hover:text-astro-purple transition-colors" href="#">Daily Horoscope</a>
+<a class="hover:text-astro-purple transition-colors" href="#">AI Oracle</a>
+<a class="hover:text-astro-purple transition-colors" href="#">Compatibility</a>
+</div>
+<div>
+<button class="bg-astro-purple text-astro-dark px-6 py-2.5 rounded-full font-bold text-sm hover:opacity-90 transition-all shadow-lg shadow-astro-purple/20">
+          Get Started
+        </button>
+</div>
+</div>
+</nav>
+<!-- END: TopNavBar -->
+<!-- BEGIN: HeroSection -->
+<main class="relative pt-32 pb-20 px-6 hero-gradient min-h-screen flex items-center overflow-hidden" data-purpose="hero-container">
+<!-- Starfield Background Overlay (Conceptual) -->
+<div class="absolute inset-0 opacity-30 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+<!-- Content Left -->
+<div data-purpose="hero-content-left">
+<div class="flex items-center gap-2 mb-8">
+<span class="text-3xl">🪐</span>
+<span class="text-2xl font-bold">AstroAI</span>
+</div>
+<h1 class="text-5xl lg:text-7xl font-extrabold leading-[1.1] mb-6 tracking-tight uppercase">
+          Decode Your <br/> Future With <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-astro-purple to-astro-blue-glow">AI-Powered</span> <br/>
+          Astrology
+        </h1>
+<p class="text-gray-400 text-lg mb-10 max-w-lg leading-relaxed">
+          Get hyper-personalized predictions, birth chart insights, compatibility analysis, and daily guidance powered by advanced AI.
+        </p>
+<div class="flex flex-wrap gap-4 mb-12">
+<button class="bg-astro-purple text-white px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-[0_0_20px_rgba(202,152,255,0.4)]">
+            GET YOUR READING
+          </button>
+<button class="border-2 border-white/30 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/5 transition-colors uppercase tracking-wide">
+            EXPLORE BIRTH CHART
+          </button>
+</div>
+<!-- Trusted Badge -->
+<div class="inline-block mb-10" data-purpose="social-proof">
+<div class="bg-gradient-to-r from-astro-gold/20 to-transparent p-px rounded-r-lg">
+<div class="flex items-center gap-3 bg-astro-dark/50 pr-6 py-2 rounded-r-lg border-l-4 border-astro-gold">
+<div class="flex text-astro-gold text-xs">
+                ★★★★★
+              </div>
+<span class="text-xs font-bold tracking-widest text-gray-300">TRUSTED BY 100K+ USERS</span>
+</div>
+</div>
+</div>
+<!-- Zodiac Icons Row -->
+<div class="flex flex-wrap gap-4 opacity-80" data-purpose="zodiac-symbols">
+<!-- Using placeholder circular icons to represent zodiac signs -->
+<div class="w-10 h-10 rounded-full border border-astro-purple flex items-center justify-center text-astro-purple text-sm">♈︎</div>
+<div class="w-10 h-10 rounded-full border border-astro-blue-glow flex items-center justify-center text-astro-blue-glow text-sm">♉︎</div>
+<div class="w-10 h-10 rounded-full border border-astro-purple flex items-center justify-center text-astro-purple text-sm">♊︎</div>
+<div class="w-10 h-10 rounded-full border border-astro-blue-glow flex items-center justify-center text-astro-blue-glow text-sm">♋︎</div>
+<div class="w-10 h-10 rounded-full border border-astro-purple flex items-center justify-center text-astro-purple text-sm">♌︎</div>
+<div class="w-10 h-10 rounded-full border border-astro-blue-glow flex items-center justify-center text-astro-blue-glow text-sm">♍︎</div>
+<div class="w-10 h-10 rounded-full border border-astro-purple flex items-center justify-center text-astro-purple text-sm">♎︎</div>
+<div class="w-10 h-10 rounded-full border border-astro-blue-glow flex items-center justify-center text-astro-blue-glow text-sm">♏︎</div>
+<div class="w-10 h-10 rounded-full border border-astro-gold bg-astro-gold/20 flex items-center justify-center text-astro-gold text-sm shadow-[0_0_10px_rgba(212,175,55,0.5)]">☀️</div>
+<div class="w-10 h-10 rounded-full border border-astro-blue-glow flex items-center justify-center text-astro-blue-glow text-sm">♑︎</div>
+</div>
+</div>
+<!-- Visual Right -->
+<div class="relative flex items-center justify-center" data-purpose="hero-visual-right">
+<!-- Main Zodiac Wheel Illustration -->
+<div class="relative w-full max-w-[550px] aspect-square rounded-full border-[10px] border-white/5 flex items-center justify-center zodiac-glow">
+<!-- Background image or canvas-based wheel -->
+<img alt="Zodiac Wheel" class="w-full h-full object-contain rounded-full opacity-90 scale-125 lg:scale-150" src="https://lh3.googleusercontent.com/aida/ADBb0uiqwG1utSw7KsYW--4oPAzVef0y1DC2YLJA47kHUyOsdOsuwmugNM6OBmv_Q6aTmPdrOTfZLmBsDdDjSAlvaekWnNFBHXonOUksqsIA53rN90IZ0jeuIauV1I4Q-1iAm1c3-UULjiegfbbfXHfFrHSA0zltSgwG82d-IyOq5lSO6P5TyUAfBKC5H02OKPoDOtMwocEctIxXTpr0mYtQdU5CfvAyi96F1aS93rRh1PDFm-ItwI0QKbOJXg0"/>
+<!-- Floating Insight Cards (Positioned relative to the wheel) -->
+<!-- AI Guide -->
+<div class="absolute -top-10 -left-10 glass-card p-4 rounded-xl max-w-[200px] animate-float border-blue-400/50" style="animation-delay: 0s;">
+<p class="text-astro-blue-glow text-[10px] font-bold uppercase tracking-widest mb-1">AI Guide:</p>
+<p class="text-[11px] text-gray-200">Today's alignment suggests strong career energy. Focus on communication!</p>
+</div>
+<!-- Career Insight -->
+<div class="absolute top-1/2 -left-20 glass-card p-4 rounded-xl max-w-[200px] animate-float border-astro-purple/50" style="animation-delay: 1.5s;">
+<p class="text-astro-purple text-[10px] font-bold uppercase tracking-widest mb-1">Career Insight</p>
+<p class="text-[11px] text-gray-200">Career alignment: Your stars point toward strong career energy this month. Focus on communication!</p>
+</div>
+<!-- Love Compatibility -->
+<div class="absolute bottom-10 -right-5 glass-card p-4 rounded-xl max-w-[220px] animate-float border-blue-400/50" style="animation-delay: 0.8s;">
+<p class="text-astro-blue-glow text-[10px] font-bold uppercase tracking-widest mb-1">Love Compatibility</p>
+<p class="text-[11px] text-gray-200">Love analysis: Focus on shared values and communication with your partner this week.</p>
+</div>
+<!-- Secondary Career Insight (Matching Image layout) -->
+<div class="absolute top-10 -right-20 glass-card p-4 rounded-xl max-w-[200px] animate-float border-astro-purple/50" style="animation-delay: 2.2s;">
+<p class="text-astro-purple text-[10px] font-bold uppercase tracking-widest mb-1">Career Insight:</p>
+<p class="text-[11px] text-gray-200">Career alignment: Your stars point toward strong career energy this month. Focus on communication!</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- END: HeroSection -->
+<!-- BEGIN: Footer -->
+<footer class="bg-astro-dark/90 border-t border-white/5 py-16 px-6 relative z-10" data-purpose="main-footer">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10">
+<div class="col-span-2">
+<div class="flex items-center gap-2 mb-6">
+<span class="text-2xl">🪐</span>
+<span class="text-xl font-bold">AstroAI</span>
+</div>
+<p class="text-gray-500 max-w-xs mb-6">
+            The world's most advanced AI-powered astrology platform. Navigating your destiny through data and celestial movements.
+          </p>
+<div class="flex gap-4">
+<a class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-astro-purple/20 transition-colors" href="#">𝕏</a>
+<a class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-astro-purple/20 transition-colors" href="#">📸</a>
+<a class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-astro-purple/20 transition-colors" href="#">☄️</a>
+</div>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-sm uppercase tracking-widest text-astro-purple">Platform</h4>
+<ul class="space-y-4 text-sm text-gray-400">
+<li><a class="hover:text-white transition-colors" href="#">Birth Charts</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Daily Readings</a></li>
+<li><a class="hover:text-white transition-colors" href="#">AI Oracle</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Compatibility</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-sm uppercase tracking-widest text-astro-purple">Company</h4>
+<ul class="space-y-4 text-sm text-gray-400">
+<li><a class="hover:text-white transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-sm uppercase tracking-widest text-astro-purple">Celestial</h4>
+<ul class="space-y-4 text-sm text-gray-400">
+<li><a class="hover:text-white transition-colors" href="#">Zodiac Guide</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Planetary Retrograde</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Moon Phases</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-600">
+<p>© 2023 AstroAI Technologies. All cosmic rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-gray-400" href="#">Privacy</a>
+<a class="hover:text-gray-400" href="#">Terms</a>
+<a class="hover:text-gray-400" href="#">Cookies</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- END: Footer -->
+</body></html>
