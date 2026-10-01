@@ -121,11 +121,11 @@ def dry_run_report(chunks: list[Chunk]) -> str:
     return "\n".join(lines)
 
 
-def _async_url(url: str) -> str:
-    for p in ("postgres://", "postgresql://"):
-        if url.startswith(p):
-            return "postgresql+asyncpg://" + url[len(p):]
-    return url
+def _async_url(url: str) -> tuple[str, dict]:
+    """Same Neon-safe normalisation as the app (strips sslmode/channel_binding, maps to ssl=require)."""
+    from app.db.url import prepare_url
+
+    return prepare_url(url)
 
 
 async def _main(args) -> int:
@@ -147,7 +147,8 @@ async def _main(args) -> int:
     from app.rag.keys import generate_keys
     from app.rag.store import PgVectorStore
 
-    engine = create_async_engine(_async_url(args.database_url), pool_size=1, max_overflow=0)
+    url, connect_args = _async_url(args.database_url)
+    engine = create_async_engine(url, pool_size=1, max_overflow=0, connect_args=connect_args)
     store = PgVectorStore(engine)
     try:
         if args.status:

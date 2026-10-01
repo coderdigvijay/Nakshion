@@ -37,6 +37,19 @@ Template (copy above the first entry; this fenced block is not an entry):
 
 ## Entries
 
+## BUG-022: `python -m app.rag.ingest --database-url <Neon URL>` crashed with "connect() got an unexpected keyword argument 'sslmode'" (2026-10-01)
+
+- **Tier:** T1 - first production data load (deploy runbook step) failed.
+- **Symptom:** Ingesting the knowledge base into Neon from a laptop raised `TypeError: connect() got an unexpected keyword argument 'sslmode'`. [reported by user, verified]
+- **Root cause:** `app/rag/ingest.py::_async_url` only swapped the URL scheme; Neon's `?sslmode=require&channel_binding=require` went to asyncpg as kwargs. The app (`app/db/session.py`) already had `prepare_url` for this, but ingest never used it. [verified]
+- **Evidence:** user's terminal traceback ending in asyncpg `connect`; `prepare_url` unit test already covered the app path only.
+- **Fix:** moved `prepare_url` to `app/db/url.py` (no settings import side effects; `app.db.session` re-exports it) and made ingest use it, passing `connect_args={"ssl": "require"}`.
+- **Blast radius:** none (nothing was written; the connection never opened).
+- **Files:** backend/app/db/url.py, backend/app/db/session.py, backend/app/rag/ingest.py, backend/tests/unit/test_db_url.py
+- **Verified:** `pytest tests/unit/test_db_url.py -q` 3 passed.
+- **Regression guard:** `test_ingest_url_is_neon_safe`. Rule: every code path that opens a DB connection from a Neon URL (app, alembic, scripts) goes through `app.db.url.prepare_url`.
+- **Committed:** not yet
+
 ## BUG-018: Vedic personal reading carried tropical aspect factors incl. outer planets and ASC; compat had no band (2026-10-01)
 
 - **Tier:** T2 - chart facts fed to the LLM and shown as chips.
