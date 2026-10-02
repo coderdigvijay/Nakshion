@@ -24,8 +24,12 @@ const DETAIL_FROM = 44;
 type Tone = "color" | "mono";
 export type LogoVariant = "mark" | "horizontal" | "stacked";
 
+// Class names must appear as FULL literals: Tailwind cannot see names assembled with `fill-${token}`,
+// so the old template string produced no CSS and every shape rendered in the browser's default black.
+const FILL = { fg: "fill-fg", ai: "fill-ai", accent: "fill-accent" } as const;
+
 function cls(tone: Tone, token: "fg" | "ai" | "accent") {
-  return tone === "mono" ? "fill-current" : `fill-${token}`;
+  return tone === "mono" ? "fill-current" : FILL[token];
 }
 
 function Mark({ detail, tone }: { detail: boolean; tone: Tone }) {
