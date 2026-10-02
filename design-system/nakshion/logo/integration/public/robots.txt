@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /$
+Allow: /auth$
+Allow: /privacy
+Allow: /terms
+Disallow: /dashboard
+Disallow: /chat
+Disallow: /chart
+Disallow: /profile
+Disallow: /compatibility
+Disallow: /onboarding
+Disallow: /auth/callback
+Disallow: /reset-password
+Disallow: /forgot-password
+Disallow: /verify
+
+Sitemap: https://nakshion.vercel.app/sitemap.xml

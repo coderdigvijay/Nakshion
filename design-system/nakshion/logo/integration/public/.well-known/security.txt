@@ -1,0 +1,5 @@
+# PLACEHOLDER: replace before launch. No real contact has been set up yet.
+Contact: mailto:REPLACE-WITH-SECURITY-CONTACT@example.invalid
+Expires: 2027-10-02T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://nakshion.vercel.app/.well-known/security.txt

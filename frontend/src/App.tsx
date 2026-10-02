@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MotionConfig } from "framer-motion";
 import { useAuthStore } from "./store/authStore";
@@ -8,6 +8,7 @@ import { Toaster } from "./components/ui/Toaster";
 import { ConnectionBanner } from "./components/layout/ConnectionBanner";
 import { ErrorBoundary } from "./components/layout/ErrorBoundary";
 import { toApiError } from "./services/errors";
+import { useDocumentTitle } from "./hooks/useDocumentTitle";
 
 // Route-level code splitting (rules §6).
 const LandingPage = lazy(() => import("./pages/LandingPage"));
@@ -25,6 +26,29 @@ const ChartPage = lazy(() => import("./pages/ChartPage"));
 const PrivacyPage = lazy(() => import("./pages/PrivacyPage"));
 const TermsPage = lazy(() => import("./pages/TermsPage"));
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
+
+const ROUTE_TITLES: Record<string, string> = {
+  "/auth": "Sign in",
+  "/verify": "Verify your email",
+  "/forgot-password": "Reset your password",
+  "/reset-password": "Choose a new password",
+  "/onboarding": "Create your chart",
+  "/dashboard": "Today",
+  "/chat": "Ask Nakshion",
+  "/compatibility": "Compatibility",
+  "/chart": "Your chart",
+  "/profile": "Profile",
+  "/privacy": "Privacy Policy",
+  "/terms": "Terms of Use",
+};
+
+/** Sets a per-route document title (landing keeps the default tagline title). */
+function RouteTitle() {
+  const { pathname } = useLocation();
+  const key = pathname.replace(/\/+$/, "").split("/").slice(0, 2).join("/") || "/";
+  useDocumentTitle(ROUTE_TITLES[key]);
+  return null;
+}
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -59,6 +83,7 @@ function AppRoutes() {
 
   return (
     <Suspense fallback={<RouteFallback />}>
+      <RouteTitle />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/auth" element={<AuthPage />} />
