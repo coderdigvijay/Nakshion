@@ -10,6 +10,9 @@ from pathlib import Path
 
 import pytest
 
+# Gate tests measure retrieval quality: a cold local model must not be cut off by the production 0.4 s query timeout.
+os.environ.setdefault("EMBED_QUERY_TIMEOUT_S", "0")
+
 BACKEND = Path(__file__).resolve().parents[2]
 if str(BACKEND) not in sys.path:
     sys.path.insert(0, str(BACKEND))

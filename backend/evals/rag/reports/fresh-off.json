@@ -1,0 +1,1360 @@
+{
+ "all": {
+  "hit@5": 0.7778,
+  "hit@10": 0.873,
+  "primary@5": 0.7619,
+  "recall@5": 0.6143,
+  "recall@10": 0.6633,
+  "mrr": 0.6682,
+  "ndcg@10": 0.5795
+ },
+ "strict_old_gold": {
+  "hit@5": 0.7778,
+  "hit@10": 0.873,
+  "primary@5": 0.7619,
+  "recall@5": 0.6143,
+  "recall@10": 0.6633,
+  "mrr": 0.6682,
+  "ndcg@10": 0.5795,
+  "n": 63
+ },
+ "lang": {
+  "hg": {
+   "hit@5": 0.8919,
+   "hit@10": 1.0,
+   "primary@5": 0.8649,
+   "recall@5": 0.6851,
+   "recall@10": 0.757,
+   "mrr": 0.7764,
+   "ndcg@10": 0.6593
+  },
+  "hi": {
+   "hit@5": 0.6154,
+   "hit@10": 0.6923,
+   "primary@5": 0.6154,
+   "recall@5": 0.5135,
+   "recall@10": 0.5299,
+   "mrr": 0.5142,
+   "ndcg@10": 0.4659
+  }
+ },
+ "source": {
+  "independent": {
+   "hit@5": 0.7778,
+   "hit@10": 0.873,
+   "primary@5": 0.7619,
+   "recall@5": 0.6143,
+   "recall@10": 0.6633,
+   "mrr": 0.6682,
+   "ndcg@10": 0.5795
+  }
+ },
+ "split": {
+  "indep_hi": {
+   "hit@5": 0.7778,
+   "hit@10": 0.873,
+   "primary@5": 0.7619,
+   "recall@5": 0.6143,
+   "recall@10": 0.6633,
+   "mrr": 0.6682,
+   "ndcg@10": 0.5795
+  }
+ },
+ "topic": {
+  "dasha": {
+   "hit@5": 0.6667,
+   "hit@10": 0.8889,
+   "primary@5": 0.6667,
+   "recall@5": 0.4815,
+   "recall@10": 0.6481,
+   "mrr": 0.6409,
+   "ndcg@10": 0.522
+  },
+  "dignity": {
+   "hit@5": 0.6,
+   "hit@10": 0.8,
+   "primary@5": 0.6,
+   "recall@5": 0.3,
+   "recall@10": 0.5,
+   "mrr": 0.5333,
+   "ndcg@10": 0.4605
+  },
+  "gochara": {
+   "hit@5": 0.75,
+   "hit@10": 1.0,
+   "primary@5": 0.75,
+   "recall@5": 0.55,
+   "recall@10": 0.5563,
+   "mrr": 0.7857,
+   "ndcg@10": 0.5816
+  },
+  "houses": {
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 0.9,
+   "ndcg@10": 0.9262
+  },
+  "matching": {
+   "hit@5": 0.8889,
+   "hit@10": 1.0,
+   "primary@5": 0.8889,
+   "recall@5": 0.7519,
+   "recall@10": 0.863,
+   "mrr": 0.8444,
+   "ndcg@10": 0.7686
+  },
+  "nakshatras": {
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 0.8571,
+   "ndcg@10": 0.8491
+  },
+  "panchang": {
+   "hit@5": 0.6667,
+   "hit@10": 0.6667,
+   "primary@5": 0.6667,
+   "recall@5": 0.4889,
+   "recall@10": 0.4333,
+   "mrr": 0.5926,
+   "ndcg@10": 0.4233
+  },
+  "remedies": {
+   "hit@5": 0.6667,
+   "hit@10": 0.8333,
+   "primary@5": 0.5,
+   "recall@5": 0.2722,
+   "recall@10": 0.2841,
+   "mrr": 0.3472,
+   "ndcg@10": 0.2051
+  },
+  "sade_sati": {
+   "hit@5": 0.8,
+   "hit@10": 0.8,
+   "primary@5": 0.8,
+   "recall@5": 0.5733,
+   "recall@10": 0.5714,
+   "mrr": 0.7,
+   "ndcg@10": 0.546
+  },
+  "yogas": {
+   "hit@5": 0.75,
+   "hit@10": 0.75,
+   "primary@5": 0.75,
+   "recall@5": 0.75,
+   "recall@10": 0.75,
+   "mrr": 0.375,
+   "ndcg@10": 0.4802
+  }
+ },
+ "latency_ms": {
+  "p50": 31.9,
+  "p95": 69.0,
+  "mean": 34.8
+ },
+ "n": 63,
+ "per_query": [
+  {
+   "id": "indep_hi:dasha:01:hg",
+   "lang": "hg",
+   "ms": 29.2,
+   "top": [
+    "kb_dasha_mahadasha_effects#saturn-mahadasha-19-years#0",
+    "kb_dasha_antardasha_combinations#saturn-mahadasha-19-years-antardashas#1",
+    "kb_dasha_antardasha_combinations#saturn-mahadasha-19-years-antardashas#2",
+    "kb_dasha_sade_sati_dhaiya#variation-by-moon-sign-and-natal-saturn#0",
+    "kb_dasha_sade_sati_dhaiya#ashtama-shani-and-kantaka-shani-dhaiya#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.5,
+   "recall@10": 0.5,
+   "mrr": 1.0,
+   "ndcg@10": 0.6131471927654584
+  },
+  {
+   "id": "indep_hi:dasha:02:hg",
+   "lang": "hg",
+   "ms": 24.4,
+   "top": [
+    "kb_dasha_mahadasha_effects#rahu-mahadasha-18-years#0",
+    "kb_dasha_antardasha_combinations#rahu-mahadasha-18-years-antardashas#1",
+    "kb_dasha_antardasha_combinations#rahu-mahadasha-18-years-antardashas#2",
+    "kb_lang_glossary_hi_en#6-dasha-vocabulary-and-the-vimshottari-order#0",
+    "kb_dasha_mahadasha_effects#moon-mahadasha-10-years#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "indep_hi:dasha:03:hg",
+   "lang": "hg",
+   "ms": 12.7,
+   "top": [
+    "kb_dasha_antardasha_combinations#ketu-mahadasha-7-years-antardashas#1",
+    "kb_dasha_antardasha_combinations#ketu-mahadasha-7-years-antardashas#2",
+    "kb_dasha_vimshottari_foundations#the-order-and-years#0",
+    "kb_lang_hinglish_phrasebook#e-dasha-and-timing#0",
+    "kb_lang_glossary_hi_en#6-dasha-vocabulary-and-the-vimshottari-order#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 1.0,
+   "mrr": 0.125,
+   "ndcg@10": 0.3154648767857287
+  },
+  {
+   "id": "indep_hi:dasha:04:hg",
+   "lang": "hg",
+   "ms": 25.3,
+   "top": [
+    "kb_dasha_antardasha_combinations#venus-mahadasha-20-years-antardashas#2",
+    "kb_dasha_antardasha_combinations#saturn-mahadasha-19-years-antardashas#1",
+    "kb_dasha_antardasha_combinations#sun-mahadasha-6-years-antardashas#2",
+    "kb_dasha_vimshottari_foundations#what-the-system-is#0",
+    "indian_bphs#functional-benefics-and-malefics-by-ascendant#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.5,
+   "recall@10": 0.5,
+   "mrr": 0.5,
+   "ndcg@10": 0.3868528072345416
+  },
+  {
+   "id": "indep_hi:dasha:05:hg",
+   "lang": "hg",
+   "ms": 13.6,
+   "top": [
+    "kb_dasha_vimshottari_foundations#balance-of-the-first-dasha-at-birth#0",
+    "kb_chart_nakshatra_pada_and_ascendant_notes#what-can-be-said-with-moon-sign-nakshatra-sun-sign-alone#0",
+    "kb_dasha_alternative_systems#yogini-dasha-36-years#0",
+    "kb_lang_hinglish_phrasebook#e-dasha-and-timing#0",
+    "kb_lang_glossary_hi_en#6-dasha-vocabulary-and-the-vimshottari-order#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "indep_hi:dasha:01:hi",
+   "lang": "hi",
+   "ms": 19.8,
+   "top": [
+    "kb_dasha_vimshottari_foundations#historical-note#0",
+    "vedic_astrology#dasha-systems-vimshottari-dasha-120-year-cycle#0",
+    "indian_bphs#dasha-systems-vimshottari-dasha-120-year-cycle-ashtottari-da#0",
+    "kb_dasha_alternative_systems#important-nakshion-uses-vimshottari#0",
+    "kb_lang_glossary_hi_en#6-dasha-vocabulary-and-the-vimshottari-order#1"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.5,
+   "mrr": 0.14285714285714285,
+   "ndcg@10": 0.09180385079206221
+  },
+  {
+   "id": "indep_hi:dasha:02:hi",
+   "lang": "hi",
+   "ms": 52.7,
+   "top": [
+    "kb_dasha_antardasha_combinations#venus-mahadasha-20-years-antardashas#1",
+    "kb_dasha_mahadasha_effects#venus-mahadasha-20-years#0",
+    "kb_dasha_antardasha_combinations#venus-mahadasha-20-years-antardashas#2",
+    "kb_dasha_antardasha_combinations#jupiter-mahadasha-16-years-antardashas#1",
+    "kb_lang_hinglish_phrasebook#a-marriage-and-relationships-7th-house-venus-jupiter-navamsh#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.8213137146137828
+  },
+  {
+   "id": "indep_hi:dasha:03:hi",
+   "lang": "hi",
+   "ms": 49.7,
+   "top": [
+    "kb_dasha_antardasha_combinations#moon-mahadasha-10-years-antardashas#1",
+    "kb_dasha_antardasha_combinations#rahu-mahadasha-18-years-antardashas#2",
+    "kb_dasha_antardasha_combinations#jupiter-mahadasha-16-years-antardashas#1",
+    "kb_dasha_vimshottari_foundations#antardasha-proportions#0",
+    "indian_jaimini_sutras#pada-arudha-lagna-and-arudha-padas-arudha-lagna-al-arudha-pa#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "indep_hi:dasha:04:hi",
+   "lang": "hi",
+   "ms": 57.0,
+   "top": [
+    "kb_dasha_antardasha_combinations#jupiter-mahadasha-16-years-antardashas#1",
+    "kb_dasha_antardasha_combinations#saturn-mahadasha-19-years-antardashas#2",
+    "kb_dasha_gochara_and_dasha_interplay#double-transit-jupiter-saturn#0",
+    "kb_dasha_antardasha_combinations#moon-mahadasha-10-years-antardashas#1",
+    "kb_dasha_vimshottari_foundations#antardasha-proportions#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.3333333333333333,
+   "recall@10": 0.3333333333333333,
+   "mrr": 1.0,
+   "ndcg@10": 0.4692787260227565
+  },
+  {
+   "id": "indep_hi:sade_sati:01:hg",
+   "lang": "hg",
+   "ms": 69.0,
+   "top": [
+    "vedic_astrology#sade-sati-saturn-s-7-5-year-transit#0",
+    "kb_dasha_sade_sati_dhaiya#what-sade-sati-is#0",
+    "kb_dasha_sade_sati_dhaiya#variation-by-moon-sign-and-natal-saturn#0",
+    "kb_dasha_sade_sati_dhaiya#timing-computation-notes-for-implementers#0",
+    "kb_lang_hinglish_phrasebook#d-sade-sati-saturn-rahu-ketu-transits-gochar#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.6666666666666666,
+   "recall@10": 1.0,
+   "mrr": 0.5,
+   "ndcg@10": 0.6325392967583533
+  },
+  {
+   "id": "indep_hi:sade_sati:02:hg",
+   "lang": "hg",
+   "ms": 70.1,
+   "top": [
+    "kb_dasha_sade_sati_dhaiya#ashtama-shani-and-kantaka-shani-dhaiya#0",
+    "kb_lang_glossary_hi_en#9-transits-sade-sati-and-periods#0",
+    "kb_dasha_sade_sati_dhaiya#variation-by-moon-sign-and-natal-saturn#0",
+    "kb_dasha_sade_sati_dhaiya#what-sade-sati-is#0",
+    "vedic_astrology#sade-sati-saturn-s-7-5-year-transit#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.6,
+   "recall@10": 0.42857142857142855,
+   "mrr": 1.0,
+   "ndcg@10": 0.5306972923267993
+  },
+  {
+   "id": "indep_hi:sade_sati:03:hg",
+   "lang": "hg",
+   "ms": 38.9,
+   "top": [
+    "kb_dasha_sade_sati_dhaiya#variation-by-moon-sign-and-natal-saturn#0",
+    "vedic_astrology#sade-sati-saturn-s-7-5-year-transit#0",
+    "kb_dasha_sade_sati_dhaiya#what-sade-sati-is#0",
+    "kb_dasha_sade_sati_dhaiya#timing-computation-notes-for-implementers#0",
+    "kb_lang_hinglish_phrasebook#d-sade-sati-saturn-rahu-ketu-transits-gochar#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "indep_hi:sade_sati:01:hi",
+   "lang": "hi",
+   "ms": 20.9,
+   "top": [
+    "vedic_astrology#sade-sati-saturn-s-7-5-year-transit#0",
+    "kb_dasha_sade_sati_dhaiya#what-sade-sati-is#0",
+    "kb_dasha_sade_sati_dhaiya#timing-computation-notes-for-implementers#0",
+    "kb_dasha_sade_sati_dhaiya#variation-by-moon-sign-and-natal-saturn#0",
+    "kb_lang_hinglish_phrasebook#d-sade-sati-saturn-rahu-ketu-transits-gochar#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "indep_hi:sade_sati:02:hi",
+   "lang": "hi",
+   "ms": 39.0,
+   "top": [
+    "kb_dasha_sade_sati_dhaiya#variation-by-moon-sign-and-natal-saturn#0",
+    "kb_dasha_sade_sati_dhaiya#ashtama-shani-and-kantaka-shani-dhaiya#0",
+    "kb_dasha_antardasha_combinations#moon-mahadasha-10-years-antardashas#1",
+    "kb_dasha_sade_sati_dhaiya#timing-computation-notes-for-implementers#0",
+    "kb_dasha_antardasha_combinations#saturn-mahadasha-19-years-antardashas#2"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.6,
+   "recall@10": 0.42857142857142855,
+   "mrr": 1.0,
+   "ndcg@10": 0.5666867828578933
+  },
+  {
+   "id": "indep_hi:matching:01:hg",
+   "lang": "hg",
+   "ms": 47.0,
+   "top": [
+    "kb_match_ashtakoota_guna_milan#nadi-koota-8-points#0",
+    "kb_match_ashtakoota_guna_milan#bhakoot-rasi-koota-7-points#0",
+    "kb_match_ashtakoota_guna_milan#yoni-koota-4-points#0",
+    "kb_match_doshas_and_cancellations#nadi-dosha#0",
+    "kb_match_doshas_and_cancellations#what-dosha-means-in-matching#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.944847956559586
+  },
+  {
+   "id": "indep_hi:matching:02:hg",
+   "lang": "hg",
+   "ms": 17.4,
+   "top": [
+    "kb_match_ashtakoota_guna_milan#vashya-koota-2-points#0",
+    "kb_match_ashtakoota_guna_milan#overview#0",
+    "kb_match_ashtakoota_guna_milan#which-variant-the-nakshion-engine-uses-audit-2026-10-02#0",
+    "kb_match_doshas_and_cancellations#what-dosha-means-in-matching#0",
+    "nakshatras_deep_dive#nakshatra-compatibility-kuta-system#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.5,
+   "recall@10": 0.5,
+   "mrr": 1.0,
+   "ndcg@10": 0.6131471927654584
+  },
+  {
+   "id": "indep_hi:matching:03:hg",
+   "lang": "hg",
+   "ms": 16.0,
+   "top": [
+    "kb_match_ashtakoota_guna_milan#yoni-koota-4-points#0",
+    "kb_match_ashtakoota_guna_milan#yoni-koota-the-full-matrix#3",
+    "kb_match_ashtakoota_guna_milan#yoni-koota-the-full-matrix#2",
+    "kb_match_doshas_and_cancellations#what-dosha-means-in-matching#0",
+    "nakshatras_deep_dive#nakshatra-compatibility-kuta-system#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.6,
+   "recall@10": 0.6,
+   "mrr": 1.0,
+   "ndcg@10": 0.7227265726449518
+  },
+  {
+   "id": "indep_hi:matching:04:hg",
+   "lang": "hg",
+   "ms": 60.2,
+   "top": [
+    "kb_match_doshas_and_cancellations#manglik-kuja-mangal-dosha-the-rule#0",
+    "vedic_astrology#mangal-dosha-mars-affliction#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "kb_match_doshas_and_cancellations#manglik-dosha-cancellations#0",
+    "kb_chart_yogas_catalogue#mangal-dosha#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.9327783893101107
+  },
+  {
+   "id": "indep_hi:matching:05:hg",
+   "lang": "hg",
+   "ms": 78.4,
+   "top": [
+    "kb_match_ashtakoota_guna_milan#bhakoot-rasi-koota-7-points#0",
+    "kb_match_doshas_and_cancellations#bhakoot-dosha#0",
+    "kb_match_doshas_and_cancellations#what-dosha-means-in-matching#0",
+    "kb_match_doshas_and_cancellations#nadi-dosha#0",
+    "kb_chart_nakshatra_pada_and_ascendant_notes#what-can-be-said-with-moon-sign-nakshatra-sun-sign-alone#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 0.5,
+   "ndcg@10": 0.6309297535714574
+  },
+  {
+   "id": "indep_hi:matching:06:hg",
+   "lang": "hg",
+   "ms": 20.6,
+   "top": [
+    "kb_match_beyond_36_points#why-the-36-points-are-only-a-starting-layer#0",
+    "kb_panchang_daily_timings#the-basic-arithmetic#0",
+    "love_relationships#venus-your-love-style-venus-sign-interpretations#1",
+    "kb_match_beyond_36_points#moon-mind-and-emotional-fit#0",
+    "kb_match_beyond_36_points#upapada-lagna-jaimini#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 1.0,
+   "mrr": 0.1,
+   "ndcg@10": 0.2890648263178878
+  },
+  {
+   "id": "indep_hi:matching:01:hi",
+   "lang": "hi",
+   "ms": 20.1,
+   "top": [
+    "kb_match_ashtakoota_guna_milan#tara-dina-koota-3-points#0",
+    "kb_match_ashtakoota_guna_milan#overview#0",
+    "kb_match_ashtakoota_guna_milan#bhakoot-rasi-koota-7-points#0",
+    "kb_match_relationship_types#what-transfers-to-other-relationships#0",
+    "kb_panchang_five_limbs#nakshatra-as-day-quality#1"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.6666666666666666,
+   "recall@10": 0.6666666666666666,
+   "mrr": 1.0,
+   "ndcg@10": 0.819876640193745
+  },
+  {
+   "id": "indep_hi:matching:02:hi",
+   "lang": "hi",
+   "ms": 36.3,
+   "top": [
+    "kb_match_ashtakoota_guna_milan#gana-koota-6-points#0",
+    "predictive_techniques_advanced#solar-arc-directions-the-principle-why-solar-arcs-matter-key#0",
+    "kb_match_ashtakoota_guna_milan#yoni-koota-4-points#0",
+    "kb_match_ashtakoota_guna_milan#nadi-koota-8-points#0",
+    "kb_match_doshas_and_cancellations#gana-dosha#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "indep_hi:matching:03:hi",
+   "lang": "hi",
+   "ms": 30.1,
+   "top": [
+    "kb_match_doshas_and_cancellations#manglik-kuja-mangal-dosha-the-rule#0",
+    "vedic_astrology#mangal-dosha-mars-affliction#0",
+    "kb_match_doshas_and_cancellations#manglik-dosha-cancellations#0",
+    "kb_chart_yogas_catalogue#mangal-dosha#0",
+    "kb_match_doshas_and_cancellations#what-dosha-means-in-matching#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.9639404333166532
+  },
+  {
+   "id": "indep_hi:nakshatras:01:hg",
+   "lang": "hg",
+   "ms": 46.4,
+   "top": [
+    "nakshatras_deep_dive#4-rohini-10-00-23-20-taurus#0",
+    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#21-uttara-ashadha-26-40-sagittarius-10-00-capricorn#0",
+    "kb_chart_nakshatra_pada_and_ascendant_notes#the-lagna-and-its-nakshatra#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "indep_hi:nakshatras:02:hg",
+   "lang": "hg",
+   "ms": 23.1,
+   "top": [
+    "kb_dasha_vimshottari_foundations#nakshatra-to-lord-mapping#0",
+    "vedic_astrology#the-27-nakshatras-13-hasta-10-00-23-20-virgo-14-chitra-23-20#0",
+    "nakshatras_deep_dive#15-swati-6-40-20-00-libra#0",
+    "kb_panchang_five_limbs#nakshatra-as-day-quality#0",
+    "kb_chart_nakshatra_pada_and_ascendant_notes#the-lagna-and-its-nakshatra#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.6885288809404666
+  },
+  {
+   "id": "indep_hi:nakshatras:03:hg",
+   "lang": "hg",
+   "ms": 22.4,
+   "top": [
+    "nakshatras_deep_dive#7-punarvasu-20-00-gemini-3-20-cancer#0",
+    "vedic_astrology#the-27-nakshatras-6-ardra-6-40-20-00-gemini-7-punarvasu-20-0#0",
+    "predictive_techniques_advanced#solar-arc-directions-the-principle-why-solar-arcs-matter-key#0",
+    "houses#tenth-house-the-midheaven-mc-life-area-natural-sign-ruler-cl#0",
+    "career_astrology#6th-house-vs-10th-house#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "indep_hi:nakshatras:04:hg",
+   "lang": "hg",
+   "ms": 31.9,
+   "top": [
+    "nakshatras_deep_dive#17-anuradha-3-20-16-40-scorpio#0",
+    "vedic_astrology#the-27-nakshatras-17-anuradha-3-20-16-40-scorpio-18-jyeshtha#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "nakshatras_deep_dive#21-uttara-ashadha-26-40-sagittarius-10-00-capricorn#0",
+    "kb_chart_nakshatra_pada_and_ascendant_notes#the-lagna-and-its-nakshatra#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "indep_hi:nakshatras:01:hi",
+   "lang": "hi",
+   "ms": 53.4,
+   "top": [
+    "vedic_astrology#the-27-nakshatras-1-ashwini-0-00-13-20-aries-2-bharani-13-20#0",
+    "nakshatras_deep_dive#2-bharani-13-20-26-40-aries#0",
+    "kb_panchang_five_limbs#karana-half-a-tithi#0",
+    "kb_panchang_five_limbs#nakshatra-as-day-quality#0",
+    "kb_chart_nakshatra_pada_and_ascendant_notes#pada-to-navamsa-quick-mapping#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 0.5,
+   "ndcg@10": 0.6240505200038378
+  },
+  {
+   "id": "indep_hi:nakshatras:02:hi",
+   "lang": "hi",
+   "ms": 26.7,
+   "top": [
+    "nakshatras_deep_dive#18-jyeshtha-16-40-30-00-scorpio#0",
+    "vedic_astrology#the-27-nakshatras-17-anuradha-3-20-16-40-scorpio-18-jyeshtha#0",
+    "kb_panchang_five_limbs#tithi-deities-adhidevata#0",
+    "kb_dasha_vimshottari_foundations#nakshatra-to-lord-mapping#0",
+    "kb_lang_glossary_hi_en#5-the-27-nakshatras#2"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "indep_hi:nakshatras:03:hi",
+   "lang": "hi",
+   "ms": 39.2,
+   "top": [
+    "vedic_astrology#the-27-nakshatras-20-purva-ashadha-13-20-26-40-sagittarius-2#0",
+    "nakshatras_deep_dive#23-dhanishta-23-20-capricorn-6-40-aquarius#0",
+    "indian_bphs#graha-drishti-planetary-aspects-in-bphs-all-planets-special-#0",
+    "indian_jaimini_sutras#chara-karakas-variable-significators-the-seven-or-eight-kara#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 0.5,
+   "ndcg@10": 0.6309297535714574
+  },
+  {
+   "id": "indep_hi:dignity:01:hg",
+   "lang": "hg",
+   "ms": 39.4,
+   "top": [
+    "kb_chart_planets_in_signs_dignity#exaltation-and-debilitation-uccha-neecha#0",
+    "timing_transits#mercury-retrograde-what-it-actually-means-what-happens-actua#0",
+    "daily_guidance#mercury-retrograde-survival-guide-before-mercury-retrograde-#0",
+    "planets#mercury-core-archetype-function-psychological-representation#0",
+    "kb_chart_planets_in_houses_vedic#mercury-in-the-houses-mercury-in-the-1st-house-mercury-in-th#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.25,
+   "recall@10": 0.25,
+   "mrr": 1.0,
+   "ndcg@10": 0.6576630675781056
+  },
+  {
+   "id": "indep_hi:dignity:02:hg",
+   "lang": "hg",
+   "ms": 42.4,
+   "top": [
+    "kb_panchang_gochara_transit_rules#chandra-gochara-the-moon-through-the-12-houses#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "daily_guidance#void-of-course-moon-timing-voc-moon-rules-monthly-voc-moon-p#0",
+    "kb_dasha_antardasha_combinations#moon-mahadasha-10-years-antardashas#1",
+    "kb_match_beyond_36_points#moon-mind-and-emotional-fit#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 1.0,
+   "mrr": 0.16666666666666666,
+   "ndcg@10": 0.3562071871080222
+  },
+  {
+   "id": "indep_hi:dignity:03:hg",
+   "lang": "hg",
+   "ms": 36.0,
+   "top": [
+    "vedic_astrology#mangal-dosha-mars-affliction#0",
+    "kb_chart_planets_in_signs_dignity#combustion-asta#0",
+    "kb_chart_planets_in_houses_vedic#mars-in-the-houses-mars-in-the-1st-house-mars-in-the-2nd-hou#0",
+    "kb_chart_yogas_catalogue#mangal-dosha#0",
+    "kb_chart_planets_in_houses_vedic#mars-in-the-houses-mars-in-the-5th-house-mars-in-the-6th-hou#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 0.5,
+   "ndcg@10": 0.6309297535714574
+  },
+  {
+   "id": "indep_hi:dignity:01:hi",
+   "lang": "hi",
+   "ms": 32.6,
+   "top": [
+    "kb_chart_planets_in_signs_dignity#exaltation-and-debilitation-uccha-neecha#0",
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0",
+    "planets#jupiter-core-archetype-function-psychological-representation#0",
+    "planets#jupiter-retrograde-transit-effects-speed-orbital-period#0",
+    "kb_chart_planets_in_houses_vedic#jupiter-in-the-houses-jupiter-in-the-1st-house-jupiter-in-th#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.25,
+   "recall@10": 0.25,
+   "mrr": 1.0,
+   "ndcg@10": 0.6576630675781056
+  },
+  {
+   "id": "indep_hi:dignity:02:hi",
+   "lang": "hi",
+   "ms": 23.3,
+   "top": [
+    "kb_match_ashtakoota_guna_milan#graha-maitri-koota-5-points#0",
+    "kb_match_ashtakoota_guna_milan#regional-variants#0",
+    "kb_match_ashtakoota_guna_milan#overview#0",
+    "indian_bphs#graha-planetary-characteristics-in-detail-the-nine-grahas#0",
+    "kb_match_beyond_36_points#moon-mind-and-emotional-fit#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "indep_hi:panchang:01:hg",
+   "lang": "hg",
+   "ms": 42.3,
+   "top": [
+    "kb_panchang_daily_timings#rahu-kaal-rahu-kalam#0",
+    "kb_panchang_daily_timings#gulika-kaal-gulika-kalam#0",
+    "kb_panchang_daily_timings#hora-planetary-hours#0",
+    "kb_panchang_five_limbs#vara-weekday-and-its-lord#0",
+    "kb_dasha_antardasha_combinations#venus-mahadasha-20-years-antardashas#1"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.6,
+   "recall@10": 0.3,
+   "mrr": 1.0,
+   "ndcg@10": 0.46900009332067477
+  },
+  {
+   "id": "indep_hi:panchang:02:hg",
+   "lang": "hg",
+   "ms": 17.8,
+   "top": [
+    "kb_panchang_daily_timings#brahma-muhurta#0",
+    "kb_panchang_daily_timings#abhijit-muhurta#0",
+    "kb_panchang_daily_timings#other-short-windows-seen-in-panchangs-brief#0",
+    "kb_panchang_muhurta_basics#eclipses-grahana-in-muhurta#0",
+    "kb_panchang_muhurta_basics#how-to-present-muhurta-to-users#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.6,
+   "recall@10": 0.3,
+   "mrr": 1.0,
+   "ndcg@10": 0.46900009332067477
+  },
+  {
+   "id": "indep_hi:panchang:03:hg",
+   "lang": "hg",
+   "ms": 9.3,
+   "top": [
+    "kb_panchang_muhurta_basics#panchaka-panchak#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "indep_hi:panchang:04:hg",
+   "lang": "hg",
+   "ms": 32.9,
+   "top": [
+    "kb_panchang_eclipses_and_special_days#ekadashi-the-11th-tithi#0",
+    "kb_panchang_five_limbs#tithi-the-lunar-day#0",
+    "kb_remedy_traditional_remedies#6-deity-worship-and-temple-practices#0",
+    "kb_panchang_five_limbs#overview#0",
+    "kb_panchang_five_limbs#karana-half-a-tithi#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.2,
+   "recall@10": 0.3,
+   "mrr": 1.0,
+   "ndcg@10": 0.3718539573761156
+  },
+  {
+   "id": "indep_hi:panchang:01:hi",
+   "lang": "hi",
+   "ms": 66.6,
+   "top": [
+    "kb_panchang_five_limbs#tithi-the-lunar-day#0",
+    "kb_panchang_five_limbs#nakshatra-as-day-quality#0",
+    "kb_panchang_eclipses_and_special_days#ekadashi-the-11th-tithi#0",
+    "kb_panchang_five_limbs#karana-half-a-tithi#0",
+    "kb_panchang_eclipses_and_special_days#eclipses-grahana#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "indep_hi:panchang:02:hi",
+   "lang": "hi",
+   "ms": 12.9,
+   "top": [
+    "kb_panchang_muhurta_basics#chaturmas#0",
+    "kb_panchang_muhurta_basics#by-activity-traditional-preferences#0",
+    "kb_panchang_muhurta_basics#the-layered-method#0",
+    "kb_panchang_vedic_calendar_basics#major-astronomically-tied-festivals-brief#0",
+    "kb_lang_core_topics_hi#6#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "indep_hi:panchang:03:hi",
+   "lang": "hi",
+   "ms": 28.3,
+   "top": [
+    "vedic_astrology#important-yogas-raja-yoga-royal-combination-dhana-yoga-wealt#0",
+    "kb_chart_yogas_catalogue#yogas-outside-the-engine-for-completeness-sakata-yoga-not-co#0",
+    "kb_panchang_five_limbs#yoga-the-27-nitya-yogas#0",
+    "indian_bphs#yoga-formations-significant-named-yogas#0",
+    "kb_chart_yogas_catalogue#kemadruma-yoga#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 0.3333333333333333,
+   "ndcg@10": 0.5
+  },
+  {
+   "id": "indep_hi:panchang:04:hi",
+   "lang": "hi",
+   "ms": 14.2,
+   "top": [
+    "kb_dasha_antardasha_combinations#moon-mahadasha-10-years-antardashas#2",
+    "kb_dasha_vimshottari_foundations#balance-of-the-first-dasha-at-birth#0",
+    "kb_dasha_antardasha_combinations#moon-mahadasha-10-years-antardashas#1",
+    "kb_dasha_vimshottari_foundations#pratyantardasha-proportions#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "indep_hi:panchang:05:hi",
+   "lang": "hi",
+   "ms": 43.4,
+   "top": [
+    "indian_jaimini_sutras#jaimini-dasha-systems-chara-dasha-movable-period-system-sthi#0",
+    "kb_chart_divisional_charts#d4-chaturthamsa-property-fixed-assets-home#0",
+    "nakshatras_deep_dive#20-purva-ashadha-13-20-26-40-sagittarius#0",
+    "kb_dasha_vimshottari_foundations#nakshatra-to-lord-mapping#0",
+    "vedic_astrology#the-27-nakshatras-20-purva-ashadha-13-20-26-40-sagittarius-2#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "indep_hi:gochara:01:hg",
+   "lang": "hg",
+   "ms": 44.3,
+   "top": [
+    "kb_dasha_gochara_and_dasha_interplay#double-transit-jupiter-saturn#0",
+    "kb_lang_hinglish_phrasebook#d-sade-sati-saturn-rahu-ketu-transits-gochar#1",
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0",
+    "timing_transits#saturn-return-ages-28-30-57-59-86-88-first-saturn-return-age#0",
+    "kb_dasha_antardasha_combinations#saturn-mahadasha-19-years-antardashas#2"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.2,
+   "recall@10": 0.125,
+   "mrr": 1.0,
+   "ndcg@10": 0.2529427027676572
+  },
+  {
+   "id": "indep_hi:gochara:02:hg",
+   "lang": "hg",
+   "ms": 31.4,
+   "top": [
+    "kb_panchang_gochara_transit_rules#favourable-houses-from-the-natal-moon-summary-table#0",
+    "kb_panchang_gochara_transit_rules#mars-about-45-days-per-sign#0",
+    "kb_dasha_gochara_and_dasha_interplay#gochara-from-the-moon-baseline-favourable-houses#0",
+    "kb_panchang_gochara_transit_rules#chandra-gochara-the-moon-through-the-12-houses#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "indep_hi:gochara:03:hg",
+   "lang": "hg",
+   "ms": 10.1,
+   "top": [
+    "kb_dasha_gochara_and_dasha_interplay#the-core-idea-dasha-sets-the-season-transit-sets-the-moment#0",
+    "kb_dasha_gochara_and_dasha_interplay#double-transit-jupiter-saturn#0",
+    "kb_match_beyond_36_points#dasha-and-transit-compatibility#0",
+    "kb_dasha_gochara_and_dasha_interplay#ashtakavarga-bindu-strength#0",
+    "kb_dasha_vimshottari_foundations#reading-a-dasha-with-chart-context#1"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "indep_hi:gochara:01:hi",
+   "lang": "hi",
+   "ms": 49.6,
+   "top": [
+    "kb_chart_planets_in_houses_vedic#sun-in-the-houses-sun-in-the-1st-house-sun-in-the-2nd-house-#0",
+    "kb_chart_planets_in_houses_vedic#saturn-in-the-houses-saturn-in-the-1st-house-saturn-in-the-2#0",
+    "timing_transits#saturn-return-ages-28-30-57-59-86-88-first-saturn-return-age#0",
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0",
+    "kb_dasha_antardasha_combinations#sun-mahadasha-6-years-antardashas#2"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.1,
+   "mrr": 0.14285714285714285,
+   "ndcg@10": 0.07336392209936006
+  },
+  {
+   "id": "indep_hi:yogas:01:hg",
+   "lang": "hg",
+   "ms": 25.0,
+   "top": [
+    "vedic_astrology#important-yogas-raja-yoga-royal-combination-dhana-yoga-wealt#0",
+    "kb_chart_yogas_catalogue#budhaditya-yoga#0",
+    "kb_chart_planets_in_signs_dignity#combustion-asta#0",
+    "timing_transits#mercury-retrograde-what-it-actually-means-what-happens-actua#0",
+    "kb_chart_yogas_catalogue#yogas-outside-the-engine-for-completeness-sakata-yoga-not-co#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 0.5,
+   "ndcg@10": 0.6590018048024133
+  },
+  {
+   "id": "indep_hi:yogas:02:hg",
+   "lang": "hg",
+   "ms": 33.9,
+   "top": [
+    "vedic_astrology#important-yogas-raja-yoga-royal-combination-dhana-yoga-wealt#0",
+    "kb_chart_yogas_catalogue#chandra-mangala-yoga#0",
+    "kb_chart_yogas_catalogue#mangal-dosha#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "kb_dasha_antardasha_combinations#mars-mahadasha-7-years-antardashas#2"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 0.5,
+   "ndcg@10": 0.6309297535714574
+  },
+  {
+   "id": "indep_hi:yogas:01:hi",
+   "lang": "hi",
+   "ms": 23.4,
+   "top": [
+    "vedic_astrology#important-yogas-raja-yoga-royal-combination-dhana-yoga-wealt#0",
+    "kb_chart_yogas_catalogue#viparita-raja-yoga#0",
+    "indian_bphs#yoga-formations-significant-named-yogas#0",
+    "indian_bphs#yoga-formations-pancha-mahapurusha-yogas-five-great-person-y#0",
+    "kb_chart_yogas_catalogue#how-the-engine-measures-strength#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 0.5,
+   "ndcg@10": 0.6309297535714574
+  },
+  {
+   "id": "indep_hi:yogas:02:hi",
+   "lang": "hi",
+   "ms": 11.3,
+   "top": [
+    "vedic_astrology#important-yogas-raja-yoga-royal-combination-dhana-yoga-wealt#0",
+    "kb_chart_yogas_catalogue#yogas-outside-the-engine-for-completeness-sakata-yoga-not-co#0",
+    "kb_panchang_five_limbs#yoga-the-27-nitya-yogas#0",
+    "indian_bphs#yoga-formations-significant-named-yogas#0",
+    "kb_chart_yogas_catalogue#kemadruma-yoga#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "indep_hi:remedies:01:hg",
+   "lang": "hg",
+   "ms": 77.3,
+   "top": [
+    "remedial_astrology#charity-and-donation-remedies#0",
+    "kb_dasha_sade_sati_dhaiya#ashtama-shani-and-kantaka-shani-dhaiya#0",
+    "kb_remedy_traditional_remedies#4-charity-daan#0",
+    "kb_dasha_sade_sati_dhaiya#the-three-phases#0",
+    "kb_dasha_sade_sati_dhaiya#what-sade-sati-is#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.2,
+   "recall@10": 0.42857142857142855,
+   "mrr": 0.3333333333333333,
+   "ndcg@10": 0.18211203732539427
+  },
+  {
+   "id": "indep_hi:remedies:02:hg",
+   "lang": "hg",
+   "ms": 26.6,
+   "top": [
+    "remedial_astrology#gemstone-therapy-gemstone-recommendations-by-planet#1",
+    "vedic_astrology#remedies-upayas-gemstones-mantras#0",
+    "kb_remedy_traditional_remedies#7-gemstones-ratna-classical-rules-and-cautions#0",
+    "indian_bphs#graha-planetary-characteristics-in-detail-the-nine-grahas#2",
+    "kb_remedy_lifestyle_and_ethics#5-example-responses-pattern-not-scripts#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.3333333333333333,
+   "recall@10": 0.3333333333333333,
+   "mrr": 0.3333333333333333,
+   "ndcg@10": 0.2781491965442198
+  },
+  {
+   "id": "indep_hi:remedies:03:hg",
+   "lang": "hg",
+   "ms": 41.0,
+   "top": [
+    "kb_remedy_traditional_remedies#8-rudraksha#0",
+    "kb_remedy_traditional_remedies#2-planet-by-planet-table-traditional-conventions#4",
+    "kb_remedy_traditional_remedies#2-planet-by-planet-table-traditional-conventions#2",
+    "kb_dasha_sade_sati_dhaiya#ashtama-shani-and-kantaka-shani-dhaiya#0",
+    "kb_dasha_sade_sati_dhaiya#the-three-phases#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.6,
+   "recall@10": 0.3,
+   "mrr": 1.0,
+   "ndcg@10": 0.46900009332067477
+  },
+  {
+   "id": "indep_hi:remedies:04:hg",
+   "lang": "hg",
+   "ms": 56.1,
+   "top": [
+    "indian_bphs#functional-benefics-and-malefics-by-ascendant#0",
+    "kb_chart_functional_nature_by_lagna#the-rules-in-brief#0",
+    "kb_chart_functional_nature_by_lagna#pisces-meena-lagna#0",
+    "kb_chart_functional_nature_by_lagna#overview#0",
+    "remedial_astrology#gemstone-therapy-vedic-gemstone-principles#0"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 1.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.14285714285714285,
+   "mrr": 0.16666666666666666,
+   "ndcg@10": 0.03735818091986814
+  },
+  {
+   "id": "indep_hi:remedies:01:hi",
+   "lang": "hi",
+   "ms": 21.7,
+   "top": [
+    "remedial_astrology#practical-guidelines-for-ai-assisted-remedies#0",
+    "remedial_astrology#charity-and-donation-remedies#0",
+    "vedic_astrology#remedies-upayas-other-remedies#0",
+    "kb_remedy_traditional_remedies#0-how-an-assistant-should-present-remedies#0",
+    "kb_remedy_traditional_remedies#1-where-remedies-come-from-brief-history#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.5,
+   "recall@10": 0.5,
+   "mrr": 0.25,
+   "ndcg@10": 0.26406812257259094
+  },
+  {
+   "id": "indep_hi:remedies:02:hi",
+   "lang": "hi",
+   "ms": 21.8,
+   "top": [
+    "vedic_astrology#remedies-upayas-gemstones-mantras#0",
+    "kb_remedy_traditional_remedies#7-gemstones-ratna-classical-rules-and-cautions#1",
+    "remedial_astrology#gemstone-therapy-vedic-gemstone-principles#0",
+    "remedial_astrology#practical-guidelines-for-ai-assisted-remedies#0",
+    "remedial_astrology#gemstone-therapy-gemstone-recommendations-by-planet#1"
+   ],
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "primary@5": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
+  },
+  {
+   "id": "indep_hi:houses:01:hg",
+   "lang": "hg",
+   "ms": 27.4,
+   "top": [
+    "kb_chart_planets_in_houses_vedic#saturn-in-the-houses-saturn-in-the-9th-house-saturn-in-the-1#0",
+    "career_astrology#jupiter-and-saturn-as-career-indicators-jupiter-the-expander#0",
+    "houses#tenth-house-the-midheaven-mc-life-area-natural-sign-ruler-cl#0",
+    "kb_lang_hinglish_phrasebook#b-career-job-business-10th-house-saturn-sun-mercury-dasha#1",
+    "kb_lang_hinglish_phrasebook#b-career-job-business-10th-house-saturn-sun-mercury-dasha#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "indep_hi:houses:02:hg",
+   "lang": "hg",
+   "ms": 44.4,
+   "top": [
+    "kb_match_beyond_36_points#the-seventh-house-and-its-lord#0",
+    "kb_chart_house_lords_in_houses#7th-lord-in-each-house#0",
+    "kb_lang_hinglish_phrasebook#a-marriage-and-relationships-7th-house-venus-jupiter-navamsh#0",
+    "kb_match_beyond_36_points#venus-and-jupiter-as-relationship-significators#0",
+    "kb_match_beyond_36_points#dasha-and-transit-compatibility#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 0.5,
+   "ndcg@10": 0.6309297535714574
+  },
+  {
+   "id": "indep_hi:houses:03:hg",
+   "lang": "hg",
+   "ms": 36.0,
+   "top": [
+    "kb_chart_planets_in_houses_vedic#moon-in-the-houses-moon-in-the-5th-house-moon-in-the-6th-hou#0",
+    "kb_panchang_gochara_transit_rules#chandra-gochara-the-moon-through-the-12-houses#0",
+    "predictive_techniques_advanced#secondary-progressions-the-principle-key-progressed-factors#0",
+    "daily_guidance#void-of-course-moon-timing-voc-moon-rules-monthly-voc-moon-p#0",
+    "kb_match_beyond_36_points#moon-mind-and-emotional-fit#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "indep_hi:houses:01:hi",
+   "lang": "hi",
+   "ms": 49.4,
+   "top": [
+    "kb_chart_house_lords_in_houses#5th-lord-in-each-house#0",
+    "kb_chart_house_lords_in_houses#9th-lord-in-each-house#0",
+    "kb_lang_hinglish_phrasebook#c-education-and-exams-4th-5th-9th-mercury-jupiter#0",
+    "houses#ninth-house-life-area-natural-sign-ruler-classification-plan#0",
+    "houses#fifth-house-life-area-natural-sign-ruler-classification-plan#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  },
+  {
+   "id": "indep_hi:houses:02:hi",
+   "lang": "hi",
+   "ms": 30.0,
+   "top": [
+    "kb_chart_planets_in_houses_vedic#sun-in-the-houses-sun-in-the-9th-house-sun-in-the-10th-house#0",
+    "kb_lang_hinglish_phrasebook#b-career-job-business-10th-house-saturn-sun-mercury-dasha#0",
+    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "kb_chart_planets_in_houses_vedic#sun-in-the-houses-sun-in-the-5th-house-sun-in-the-6th-house-#0",
+    "kb_chart_planets_in_houses_vedic#sun-in-the-houses-sun-in-the-1st-house-sun-in-the-2nd-house-#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
+  }
+ ],
+ "label": "fresh-off",
+ "config": "A6-phonetic",
+ "embedder": "BAAI/bge-small-en-v1.5",
+ "chunks": 776
+}

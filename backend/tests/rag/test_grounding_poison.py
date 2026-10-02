@@ -148,4 +148,4 @@ async def test_retrieval_exception_is_flagged_and_swallowed():
     p = FakeProvider([reply(GOOD, ["N.SUN.SIGN.CANCER"])])
     res = await ChatResponder(LLMRouter(S, {"fake": Dispatch(p)}), retriever=Boom()).answer(
         ChatInput(chart_data=CHART, question="What does my Sun sign say about my career?", history=[]))
-    assert res["metadata"]["rag"] == {"used": True, "degraded": True, "reason": "error", "hits": 0}
+    assert res["metadata"]["rag"] == {"used": True, "degraded": True, "reason": "error", "hits": 0, "low_confidence": False}

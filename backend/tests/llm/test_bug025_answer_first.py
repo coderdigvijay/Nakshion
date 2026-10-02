@@ -1,4 +1,4 @@
-"""BUG-025: answer-first chat (chat@v7), the question-type classifier and the answer-shape validators.
+"""BUG-025: answer-first chat (chat@v8), the question-type classifier and the answer-shape validators.
 
 Live finding: "What does Mars mahadasha with Venus antardasha mean?" was answered with the user's own Venus/Mercury
 period. The claim checker flagged "Mars Mahadasha" as "not the current dasha", the repair then rewrote the answer
@@ -230,7 +230,7 @@ def test_chat_v7_renders_the_answer_shape_and_keeps_v6_locked():
     from app.llm.prompts import get_registry
 
     reg = get_registry()
-    assert reg.verify() == [] and reg.active_version("chat") == "v7"
+    assert reg.verify() == [] and reg.active_version("chat") == "v8"
     kw = dict(streaming=False, language_instruction="English.", length_hint="100 to 180 words")
     g = reg.render("chat", answer_mode="general", **kw).text
     assert "general question" in g and "Name the thing asked about" in g

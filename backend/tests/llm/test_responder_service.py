@@ -60,7 +60,7 @@ async def test_happy_path_grounded_answer(chart):
     assert [c["factor_id"] for c in res["citations"]] == CITES
     assert res["citations"][0]["label"].startswith("Natal Sun in Cancer")
     md = res["metadata"]
-    assert md["outcome"] == "ok" and md["prompt_version"] == "chat@v7" and md["validator_flags"] == []
+    assert md["outcome"] == "ok" and md["prompt_version"] == "chat@v8" and md["validator_flags"] == []
     assert md["chart_engine_version"] == "1.0.0-synthetic" and "factor_ids_provided" in md
     assert res["tokens_used"] == 150
 

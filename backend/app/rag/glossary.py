@@ -22,8 +22,13 @@ from app.llm.lexicon import (
 )
 
 
+_ZW = dict.fromkeys(map(ord, "\u200b\u200c\u200d\u2060\ufeff"))
+
+
 def norm(s: str) -> str:
-    s = unicodedata.normalize("NFD", s).replace("़", "")  # drop nukta: ढ़ == ढ
+    """NFC, lower case, nukta dropped (ढ़ == ढ), zero-width joiners removed, chandrabindu folded into anusvara
+    (हूँ == हूं): the spellings Hindi writers mix freely."""
+    s = unicodedata.normalize("NFD", s).replace("़", "").translate(_ZW).replace("ँ", "ं")
     return unicodedata.normalize("NFC", s).lower()
 
 
@@ -108,6 +113,12 @@ _RAW: dict[str, str] = {
     "राहु काल": "rahu kaal rahu kalam", "राहुकाल": "rahu kaal rahu kalam", "rahu kaal": "rahu kaal rahu kalam",
     "rahukaal": "rahu kaal rahu kalam", "rahu kalam": "rahu kaal rahu kalam", "rahukalam": "rahu kaal rahu kalam",
     "कालसर्प": "kaal sarp dosha", "kalsarp": "kaal sarp dosha", "kaalsarp": "kaal sarp dosha",
+    "swami": "lord", "svami": "lord", "adhipati": "lord", "sa": "", "confused": "", "hu": "",
+    "उच्च": "exalted exaltation", "ucch": "exalted exaltation", "uch": "exalted exaltation", "uccha": "exalted exaltation",
+    "नीच": "debilitated debilitation", "neech": "debilitated debilitation", "nich": "debilitated debilitation",
+    "neecha": "debilitated debilitation", "नीचभंग": "neecha bhanga debilitation cancellation",
+    "neechbhang": "neecha bhanga debilitation cancellation", "रज्जु": "rajju porutham", "rajju": "rajju porutham",
+    "वेध": "vedha porutham", "vedha": "vedha porutham", "porutham": "porutham regional variants",
     "मूलत्रिकोण": "moolatrikona", "mooltrikona": "moolatrikona", "मुहूर्त": "muhurta", "muhurat": "muhurta",
     "तिथि": "tithi lunar day", "tithi": "tithi lunar day", "पंचांग": "panchang", "panchang": "panchang",
     "स्वामी": "lord", "अधिपति": "lord", "भावेश": "house lord", "अर्थ": "meaning", "मतलब": "meaning",
@@ -128,6 +139,14 @@ _STOP_HI = set("""क्या है हैं और के का की क�
 _STOP = {norm(w) for w in _STOP_EN | _STOP_HI}
 
 GLOSS: dict[str, str] = {norm(k): v for k, v in _RAW.items()}
+from app.rag import vocab as _vocab  # noqa: E402  (complete vocabulary classes; hand-written entries above win)
+
+_ORD = _vocab.ordinal_keys()
+for _k, _v in _vocab.build().items():
+    if _k in _ORD:
+        GLOSS[norm(_k)] = _v
+    else:
+        GLOSS.setdefault(norm(_k), _v)
 _PHRASES = sorted((k for k in GLOSS if " " in k), key=len, reverse=True)
 
 # Devanagari nakshatra names (+ common spellings) -> canonical English name
@@ -141,7 +160,10 @@ _NAK_HI = {
     "उत्तरा भाद्रपद": "Uttara Bhadrapada", "रेवती": "Revati",
 }
 NAK_HI = {norm(k): v for k, v in _NAK_HI.items()}
+_nd, _nr = _vocab.nakshatra_forms()
+NAK_HI.update({norm(k): v for k, v in _nd.items()})
 NAK_ROMAN = {n.lower(): n for n in NAKSHATRAS}
+NAK_ROMAN.update({k: v for k, v in _nr.items() if " " not in k})
 NAK_ROMAN.update({"krittika": "Krittika", "kritika": "Krittika", "ashvini": "Ashwini", "mrigshira": "Mrigashira",
                   "jyestha": "Jyeshtha", "shatabisha": "Shatabhisha", "shravan": "Shravana"})
 
@@ -203,10 +225,37 @@ def _ensure_file_gloss() -> None:
     _PHRASES = sorted((k for k in GLOSS if " " in k), key=len, reverse=True)
 
 
+_ENGLISH_KEEP = frozenset(("career", "love", "marriage", "money", "health", "job", "business", "remedy", "remedies", "lord", "result",
+                           "effect", "effects", "sign", "house", "transit", "dasha", "period", "yoga", "dosha", "mantra", "good", "bad",
+                           "strong", "weak", "rahu", "ketu", "moon", "sun", "mars", "venus", "saturn", "jupiter", "mercury"))
+_HINGLISH_MARK = re.compile(r"\b(?:hai|hain|hota|hoti|hote|kya|kaun|kab|kahan|mein|me|ka|ki|ke|ko|se|nahi|kaise|kitna|batao|bataiye|aur|ya)\b")
+
+
+# Roman spelling variants of Sanskrit terms -> the spelling the knowledge base uses (applied to Roman text only).
+_SPELL = [
+    (r"\bu+tt?ra\b", "uttara"), (r"\bu+ttar\b", "uttara"), (r"\bpo+r?v[ae]?\b", "purva"), (r"\bpurv\b", "purva"),
+    (r"\bbhadrapad\b", "bhadrapada"), (r"\bbhadrapada?\b", "bhadrapada"), (r"\bas+h?ad+h?a?\b", "ashadha"),
+    (r"\bfalguni\b", "phalguni"), (r"\b(?:sat|shat)b?h?i+sh?a\b", "shatabhisha"), (r"\bdhanish?th?a\b", "dhanishta"),
+    (r"\bj[yi]e?sh?th?a\b", "jyeshtha"), (r"\bmri?g?sh?ira\b", "mrigashira"), (r"\bkri?tt?ika\b", "krittika"),
+    (r"\b(purva|uttara)\s*bhadra\b", r"\1 bhadrapada"), (r"\bsvati\b", "swati"), (r"\bvi?sh?akh?a\b", "vishakha"), (r"\bmahadasa\b|\bmahadasha\b", "mahadasha"),
+    (r"\bantardasa\b|\bantar dasa\b", "antardasha"), (r"\bnakshat(?:ar|ra)?\b", "nakshatra"),
+    (r"\bsani\b|\bshanee\b", "shani"), (r"\bgun milan\b|\bgunmilan\b", "guna milan"), (r"\bmangala\b", "mangal"),
+    (r"\bsade ?saati\b|\bsadhe ?sati\b|\bsaadhe ?saati\b", "sade sati"), (r"\bkundali\b", "kundli"),
+]
+_SPELL_RE = [(re.compile(a), b) for a, b in _SPELL]
+
+
+def canon_spelling(t: str) -> str:
+    for rx, rep in _SPELL_RE:
+        t = rx.sub(rep, t)
+    return t
+
+
 def gloss_terms(text: str, *, phonetic: bool = True) -> list[str]:
     """English search terms for a question in English / Hindi / Hinglish. Order-preserving, de-duplicated."""
     _ensure_file_gloss()
-    t = norm(text)
+    t = _vocab.expand_numeric(canon_spelling(norm(text)))
+    hinglish = len(_HINGLISH_MARK.findall(t)) >= 1
     out: list[str] = []
     for tokn in re.findall(r"\b\d{1,2}(?:st|nd|rd|th)\b", t):          # keep "7th" next to "seventh": headings use both
         out.append(tokn)
@@ -216,7 +265,7 @@ def gloss_terms(text: str, *, phonetic: bool = True) -> list[str]:
             t = t.replace(ph, " ")
     for nk, canon in sorted(NAK_HI.items(), key=lambda kv: len(kv[0]), reverse=True):
         if nk in t and len(nk) > 2:
-            out.append(canon.lower())
+            out.extend(canon.lower().split())
             t = t.replace(nk, " ")
     for tok in _TOKEN.findall(t):
         if tok in _STOP or len(tok) < 2:
@@ -226,7 +275,7 @@ def gloss_terms(text: str, *, phonetic: bool = True) -> list[str]:
             out.extend(g.split())
             continue
         if tok in NAK_ROMAN:
-            out.append(NAK_ROMAN[tok].lower())
+            out.extend(NAK_ROMAN[tok].lower().split())
             continue
         planet = PLANET_LOOKUP.get(tok)
         if planet:
@@ -237,6 +286,18 @@ def gloss_terms(text: str, *, phonetic: bool = True) -> list[str]:
             out.append(sign.lower())
             continue
         if re.fullmatch(r"[a-z0-9']+", tok):  # untouched English word
+            if hinglish and phonetic and len(tok) >= 3:
+                from app.rag.phonetic import _FREQ, match_roman_all, vocabulary
+
+                vocabulary()
+                if tok not in _FREQ:                     # not a KB heading word: maybe a Roman-Hindi spelling of one
+                    sp = match_roman_all(tok) if len(tok) >= 4 else []
+                    out.extend(sp)
+                    # Romanised function words / verbs ("kaisa rehta chal rahi karu") are noise: with IDF they looked
+                    # "rare" and dominated the query. A Roman token that is neither a KB heading word, a planet, a sign nor
+                    # a sound-alike of one is dropped (Hinglish questions only).
+                    if not sp and tok not in _ENGLISH_KEEP and not re.fullmatch(r"\d+(?:st|nd|rd|th)?", tok):
+                        continue
             out.append(tok.strip("'"))
         elif phonetic and _DEV_TOK.fullmatch(tok):  # unknown Devanagari word: sound-alike KB term
             from app.rag.phonetic import match_all

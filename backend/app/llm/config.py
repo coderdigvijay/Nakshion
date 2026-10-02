@@ -93,6 +93,9 @@ class LLMSettings(BaseSettings):
     # --- RAG (§6) ---
     embeddings_runtime: str = Field(default="local", alias="EMBEDDINGS_RUNTIME")  # local | off
     embedding_model: str = Field(default="BAAI/bge-small-en-v1.5", alias="EMBEDDING_MODEL")
+    # Per-call budget for embedding the query locally; over it (or while the model loads / if it fails to load) the
+    # request degrades to keys + full-text, never fails. 0 disables the limit (evals, ingest).
+    embed_query_timeout_s: float = Field(default=0.4, alias="EMBED_QUERY_TIMEOUT_S")
     rag_top_k: int = 5
     rag_token_cap: int = 1200
     rag_candidates: int = 20

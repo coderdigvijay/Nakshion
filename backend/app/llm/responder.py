@@ -34,6 +34,9 @@ from app.llm.validators import Violation, strip_violating_sentences, validate_an
 
 log = logging.getLogger("nakshion.llm.chat")
 META_DELIM = "<<<META>>>"
+NO_NOTE_LINE = ("NO SOURCED NOTE: the reference library has no note that matches this question. Say so in one short clause "
+                "(\"I don't have a sourced note on that\"), answer only from CHART FACTS or clearly hedged general knowledge "
+                "(\"traditionally\", \"traditions differ\"), invent no specifics, and cite no reference notes.")
 
 
 class Retriever(Protocol):
@@ -83,7 +86,8 @@ class ChatResponder:
                                   display_name=inp.display_name, today=inp.today, is_minor=inp.is_minor,
                                   focus_planets=qt.planets[:3], k=7 if qt.is_general else 12)
         notes: list[Any] = []
-        rag: dict[str, Any] = {"used": False, "degraded": False, "reason": None, "hits": 0}
+        low_conf = False
+        rag: dict[str, Any] = {"used": False, "degraded": False, "reason": None, "hits": 0, "low_confidence": False}
         if self.retriever is not None and not is_small_talk(q):
             keys = [k for f in facts.factors[:6] for k in f.kb_keys]
             kw = dict(kb_keys=keys, question=q, system=inp.astrology_system, topic=topic, language=inp.language)
@@ -92,6 +96,9 @@ class ChatResponder:
                     r = await self.retriever.retrieve_ex(**kw)
                     notes = list(r.chunks)
                     rag.update(degraded=bool(r.degraded), reason=r.reason)
+                    if getattr(r, "low_confidence", False) and not r.degraded:
+                        low_conf = True
+                        notes = []          # weak matches are not support: the model is told there is no sourced note
                 else:
                     notes = list(await self.retriever.retrieve(**kw))
                 rag.update(used=True, hits=len(notes))
@@ -104,6 +111,9 @@ class ChatResponder:
         req, prov = build_chat_prompt(facts=facts, notes=notes, history=inp.history, question=q,
                                       language=inp.language, streaming=streaming, metadata=md,
                                       max_user_chars=self.router.s.max_user_message_chars, qtype=qt)
+        if low_conf:
+            rag.update(low_confidence=True, hits=0)
+            req = req.with_(context_blocks=req.context_blocks + (NO_NOTE_LINE,))
         prov.extra["rag"] = rag
         prov.extra["sources_available"] = [
             {"alias": a, "source_id": hashlib.sha1(cid.encode()).hexdigest()[:10],

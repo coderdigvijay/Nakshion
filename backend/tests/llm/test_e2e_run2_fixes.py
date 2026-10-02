@@ -183,7 +183,7 @@ async def test_compat_budget_and_prompt_v2():
 
 
 REQ = LLMRequest(task="chat", system="s", context_blocks=(), messages=({"role": "user", "content": "q"},),
-                 max_output_tokens=50, timeout_s=2, prompt_id="chat@v7")
+                 max_output_tokens=50, timeout_s=2, prompt_id="chat@v8")
 
 
 async def test_429_skips_model_immediately_and_sets_cooldown():

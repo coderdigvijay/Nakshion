@@ -37,10 +37,12 @@ def main() -> int:
     print("active prompts: " + ", ".join(f"{k}={v}" for k, v in reg.reg["active"].items()))
 
     if os.environ.get("EMBEDDINGS_RUNTIME", "local") == "local":
-        from fastembed import TextEmbedding
+        # Same loader as the app (handles quantised/custom ONNX specs such as "...@int8"), so the exact files the
+        # running process needs are the ones baked into the build.
+        from app.rag.embeddings import FastEmbedEmbedder
 
         model = os.environ.get("EMBEDDING_MODEL", "BAAI/bge-small-en-v1.5")
-        TextEmbedding(model, cache_dir=os.environ.get("FASTEMBED_CACHE_PATH"), threads=1)
+        FastEmbedEmbedder(model, cache_dir=os.environ.get("FASTEMBED_CACHE_PATH"), threads=1)._load()
         print(f"embedding model cached: {model}")
     else:
         print("embeddings off: model not downloaded")

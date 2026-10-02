@@ -24,7 +24,7 @@ from typing import Any, Protocol
 from app.llm.resilience import CircuitBreaker
 from app.rag.chunking import count_tokens
 from app.rag.embeddings import Embedder
-from app.rag.query import QueryPlan, build_plan, normalize_question
+from app.rag.query import QueryPlan, apply_idf, build_plan, normalize_question
 from app.rag.store import RetrievedChunk, SearchSpec, VectorStore
 
 log = logging.getLogger("nakshion.rag.retriever")
@@ -50,9 +50,24 @@ class RetrievalConfig:
     fts: bool = True
     fts_weight: float = 1.0
     fts_key_weight: float = 0.3
+    # IDF-aware full-text planning (BUG-027): Postgres ts_rank has no IDF, so a query like "Moon sign ... Nadi" was won by
+    # every Moon-heavy chunk. Terms in > common_df of the chunks are dropped from the OR query, an AND list over the
+    # discriminative terms and a phrase list over adjacent question words are added.
+    idf: bool = True
+    common_df: float = 0.12
+    rare_df: float = 0.10
+    fts_and_weight: float = 1.5
+    fts_rare_weight: float = 1.0
+    fts_phrase_weight: float = 2.0
+    fts_anchor_weight: float = 2.0
+    lang_penalty: float = 0.012       # kb_lang_* (phrasebook / glossary) chunks, unless the question asks for a term's meaning or a translation
+    # Low-confidence thresholds on the best fused+boosted score (evals/rag_independent, 10 traps vs 121 answerable):
+    # off (keys+FTS): 0.05 flags 5/10 traps and 3/121 answerable (2.5%); local embeddings: 0.06 flags 5/10 and 7/121 (5.8%).
+    low_conf_off: float = 0.05
+    low_conf_local: float = 0.06
     fts_head_weight: float = 0.0         # optional extra full-text query on the distinctive terms only (measured: no gain)
     # metadata boosts (added to the fused RRF score; one rank-1 hit is ~0.016)
-    head_boost: float = 0.006
+    head_boost: float = 0.02
     topic_boost: float = 0.002
     tier_boost: tuple[float, float, float] = (0.002, 0.0, -0.002)    # tier 1, 2, 3
     confidence_boost: tuple[float, float, float] = (0.002, 0.0, -0.002)   # high, medium, low
@@ -82,6 +97,10 @@ class RetrievalResult:
     degraded: bool = False
     reason: str | None = None
     stats: dict = field(default_factory=dict)
+    # True when the best note scores below the threshold measured on the independent trap queries (or nothing matched):
+    # the answer layer should say it has no sourced note instead of presenting the notes as support. Not set when
+    # retrieval degraded (that is a different state: the notes are unavailable, not absent).
+    low_confidence: bool = False
 
 
 class JsonCache(Protocol):
@@ -122,6 +141,9 @@ class RagMetrics:
                 "latency_ms_p50": pct(0.5), "latency_ms_p95": pct(0.95),
                 "rerank_calls": self.rerank_calls, "rerank_reorder_rate":
                     round(self.rerank_moved / max(1, self.rerank_calls), 3)}
+
+
+_TRANSLATE_ASK = re.compile(r"translat|phrasebook|hinglish|in hindi|in english|hindi (?:mein|me|word)|english (?:mein|me|word)|अनुवाद|हिंदी में|अंग्रेज़ी|अंग्रेजी", re.I)
 
 
 def systems_for(user_system: str, question: str = "") -> list[str]:
@@ -215,6 +237,12 @@ class Retriever:
             return RetrievalResult([], True, "no_index")
         systems = systems_for(system, question)
         plan = build_plan(question, language, kb_keys, multilingual=self._multilingual, cfg=cfg)
+        if cfg.idf and plan.fts and hasattr(self.store, "term_df"):
+            try:
+                df, n_docs = await self.store.term_df(version, plan.terms)
+                apply_idf(plan, df, n_docs, cfg)
+            except Exception:  # noqa: BLE001 - IDF is an optimisation; keep the plain plan
+                log.warning("rag_idf_failed")
         stats = {"version": version, "lang": language, "keys_used": len(plan.keys_used),
                  "keys_dropped": len(plan.keys_dropped), "terms": len(plan.terms), "n_fts": len(plan.fts)}
         ck = self._cache_key(version, systems, plan) if self.cache else None
@@ -225,16 +253,19 @@ class Retriever:
                 hit = None
             if hit is not None:
                 m.cache_hits += 1
-                return RetrievalResult([RetrievedChunk(**{**h, "entities": tuple(h["entities"]),
-                                                          "topics": tuple(h["topics"]), "via": tuple(h["via"])})
-                                        for h in hit], stats={**stats, "cache": "hit"})
+                cached = [RetrievedChunk(**{**h, "entities": tuple(h["entities"]),
+                                            "topics": tuple(h["topics"]), "via": tuple(h["via"])}) for h in hit]
+                thr = cfg.low_conf_local if self.embedder is not None and plan.vector_texts else cfg.low_conf_off
+                return RetrievalResult(cached, stats={**stats, "cache": "hit"},
+                                       low_confidence=(not cached) or cached[0].score < thr)
         vectors: list[tuple[str, list[float], float]] = []
+        degraded0 = (getattr(self.embedder, "stats", None) or {}).get("degraded", 0)
         if self.embedder is not None and plan.vector_texts:
             vecs = await self.embedder.embed_queries([t for _, t, _ in plan.vector_texts])
             vectors = [(lab, v, w) for (lab, _, w), v in zip(plan.vector_texts, vecs)]
         stats["n_vec"] = len(vectors)
         if not vectors and not plan.fts and not plan.keys_used:
-            return RetrievalResult([], stats=stats)
+            return RetrievalResult([], stats=stats, low_confidence=True)
         spec = SearchSpec(version=version, systems=systems, vectors=vectors, keys=plan.keys_used,
                           key_weight=cfg.key_weight, fts=plan.fts, per_query=cfg.per_query, limit=cfg.candidates)
         cands = await self.store.hybrid_search(spec)
@@ -245,12 +276,17 @@ class Retriever:
             cands = await self._rerank(cands, plan, stats)
         out = self._select(cands)
         m.key_total += len(plan.keys_used) + len(plan.keys_dropped)
-        if ck and out:
+        embed_degraded = ((getattr(self.embedder, "stats", None) or {}).get("degraded", 0) > degraded0
+                          or (self.embedder is not None and plan.vector_texts and not vectors))
+        if ck and out and not embed_degraded:      # never cache a keys+FTS result produced while the embedder was degraded
             try:
                 await self.cache.set(ck, [{**asdict(c), "meta": c.meta} for c in out], cfg.cache_ttl_s)
             except Exception:  # noqa: BLE001
                 pass
-        return RetrievalResult(out, stats=stats)
+        thr = cfg.low_conf_local if vectors else cfg.low_conf_off
+        low = (not out) or out[0].score < thr
+        stats["top_score"] = round(out[0].score, 4) if out else 0.0
+        return RetrievalResult(out, stats=stats, low_confidence=low)
 
     def _boost(self, cands: list[RetrievedChunk], plan: QueryPlan) -> list[RetrievedChunk]:
         cfg = self.cfg
@@ -273,6 +309,8 @@ class Retriever:
                     s -= cfg.table_penalty
             if plan.lord_of and re.search(rf"\b{plan.lord_of} lord in", hp):
                 s += 2 * cfg.head_boost                           # "7th lord in the 12th house": the lord's own section
+            if c.file.startswith("kb_lang_") and not plan.is_definition and not _TRANSLATE_ASK.search(plan.question):
+                s -= cfg.lang_penalty
             if plan.is_definition and (c.file.startswith("kb_lang_") or c.meta.get("language") in ("hinglish", "hi")):
                 s += cfg.definition_boost
             q = float(c.meta.get("quality", 1.0))
@@ -341,6 +379,9 @@ class Retriever:
                 problems.append("active index has 0 chunks")
             em = getattr(self.embedder, "model_name", None)
             if self.embedder is not None and info.get("embedding_model") and info["embedding_model"] != em:
+                if hasattr(self.embedder, "disable"):
+                    # incomparable vectors: run keys + full-text only until the index is rebuilt for this model
+                    self.embedder.disable("index embedding model mismatch", seconds=24 * 3600.0)
                 problems.append(f"embedding model mismatch: index={info['embedding_model']} runtime={em}; "
                                 "mixed models silently wreck retrieval. Reindex or fix EMBEDDING_MODEL.")
             if not problems:

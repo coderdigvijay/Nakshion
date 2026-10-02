@@ -66,7 +66,7 @@ CORRECTION = re.compile(r"\b(not|isn'?t|rather than|instead of|you mentioned|you
 HOUSE_YOGA = re.compile(r"\b(gajakesari|gaja kesari|raja yoga|dhana yoga|mangal dosha|manglik|kendra|trikona)\b", re.I)
 UNAVAIL = re.compile(
     r"\b(unknown|not (?:known|available)|isn'?t available|can'?t|cannot|without|unavailable|do(?:es)? not have|"
-    r"don'?t have)\b|अज्ञात|ज्ञात नहीं|उपलब्ध नहीं|बिना|नहीं (?:बता|मिल|दे) सक|pata nahi|available nahi|maloom nahi|nahi bata", re.I)
+    r"don'?t have|(?:do|does) not (?:contain|include|list|show)|not (?:listed|included|provided)|no (?:start|end|exact) dates?)\b|अज्ञात|ज्ञात नहीं|उपलब्ध नहीं|बिना|नहीं (?:बता|मिल|दे) सक|pata nahi|available nahi|maloom nahi|nahi bata", re.I)
 FROM_MOON = re.compile(r"from (your|the) moon|chandra[\s-]?lagna|चंद्र लग्न", re.I)
 
 
@@ -169,7 +169,7 @@ def check_claims(answer: str, idx: ChartIndex, facts: ChartFacts, *, transit_exe
         # dasha lords
         for m in DASHA.finditer(sent):
             p = canon_planet(m.group("p"))
-            if p and p not in (idx.maha, idx.antar) and not _factor_supports(facts, p, "dasha"):
+            if p and p not in (idx.maha, idx.antar) and not _factor_supports(facts, p, "dasha") and not unavail:
                 bad("claim", f"{p} dasha is not current")
         # retrograde
         for m in RETRO.finditer(sent):
@@ -398,6 +398,28 @@ def check_distress(question: str, answer: str) -> list[Violation]:
     return []
 
 
+_OTHER_CHART = re.compile(
+    r"\b[A-Z][\w.]+(?:\s+[A-Z][\w.]+){0,2}['\u2019]s\s+(?:birth\s+|natal\s+)?(?:chart|kundli|kundali|horoscope|planets?)\b"
+    r"|\b(?:chart|kundli|kundali|horoscope)\s+of\s+(?!my\b|mine\b|me\b)[A-Z]"
+    r"|\b(?!meri\b|mera\b|apni\b|apna\b|my\b)[A-Za-z]+\s+(?:ki|ka)\s+(?:janam\s+)?(?:kundli|kundali)\b(?<!\bmeri kundli)"
+    r"|(?<![\u0900-\u097F])(?!मेरी|मेरा|अपनी)[\u0900-\u097F]+\s+(?:की|का)\s+(?:जन्म\s*)?(?:कुंडली|कुण्डली)", re.U)
+_NO_DATA = re.compile(
+    r"(?:do(?:es)?\s*n[o']t|don'?t|cannot|can'?t)\s+(?:have|hold|see)|no\s+(?:birth\s+)?(?:data|details)|only\s+(?:have|hold)|"
+    r"नहीं\s+(?:है|हैं|हूं|हूँ)|उपलब्ध\s+नहीं|paas\s+.{0,40}nahi|data\s+nahi|nahi\s+(?:hai|hain)", re.I)
+
+
+def check_third_party_chart(question: str, answer: str) -> list[Violation]:
+    """Asked for someone else's chart ("Sachin Tendulkar's chart"): the first sentence must say there is no birth data for that
+    person, not present the user's own chart as theirs (BUG-027, live trap test)."""
+    m = _OTHER_CHART.search(question or "")
+    if m and not any(canon_planet(w.strip("'’s")) or canon_sign(w.strip("'’s")) for w in re.findall(r"[\w.]+", m.group(0))[:3]):
+        first = " ".join(sentences(answer)[:2])
+        if not _NO_DATA.search(first):
+            return [Violation("style", "the user asked about another person's chart: say in the first sentence that you only have the "
+                                       "user's own birth data, never present the user's chart as theirs", first[:200])]
+    return []
+
+
 def check_hedge(answer: str, citations: list[str], facts: ChartFacts) -> list[Violation]:
     """Claims taken from a low-confidence / [unverified] / schools-differ note must be hedged, never stated as fact."""
     cited = [c for c in citations if c in facts.kb_hedge]
@@ -434,6 +456,7 @@ def validate_answer(answer: str, citations: list[str], topic: str, *, facts: Cha
         + check_answer_shape(answer, qtype, detail)
         + check_system_blend(answer, facts.system, question)
         + check_hedge(answer, citations, facts)
+        + check_third_party_chart(question, answer)
     )
 
 

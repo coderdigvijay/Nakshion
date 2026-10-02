@@ -119,3 +119,17 @@ def match(devanagari_token: str) -> str | None:
     """Single best KB word, or None when the sound is ambiguous (see match_all)."""
     ws = match_all(devanagari_token)
     return ws[0] if len(ws) == 1 else None
+
+
+def match_roman_all(token: str, max_candidates: int = 2) -> list[str]:
+    """Roman-Hindi spelling variants of KB words ("uttra bhadrapad" -> uttara bhadrapada, "sani" -> shani): same consonant
+    skeleton as a KB word, exact or a unique one-edit match for 6+ consonants. Tokens already known to the KB vocabulary
+    are not touched by the caller."""
+    sk = skeleton(token)
+    if len(sk) < 3:
+        return []
+    vocab = vocabulary()
+    if sk in vocab:
+        ws = vocab[sk]
+        return ws[:max_candidates] if len(ws) <= 3 else []
+    return []

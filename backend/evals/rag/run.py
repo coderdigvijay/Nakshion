@@ -22,6 +22,9 @@ from collections import defaultdict
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
+# Eval harness only: the production embed-query timeout (0.4 s) degrades a cold model to keys+FTS. Measurements need the
+# model to answer, so lift the limit here; production settings are untouched.
+os.environ.setdefault("EMBED_QUERY_TIMEOUT_S", "0")
 BACKEND = HERE.parents[1]
 sys.path.insert(0, str(BACKEND))
 

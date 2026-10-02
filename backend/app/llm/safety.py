@@ -14,7 +14,7 @@ from dataclasses import dataclass
 from typing import Literal
 
 InputClass = Literal["crisis", "medical_emergency", "abuse"]
-OutputClass = Literal["death", "child_sex", "medical_legal_financial", "paid_remedy", "caste", "leak", "fatalism"]
+OutputClass = Literal["death", "child_sex", "medical_legal_financial", "paid_remedy", "caste", "leak", "fatalism", "price", "gambling"]
 
 DISCLAIMER = {
     "english": "For self-reflection and entertainment. Not a substitute for professional advice.",
@@ -209,6 +209,7 @@ def static_reply(cls: InputClass, language: str) -> str:
 
 _FUTURE = r"(will|would|is going to|are going to|may|might|could|likely to|destined to)"
 _OUTPUT_RULES: list[tuple[OutputClass, re.Pattern[str]]] = [
+    ("leak", re.compile(r"\bCHART FACTS\b|\bREFERENCE NOTES\b")),      # exact, upper case only: "your chart facts" is plain wording
     ("death", _rx(
         rf"\b{_FUTURE}\s+(soon\s+)?(die|pass away|lose (his|her|their|your) life)\b",
         r"\b(time|timing|date|year|age)\s+of\s+(your\s+|his\s+|her\s+)?death\b",
@@ -234,14 +235,24 @@ _OUTPUT_RULES: list[tuple[OutputClass, re.Pattern[str]]] = [
         r"\b(book|pay for|sponsor)\s+(a\s+)?(puja|pooja|havan|homa|yagna|ritual)\b",
         r"\b(consult|book|pay)\s+(an?\s+)?(astrologer|pandit|jyotishi)\b",
     )),
+    # Prices are never in CHART FACTS or the notes, so any amount is invented (BUG-027: "tens of thousands to lakhs of rupees").
+    ("price", _rx(
+        r"(?:₹|\brs\.?|\binr\b|\brupees?\b|\brupaye\b|रुपय[ेा]?|रु\.)\s*\d", r"\d[\d,\.]*\s*(?:₹|\brs\b|\binr\b|\brupees?\b|\brupaye\b|रुपय|रु\b)",
+        r"\b(?:thousands?|lakhs?|crores?|hazaar|hazaron|lakh|lakhon)\b.{0,30}\b(?:rupees?|rupaye|rs)\b",
+        r"(?:हज़ार|हजार|लाख|करोड़).{0,30}रुपय", r"\b(?:hazaron|lakhon|karodon)\b.{0,30}\brupaye\b",
+        r"\$\s*\d", r"\b(?:usd|eur|gbp)\s*\d", r"\d\s*(?:dollars?|usd|euros?)\b")),
+    ("gambling", _rx(
+        r"\b(?:lucky|winning|jackpot)\s+(?:lottery\s+)?numbers?\b.{0,40}\d", r"\b(?:play|bet|buy)\b.{0,30}\b(?:lottery|ticket)\b.{0,30}\b\d{2,}")),
     ("caste", _rx(r"\b(brahmin|brahman|kshatriya|vaishya|shudra|sudra|caste|dalit)\b",
                  # Hinglish "jati hai" / "chali jati" is the verb "goes": only the caste noun in caste contexts counts
                  r"\bj[a]+ti\s+(?:system|vyavastha|bhed|bhedbhav|ke\s+(?:aadhar|adhar|hisaab)|wala|wali)\b", r"\bnich(?:i)?\s+jati\b",
                  r"जाति(?!\s+है|\s+हैं)")),
     ("leak", _rx(
         r"\bsystem\s+prompt\b", r"\bas per (my|the) (guidelines|instructions|rules|programming)\b",
+        r"\b(?:my|the|our)\s+safety\s+(?:policy|policies|guidelines|rules)\b", r"\bagainst\s+(?:my|the)\s+(?:policy|policies|guidelines|rules)\b",
+        r"\bmeri\s+safety\s+policy\b", r"मेरी\s+(?:सुरक्षा\s+)?नीति", r"\bi\s+(?:am|\'m)\s+not\s+(?:allowed|permitted)\s+to\b",
         r"\b(my|these|the) (guidelines|instructions)\s+(say|state|require|tell|are)\b",
-        r"\bI(?:'m| am) (programmed|instructed|required) to\b", r"\bCHART FACTS\b", r"\bREFERENCE NOTES\b", r"\b(my|these)\s+instructions\s+(say|are|tell)\b",
+        r"\bI(?:'m| am) (programmed|instructed|required) to\b", r"\b(my|these)\s+instructions\s+(say|are|tell)\b",
         r"\[(?:N|A|T|V|VN|Y|D|P|META)\.[A-Z0-9_.]+\]", r"(?<![\w.])(?:VN|META)\.[A-Z][A-Z0-9_.]+",
         r"(?<![\w.])[NATVYDP]\.[A-Z]{2,}(?:\.[A-Z0-9_]+)+",
     )),
@@ -262,6 +273,10 @@ CANNED_OUTPUT: dict[OutputClass, str] = {
                                 "themes of this period, if that helps."),
     "paid_remedy": ("You don't need to buy anything. If you'd like to work with this period, simple free practices "
                     "such as a steady routine, reflection, or a short daily mantra are optional traditions some people find grounding."),
+    "price": ("I don't have price information, and you don't need to buy anything. If you'd like to work with this theme, simple free "
+              "practices such as a steady routine, reflection or a short daily mantra are optional traditions some people find grounding."),
+    "gambling": ("Astrology can't pick lottery numbers or predict games of chance, so I won't give any. I'm glad to talk about what your chart "
+                 "suggests about this period more generally."),
     "caste": "I describe compatibility in terms of temperament and values, not caste or community.",
     "leak": "I can't share how I'm set up internally, but I'm happy to keep exploring your chart with you.",
     "fatalism": ("No single placement or dosha decides a life. Traditional texts list many cancellations, and your "

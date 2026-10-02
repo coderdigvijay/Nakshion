@@ -74,7 +74,10 @@ async def run_ingest(store, embedder: Embedder, chunks: list[Chunk], *, kb_keys:
                 await store.update_meta(active, stale, by_id)
                 return IngestReport("metadata_updated", active, len(chunks), len(keys), embedded=0, copied=len(stale))
             if keys and hasattr(store, "key_count") and await store.key_count(active) != len(keys):
-                await store.insert_keys(active, keys, await embedder.embed_queries(keys), embedder.model_name)
+                kv = await embedder.embed_queries(keys)
+                if len(kv) != len(keys):
+                    raise RuntimeError(f"embedded {len(kv)} of {len(keys)} keys")
+                await store.insert_keys(active, keys, kv, embedder.model_name)
                 return IngestReport("keys_updated", active, len(chunks), len(keys))
             return IngestReport("unchanged", active, len(chunks), len(keys))
     version = (await store.max_version() if hasattr(store, "max_version") else (active or 0)) + 1
@@ -93,7 +96,10 @@ async def run_ingest(store, embedder: Embedder, chunks: list[Chunk], *, kb_keys:
             raise RuntimeError("embedding dimension mismatch")
         await store.insert(version, part, vecs, embedder.model_name)
     if keys:
-        await store.insert_keys(version, keys, await embedder.embed_queries(keys), embedder.model_name)
+        kvecs = await embedder.embed_queries(keys)
+        if len(kvecs) != len(keys):   # a degraded (time-limited) embedder returns []; never index a partial key set
+            raise RuntimeError(f"embedded {len(kvecs)} of {len(keys)} keys; version {version} not activated")
+        await store.insert_keys(version, keys, kvecs, embedder.model_name)
     if smoke:
         await _smoke(store, embedder, version)
     if await store.model_of(version) != embedder.model_name:
@@ -178,7 +184,8 @@ def main() -> int:
     ap.add_argument("--kb-keys-file", default=None, help="newline-separated factor kb_keys (default: generated)")
     ap.add_argument("--no-keys", action="store_true", help="skip pre-embedding factor keys")
     ap.add_argument("--model", default=os.environ.get("RAG_EMBEDDER", "bge-small"),
-                    help="embedder spec: bge-small | bge-small-q | minilm-ml | e5-small | e5-small-fp32")
+                    help="embedder spec key (app.rag.embeddings.SPECS): bge-small | minilm-l6-q | arctic-xs | minilm-l6 | "
+                         "bge-small-fp32 | minilm-ml | e5-small | e5-small-fp32")
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--status", action="store_true")

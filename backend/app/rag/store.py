@@ -301,6 +301,25 @@ class PgVectorStore:
                                       meta, tuple(r["via"] or ())))
         return out
 
+    _DF_CACHE: dict = {}
+
+    async def term_df(self, version: int, terms: Sequence[str]) -> tuple[dict[str, int], int]:
+        """Document frequency per term (english-stemmed, like the FTS) and the chunk count of this index version.
+        The corpus is static per version, so results are cached in-process: one small query per new term."""
+        cache = self._DF_CACHE.setdefault((id(self.engine), version), {"n": None, "df": {}})
+        todo = [t for t in dict.fromkeys(terms) if t not in cache["df"]]
+        if todo or cache["n"] is None:
+            rows = await self._fetch(
+                "SELECT t.term AS term, (SELECT count(*) FROM kb_chunks c WHERE c.index_version = :v "
+                "AND c.content_tsv @@ plainto_tsquery('english', t.term)) AS df "
+                "FROM unnest(CAST(:terms AS text[])) AS t(term)", v=version, terms=todo or ["x"])
+            for r in rows:
+                if r["term"] in todo:
+                    cache["df"][r["term"]] = int(r["df"])
+            n = await self._fetch("SELECT count(*) AS n FROM kb_chunks WHERE index_version = :v", v=version)
+            cache["n"] = int(n[0]["n"])
+        return {t: cache["df"].get(t, 0) for t in terms}, cache["n"]
+
     async def key_embedding(self, key, version):
         rows = await self._fetch(
             "SELECT embedding::text AS e FROM kb_key_embeddings WHERE index_version = :v AND key = :k", v=version, k=key)

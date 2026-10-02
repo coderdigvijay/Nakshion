@@ -46,10 +46,16 @@ Measured with the project venv on macOS x86_64 / Python 3.14 (Linux will differ;
 | after chart creation | 177 MB |
 | after first chat with `EMBEDDINGS_RUNTIME=off` (full-text + pre-embedded keys retrieval) | **182 MB** |
 | after first chat with `EMBEDDINGS_RUNTIME=local` (bge-small ONNX model loaded) | **422 MB peak** |
+| `import app.main` + local embedder `minilm-l6-q` (23 MB int8) after 200 queries, macOS arm64 | **245 MB peak** (BUG-028; adds ~25 MB for the first chat, so about 270 MB expected) |
+| same with `arctic-xs` / `minilm-l6` (90 MB fp32) | 350 MB peak |
+| same with `bge-small` (66 MB int8, current default) | 416 MB peak |
+| same with multilingual-e5-small / paraphrase-multilingual-MiniLM | 730 / 880 MB peak (do not fit) |
 
 The RAG agent measured ~396 MB with the model on macOS arm64. Linux x86 usually reports a bit less, but ONNX runtime arenas and
 request spikes on a 0.1 vCPU box make 420 MB too close to 512 MB for a free instance, so **`render.yaml` defaults to
 `EMBEDDINGS_RUNTIME=off`** (retrieval hit@5 0.907 vs 0.956, a 5-point quality cost; see `docs/rag-runbook.md`).
+
+Update (BUG-028): `minilm-l6-q` is the one local model that fits 512 MB on paper (245 MB peak measured on macOS arm64; **Linux and the 0.1 vCPU Render box are not measured**, so treat 245 MB as an estimate with an unknown but probably favourable Linux offset and expect load and inference to be several times slower than on a laptop). It is now the `render.yaml` default (fresh blind Hindi/Hinglish hit@5 0.70 to 0.81, runbook section 2e); the Neon index must be re-ingested with it BEFORE deploying. Procedure: `python -m app.rag.ingest --model minilm-l6-q --force`, then set `EMBEDDING_MODEL=minilm-l6-q` and `EMBEDDINGS_RUNTIME=local`. The model loads lazily in a background thread after the first retrieval, so boot and `/health/live` are unaffected, and a load failure or a query over `EMBED_QUERY_TIMEOUT_S` (0.4 s) falls back to keys + full-text for that request.
 
 Switch: set `EMBEDDINGS_RUNTIME=local` in the Render dashboard on a plan with 1 GB+ RAM. The build then pre-downloads the model
 into `backend/.fastembed_cache` (`scripts/build_check.py`, `FASTEMBED_CACHE_PATH`), so it is **never downloaded at boot** (ephemeral disk).

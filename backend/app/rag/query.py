@@ -119,3 +119,66 @@ def build_plan(question: str, language: str, kb_keys: list[str], *, multilingual
 
 def normalize_question(q: str) -> str:
     return " ".join(norm(q).split())
+
+
+_MAIN_PLANETS = {"Sun", "Moon", "Mercury", "Venus", "Mars", "Jupiter", "Saturn", "Rahu", "Ketu"}
+
+
+def _question_bigrams(question: str) -> list[tuple[str, str]]:
+    ws = [w for w in _words(question) if w not in _STOP_EN and len(w) > 1]
+    return [(a, b) for a, b in zip(ws, ws[1:])]
+
+
+def apply_idf(plan: QueryPlan, df: dict[str, int], n_docs: int, cfg) -> None:
+    """Re-plan the full-text queries with document frequencies (mutates the plan).
+
+    f:t   OR of the terms, minus very common ones (df > common_df of chunks) unless nothing else is left
+    f:and AND of the discriminative terms (df <= rare_df) when there are at least two, so "nadi" + "constitutional"
+          must co-occur; it returns nothing when no chunk has them all, which costs nothing (OR lists still run)
+    f:r   OR of the discriminative terms alone
+    f:p   adjacent question words as phrases ("rahu <-> exalted"), for multi-word concepts"""
+    if not n_docs or not plan.fts:
+        return
+    seen = [t for t in dict.fromkeys(plan.terms) if re.fullmatch(r"[a-z0-9]+", t)]
+    known = [t for t in seen if df.get(t, 0) > 0]
+    rare = [t for t in known if df[t] / n_docs <= cfg.rare_df and t not in _STOP_EN]
+    from app.llm.lexicon import PLANET_LOOKUP as _PL
+
+    keep = [t for t in known if df[t] / n_docs <= cfg.common_df or t in _PL] or known     # a named planet is never 'common'
+    out: list[tuple[str, str, float]] = []
+    for label, q, w in plan.fts:
+        if label == "f:t":
+            dev = [x for x in re.findall(r"[\u0900-\u097F]+", q)]
+            out.append((label, " | ".join(keep + dev) or q, w))
+        else:
+            out.append((label, q, w))
+    if cfg.fts_and_weight > 0:
+        # the AND list: the discriminative terms; when fewer than two, the rarest three content terms
+        pool = rare if len(rare) >= 2 else sorted((t for t in known if t not in GENERIC), key=lambda t: df[t])[:3]
+        if len(pool) >= 2:
+            out.append(("f:and", " & ".join(pool[:4]), cfg.fts_and_weight))
+    if rare and cfg.fts_rare_weight > 0:
+        out.append(("f:r", " | ".join(rare), cfg.fts_rare_weight))
+    if cfg.fts_phrase_weight > 0 and plan.language == "english":
+        ph = [f"{a} <-> {b}" for a, b in _question_bigrams(plan.question)
+              if df.get(a, 1) > 0 and df.get(b, 1) > 0 and not (a in GENERIC and b in GENERIC)]
+        if ph:
+            out.append(("f:p", " | ".join(ph[:6]), cfg.fts_phrase_weight))
+    # planet-in-house / house-lord / dasha-pair anchors: the planet and the house are individually common words, so IDF
+    # drops them, yet together they ARE the heading ("Saturn in the 10th house"; "7th lord in each house"; "Saturn-Venus").
+    from app.llm.lexicon import PLANET_LOOKUP
+
+    planets = [t for t in seen if t in PLANET_LOOKUP and PLANET_LOOKUP[t] in _MAIN_PLANETS]
+    ords = [t for t in seen if re.fullmatch(r"\d{1,2}(?:st|nd|rd|th)", t)]
+    anchors: list[str] = []
+    for pl in planets[:2]:
+        for o in ords[:2]:
+            anchors.append(f"{pl} <3> {o}")                    # "saturn in the 10th": stop words keep their positions
+    if "lord" in seen:
+        anchors += [f"{o} <-> lord" for o in ords[:2]]
+    if len(planets) >= 2 and ({"dasha", "mahadasha", "antardasha"} & set(seen)):
+        a, b = planets[0], planets[1]
+        anchors += [f"{a} <-> {b}", f"{b} <-> {a}"]
+    if anchors and cfg.fts_anchor_weight > 0:
+        out.append(("f:a", " | ".join(anchors), cfg.fts_anchor_weight))
+    plan.fts = out

@@ -86,7 +86,9 @@ services:
       - key: RAG_EXCLUDE_REVIEW
         value: "0"                      # study project: every knowledge file is indexed (see docs/rag-runbook.md provenance note)
       - key: EMBEDDINGS_RUNTIME
-        value: "off"                    # 512 MB plan: the local embedding model pushes RSS to ~420 MB (measured). Retrieval stays on full-text + pre-embedded keys. Set "local" on a 2 GB plan.
+        value: "local"                  # minilm-l6-q: 245 MB peak measured on macOS arm64 (+25 MB first chat; Linux unmeasured, ~340 MB with 25% margin), lazy background load, 0.4 s per-query budget then keys+FTS. Fresh blind Hindi/Hinglish hit@5 0.70 -> 0.81. RE-INGEST BEFORE DEPLOYING (docs/rag-runbook.md 2e); set "off" to roll back instantly.
+      - key: EMBEDDING_MODEL
+        value: minilm-l6-q              # must equal the model the Neon index was built with (python -m app.rag.ingest --model minilm-l6-q --force)
       - key: FASTEMBED_CACHE_PATH
         value: /opt/render/project/src/backend/.fastembed_cache   # only used when EMBEDDINGS_RUNTIME=local (baked during build)
       - key: LLM_BUDGET_COUNTERS

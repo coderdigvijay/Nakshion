@@ -204,7 +204,7 @@ def classify_question(question: str) -> QuestionType:
         if concept_shaped and toks and not strong_personal and not asks_current:
             return QuestionType("general", "concept", planets, tuple(re.escape(t) for t in toks[:4]), False, wants_tie)
         return QuestionType("personal", "other", planets, (), False, False)
-    if strong_personal or asks_current:
+    if strong_personal or (asks_current and subtype != "panchang"):      # "Rahu Kaal right now" is about the sky, not the chart
         return QuestionType("personal", subtype, planets, anchors, anchor_all, False, _house(q), md, ad)
     # No chart-specific marker: a named concept is a general question. Without a concept-shaped phrasing but with a
     # named subtype (e.g. "Rahu Kaal today?"), still general: the chart is rarely what answers it.

@@ -7,7 +7,7 @@ Owner: ai-genai-specialist. Code: `backend/app/rag/`. Eval: `backend/evals/rag/`
 | Piece | Where | Notes |
 |---|---|---|
 | Chunking, provenance, key generation | offline (`python -m app.rag.ingest`) | never in the web process |
-| Embedding model (bge-small-en-v1.5) | web process, lazy, ~280 MB RSS | `EMBEDDINGS_RUNTIME=off` removes it |
+| Embedding model (bge-small-en-v1.5 int8, or `minilm-l6-q`, section 2e) | web process, lazy, loads in a background thread, per-query budget 0.4 s | +125 MB (`minilm-l6-q`) to +290 MB (`bge-small`) RSS; `EMBEDDINGS_RUNTIME=off` removes it |
 | Query planning (glossary, phonetic bridge) | web process, pure Python | no model |
 | Hybrid search + RRF fusion | Postgres (one round trip) | pgvector + weighted tsvector |
 | Boosts, diversity, token cap | web process | |
@@ -105,6 +105,122 @@ By language (hit@5): EN 0.926, Hinglish 0.89, Hindi 0.839. Weakest topics: compa
 
 Grounded 10/10 after repair, citation valid 9/10 first draft, cited a retrieved note in 8/10, no `[unverified]` marker stated, no raw-token leak, no safety hit; low-confidence Yogini-dasha answer was hedged. Memory: planner data adds ~8 MB; RSS is 121 MB with `EMBEDDINGS_RUNTIME=off` and 395 MB with the local model (both unchanged by the bigger corpus, which lives in Postgres: 773 chunks + 2,952 keys is a few MB on Neon).
 
+## 2d. Off-mode (keys + full-text) retrieval on the independent blind set (BUG-027)
+
+Independent set: 121 answerable + 10 trap queries written without seeing the retriever. Tuned on EVEN ids only; ODD ids are the blind half.
+`backend/evals/rag_independent/queries.jsonl`; run through `evals.rag.run` with `load_queries` filtered by id parity.
+
+| Config (hit@5) | even (tuned) | odd (blind) |
+|---|---|---|
+| off, before (head_boost 0.006, no IDF) | 0.564 | 0.651 |
+| off, after | 0.818 | 0.818 |
+| local bge-small, after | 0.818 | 0.879 |
+
+Per topic (off, even / odd, before > after): dignity 0.29>0.64 / 0.38>0.62; matching 0.65>0.85 / 0.76>0.90; nakshatras 0.57>0.86 / 0.69>0.88; panchang 0.67>1.00 / 1.00>1.00; sade_sati 1.00 / 0.50>0.75; gochara and yogas unchanged. By language (even / odd): en 0.50>0.81 / 0.76>0.97; hi 0.62>0.88 / 0.55>0.65; hg 0.62>0.77 / 0.59>0.76. The 204-query regression set (off): hit@5 0.831 > 0.863.
+
+What changed: Postgres `ts_rank_cd` has no IDF, so Moon/Rahu/sign-heavy chunks won every OR query. `apply_idf` (app/rag/query.py) uses per-version document frequencies (`PgVectorStore.term_df`, cached in-process): terms in >12% of chunks leave the OR list, an AND list over the rare terms (<=10%, else the rarest three), an OR list of rare terms, and adjacent question words as `a <-> b` phrases (English only, weight 2.0). `head_boost` 0.006 > 0.02. The in-memory twin (`MemoryStore`) deliberately has no `term_df`, so its gates are unchanged.
+
+Even-half failure buckets (before): about 23 misses, nearly all genuine defects (the answer chunk exists: Nadi/Bhakoot cancellations, Graha Maitri, combustion, Ketu-ruled nakshatras, sutak). Acceptable uncredited alternatives: Rahu exaltation (bphs/dignity notes), Ketu nakshatras (the bphs dasha table lists Ketu: Ashwini, Magha, Mula). Remaining misses are mostly Hindi/Hinglish (glossary bridge) and Rahu/Ketu-heavy questions. No missing-knowledge topics found on the even half.
+
+Low-confidence signal: `RetrievalResult.low_confidence` (best fused+boosted score below `low_conf_off` 0.05 / `low_conf_local` 0.06, or no hit; never set when retrieval degraded). Traps: off flags 5/10 at 3/121 answerable (2.5%); local flags 5/10 at 7/121 (5.8%). Several traps share vocabulary with the KB and score as high as answerable queries, so lexical thresholds cannot catch them all; the answer layer must also keep its "cite only what the notes say" rule. Answer layer change needed (app/llm, not edited): in `ChatResponder._prepare` read `r.low_confidence` from `retrieve_ex`, put it in `rag`, and when true add one context line "No sourced note matches this question: say so and answer only from CHART FACTS or general, hedged knowledge".
+
+## 2e. Local query embeddings on a 512 MB instance (BUG-028)
+
+Question: can local query embeddings fit Render's 512 MB free instance? **Measured on macOS arm64 (Python 3.14, onnxruntime 1.24, 1 ONNX thread, arena off). Linux and the 0.1 vCPU box are NOT measured**; expect Linux RSS to be somewhat lower and latency several times higher. RSS is the full process: `import app.main` (120 MB) + `fastembed` import (~45 MB) + model session + 200 distinct queries; macOS compresses pages, so "peak" is `ru_maxrss`, stable to +-1 MB over 3 runs. Latency is p50 / p95 over 200 distinct queries on an otherwise quiet laptop (these swing 2-4x when other jobs run).
+
+| Model (spec key) | disk MB | dim | full-process peak RSS | p50 / p95 ms | cold load (warm page cache) |
+|---|---|---|---|---|---|
+| **sentence-transformers/all-MiniLM-L6-v2 int8** (`minilm-l6-q`) | 23 | 384 | **245** | 3.4 / 8 | 0.35 s |
+| snowflake-arctic-embed-xs fp32 (`arctic-xs`) | 90 | 384 | 350 | 9 / 20 | 0.4 s |
+| all-MiniLM-L6-v2 fp32 (`minilm-l6`) | 90 | 384 | 350 | 9 / 20 | 0.4 s |
+| bge-small-en-v1.5 fp32 (`bge-small-fp32`) | 133 | 384 | 410 | 17 / 39 | 0.5 s |
+| **bge-small-en-v1.5 int8 (`bge-small`, the current default)** | **66** (the old "~130 MB fp32" note was wrong: fastembed ships the int8 file) | 384 | 416 | 17 / 39 | 0.45 s |
+| multilingual-e5-small int8 (`e5-small`) | 118 + 17 tokenizer | 384 | 730 | 7 / 9 | 1.0 s |
+| paraphrase-multilingual-MiniLM-L12 int8 (`minilm-ml`) | 235 + 17 | 384 | 880 | 16 / 22 | 1.0 s |
+| minishlab/potion-base-8M (static, 256-d, not indexed) | 30 | 256 | 292 | 7 / 8 | |
+
+Findings: (1) quantising bge-small does not help memory (fp32 410 vs int8 416): ONNX Runtime's session overhead dominates, not the weights. (2) Arena off (`enable_cpu_mem_arena=False`, now the default) lowers the settled RSS after load (bge-small 376 > 309 MB after 200 queries) but not the peak that decides an OOM kill; graph-optimisation level and prepacking options changed nothing meaningful. (3) The multilingual models need 700-880 MB (a 250k-token vocabulary is expanded to fp32 by the runtime) and gave no Hindi gain (below). (4) Only `minilm-l6-q` is under the ~330 MB budget: 245 MB measured, 85 MB of headroom, plus the ~25 MB the web process adds after the first chat (182 vs 157 MB in `docs/deployment.md`): about 270 MB steady state, 240 MB under 512 MB.
+
+Retrieval, independent blind set (121 answerable queries, `A6-phonetic`, current retriever, scratch DB `astroai_rag_scratch_q`; `python -m evals.rag_independent.run_halves --embedder <key> --label <x>` builds the index, scores EVEN ids / ODD ids / the 409-query regression set with the model, then the same index with the model off). One query is 1.8 points on the even half and 1.5 on the odd half: differences under ~3 points are noise.
+
+| Index / runtime | even hit@5 | odd hit@5 | even nDCG@10 | odd nDCG@10 | 409-set hit@5 / nDCG |
+|---|---|---|---|---|---|
+| keys + full-text, bge-small key vectors | 0.818 | 0.818 | 0.548 | 0.556 | 0.863 / 0.595 |
+| keys + full-text, minilm-l6-q key vectors | 0.782 | 0.818 | 0.534 | 0.552 | 0.870 / 0.600 |
+| **local minilm-l6-q** | 0.818 | 0.833 | 0.583 | 0.590 | 0.895 / 0.639 |
+| local arctic-xs | 0.818 | 0.864 | 0.579 | 0.594 | 0.912 / 0.636 |
+| local minilm-l6 fp32 | 0.800 | 0.818 | 0.561 | 0.587 | 0.902 / 0.644 |
+| local bge-small (current) | 0.818 | 0.879 | 0.589 | 0.599 | 0.919 / 0.643 |
+| local bge-small fp32 | 0.818 | 0.879 | 0.585 | 0.596 | 0.919 / 0.643 |
+| local e5-small (multilingual) | 0.818 | 0.849 | 0.558 | 0.581 | 0.909 / 0.650 |
+| local minilm-ml | 0.782 | 0.818 | 0.555 | 0.588 | 0.890 / 0.636 |
+
+By language, hit@5 even / odd: off en 0.77 / 0.97, hg 0.69 / 0.76, hi 0.88 / 0.65. minilm-l6-q: en 0.81 / 0.97, hg 0.77 / 0.82, hi 0.88 / 0.65. bge-small: en 0.81 / 1.00, hg 0.77 / 0.82, hi 0.88 / 0.75. e5-small (multilingual): hi 0.88 / 0.65. A multilingual model does not fix Hindi; the planner's glossary and phonetic bridge do. By topic the gain is concentrated in nakshatras (even 0.71 > 0.86) and dignity (odd 0.62 > 0.75 minilm-l6-q, 0.81 bge-small); matching, panchang, yogas and sade_sati do not move. On the 409 set minilm-l6-q helps planets (0.56 > 0.89), career, gochara and houses, and loses nakshatras (1.00 > 0.85) and jaimini.
+
+**On the English-heavy sets the case for local embeddings is much smaller than BUG-027 recorded (the Hindi/Hinglish exam below reverses this)** (0.61-0.70 off vs 0.785 local): after the query-planning changes the off baseline is 0.82 / 0.82 and bge-small adds +0.00 / +0.06 hit@5, +0.04 nDCG@10; `minilm-l6-q` adds +0.04 / +0.02 hit@5, +0.05 / +0.04 nDCG@10 and +0.025 hit@5 / +0.039 nDCG on the 409 set, at +125 MB (not +290). It gives up 0.00 / 0.05 hit@5 against bge-small, but the loss in nDCG is 0.006 / 0.009 and in the 409-set 0.024 hit@5.
+
+**Fresh blind Hindi/Hinglish set (final exam, `evals/rag_independent_hi`, 63 answerable, each configuration run once, nothing tuned; `python -m evals.rag_independent_hi.run_final --embedder <key>`).**
+
+| Config | hit@5 | hit@10 | MRR | nDCG@10 | Hindi (26) | Hinglish (37) |
+|---|---|---|---|---|---|---|
+| keys+FTS (index of bge-small / minilm-l6-q / arctic-xs) | 0.682 / 0.698 / 0.714 | 0.76-0.78 | 0.50-0.52 | 0.44-0.45 | 0.62-0.65 | 0.73-0.76 |
+| local bge-small | 0.809 | 0.857 | 0.612 | 0.540 | 0.69 | 0.89 |
+| **local minilm-l6-q** | **0.809** | 0.825 | 0.610 | 0.530 | **0.73** | 0.86 |
+| local arctic-xs | 0.778 | 0.841 | 0.603 | 0.526 | 0.65 | 0.86 |
+
+minilm-l6-q recovers +0.111 of bge-small's +0.127 hit@5 (87%) and +0.077 of +0.088 nDCG (88%) at 245 MB instead of 416 MB. Per topic detail is in `evals/rag_independent_hi/final_*.json`. Earlier English-heavy sets showed little gain because the keys+FTS planner already handles English; the gain is in Roman/Devanagari Hindi, which is the audience that matters.
+
+**Gated mode** (embed only when the query is non-English or keys+FTS is `low_confidence`): on this set the gate opened for 62 of 63 queries, so hit@5 is identical to always-local (0.809) and there is no saving; latency is worse in the harness (p95 73 vs 31 ms) because it runs the off pass first. Gating does not reduce RSS once the model is loaded and brings nothing for a Hindi audience; **not adopted**. Its saving on English traffic was not measured.
+
+**Decision: switch on.** `render.yaml` now defaults to `EMBEDDING_MODEL=minilm-l6-q`, `EMBEDDINGS_RUNTIME=local`. Memory: 245 MB peak measured (macOS arm64) + ~25 MB after the first chat = ~270 MB; with a 25% safety margin ~340 MB of 512 MB. Linux is unmeasured (read `/proc` RSS after deploy, and keep the `off` rollback). Cold start: model load 0.35 s warm cache here, estimated 3-6 s on 0.1 vCPU, in a background thread; requests in that window and any query over 0.4 s run keys+FTS (the quality of today's production). **Order matters: re-ingest BEFORE the deploy**, because chunk and key vectors from two models are not comparable.
+
+**Switch procedure (`minilm-l6-q`, all 384-d, so no schema change).**
+1. `cd backend && python -m app.rag.ingest --model minilm-l6-q --force --database-url "$MIGRATION_DATABASE_URL"` (run from a laptop with the Neon direct URL; about 3-5 minutes; check with `--status`). This embeds 776 chunks and 2,952 keys into a new `index_version` (the previous one stays for `--rollback`) and records `embedding_model=sentence-transformers/all-MiniLM-L6-v2@int8`. Ingest refuses to activate when fewer key vectors than keys were produced. Key generation is unchanged (`python -m app.rag.keys --out keys.txt`, then `--kb-keys-file keys.txt`, or the default generated set).
+2. Set `EMBEDDING_MODEL=minilm-l6-q` (a spec key or the full recorded name both work) and `EMBEDDINGS_RUNTIME=local`; the build then bakes the 23 MB model into `FASTEMBED_CACHE_PATH` (`scripts/build_check.py` uses the same loader as the app).
+3. Check `/health/ready` (`rag.ok`) and the memory graph for a day. Rollback is one env var (`EMBEDDINGS_RUNTIME=off`); the keys in the index are then minilm vectors, which are used only through the stored key vectors.
+Never change `EMBEDDING_MODEL` without step 1: vectors from two models are not comparable and `self_check` only reports the mismatch (open item for the retriever owner: call `embedder.disable(...)` in `self_check` on a mismatch).
+
+**Cold start and fallback (`app/rag/embeddings.py`).** The model is lazy: nothing loads at boot, `/health/live` never touches it. On the first retrieval a worker thread loads it once (0.35 s with a warm page cache on this laptop; **estimate 3-6 s on Render's 0.1 vCPU with a cold disk, unmeasured**) and the request never waits for it past the budget: `EMBED_QUERY_TIMEOUT_S` (default 0.4 s, `0` disables) covers load plus inference. Over budget, while loading, after a failed load (5 minute back-off), after three consecutive timeouts (30 s back-off) or after `embedder.disable(...)`, `embed_queries` returns `[]`; the retriever zips it against its plan, so that request runs on pre-embedded keys + full-text (`stats["n_vec"] == 0`, `embedder.stats["degraded"]` increments, `EMBED_DEGRADED` is set for direct callers). Cached queries are always served. Chat never fails because of the embedder. Ingest and evals build the embedder through `make_embedder`, which has no time limit.
+
+### Hindi/Hinglish round (BUG-027)
+
+Changes (all query-side; no KB text or index change, no alias lines at ingest): `glossary.norm` folds ZWJ/ZWNJ and chandrabindu into anusvara (plus the existing nukta fold); `canon_spelling` maps Roman variants to the KB spelling (uttra bhadrapad, poorva, mahadasa, nakshat, sani, gun milan, sade saati...); glossary entries for uch/neech/rajju/vedha/swami; Roman skeleton match (`phonetic.match_roman_all`) for unknown Hinglish tokens only. Tuned on even-id Hindi/Hinglish queries (hit@5 unchanged at hi 0.88 / hg 0.77, nDCG 0.548>0.566); the 204-query set 0.863>0.866.
+
+Fresh blind set `evals/rag_independent_hi` (63 answerable), run once: off hit@5 0.73 hg / 0.62 hi; local 0.89 hg / 0.69 hi. Weakest topics off: houses 0.0, dasha 0.44. Hindi remains the ceiling in off mode; local embeddings help Hinglish most, Hindi little (English-only bge-small).
+
+Eval harness and gates set `EMBED_QUERY_TIMEOUT_S=0` (harness and tests only) so a cold model is not cut off by the production 0.4 s guard. `self_check` disables the embedder on an index/model mismatch; results produced while the embedder was degraded are not cached.
+
+### Houses 0.0 / dasha 0.44 diagnosis (BUG-027, development diagnostic on the spent fresh set)
+
+Not a chunking or label problem: the gold chunks exist and are reachable (`saturn-in-the-houses-saturn-in-the-9th-house-saturn-in-the-10th-house`, `saturn-mahadasha-19-years-antardashas`). Three systematic causes: (1) IDF treated "saturn" (32% of chunks) and "house" as noise although planet + house together ARE the heading; (2) untranslated Hinglish function words ("kaisa", "rehta") looked rare and dominated the OR/AND lists; (3) pair headings ("Saturn-Venus" rows, "7th lord in each house") need phrase matching. Fixes: planets are never dropped as common; Roman tokens that are not KB heading words, planets, signs or sound-alikes are dropped for Hinglish; new `f:a` anchor list (`planet <3> 10th`, `7th <-> lord`, `a <-> b` for dasha pairs, weight 2.0).
+
+Off-mode hit@5 after: even 0.818 (nDCG 0.566>0.529), odd 0.818>0.849, 204-query set 0.866>0.887, fresh Hindi diagnostic 0.68>0.76 (houses 0.0>0.8, dasha 0.44>0.56). The fresh set is spent as a blind set.
+
+## 2f. Final exam (`evals/rag_final`, 90 answerable + 12 traps; EN 45, HI 23, HG 22; independent labeller; run once per configuration, nothing tuned)
+
+`python -m evals.rag_final.run_final --embedder <key>`; JSON in `evals/rag_final/final_*.json` (per-query rows, top-5 headings). Current retriever (anchor lists, named planets kept, Hinglish filler dropped, low_confidence), scratch DB `astroai_rag_scratch_q`, macOS arm64.
+
+| Config | hit@5 | hit@10 | MRR | nDCG@10 | hit@5 en / hi / hg | traps flagged low_confidence | false positives on answerable | p50 / p95 ms |
+|---|---|---|---|---|---|---|---|---|
+| keys+FTS (minilm-l6-q index) | 0.756 | 0.800 | 0.611 | 0.585 | 0.82 / 0.74 / 0.64 | 0/12 | 2/90 | 39.7 / 74.2 |
+| **local minilm-l6-q** | 0.800 | 0.833 | 0.647 | 0.617 | 0.87 / 0.74 / 0.73 | 0/12 | 5/90 | 18.7 / 51.1 |
+| keys+FTS (bge-small index) | 0.767 | 0.822 | 0.625 | 0.601 | 0.82 / 0.74 / 0.68 | 0/12 | 2/90 | 39.2 / 75.0 |
+| local bge-small (reference) | 0.822 | 0.856 | 0.676 | 0.641 | 0.84 / 0.83 / 0.77 | 0/12 | 4/90 | 38.0 / 66.2 |
+
+By topic, hit@5 (minilm-l6-q off > local): dasha 0.87>0.80, dignity 0.88>0.88, divisional 0.80>1.00, houses 0.58>0.58, matching 0.75>0.83, nakshatras 0.90>0.90, panchang 0.88>0.88, remedies 0.40>0.60, sade_sati 0.75>0.88, yogas 0.57>0.71. Weak either way: houses 0.58, yogas 0.57-0.71, remedies 0.4-0.6.
+
+Reading: local minilm-l6-q adds +0.044 hit@5 and +0.032 nDCG@10 over keys+FTS (Hinglish +0.09, English +0.05, Hindi 0); bge-small adds +0.055 / +0.04 and is the only one that helps Devanagari Hindi (0.74 > 0.83). With the Hindi/Hinglish exam (+0.11) every fresh blind set favours local. Latency stays inside the 250 ms alert on a laptop. **Traps: 0 of 12 flagged by `low_confidence` in any configuration**, so that signal does not detect no-answer questions; it fires on 2-5 of 90 answerable (2-6%). The answer layer must keep its "cite only what the notes say" rule.
+
+Ten worst misses (minilm-l6-q local), categorised. Retrieval/planner defects (7, NOT fixed against this set): `dasha:01:hg` (phrasebook chunk outranks "The order and years"); `dasha:03:hg` ("AD" abbreviation unknown, Rahu/eclipse chunks returned); `houses:04:en` (kendra/trikona/upachaya "House-type guide" never surfaces, house-lord chunks win); `houses:01:hi` (आठवें भाव = 8th house not mapped, Sade Sati chunks returned); `houses:02:hi` (वृषभ not mapped to Taurus: Scorpio lagna chunk returned); `matching:01:hg` ("6/8" not mapped to Bhakoot); `nakshatras:03:hi` (the joined spelling पूर्वाभाद्रपद is not in the glossary). Label strictness / hard paraphrase (3): `houses:02:en` (the per-lagna yogakaraka chunks of the gold file answer the question; only the summary-table chunk is graded), `matching:06:en` (a product-wording question; gold is one section of kb_match_relationship_types), `sade_sati:01:hi` (Rahu/Ketu transit duration; Rahu chunks from four other files returned, gold is the gochara-rules section; partly a defect). Missing knowledge: none found.
+
+**Decision re-confirmed: keep `EMBEDDING_MODEL=minilm-l6-q`, `EMBEDDINGS_RUNTIME=local`.** The gain is small but positive on all three fresh blind sets (+0.04 / +0.11 / +0.03 to +0.06), the cost is +125 MB with a keys+FTS fallback, and rollback is one env var. Condition unchanged: re-ingest Neon first. Caveat: Linux RSS unmeasured.
+
+### Vocabulary classes and live trap test (BUG-027)
+
+`app/rag/vocab.py` maps complete classes (not samples) onto KB words: signs, all 27 nakshatras (spaced and joined Devanagari, Roman variants), ordinals and house-lord words 1-12, kendra/trikona/dusthana/upachaya (reach the "House Classifications" headings), planets and nicknames, MD/AD/PD and D1-D60, kuta/dosha names and 6/8, 2/12, 5/9, Panchang limbs, tithis, weekdays. Unit tests iterate every member (`tests/rag/test_vocab_classes.py`). kb_lang_* chunks carry a 0.012 penalty unless the question asks for a meaning or translation. Off-mode hit@5 after: even 0.855, odd 0.833, 204-set 0.909, fresh-hi diagnostic 0.778. Known ambiguity: "shravan"/"magh" stay lunar months.
+
+Live trap run (`python -m evals.trap_live`, real Gemini, synthetic chart): 25 refusal / no-answer / injection questions; no invented price, date, diagnosis or lottery number, no leak.
+
 ## 3. Operations
 
 ```bash
@@ -119,7 +235,7 @@ python -m app.rag.ingest --kb-keys-file keys.txt ...        # or let ingest gene
 - **Run 008 first.** `kb_chunks` had `PRIMARY KEY (id)`, so a re-index (same ids, new `index_version`) failed with a unique violation. Migration 008 makes it `(index_version, id)`, adds `meta JSONB` and a heading-weighted tsvector. The code also works against the 007 schema for reads.
 - **Deploy order for a corpus or chunking change:** `--dry-run`, ingest to the scratch DB, run `evals.rag.run` and compare to the table above, then ingest to prod. The indexer copies unchanged chunks, embeds only new ones, runs a 4-query smoke test, flips the version and keeps the previous one. Roll back with `--rollback` (instant).
 - **Startup:** call `await retriever.self_check()` once and log it. It reports no active version, an empty index, an embedding-model mismatch (index vs runtime) and a failing probe query. A failed check never blocks the app; chat degrades to chart facts.
-- **Settings:** `EMBEDDINGS_RUNTIME=local|off`, `EMBEDDING_MODEL`, `RAG_EXCLUDE_REVIEW`, `RAG_RERANK_MODEL`, `RAG_TIMEOUT_S` (3 s), plus `rag_top_k` / `rag_token_cap` / `rag_candidates`.
+- **Settings:** `EMBEDDINGS_RUNTIME=local|off`, `EMBEDDING_MODEL` (spec key or full name), `EMBED_QUERY_TIMEOUT_S` (0.4), `RAG_EXCLUDE_REVIEW`, `RAG_RERANK_MODEL`, `RAG_TIMEOUT_S` (3 s), plus `rag_top_k` / `rag_token_cap` / `rag_candidates`.
 - **Resilience:** per-request timeout, in-process circuit breaker (5 failures in 60 s opens it for 30 s), Redis cache failures ignored, store failure returns no chunks and `metadata.rag.degraded=true`.
 - **Metrics:** `retriever.metrics.snapshot()` returns request count, empty rate, degraded, cache hit rate, errors, timeouts, p50/p95 latency and rerank reorder rate. Logs (`rag_retrieve`) carry counts and latencies only, never question text, birth data or chunk text.
 - **Alerts to set:** empty-result rate above 5 %, degraded above 2 %, p95 above 250 ms, any `rag_error`.

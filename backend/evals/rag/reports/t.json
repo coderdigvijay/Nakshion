@@ -1,119 +1,119 @@
 {
  "all": {
-  "hit@5": 0.5455,
-  "hit@10": 0.7091,
-  "primary@5": 0.4545,
-  "recall@5": 0.347,
-  "recall@10": 0.4271,
-  "mrr": 0.3918,
-  "ndcg@10": 0.3401
+  "hit@5": 0.8,
+  "hit@10": 0.8182,
+  "primary@5": 0.7455,
+  "recall@5": 0.5488,
+  "recall@10": 0.56,
+  "mrr": 0.629,
+  "ndcg@10": 0.5263
  },
  "strict_old_gold": {
-  "hit@5": 0.5455,
-  "hit@10": 0.7091,
-  "primary@5": 0.4545,
-  "recall@5": 0.347,
-  "recall@10": 0.4271,
-  "mrr": 0.3918,
-  "ndcg@10": 0.3401,
+  "hit@5": 0.8,
+  "hit@10": 0.8182,
+  "primary@5": 0.7455,
+  "recall@5": 0.5488,
+  "recall@10": 0.56,
+  "mrr": 0.629,
+  "ndcg@10": 0.5263,
   "n": 55
  },
  "lang": {
   "en": {
-   "hit@5": 0.4615,
-   "hit@10": 0.5769,
-   "primary@5": 0.4231,
-   "recall@5": 0.3064,
-   "recall@10": 0.3221,
-   "mrr": 0.3168,
-   "ndcg@10": 0.2705
+   "hit@5": 0.8077,
+   "hit@10": 0.8462,
+   "primary@5": 0.8077,
+   "recall@5": 0.5429,
+   "recall@10": 0.5512,
+   "mrr": 0.6517,
+   "ndcg@10": 0.545
   },
   "hg": {
-   "hit@5": 0.6154,
+   "hit@5": 0.6923,
    "hit@10": 0.6923,
-   "primary@5": 0.4615,
-   "recall@5": 0.4359,
-   "recall@10": 0.5513,
-   "mrr": 0.5103,
-   "ndcg@10": 0.398
+   "primary@5": 0.6154,
+   "recall@5": 0.5897,
+   "recall@10": 0.5897,
+   "mrr": 0.5449,
+   "ndcg@10": 0.4666
   },
   "hi": {
-   "hit@5": 0.625,
-   "hit@10": 0.9375,
-   "primary@5": 0.5,
-   "recall@5": 0.3406,
-   "recall@10": 0.4969,
-   "mrr": 0.4174,
-   "ndcg@10": 0.4061
+   "hit@5": 0.875,
+   "hit@10": 0.875,
+   "primary@5": 0.75,
+   "recall@5": 0.525,
+   "recall@10": 0.55,
+   "mrr": 0.6604,
+   "ndcg@10": 0.5445
   }
  },
  "source": {
   "independent": {
-   "hit@5": 0.5455,
-   "hit@10": 0.7091,
-   "primary@5": 0.4545,
-   "recall@5": 0.347,
-   "recall@10": 0.4271,
-   "mrr": 0.3918,
-   "ndcg@10": 0.3401
+   "hit@5": 0.8,
+   "hit@10": 0.8182,
+   "primary@5": 0.7455,
+   "recall@5": 0.5488,
+   "recall@10": 0.56,
+   "mrr": 0.629,
+   "ndcg@10": 0.5263
   }
  },
  "split": {
   "indep": {
-   "hit@5": 0.5455,
-   "hit@10": 0.7091,
-   "primary@5": 0.4545,
-   "recall@5": 0.347,
-   "recall@10": 0.4271,
-   "mrr": 0.3918,
-   "ndcg@10": 0.3401
+   "hit@5": 0.8,
+   "hit@10": 0.8182,
+   "primary@5": 0.7455,
+   "recall@5": 0.5488,
+   "recall@10": 0.56,
+   "mrr": 0.629,
+   "ndcg@10": 0.5263
   }
  },
  "topic": {
   "dignity": {
-   "hit@5": 0.2143,
-   "hit@10": 0.6429,
-   "primary@5": 0.2143,
-   "recall@5": 0.1036,
-   "recall@10": 0.2949,
-   "mrr": 0.2152,
-   "ndcg@10": 0.2332
+   "hit@5": 0.6429,
+   "hit@10": 0.7143,
+   "primary@5": 0.5714,
+   "recall@5": 0.2893,
+   "recall@10": 0.3383,
+   "mrr": 0.4484,
+   "ndcg@10": 0.3254
   },
   "gochara": {
    "hit@5": 1.0,
    "hit@10": 1.0,
    "primary@5": 1.0,
    "recall@5": 0.4,
-   "recall@10": 0.2,
+   "recall@10": 0.3,
    "mrr": 0.5,
-   "ndcg@10": 0.2489
+   "ndcg@10": 0.312
   },
   "matching": {
-   "hit@5": 0.6,
-   "hit@10": 0.7,
-   "primary@5": 0.55,
-   "recall@5": 0.4167,
-   "recall@10": 0.4917,
-   "mrr": 0.4805,
-   "ndcg@10": 0.4253
+   "hit@5": 0.85,
+   "hit@10": 0.85,
+   "primary@5": 0.8,
+   "recall@5": 0.6167,
+   "recall@10": 0.6417,
+   "mrr": 0.7292,
+   "ndcg@10": 0.6333
   },
   "nakshatras": {
-   "hit@5": 0.5714,
-   "hit@10": 0.6429,
-   "primary@5": 0.3571,
-   "recall@5": 0.4048,
-   "recall@10": 0.4762,
-   "mrr": 0.3971,
-   "ndcg@10": 0.3242
+   "hit@5": 0.7857,
+   "hit@10": 0.7857,
+   "primary@5": 0.7857,
+   "recall@5": 0.7262,
+   "recall@10": 0.7262,
+   "mrr": 0.7143,
+   "ndcg@10": 0.6538
   },
   "panchang": {
    "hit@5": 1.0,
    "hit@10": 1.0,
    "primary@5": 1.0,
    "recall@5": 0.3778,
-   "recall@10": 0.2444,
-   "mrr": 0.3444,
-   "ndcg@10": 0.264
+   "recall@10": 0.2778,
+   "mrr": 0.5111,
+   "ndcg@10": 0.3123
   },
   "sade_sati": {
    "hit@5": 1.0,
@@ -121,8 +121,8 @@
    "primary@5": 0.5,
    "recall@5": 0.55,
    "recall@10": 0.4643,
-   "mrr": 0.6667,
-   "ndcg@10": 0.3617
+   "mrr": 0.6,
+   "ndcg@10": 0.3461
   },
   "yogas": {
    "hit@5": 1.0,
@@ -135,41 +135,41 @@
   }
  },
  "latency_ms": {
-  "p50": 29.0,
-  "p95": 50.4,
-  "mean": 30.3
+  "p50": 40.0,
+  "p95": 61.0,
+  "mean": 41.1
  },
  "n": 55,
  "per_query": [
   {
    "id": "indep:matching:02:en",
    "lang": "en",
-   "ms": 35.1,
+   "ms": 41.0,
    "top": [
     "kb_lang_hinglish_phrasebook#h-chart-basics-and-technical-asks#1",
-    "kb_chart_nakshatra_pada_and_ascendant_notes#the-lagna-and-its-nakshatra#0",
     "kb_match_ashtakoota_guna_milan#nadi-koota-8-points#0",
-    "kb_chart_nakshatra_pada_and_ascendant_notes#what-can-be-said-with-moon-sign-nakshatra-sun-sign-alone#0",
-    "kb_match_doshas_and_cancellations#nadi-dosha#0"
+    "kb_match_doshas_and_cancellations#nadi-dosha#0",
+    "nakshatras_deep_dive#nakshatra-compatibility-kuta-system#0",
+    "kb_match_doshas_and_cancellations#bhakoot-dosha#0"
    ],
    "hit@5": 1.0,
    "hit@10": 1.0,
    "primary@5": 1.0,
    "recall@5": 1.0,
    "recall@10": 1.0,
-   "mrr": 0.3333333333333333,
-   "ndcg@10": 0.5
+   "mrr": 0.5,
+   "ndcg@10": 0.6309297535714574
   },
   {
    "id": "indep:matching:04:en",
    "lang": "en",
-   "ms": 51.5,
+   "ms": 60.7,
    "top": [
-    "daily_guidance#void-of-course-moon-timing-voc-moon-rules-monthly-voc-moon-p#0",
-    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
     "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
-    "daily_guidance#moon-phase-meanings-and-rituals-waning-gibbous-disseminating#0",
-    "kb_dasha_antardasha_combinations#moon-mahadasha-10-years-antardashas#1"
+    "kb_chart_nakshatra_pada_and_ascendant_notes#what-can-be-said-with-moon-sign-nakshatra-sun-sign-alone#0",
+    "love_relationships#the-relationship-houses-5th-house-romance-and-dating-7th-hou#0",
+    "compatibility_synastry_advanced#same-sign-vs-complementary-sign-dynamics#0",
+    "indian_jaimini_sutras#jaimini-dasha-systems-chara-dasha-movable-period-system-sthi#0"
    ],
    "hit@5": 0.0,
    "hit@10": 0.0,
@@ -182,51 +182,51 @@
   {
    "id": "indep:matching:06:en",
    "lang": "en",
-   "ms": 43.1,
+   "ms": 41.8,
    "top": [
-    "daily_guidance#void-of-course-moon-timing-voc-moon-rules-monthly-voc-moon-p#0",
-    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
-    "kb_dasha_antardasha_combinations#moon-mahadasha-10-years-antardashas#1",
-    "daily_guidance#moon-phase-meanings-and-rituals-waning-gibbous-disseminating#0",
-    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0"
+    "kb_match_doshas_and_cancellations#bhakoot-dosha#0",
+    "kb_match_doshas_and_cancellations#nadi-dosha#0",
+    "kb_match_doshas_and_cancellations#gana-dosha#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
+    "kb_chart_nakshatra_pada_and_ascendant_notes#what-can-be-said-with-moon-sign-nakshatra-sun-sign-alone#0"
    ],
-   "hit@5": 0.0,
-   "hit@10": 0.0,
-   "primary@5": 0.0,
-   "recall@5": 0.0,
-   "recall@10": 0.0,
-   "mrr": 0.0,
-   "ndcg@10": 0.0
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.5,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.8065735963827292
   },
   {
    "id": "indep:matching:08:en",
    "lang": "en",
-   "ms": 31.6,
+   "ms": 31.7,
    "top": [
     "kb_chart_planets_in_houses_vedic#mars-in-the-houses-mars-in-the-5th-house-mars-in-the-6th-hou#0",
+    "kb_lang_hinglish_phrasebook#a-marriage-and-relationships-7th-house-venus-jupiter-navamsh#1",
     "vedic_astrology#mangal-dosha-mars-affliction#0",
-    "kb_chart_planets_in_houses_vedic#mars-in-the-houses-mars-in-the-1st-house-mars-in-the-2nd-hou#0",
-    "kb_chart_planets_in_houses_vedic#mars-in-the-houses-mars-in-the-9th-house-mars-in-the-10th-ho#0",
-    "kb_lang_hinglish_phrasebook#a-marriage-and-relationships-7th-house-venus-jupiter-navamsh#0"
+    "kb_match_doshas_and_cancellations#manglik-dosha-cancellations#0",
+    "kb_match_doshas_and_cancellations#nadi-dosha#0"
    ],
-   "hit@5": 0.0,
+   "hit@5": 1.0,
    "hit@10": 1.0,
-   "primary@5": 0.0,
-   "recall@5": 0.0,
+   "primary@5": 1.0,
+   "recall@5": 0.5,
    "recall@10": 0.5,
-   "mrr": 0.14285714285714285,
-   "ndcg@10": 0.09180385079206221
+   "mrr": 0.25,
+   "ndcg@10": 0.35583989829307827
   },
   {
    "id": "indep:matching:10:en",
    "lang": "en",
-   "ms": 29.3,
+   "ms": 45.9,
    "top": [
     "kb_match_ashtakoota_guna_milan#tara-dina-koota-3-points#0",
     "kb_match_beyond_36_points#why-the-36-points-are-only-a-starting-layer#0",
+    "nakshatras_deep_dive#nakshatra-compatibility-kuta-system#0",
     "kb_match_ashtakoota_guna_milan#bhakoot-rasi-koota-7-points#0",
-    "kb_match_ashtakoota_guna_milan#nadi-koota-8-points#0",
-    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-1-elemental-comp#0"
+    "kb_match_ashtakoota_guna_milan#vashya-koota-2-points#0"
    ],
    "hit@5": 1.0,
    "hit@10": 1.0,
@@ -239,13 +239,13 @@
   {
    "id": "indep:matching:12:en",
    "lang": "en",
-   "ms": 17.6,
+   "ms": 23.4,
    "top": [
     "kb_match_ashtakoota_guna_milan#reading-the-total-out-of-36#0",
     "love_relationships#juno-the-marriage-asteroid-juno-sign-interpretations#0",
     "love_relationships#juno-the-marriage-asteroid-juno-house-placement-juno-aspects#0",
     "kb_lang_hinglish_phrasebook#a-marriage-and-relationships-7th-house-venus-jupiter-navamsh#0",
-    "kb_match_relationship_types#marriage-is-the-original-use-case#0"
+    "kb_match_beyond_36_points#why-the-36-points-are-only-a-starting-layer#0"
    ],
    "hit@5": 1.0,
    "hit@10": 1.0,
@@ -258,32 +258,32 @@
   {
    "id": "indep:matching:14:en",
    "lang": "en",
-   "ms": 53.2,
+   "ms": 81.6,
    "top": [
+    "kb_match_ashtakoota_guna_milan#graha-maitri-koota-5-points#0",
     "vedic_astrology#the-27-nakshatras-6-ardra-6-40-20-00-gemini-7-punarvasu-20-0#0",
     "nakshatras_deep_dive#7-punarvasu-20-00-gemini-3-20-cancer#0",
-    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
-    "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
-    "career_astrology#best-careers-by-sun-sign-aries-taurus-gemini-cancer-leo-virg#0"
+    "kb_match_ashtakoota_guna_milan#overview#0",
+    "kb_match_ashtakoota_guna_milan#varna-koota-1-point#0"
    ],
-   "hit@5": 0.0,
-   "hit@10": 0.0,
-   "primary@5": 0.0,
-   "recall@5": 0.0,
-   "recall@10": 0.0,
-   "mrr": 0.0,
-   "ndcg@10": 0.0
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.5,
+   "recall@10": 0.5,
+   "mrr": 1.0,
+   "ndcg@10": 0.8262346571285599
   },
   {
    "id": "indep:matching:16:en",
    "lang": "en",
-   "ms": 20.7,
+   "ms": 45.1,
    "top": [
     "kb_match_beyond_36_points#a-practical-order-of-reading#0",
     "kb_match_beyond_36_points#why-the-36-points-are-only-a-starting-layer#0",
     "kb_match_beyond_36_points#moon-mind-and-emotional-fit#0",
-    "kb_lang_glossary_hi_en#6-dasha-vocabulary-and-the-vimshottari-order#1",
-    "daily_guidance#quick-reference-today-s-astrological-weather#0"
+    "kb_match_ashtakoota_guna_milan#overview#0",
+    "kb_lang_glossary_hi_en#6-dasha-vocabulary-and-the-vimshottari-order#1"
    ],
    "hit@5": 1.0,
    "hit@10": 1.0,
@@ -296,32 +296,32 @@
   {
    "id": "indep:matching:18:en",
    "lang": "en",
-   "ms": 29.0,
+   "ms": 48.4,
    "top": [
+    "kb_match_ashtakoota_guna_milan#regional-variants#0",
+    "kb_lang_glossary_hi_en#11-ashtakoota-kundli-milan-terms#0",
+    "vedic_astrology#key-differences-from-western-astrology#0",
     "indian_jaimini_sutras#jaimini-dasha-systems-chara-dasha-movable-period-system-sthi#0",
-    "indian_bphs#ashtakavarga-system-how-it-works-key-thresholds-practical-ap#0",
-    "indian_bphs#dasha-systems-vimshottari-dasha-120-year-cycle-ashtottari-da#0",
-    "spiritual_astrology#north-node-south-node-life-purpose-north-node-by-house#0",
-    "spiritual_astrology#north-node-south-node-life-purpose-north-node-by-sign#0"
+    "indian_bphs#ashtakavarga-system-how-it-works-key-thresholds-practical-ap#0"
    ],
-   "hit@5": 0.0,
-   "hit@10": 0.0,
-   "primary@5": 0.0,
-   "recall@5": 0.0,
-   "recall@10": 0.0,
-   "mrr": 0.0,
-   "ndcg@10": 0.0
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
   },
   {
    "id": "indep:matching:02:hi",
    "lang": "hi",
-   "ms": 45.6,
+   "ms": 47.4,
    "top": [
     "kb_match_doshas_and_cancellations#nadi-dosha#0",
     "kb_match_doshas_and_cancellations#what-dosha-means-in-matching#0",
-    "kb_match_doshas_and_cancellations#manglik-kuja-mangal-dosha-the-rule#0",
+    "kb_match_doshas_and_cancellations#bhakoot-dosha#0",
     "kb_match_ashtakoota_guna_milan#nadi-koota-8-points#0",
-    "kb_lang_glossary_hi_en#11-ashtakoota-kundli-milan-terms#0"
+    "spiritual_astrology#past-life-indicators-in-the-natal-chart#0"
    ],
    "hit@5": 1.0,
    "hit@10": 1.0,
@@ -334,51 +334,51 @@
   {
    "id": "indep:matching:04:hi",
    "lang": "hi",
-   "ms": 37.1,
+   "ms": 29.7,
    "top": [
-    "vedic_astrology#mangal-dosha-mars-affliction#0",
     "kb_match_doshas_and_cancellations#manglik-kuja-mangal-dosha-the-rule#0",
+    "vedic_astrology#mangal-dosha-mars-affliction#0",
     "kb_match_doshas_and_cancellations#manglik-dosha-cancellations#0",
-    "kb_chart_yogas_catalogue#mangal-dosha#0",
-    "kb_chart_planets_in_houses_vedic#mars-in-the-houses-mars-in-the-1st-house-mars-in-the-2nd-hou#0"
+    "kb_match_doshas_and_cancellations#what-dosha-means-in-matching#0",
+    "kb_chart_yogas_catalogue#mangal-dosha#0"
    ],
    "hit@5": 1.0,
    "hit@10": 1.0,
    "primary@5": 1.0,
    "recall@5": 0.6666666666666666,
    "recall@10": 0.6666666666666666,
-   "mrr": 0.5,
-   "ndcg@10": 0.4308467671291832
+   "mrr": 1.0,
+   "ndcg@10": 0.6280335914305488
   },
   {
    "id": "indep:matching:06:hi",
    "lang": "hi",
-   "ms": 32.8,
+   "ms": 46.7,
    "top": [
+    "kb_match_ashtakoota_guna_milan#gana-koota-6-points#0",
     "kb_match_doshas_and_cancellations#what-dosha-means-in-matching#0",
-    "kb_match_beyond_36_points#why-the-36-points-are-only-a-starting-layer#0",
     "kb_match_beyond_36_points#dasha-and-transit-compatibility#0",
-    "kb_match_beyond_36_points#upapada-lagna-jaimini#0",
-    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-1-elemental-comp#0"
+    "kb_match_doshas_and_cancellations#gana-dosha#0",
+    "kb_lang_glossary_hi_en#11-ashtakoota-kundli-milan-terms#0"
    ],
-   "hit@5": 0.0,
+   "hit@5": 1.0,
    "hit@10": 1.0,
-   "primary@5": 0.0,
-   "recall@5": 0.0,
-   "recall@10": 0.5,
-   "mrr": 0.1,
-   "ndcg@10": 0.2388353776606868
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.944847956559586
   },
   {
    "id": "indep:matching:08:hi",
    "lang": "hi",
-   "ms": 29.0,
+   "ms": 31.0,
    "top": [
     "kb_match_ashtakoota_guna_milan#varna-koota-1-point#0",
-    "spiritual_astrology#neptune-and-spiritual-awakening#0",
-    "spiritual_astrology#the-12th-house-as-spiritual-gateway#0",
+    "kb_match_beyond_36_points#dasha-and-transit-compatibility#0",
     "kb_match_beyond_36_points#why-the-36-points-are-only-a-starting-layer#0",
-    "kb_match_beyond_36_points#dasha-and-transit-compatibility#0"
+    "kb_match_beyond_36_points#the-seventh-house-and-its-lord#0",
+    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-1-elemental-comp#0"
    ],
    "hit@5": 1.0,
    "hit@10": 1.0,
@@ -391,13 +391,13 @@
   {
    "id": "indep:matching:10:hi",
    "lang": "hi",
-   "ms": 22.2,
+   "ms": 31.7,
    "top": [
     "kb_lang_hinglish_phrasebook#a-marriage-and-relationships-7th-house-venus-jupiter-navamsh#1",
-    "love_relationships#juno-the-marriage-asteroid-juno-sign-interpretations#0",
+    "kb_match_ashtakoota_guna_milan#overview#0",
     "kb_match_ashtakoota_guna_milan#reading-the-total-out-of-36#0",
-    "love_relationships#juno-the-marriage-asteroid-juno-house-placement-juno-aspects#0",
-    "kb_match_ashtakoota_guna_milan#overview#0"
+    "kb_match_ashtakoota_guna_milan#yoni-koota-4-points#0",
+    "love_relationships#juno-the-marriage-asteroid-juno-sign-interpretations#0"
    ],
    "hit@5": 1.0,
    "hit@10": 1.0,
@@ -410,7 +410,7 @@
   {
    "id": "indep:matching:12:hi",
    "lang": "hi",
-   "ms": 31.9,
+   "ms": 55.6,
    "top": [
     "love_relationships#synastry-relationship-compatibility-most-important-synastry-#0",
     "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-1-elemental-comp#0",
@@ -429,13 +429,13 @@
   {
    "id": "indep:matching:02:hg",
    "lang": "hg",
-   "ms": 27.8,
+   "ms": 30.4,
    "top": [
     "kb_match_ashtakoota_guna_milan#nadi-koota-8-points#0",
     "kb_match_doshas_and_cancellations#nadi-dosha#0",
-    "kb_lang_glossary_hi_en#11-ashtakoota-kundli-milan-terms#0",
-    "kb_lang_hinglish_phrasebook#a-marriage-and-relationships-7th-house-venus-jupiter-navamsh#1",
-    "nakshatras_deep_dive#nakshatra-compatibility-kuta-system#0"
+    "spiritual_astrology#past-life-indicators-in-the-natal-chart#0",
+    "kb_match_beyond_36_points#upapada-lagna-jaimini#0",
+    "kb_match_beyond_36_points#venus-and-jupiter-as-relationship-significators#0"
    ],
    "hit@5": 1.0,
    "hit@10": 1.0,
@@ -448,31 +448,31 @@
   {
    "id": "indep:matching:04:hg",
    "lang": "hg",
-   "ms": 50.4,
+   "ms": 52.3,
    "top": [
-    "kb_match_beyond_36_points#moon-mind-and-emotional-fit#0",
-    "daily_guidance#void-of-course-moon-timing-voc-moon-rules-monthly-voc-moon-p#0",
-    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
-    "kb_dasha_antardasha_combinations#moon-mahadasha-10-years-antardashas#1",
-    "kb_match_doshas_and_cancellations#bhakoot-dosha#0"
+    "kb_match_doshas_and_cancellations#manglik-kuja-mangal-dosha-the-rule#0",
+    "kb_match_doshas_and_cancellations#bhakoot-dosha#0",
+    "kb_match_doshas_and_cancellations#nadi-dosha#0",
+    "kb_match_ashtakoota_guna_milan#bhakoot-rasi-koota-7-points#0",
+    "vedic_astrology#mangal-dosha-mars-affliction#0"
    ],
    "hit@5": 1.0,
    "hit@10": 1.0,
    "primary@5": 1.0,
-   "recall@5": 0.5,
+   "recall@5": 1.0,
    "recall@10": 1.0,
-   "mrr": 0.2,
-   "ndcg@10": 0.4114350473367146
+   "mrr": 0.5,
+   "ndcg@10": 0.639909328045346
   },
   {
    "id": "indep:matching:06:hg",
    "lang": "hg",
-   "ms": 39.0,
+   "ms": 39.3,
    "top": [
-    "aspects#aspect-interpretation-between-specific-planet-pairs-sun-moon#0",
-    "indian_bphs#graha-drishti-planetary-aspects-in-bphs-all-planets-special-#0",
-    "indian_jaimini_sutras#rashi-aspects-sign-based-aspects-aspect-rules-why-this-matte#0",
-    "kb_chart_planets_in_houses_vedic#jupiter-in-the-houses-jupiter-in-the-5th-house-jupiter-in-th#0",
+    "kb_remedy_traditional_remedies#2-planet-by-planet-table-traditional-conventions#2",
+    "vedic_astrology#mangal-dosha-mars-affliction#0",
+    "houses#seventh-house-the-descendant-life-area-natural-sign-ruler-cl#0",
+    "kb_lang_hinglish_phrasebook#a-marriage-and-relationships-7th-house-venus-jupiter-navamsh#1",
     "kb_chart_planets_in_houses_vedic#mars-in-the-houses-mars-in-the-1st-house-mars-in-the-2nd-hou#0"
    ],
    "hit@5": 0.0,
@@ -486,13 +486,13 @@
   {
    "id": "indep:matching:08:hg",
    "lang": "hg",
-   "ms": 24.3,
+   "ms": 32.0,
    "top": [
     "kb_match_ashtakoota_guna_milan#tara-dina-koota-3-points#0",
     "kb_match_beyond_36_points#why-the-36-points-are-only-a-starting-layer#0",
+    "nakshatras_deep_dive#nakshatra-compatibility-kuta-system#0",
     "kb_match_beyond_36_points#dasha-and-transit-compatibility#0",
-    "kb_match_beyond_36_points#navamsa-d9#0",
-    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-1-elemental-comp#0"
+    "kb_lang_glossary_hi_en#11-ashtakoota-kundli-milan-terms#0"
    ],
    "hit@5": 1.0,
    "hit@10": 1.0,
@@ -505,13 +505,13 @@
   {
    "id": "indep:matching:10:hg",
    "lang": "hg",
-   "ms": 24.5,
+   "ms": 38.0,
    "top": [
     "kb_match_relationship_types#marriage-is-the-original-use-case#0",
     "kb_match_beyond_36_points#upapada-lagna-jaimini#0",
     "kb_match_beyond_36_points#dasha-and-transit-compatibility#0",
-    "love_relationships#juno-the-marriage-asteroid-juno-house-placement-juno-aspects#0",
-    "kb_match_beyond_36_points#venus-and-jupiter-as-relationship-significators#0"
+    "kb_match_beyond_36_points#venus-and-jupiter-as-relationship-significators#0",
+    "love_relationships#juno-the-marriage-asteroid-juno-house-placement-juno-aspects#0"
    ],
    "hit@5": 1.0,
    "hit@10": 1.0,
@@ -524,26 +524,26 @@
   {
    "id": "indep:dignity:02:en",
    "lang": "en",
-   "ms": 25.8,
+   "ms": 37.9,
    "top": [
-    "love_relationships#venus-your-love-style-venus-sign-interpretations#0",
-    "planets#venus-core-archetype-function-psychological-representation-d#0",
-    "kb_chart_planets_in_houses_vedic#venus-in-the-houses-venus-in-the-5th-house-venus-in-the-6th-#0",
-    "kb_chart_planets_in_houses_vedic#venus-in-the-houses-venus-in-the-9th-house-venus-in-the-10th#0",
-    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0"
+    "kb_chart_planets_in_signs_dignity#exaltation-and-debilitation-uccha-neecha#0",
+    "famous_charts_analysis#mahatma-gandhi-october-2-1869-7-12-am-porbandar-india-chart-#0",
+    "kb_chart_planets_in_signs_dignity#moolatrikona-root-triangle-ranges#0",
+    "kb_chart_planets_in_signs_dignity#planetary-states-avasthas-basics#0",
+    "indian_bphs#planetary-avasthas-states-deeptadi-avasthas-luminosity-state#0"
    ],
-   "hit@5": 0.0,
+   "hit@5": 1.0,
    "hit@10": 1.0,
-   "primary@5": 0.0,
-   "recall@5": 0.0,
-   "recall@10": 0.25,
-   "mrr": 0.16666666666666666,
-   "ndcg@10": 0.23426431136683007
+   "primary@5": 1.0,
+   "recall@5": 0.25,
+   "recall@10": 0.5,
+   "mrr": 1.0,
+   "ndcg@10": 0.7357511713670489
   },
   {
    "id": "indep:dignity:04:en",
    "lang": "en",
-   "ms": 24.7,
+   "ms": 43.6,
    "top": [
     "vedic_astrology#rahu-and-ketu-in-vedic-context-rahu-north-node-ketu-south-no#0",
     "timing_transits#eclipse-interpretation-solar-eclipse-new-moon-near-north-nod#0",
@@ -552,42 +552,42 @@
     "spiritual_astrology#north-node-south-node-life-purpose-north-node-by-sign#0"
    ],
    "hit@5": 0.0,
-   "hit@10": 0.0,
+   "hit@10": 1.0,
    "primary@5": 0.0,
    "recall@5": 0.0,
-   "recall@10": 0.0,
-   "mrr": 0.0,
-   "ndcg@10": 0.0
+   "recall@10": 0.25,
+   "mrr": 0.1111111111111111,
+   "ndcg@10": 0.19797631038139768
   },
   {
    "id": "indep:dignity:06:en",
    "lang": "en",
-   "ms": 42.8,
+   "ms": 54.8,
    "top": [
-    "kb_dasha_antardasha_combinations#moon-mahadasha-10-years-antardashas#2",
-    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
-    "kb_dasha_antardasha_combinations#moon-mahadasha-10-years-antardashas#1",
     "kb_dasha_antardasha_combinations#mercury-mahadasha-17-years-antardashas#1",
-    "daily_guidance#void-of-course-moon-timing-voc-moon-rules-monthly-voc-moon-p#0"
+    "kb_dasha_antardasha_combinations#moon-mahadasha-10-years-antardashas#2",
+    "kb_dasha_antardasha_combinations#moon-mahadasha-10-years-antardashas#1",
+    "kb_chart_planets_in_signs_dignity#natural-friendships-naisargika-maitri#0",
+    "kb_chart_planets_in_signs_dignity#planetary-states-avasthas-basics#0"
    ],
-   "hit@5": 0.0,
-   "hit@10": 0.0,
-   "primary@5": 0.0,
-   "recall@5": 0.0,
-   "recall@10": 0.0,
-   "mrr": 0.0,
-   "ndcg@10": 0.0
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 0.5,
+   "recall@10": 0.5,
+   "mrr": 0.25,
+   "ndcg@10": 0.35583989829307827
   },
   {
    "id": "indep:dignity:08:en",
    "lang": "en",
-   "ms": 42.2,
+   "ms": 61.0,
    "top": [
-    "kb_dasha_antardasha_combinations#sun-mahadasha-6-years-antardashas#2",
-    "kb_dasha_antardasha_combinations#venus-mahadasha-20-years-antardashas#1",
-    "kb_chart_planets_in_houses_vedic#venus-in-the-houses-venus-in-the-5th-house-venus-in-the-6th-#0",
-    "kb_chart_planets_in_houses_vedic#sun-in-the-houses-sun-in-the-9th-house-sun-in-the-10th-house#0",
-    "kb_dasha_antardasha_combinations#sun-mahadasha-6-years-antardashas#1"
+    "planets#the-sun-retrograde-transit-effects-speed-orbital-period#0",
+    "timing_transits#venus-retrograde-in-relationships#0",
+    "planets#venus-retrograde-transit-effects-speed-orbital-period#0",
+    "timing_transits#mercury-retrograde-what-it-actually-means-what-happens-actua#0",
+    "daily_guidance#mercury-retrograde-survival-guide-before-mercury-retrograde-#0"
    ],
    "hit@5": 0.0,
    "hit@10": 0.0,
@@ -600,32 +600,32 @@
   {
    "id": "indep:dignity:10:en",
    "lang": "en",
-   "ms": 19.0,
+   "ms": 34.1,
    "top": [
+    "planets#the-north-node-rahu-core-archetype-function-psychological-re#0",
     "predictive_techniques_advanced#timing-events-when-aspects-become-exact-the-trigger-concept-#0",
+    "kb_chart_planets_in_signs_dignity#retrogression-vakri#0",
     "timing_transits#mercury-retrograde-what-it-actually-means-what-happens-actua#0",
-    "daily_guidance#mercury-retrograde-survival-guide-before-mercury-retrograde-#0",
-    "planets#mercury-retrograde-transit-effects-speed-orbital-period#0",
-    "planets#chiron-core-archetype-function-psychological-representation-#0"
+    "daily_guidance#mercury-retrograde-survival-guide-before-mercury-retrograde-#0"
    ],
-   "hit@5": 0.0,
+   "hit@5": 1.0,
    "hit@10": 1.0,
-   "primary@5": 0.0,
-   "recall@5": 0.0,
+   "primary@5": 1.0,
+   "recall@5": 0.2,
    "recall@10": 0.1,
-   "mrr": 0.14285714285714285,
-   "ndcg@10": 0.07336392209936006
+   "mrr": 0.3333333333333333,
+   "ndcg@10": 0.11004588314904008
   },
   {
    "id": "indep:dignity:12:en",
    "lang": "en",
-   "ms": 27.2,
+   "ms": 56.5,
    "top": [
-    "kb_chart_divisional_charts#d9-navamsa-dharma-spouse-inner-strength-worked-example-vargo#0",
-    "kb_dasha_alternative_systems#chara-dasha-jaimini#0",
-    "kb_panchang_daily_timings#rahu-kaal-rahu-kalam#0",
-    "health_astrology#body-parts-ruled-by-each-sign#0",
-    "career_astrology#timing-career-moves-with-transits-best-times-to-start-a-new-#0"
+    "health_astrology#body-parts-ruled-by-each-sign#1",
+    "career_astrology#timing-career-moves-with-transits-best-times-to-start-a-new-#0",
+    "kb_match_beyond_36_points#why-the-36-points-are-only-a-starting-layer#0",
+    "health_astrology#planets-and-health-associations#0",
+    "remedial_astrology#gemstone-therapy-gemstone-recommendations-by-planet#0"
    ],
    "hit@5": 0.0,
    "hit@10": 0.0,
@@ -638,51 +638,51 @@
   {
    "id": "indep:dignity:14:en",
    "lang": "en",
-   "ms": 30.6,
+   "ms": 36.7,
    "top": [
-    "kb_chart_planets_in_houses_vedic#sun-in-the-houses-sun-in-the-9th-house-sun-in-the-10th-house#0",
-    "kb_chart_planets_in_houses_vedic#sun-in-the-houses-sun-in-the-1st-house-sun-in-the-2nd-house-#0",
-    "kb_chart_planets_in_houses_vedic#sun-in-the-houses-sun-in-the-5th-house-sun-in-the-6th-house-#0",
-    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
-    "planets#the-sun-core-archetype-function-psychological-representation#0"
+    "indian_bphs#graha-planetary-characteristics-in-detail-the-nine-grahas#0",
+    "kb_chart_planets_in_signs_dignity#moolatrikona-root-triangle-ranges#0",
+    "kb_chart_planets_in_signs_dignity#exaltation-and-debilitation-uccha-neecha#0",
+    "zodiac_signs#aries-march-21-april-19-element-modality-ruling-planet-core-#0",
+    "zodiac_signs#aries-march-21-april-19-love-relationship-style-health-vulne#0"
    ],
    "hit@5": 1.0,
    "hit@10": 1.0,
    "primary@5": 1.0,
-   "recall@5": 0.2,
-   "recall@10": 0.42857142857142855,
-   "mrr": 0.2,
-   "ndcg@10": 0.26745360199101526
+   "recall@5": 0.4,
+   "recall@10": 0.2857142857142857,
+   "mrr": 1.0,
+   "ndcg@10": 0.28534863955631545
   },
   {
    "id": "indep:dignity:02:hi",
    "lang": "hi",
-   "ms": 31.4,
+   "ms": 31.5,
    "top": [
     "vedic_astrology#mangal-dosha-mars-affliction#0",
-    "love_relationships#mars-your-sexual-energy-mars-sign-interpretations#0",
-    "compatibility_synastry_advanced#the-seven-pillars-of-compatibility-analysis-3-venus-mars-int#0",
-    "kb_chart_planets_in_houses_vedic#mars-in-the-houses-mars-in-the-1st-house-mars-in-the-2nd-hou#0",
-    "kb_chart_planets_in_houses_vedic#mars-in-the-houses-mars-in-the-5th-house-mars-in-the-6th-hou#0"
+    "kb_match_doshas_and_cancellations#manglik-kuja-mangal-dosha-the-rule#0",
+    "kb_chart_planets_in_signs_dignity#exaltation-and-debilitation-uccha-neecha#0",
+    "kb_chart_yogas_catalogue#neecha-bhanga-raja-yoga#0",
+    "kb_chart_yogas_catalogue#mangal-dosha#0"
    ],
-   "hit@5": 0.0,
+   "hit@5": 1.0,
    "hit@10": 1.0,
-   "primary@5": 0.0,
-   "recall@5": 0.0,
+   "primary@5": 1.0,
+   "recall@5": 0.25,
    "recall@10": 0.25,
-   "mrr": 0.125,
-   "ndcg@10": 0.20746959858005143
+   "mrr": 0.3333333333333333,
+   "ndcg@10": 0.3288315337890528
   },
   {
    "id": "indep:dignity:04:hi",
    "lang": "hi",
-   "ms": 45.6,
+   "ms": 38.5,
    "top": [
     "kb_chart_planets_in_signs_dignity#combustion-asta#0",
-    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
-    "kb_dasha_antardasha_combinations#moon-mahadasha-10-years-antardashas#1",
-    "daily_guidance#void-of-course-moon-timing-voc-moon-rules-monthly-voc-moon-p#0",
-    "daily_guidance#moon-phase-meanings-and-rituals-waning-gibbous-disseminating#0"
+    "kb_chart_planets_in_signs_dignity#quick-reading-checklist-for-a-planet#0",
+    "kb_chart_planets_in_signs_dignity#moolatrikona-root-triangle-ranges#0",
+    "kb_chart_nakshatra_pada_and_ascendant_notes#what-can-be-said-with-moon-sign-nakshatra-sun-sign-alone#0",
+    "kb_panchang_gochara_transit_rules#chandra-gochara-the-moon-through-the-12-houses#0"
    ],
    "hit@5": 1.0,
    "hit@10": 1.0,
@@ -695,51 +695,51 @@
   {
    "id": "indep:dignity:06:hi",
    "lang": "hi",
-   "ms": 44.8,
+   "ms": 40.2,
    "top": [
-    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
-    "kb_chart_planets_in_houses_vedic#sun-in-the-houses-sun-in-the-9th-house-sun-in-the-10th-house#0",
-    "kb_chart_planets_in_houses_vedic#sun-in-the-houses-sun-in-the-5th-house-sun-in-the-6th-house-#0",
-    "kb_chart_planets_in_houses_vedic#sun-in-the-houses-sun-in-the-1st-house-sun-in-the-2nd-house-#0",
-    "planets#the-sun-core-archetype-function-psychological-representation#0"
+    "aspects#major-aspects-trine-120#0",
+    "aspects#aspect-patterns-stellium-grand-trine#0",
+    "houses#tenth-house-the-midheaven-mc-empty-tenth-house-derivative-ho#0",
+    "vedic_astrology#sidereal-vs-tropical-zodiac#0",
+    "houses#twelfth-house-empty-twelfth-house-derivative-house-meaning#0"
    ],
    "hit@5": 0.0,
-   "hit@10": 1.0,
+   "hit@10": 0.0,
    "primary@5": 0.0,
    "recall@5": 0.0,
-   "recall@10": 0.25,
-   "mrr": 0.1111111111111111,
-   "ndcg@10": 0.19797631038139768
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "ndcg@10": 0.0
   },
   {
    "id": "indep:dignity:08:hi",
    "lang": "hi",
-   "ms": 15.6,
+   "ms": 22.9,
    "top": [
+    "kb_lang_glossary_hi_en#7-dignity-strength-and-relationship-terms#0",
     "kb_chart_planets_in_signs_dignity#exaltation-and-debilitation-uccha-neecha#0",
     "kb_match_doshas_and_cancellations#what-dosha-means-in-matching#0",
     "kb_dasha_sade_sati_dhaiya#commonly-cited-mitigating-factors-cancellation-ideas#0",
-    "kb_match_doshas_and_cancellations#gana-dosha#0",
     "kb_match_doshas_and_cancellations#bhakoot-dosha#0"
    ],
-   "hit@5": 0.0,
+   "hit@5": 1.0,
    "hit@10": 1.0,
    "primary@5": 0.0,
-   "recall@5": 0.0,
+   "recall@5": 0.2,
    "recall@10": 0.6,
-   "mrr": 0.16666666666666666,
-   "ndcg@10": 0.33781668671687665
+   "mrr": 1.0,
+   "ndcg@10": 0.4541665540787796
   },
   {
    "id": "indep:dignity:02:hg",
    "lang": "hg",
-   "ms": 20.5,
+   "ms": 22.5,
    "top": [
     "kb_chart_planets_in_signs_dignity#combustion-asta#0",
-    "timing_transits#mercury-retrograde-what-it-actually-means-what-happens-actua#0",
-    "kb_chart_planets_in_signs_dignity#natural-friendships-naisargika-maitri#0",
-    "kb_chart_planets_in_signs_dignity#moolatrikona-root-triangle-ranges#0",
-    "daily_guidance#mercury-retrograde-survival-guide-before-mercury-retrograde-#0"
+    "kb_chart_planets_in_signs_dignity#quick-reading-checklist-for-a-planet#0",
+    "kb_chart_planets_in_signs_dignity#pushkara-navamsa-and-pushkara-bhaga-quick-table#0",
+    "vedic_astrology#important-yogas-raja-yoga-royal-combination-dhana-yoga-wealt#0",
+    "kb_chart_yogas_catalogue#budhaditya-yoga#0"
    ],
    "hit@5": 1.0,
    "hit@10": 1.0,
@@ -752,7 +752,7 @@
   {
    "id": "indep:dignity:04:hg",
    "lang": "hg",
-   "ms": 28.2,
+   "ms": 41.9,
    "top": [
     "vedic_astrology#rahu-and-ketu-in-vedic-context-rahu-north-node-ketu-south-no#0",
     "timing_transits#eclipse-interpretation-solar-eclipse-new-moon-near-north-nod#0",
@@ -771,30 +771,30 @@
   {
    "id": "indep:dignity:06:hg",
    "lang": "hg",
-   "ms": 28.2,
+   "ms": 26.0,
    "top": [
+    "kb_dasha_antardasha_combinations#moon-mahadasha-10-years-antardashas#2",
     "kb_dasha_antardasha_combinations#friendship-rule-used#0",
-    "kb_chart_planets_in_houses_vedic#sun-in-the-houses-sun-in-the-9th-house-sun-in-the-10th-house#0",
-    "kb_chart_planets_in_houses_vedic#sun-in-the-houses-sun-in-the-5th-house-sun-in-the-6th-house-#0",
-    "timing_transits#mercury-retrograde-what-it-actually-means-what-happens-actua#0",
-    "kb_chart_planets_in_houses_vedic#sun-in-the-houses-sun-in-the-1st-house-sun-in-the-2nd-house-#0"
+    "kb_chart_planets_in_signs_dignity#temporary-friendships-tatkalika-maitri-and-compound-relation#0",
+    "kb_chart_planets_in_signs_dignity#natural-friendships-naisargika-maitri#0",
+    "kb_chart_planets_in_signs_dignity#planetary-states-avasthas-basics#0"
    ],
-   "hit@5": 0.0,
+   "hit@5": 1.0,
    "hit@10": 1.0,
-   "primary@5": 0.0,
-   "recall@5": 0.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
    "recall@10": 1.0,
-   "mrr": 0.1,
-   "ndcg@10": 0.2890648263178878
+   "mrr": 0.25,
+   "ndcg@10": 0.4306765580733931
   },
   {
    "id": "indep:nakshatras:02:en",
    "lang": "en",
-   "ms": 30.1,
+   "ms": 35.1,
    "top": [
     "vedic_astrology#rahu-and-ketu-in-vedic-context-rahu-north-node-ketu-south-no#0",
-    "timing_transits#eclipse-interpretation-solar-eclipse-new-moon-near-north-nod#0",
     "planets#the-south-node-ketu-core-archetype-function-psychological-re#0",
+    "timing_transits#eclipse-interpretation-solar-eclipse-new-moon-near-north-nod#0",
     "spiritual_astrology#north-node-south-node-life-purpose-north-node-by-house#0",
     "spiritual_astrology#north-node-south-node-life-purpose-north-node-by-sign#0"
    ],
@@ -809,70 +809,70 @@
   {
    "id": "indep:nakshatras:04:en",
    "lang": "en",
-   "ms": 50.9,
+   "ms": 69.6,
    "top": [
     "kb_chart_nakshatra_pada_and_ascendant_notes#what-can-be-said-with-moon-sign-nakshatra-sun-sign-alone#0",
-    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
-    "daily_guidance#void-of-course-moon-timing-voc-moon-rules-monthly-voc-moon-p#0",
-    "kb_dasha_antardasha_combinations#moon-mahadasha-10-years-antardashas#1",
-    "daily_guidance#moon-phase-meanings-and-rituals-waning-gibbous-disseminating#0"
-   ],
-   "hit@5": 0.0,
-   "hit@10": 0.0,
-   "primary@5": 0.0,
-   "recall@5": 0.0,
-   "recall@10": 0.0,
-   "mrr": 0.0,
-   "ndcg@10": 0.0
-  },
-  {
-   "id": "indep:nakshatras:06:en",
-   "lang": "en",
-   "ms": 13.5,
-   "top": [
-    "spiritual_astrology#neptune-and-spiritual-awakening#0",
-    "spiritual_astrology#the-12th-house-as-spiritual-gateway#0",
-    "spiritual_astrology#north-node-south-node-life-purpose-north-node-by-sign#0",
-    "nakshatras_deep_dive#27-revati-16-40-30-00-pisces#0",
-    "planets#saturn-core-archetype-function-psychological-representation-#2"
+    "nakshatras_deep_dive#14-chitra-23-20-virgo-6-40-libra#0",
+    "vedic_astrology#the-27-nakshatras-13-hasta-10-00-23-20-virgo-14-chitra-23-20#0",
+    "kb_panchang_five_limbs#nakshatra-as-day-quality#0",
+    "kb_chart_nakshatra_pada_and_ascendant_notes#the-lagna-and-its-nakshatra#0"
    ],
    "hit@5": 1.0,
    "hit@10": 1.0,
    "primary@5": 1.0,
    "recall@5": 1.0,
    "recall@10": 1.0,
-   "mrr": 0.25,
-   "ndcg@10": 0.4306765580733931
+   "mrr": 0.5,
+   "ndcg@10": 0.6309297535714574
+  },
+  {
+   "id": "indep:nakshatras:06:en",
+   "lang": "en",
+   "ms": 24.1,
+   "top": [
+    "nakshatras_deep_dive#27-revati-16-40-30-00-pisces#0",
+    "nakshatras_deep_dive#1-ashwini-0-00-13-20-aries#0",
+    "nakshatras_deep_dive#2-bharani-13-20-26-40-aries#0",
+    "spiritual_astrology#north-node-south-node-life-purpose-north-node-by-sign#0",
+    "vedic_astrology#the-27-nakshatras-27-revati-16-40-30-00-pisces#0"
+   ],
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
   },
   {
    "id": "indep:nakshatras:08:en",
    "lang": "en",
-   "ms": 27.5,
+   "ms": 61.1,
    "top": [
-    "kb_chart_nakshatra_pada_and_ascendant_notes#the-lagna-and-its-nakshatra#0",
     "vedic_astrology#the-27-nakshatras-1-ashwini-0-00-13-20-aries-2-bharani-13-20#0",
-    "kb_chart_nakshatra_pada_and_ascendant_notes#what-can-be-said-with-moon-sign-nakshatra-sun-sign-alone#0",
-    "kb_lang_glossary_hi_en#5-the-27-nakshatras#2",
-    "kb_panchang_five_limbs#nakshatra-as-day-quality#0"
+    "nakshatras_deep_dive#1-ashwini-0-00-13-20-aries#0",
+    "kb_chart_nakshatra_pada_and_ascendant_notes#the-lagna-and-its-nakshatra#0",
+    "kb_chart_nakshatra_pada_and_ascendant_notes#pada-to-navamsa-quick-mapping#0",
+    "nakshatras_deep_dive#4-rohini-10-00-23-20-taurus#0"
    ],
    "hit@5": 1.0,
    "hit@10": 1.0,
-   "primary@5": 0.0,
-   "recall@5": 0.5,
-   "recall@10": 0.5,
-   "mrr": 0.5,
-   "ndcg@10": 0.17376534287144002
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 0.7967075809905066
   },
   {
    "id": "indep:nakshatras:10:en",
    "lang": "en",
-   "ms": 34.5,
+   "ms": 60.2,
    "top": [
     "kb_chart_nakshatra_pada_and_ascendant_notes#the-lagna-and-its-nakshatra#0",
-    "kb_chart_nakshatra_pada_and_ascendant_notes#lagna-lord-lagnesh-role-and-placement#0",
     "kb_chart_nakshatra_pada_and_ascendant_notes#what-can-be-said-with-moon-sign-nakshatra-sun-sign-alone#1",
-    "indian_bphs#functional-benefics-and-malefics-by-ascendant#0",
-    "indian_jaimini_sutras#pada-arudha-lagna-and-arudha-padas-arudha-lagna-al-arudha-pa#0"
+    "kb_chart_nakshatra_pada_and_ascendant_notes#lagna-lord-lagnesh-role-and-placement#0",
+    "kb_chart_karakas_and_arudha#arudha-lagna-al-and-arudha-padas#0",
+    "kb_lang_glossary_hi_en#15-divisional-charts-and-calculation-terms#1"
    ],
    "hit@5": 1.0,
    "hit@10": 1.0,
@@ -880,37 +880,37 @@
    "recall@5": 0.6666666666666666,
    "recall@10": 0.6666666666666666,
    "mrr": 1.0,
-   "ndcg@10": 0.8472668887613066
+   "ndcg@10": 0.878961873034099
   },
   {
    "id": "indep:nakshatras:12:en",
    "lang": "en",
-   "ms": 19.0,
+   "ms": 36.2,
    "top": [
-    "kb_dasha_vimshottari_foundations#nakshatra-to-lord-mapping#0",
-    "kb_chart_nakshatra_pada_and_ascendant_notes#the-lagna-and-its-nakshatra#0",
-    "kb_chart_nakshatra_pada_and_ascendant_notes#what-can-be-said-with-moon-sign-nakshatra-sun-sign-alone#0",
-    "kb_panchang_five_limbs#nakshatra-as-day-quality#0",
-    "kb_lang_hinglish_phrasebook#h-chart-basics-and-technical-asks#1"
+    "kb_match_ashtakoota_guna_milan#gana-koota-6-points#0",
+    "kb_match_doshas_and_cancellations#gana-dosha#0",
+    "kb_match_doshas_and_cancellations#nadi-dosha#0",
+    "nakshatras_deep_dive#nakshatra-compatibility-kuta-system#0",
+    "kb_dasha_vimshottari_foundations#nakshatra-to-lord-mapping#0"
    ],
-   "hit@5": 0.0,
-   "hit@10": 0.0,
-   "primary@5": 0.0,
-   "recall@5": 0.0,
-   "recall@10": 0.0,
-   "mrr": 0.0,
-   "ndcg@10": 0.0
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
   },
   {
    "id": "indep:nakshatras:02:hi",
    "lang": "hi",
-   "ms": 22.5,
+   "ms": 36.4,
    "top": [
     "nakshatras_deep_dive#4-rohini-10-00-23-20-taurus#0",
     "vedic_astrology#the-27-nakshatras-3-krittika-26-40-aries-10-00-taurus-4-rohi#0",
+    "kb_lang_glossary_hi_en#5-the-27-nakshatras#2",
     "kb_dasha_vimshottari_foundations#nakshatra-to-lord-mapping#0",
-    "kb_chart_nakshatra_pada_and_ascendant_notes#the-lagna-and-its-nakshatra#0",
-    "kb_chart_nakshatra_pada_and_ascendant_notes#what-can-be-said-with-moon-sign-nakshatra-sun-sign-alone#0"
+    "kb_chart_nakshatra_pada_and_ascendant_notes#the-lagna-and-its-nakshatra#0"
    ],
    "hit@5": 1.0,
    "hit@10": 1.0,
@@ -923,50 +923,50 @@
   {
    "id": "indep:nakshatras:04:hi",
    "lang": "hi",
-   "ms": 30.0,
+   "ms": 35.2,
    "top": [
+    "nakshatras_deep_dive#8-pushya-3-20-16-40-cancer#0",
+    "vedic_astrology#the-27-nakshatras-6-ardra-6-40-20-00-gemini-7-punarvasu-20-0#0",
+    "kb_panchang_five_limbs#tithi-deities-adhidevata#0",
     "kb_dasha_vimshottari_foundations#nakshatra-to-lord-mapping#0",
-    "kb_chart_nakshatra_pada_and_ascendant_notes#the-lagna-and-its-nakshatra#0",
-    "kb_chart_nakshatra_pada_and_ascendant_notes#what-can-be-said-with-moon-sign-nakshatra-sun-sign-alone#0",
-    "kb_chart_nakshatra_pada_and_ascendant_notes#lagna-lord-lagnesh-role-and-placement#0",
-    "kb_lang_glossary_hi_en#5-the-27-nakshatras#2"
+    "kb_chart_nakshatra_pada_and_ascendant_notes#the-lagna-and-its-nakshatra#0"
    ],
-   "hit@5": 0.0,
+   "hit@5": 1.0,
    "hit@10": 1.0,
-   "primary@5": 0.0,
-   "recall@5": 0.0,
-   "recall@10": 0.5,
-   "mrr": 0.14285714285714285,
-   "ndcg@10": 0.27541155237618664
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 1.0,
+   "ndcg@10": 1.0
   },
   {
    "id": "indep:nakshatras:06:hi",
    "lang": "hi",
-   "ms": 18.3,
+   "ms": 20.5,
    "top": [
-    "kb_dasha_vimshottari_foundations#nakshatra-to-lord-mapping#0",
-    "kb_chart_nakshatra_pada_and_ascendant_notes#the-lagna-and-its-nakshatra#0",
     "vedic_astrology#the-27-nakshatras-17-anuradha-3-20-16-40-scorpio-18-jyeshtha#0",
+    "nakshatras_deep_dive#19-mula-0-00-13-20-sagittarius#0",
+    "kb_dasha_vimshottari_foundations#nakshatra-to-lord-mapping#0",
     "kb_lang_glossary_hi_en#5-the-27-nakshatras#2",
-    "kb_chart_nakshatra_pada_and_ascendant_notes#what-can-be-said-with-moon-sign-nakshatra-sun-sign-alone#0"
+    "kb_lang_hinglish_phrasebook#h-chart-basics-and-technical-asks#1"
    ],
    "hit@5": 1.0,
    "hit@10": 1.0,
-   "primary@5": 0.0,
-   "recall@5": 0.5,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
    "recall@10": 1.0,
-   "mrr": 0.3333333333333333,
-   "ndcg@10": 0.41311732856427996
+   "mrr": 1.0,
+   "ndcg@10": 0.7967075809905066
   },
   {
    "id": "indep:nakshatras:08:hi",
    "lang": "hi",
-   "ms": 28.0,
+   "ms": 41.4,
    "top": [
     "vedic_astrology#the-27-nakshatras-13-hasta-10-00-23-20-virgo-14-chitra-23-20#0",
-    "kb_chart_nakshatra_pada_and_ascendant_notes#the-lagna-and-its-nakshatra#0",
     "nakshatras_deep_dive#16-vishakha-20-00-libra-3-20-scorpio#0",
-    "kb_chart_nakshatra_pada_and_ascendant_notes#what-can-be-said-with-moon-sign-nakshatra-sun-sign-alone#0",
+    "kb_panchang_five_limbs#tithi-deities-adhidevata#0",
+    "love_relationships#compatibility-by-element-fire-air-aries-leo-sagittarius-gemi#0",
     "kb_lang_glossary_hi_en#5-the-27-nakshatras#2"
    ],
    "hit@5": 1.0,
@@ -974,18 +974,18 @@
    "primary@5": 1.0,
    "recall@5": 1.0,
    "recall@10": 1.0,
-   "mrr": 0.3333333333333333,
-   "ndcg@10": 0.5
+   "mrr": 0.5,
+   "ndcg@10": 0.6309297535714574
   },
   {
    "id": "indep:nakshatras:02:hg",
    "lang": "hg",
-   "ms": 17.8,
+   "ms": 22.9,
    "top": [
     "vedic_astrology#the-27-nakshatras-9-ashlesha-16-40-30-00-cancer-10-magha-0-0#0",
     "nakshatras_deep_dive#10-magha-0-00-13-20-leo#0",
     "kb_dasha_vimshottari_foundations#nakshatra-to-lord-mapping#0",
-    "kb_chart_nakshatra_pada_and_ascendant_notes#the-lagna-and-its-nakshatra#0",
+    "kb_lang_hinglish_phrasebook#h-chart-basics-and-technical-asks#1",
     "kb_lang_glossary_hi_en#5-the-27-nakshatras#2"
    ],
    "hit@5": 1.0,
@@ -999,32 +999,32 @@
   {
    "id": "indep:nakshatras:04:hg",
    "lang": "hg",
-   "ms": 33.2,
+   "ms": 40.0,
    "top": [
     "vedic_astrology#the-27-nakshatras-1-ashwini-0-00-13-20-aries-2-bharani-13-20#0",
-    "kb_chart_nakshatra_pada_and_ascendant_notes#what-can-be-said-with-moon-sign-nakshatra-sun-sign-alone#0",
-    "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
+    "nakshatras_deep_dive#2-bharani-13-20-26-40-aries#0",
     "kb_chart_nakshatra_pada_and_ascendant_notes#the-lagna-and-its-nakshatra#0",
-    "daily_guidance#moon-phase-meanings-and-rituals-waning-gibbous-disseminating#0"
+    "kb_chart_nakshatra_pada_and_ascendant_notes#pada-to-navamsa-quick-mapping#0",
+    "kb_match_doshas_and_cancellations#gana-dosha#0"
    ],
    "hit@5": 1.0,
    "hit@10": 1.0,
-   "primary@5": 0.0,
-   "recall@5": 0.5,
-   "recall@10": 0.5,
+   "primary@5": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
    "mrr": 1.0,
-   "ndcg@10": 0.27541155237618664
+   "ndcg@10": 0.7967075809905066
   },
   {
    "id": "indep:nakshatras:06:hg",
    "lang": "hg",
-   "ms": 28.5,
+   "ms": 46.5,
    "top": [
-    "kb_panchang_vedic_calendar_basics#solar-and-lunar-months#0",
     "predictive_techniques_advanced#return-charts-solar-return-birthday-chart-lunar-return-month#0",
-    "kb_chart_nakshatra_pada_and_ascendant_notes#the-lagna-and-its-nakshatra#0",
-    "kb_chart_nakshatra_pada_and_ascendant_notes#what-can-be-said-with-moon-sign-nakshatra-sun-sign-alone#0",
-    "nakshatras_deep_dive#overview#0"
+    "kb_panchang_vedic_calendar_basics#solar-and-lunar-months#0",
+    "kb_lang_glossary_hi_en#10-panchang-tithi-vara-karana-yoga-paksha-masa#2",
+    "timing_transits#solar-and-lunar-returns-solar-return-lunar-return#0",
+    "kb_panchang_five_limbs#tithi-the-lunar-day#0"
    ],
    "hit@5": 0.0,
    "hit@10": 0.0,
@@ -1037,13 +1037,13 @@
   {
    "id": "indep:nakshatras:08:hg",
    "lang": "hg",
-   "ms": 22.0,
+   "ms": 24.1,
    "top": [
-    "kb_panchang_vedic_calendar_basics#solar-and-lunar-months#0",
     "predictive_techniques_advanced#return-charts-solar-return-birthday-chart-lunar-return-month#0",
+    "kb_panchang_vedic_calendar_basics#solar-and-lunar-months#0",
     "timing_transits#solar-and-lunar-returns-solar-return-lunar-return#0",
-    "kb_panchang_muhurta_basics#adhika-masa-the-extra-month#0",
-    "timing_transits#eclipse-interpretation-solar-eclipse-new-moon-near-north-nod#0"
+    "timing_transits#eclipse-interpretation-solar-eclipse-new-moon-near-north-nod#0",
+    "kb_panchang_muhurta_basics#adhika-masa-the-extra-month#0"
    ],
    "hit@5": 0.0,
    "hit@10": 0.0,
@@ -1056,13 +1056,13 @@
   {
    "id": "indep:sade_sati:02:en",
    "lang": "en",
-   "ms": 21.8,
+   "ms": 37.5,
    "top": [
     "kb_dasha_sade_sati_dhaiya#ashtama-shani-and-kantaka-shani-dhaiya#0",
-    "kb_dasha_sade_sati_dhaiya#variation-by-moon-sign-and-natal-saturn#0",
-    "kb_dasha_sade_sati_dhaiya#timing-computation-notes-for-implementers#0",
-    "timing_transits#saturn-return-ages-28-30-57-59-86-88-first-saturn-return-age#0",
-    "kb_chart_planets_in_houses_vedic#saturn-in-the-houses-saturn-in-the-5th-house-saturn-in-the-6#0"
+    "kb_dasha_sade_sati_dhaiya#the-three-phases#0",
+    "kb_dasha_sade_sati_dhaiya#constructive-framing-for-users#0",
+    "kb_lang_hinglish_phrasebook#d-sade-sati-saturn-rahu-ketu-transits-gochar#0",
+    "kb_lang_hinglish_phrasebook#d-sade-sati-saturn-rahu-ketu-transits-gochar#1"
    ],
    "hit@5": 1.0,
    "hit@10": 1.0,
@@ -1075,70 +1075,70 @@
   {
    "id": "indep:sade_sati:02:hi",
    "lang": "hi",
-   "ms": 31.7,
+   "ms": 48.7,
    "top": [
     "kb_lang_hinglish_phrasebook#d-sade-sati-saturn-rahu-ketu-transits-gochar#0",
     "kb_dasha_sade_sati_dhaiya#what-sade-sati-is#0",
-    "kb_dasha_sade_sati_dhaiya#variation-by-moon-sign-and-natal-saturn#0",
     "vedic_astrology#sade-sati-saturn-s-7-5-year-transit#0",
-    "kb_dasha_sade_sati_dhaiya#timing-computation-notes-for-implementers#0"
+    "kb_dasha_sade_sati_dhaiya#timing-computation-notes-for-implementers#0",
+    "kb_dasha_sade_sati_dhaiya#variation-by-moon-sign-and-natal-saturn#0"
    ],
    "hit@5": 1.0,
    "hit@10": 1.0,
    "primary@5": 0.0,
    "recall@5": 0.5,
    "recall@10": 0.5,
-   "mrr": 0.3333333333333333,
-   "ndcg@10": 0.13770577618809332
+   "mrr": 0.2,
+   "ndcg@10": 0.10654373218155079
   },
   {
    "id": "indep:panchang:02:en",
    "lang": "en",
-   "ms": 22.9,
+   "ms": 43.8,
    "top": [
-    "kb_lang_glossary_hi_en#10-panchang-tithi-vara-karana-yoga-paksha-masa#1",
-    "kb_panchang_five_limbs#karana-half-a-tithi#0",
-    "kb_panchang_five_limbs#tithi-classes-the-five-nature-groups#0",
     "kb_panchang_five_limbs#how-the-five-limbs-are-used-together#0",
-    "kb_lang_glossary_hi_en#10-panchang-tithi-vara-karana-yoga-paksha-masa#2"
+    "kb_lang_glossary_hi_en#10-panchang-tithi-vara-karana-yoga-paksha-masa#1",
+    "kb_panchang_five_limbs#tithi-classes-the-five-nature-groups#0",
+    "kb_panchang_five_limbs#karana-half-a-tithi#0",
+    "kb_panchang_muhurta_basics#the-layered-method#0"
    ],
    "hit@5": 1.0,
    "hit@10": 1.0,
    "primary@5": 1.0,
    "recall@5": 0.6,
    "recall@10": 0.3,
-   "mrr": 0.5,
-   "ndcg@10": 0.3436966913921454
+   "mrr": 1.0,
+   "ndcg@10": 0.42492601381667106
   },
   {
    "id": "indep:panchang:02:hi",
    "lang": "hi",
-   "ms": 30.8,
+   "ms": 41.7,
    "top": [
     "predictive_techniques_advanced#eclipse-interpretation-and-activation-solar-eclipses-lunar-e#0",
-    "kb_panchang_muhurta_basics#by-activity-traditional-preferences#0",
     "kb_panchang_muhurta_basics#eclipses-grahana-in-muhurta#0",
     "timing_transits#eclipse-interpretation-solar-eclipse-new-moon-near-north-nod#0",
+    "kb_dasha_vimshottari_foundations#balance-of-the-first-dasha-at-birth#0",
     "kb_panchang_eclipses_and_special_days#eclipses-grahana#0"
    ],
    "hit@5": 1.0,
    "hit@10": 1.0,
    "primary@5": 1.0,
    "recall@5": 0.2,
-   "recall@10": 0.1,
+   "recall@10": 0.2,
    "mrr": 0.2,
-   "ndcg@10": 0.085143117641621
+   "ndcg@10": 0.1487639058405727
   },
   {
    "id": "indep:panchang:02:hg",
    "lang": "hg",
-   "ms": 33.3,
+   "ms": 36.7,
    "top": [
     "daily_guidance#moon-phase-meanings-and-rituals-new-moon-sun-conjunct-moon-w#0",
     "daily_guidance#moon-phase-meanings-and-rituals-waning-gibbous-disseminating#0",
     "kb_panchang_gochara_transit_rules#chandra-gochara-the-moon-through-the-12-houses#0",
-    "daily_guidance#void-of-course-moon-timing-voc-moon-rules-monthly-voc-moon-p#0",
-    "kb_dasha_antardasha_combinations#moon-mahadasha-10-years-antardashas#1"
+    "houses#twelfth-house-empty-twelfth-house-derivative-house-meaning#0",
+    "houses#tenth-house-the-midheaven-mc-empty-tenth-house-derivative-ho#0"
    ],
    "hit@5": 1.0,
    "hit@10": 1.0,
@@ -1151,26 +1151,26 @@
   {
    "id": "indep:gochara:02:en",
    "lang": "en",
-   "ms": 27.6,
+   "ms": 53.9,
    "top": [
     "kb_dasha_gochara_and_dasha_interplay#vedha-obstruction#0",
     "kb_panchang_gochara_transit_rules#vedha-obstruction-of-a-favourable-transit#0",
+    "kb_dasha_sade_sati_dhaiya#commonly-cited-mitigating-factors-cancellation-ideas#0",
     "kb_panchang_gochara_transit_rules#ashtakavarga-based-refinement#0",
-    "daily_guidance#how-to-interpret-daily-transits-for-each-sign-daily-transit-#0",
-    "love_relationships#timing-love-with-transits-venus-transits-jupiter-transits-sa#0"
+    "aspects#aspect-interpretation-between-specific-planet-pairs-sun-moon#0"
    ],
    "hit@5": 1.0,
    "hit@10": 1.0,
    "primary@5": 1.0,
    "recall@5": 0.4,
-   "recall@10": 0.2,
+   "recall@10": 0.3,
    "mrr": 0.5,
-   "ndcg@10": 0.2489083270225946
+   "ndcg@10": 0.31204907722178066
   },
   {
    "id": "indep:yogas:02:en",
    "lang": "en",
-   "ms": 21.9,
+   "ms": 43.3,
    "top": [
     "vedic_astrology#important-yogas-raja-yoga-royal-combination-dhana-yoga-wealt#0",
     "kb_chart_yogas_catalogue#neecha-bhanga-raja-yoga#0",
@@ -1188,7 +1188,7 @@
   }
  ],
  "label": "t",
- "config": "A6-phonetic:fts_head_weight=1.0",
+ "config": "A6-phonetic:rare_df=0.15,fts_phrase_weight=2.0",
  "embedder": "BAAI/bge-small-en-v1.5",
  "chunks": 776
 }

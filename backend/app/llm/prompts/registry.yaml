@@ -1,5 +1,5 @@
 active:
-  chat: v7
+  chat: v8
   repair: v1
   daily_sign: v1
   daily_personal: v2
@@ -39,6 +39,7 @@ released:
   chat/v5.j2: c455239609a9cdbb3cfdf10cab5dd3e832f17cca8c3249b4a2c28a52dd5d5755
   chat/v6.j2: f875aeee40b59d9af883c3edce1ec9e931da4d96f2ba74d80d1a7eacb97f6917
   chat/v7.j2: 5de5394f79e25124b8af66b4db65c8e43c9826b22909e636807d7ddd384ec269
+  chat/v8.j2: c6395fe1db960acaa93a6089f849a2e241599f161b2895aa770cce0fca09e984
   compat/v1.j2: 3d86c2a93f6640eb68cb2c7cda88e64ca3670cb5e259b2a427504354d9037164
   compat/v2.j2: d8288ba77e99255996e8197878cbf7016cdc77dd3f66245ca53a905a42561a56
   compat/v3.j2: 6e12d7da58baac445963d81f2c76f402ab629d005098ee0508963f084fa4b33f
