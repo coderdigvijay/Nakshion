@@ -3,7 +3,7 @@ horoscopes (api-contract 7.1 `transit_data`), personal transits for a natal char
 
 from __future__ import annotations
 
-from datetime import date, datetime, time, timedelta, timezone
+from datetime import date, datetime, time, timedelta, timezone, tzinfo
 from typing import Callable
 
 from . import ephemeris
@@ -68,7 +68,7 @@ def _saturn_sign(jd: float) -> int:
     return sign_of(_lon("Saturn", jd, sidereal=True))[0]
 
 
-def sade_sati_period(natal_moon_rashi: int, now_utc: datetime) -> dict | None:
+def sade_sati_period(natal_moon_rashi: int, now_utc: datetime, tz: tzinfo | None = None) -> dict | None:
     """Start/end dates (YYYY-MM-DD, UTC) of the current Sade Sati, or of the next one if none
     is running. Period = Saturn (sidereal) in the 12th/1st/2nd sign from the natal Moon.
     Saturn's retrograde dips back out of the three signs for months; gaps shorter than 1.5 years
@@ -119,12 +119,13 @@ def sade_sati_period(natal_moon_rashi: int, now_utc: datetime) -> dict | None:
         start, end = first_inside(a), last_inside(b)
         if a <= lo_jd + step:   # run began before the scan window: start unknown, extend back
             start = None
-        fmt = lambda j: None if j is None else jd_to_datetime(j).strftime("%Y-%m-%d")
+        fmt = lambda j: None if j is None else jd_to_datetime(j).astimezone(tz or timezone.utc).strftime("%Y-%m-%d")
         return {"start": fmt(start), "end": fmt(end), "running": start is None or start <= jd_now}
     return None
 
 
-def sade_sati(natal_moon_rashi: int, now_utc: datetime, *, with_dates: bool = False) -> dict:
+def sade_sati(natal_moon_rashi: int, now_utc: datetime, *, with_dates: bool = False,
+              tz: tzinfo | None = None) -> dict:
     """Transiting sidereal Saturn in the 12th / 1st / 2nd sign from the natal Moon sign."""
     jd = jd_from_utc(require_aware(now_utc))
     saturn_sign = _saturn_sign(jd)
@@ -133,7 +134,7 @@ def sade_sati(natal_moon_rashi: int, now_utc: datetime, *, with_dates: bool = Fa
     out = {"active": phase != "none", "phase": phase, "saturn_rashi": RASHIS[saturn_sign],
            "computed_for": now_utc.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")}
     if with_dates:
-        period = sade_sati_period(natal_moon_rashi, now_utc)
+        period = sade_sati_period(natal_moon_rashi, now_utc, tz)
         out["start"] = period["start"] if period else None
         out["end"] = period["end"] if period else None
     return out

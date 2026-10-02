@@ -16,7 +16,8 @@ def test_moon_at_ashwini_start_full_ketu_balance():
     # Ketu MD = 7 * 365.25 d = 2556.75 d -> 2006-12-31T18:00Z
     assert tl[0] == {**tl[0], "lord": "Ketu", "start": "2000-01-01", "end": "2006-12-31"}
     # Ketu/Ketu AD = 7*7/120 y = 149.14 d -> 2000-05-29
-    assert tl[0]["antar"][0] == {"lord": "Ketu", "start": "2000-01-01", "end": "2000-05-29"}
+    assert tl[0]["antar"][0] == {"lord": "Ketu", "start": "2000-01-01", "end": "2000-05-29",
+                                 "start_utc": "2000-01-01T00:00:00Z", "end_utc": "2000-05-29T03:27:00Z"}
     assert [m["lord"] for m in tl] == ["Ketu", "Venus", "Sun", "Moon", "Mars", "Rahu",
                                       "Jupiter", "Saturn", "Mercury"]
 

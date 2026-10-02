@@ -14,6 +14,8 @@ school_notes: "Classical texts give a verse for each of the 144 combinations; wo
 
 # House Lords in Houses (Bhavesha Phala)
 
+> **Provenance warning.** Most of the 144 rows below are SYNTHESISED characterisations generated from two inputs (the lord's own house themes and a generic label for the house it sits in). They are NOT quotations or paraphrases of individual BPHS Bhavesha Phala verses, and the repeated phrases ("channelled through...", "visible and well supported (kendra)", "carried by merit and good fortune (trikona)") are template wording. Rows that were not template text (for example own-house placements, 5th lord in 9th, 6/8/12 lords in dusthanas and Viparita Raja notes) rest on widely taught principles. Lords of the 6th, 8th and 12th placed in kendras or trikonas are deliberately described as mixed, because classical authors do not treat them as simply favourable. Use every row as a prompt for reflection, never as a prediction.
+
 The *lord of a house* (the planet ruling the sign on that house's cusp, using whole-sign houses from the lagna) carries that house's matters to wherever it sits. Read: "the 5th lord in the 10th" means creativity, learning and children's themes are expressed through career and public standing. The text of each entry is a synthesis; use it as a starting question rather than a conclusion.
 
 ## How to read the table
@@ -29,7 +31,7 @@ The *lord of a house* (the planet ruling the sign on that house's cusp, using wh
 - **Trikona (1, 5, 9):** merit and fortune; lords placed here are protected by the "grace" of the chart.
 - **Upachaya (3, 6, 10, 11):** improve with time and effort; even malefic themes ripen into strengths.
 - **Dusthana (6, 8, 12):** difficulty-oriented houses; lords placed there ask for conscious handling, while some combinations (Viparita Raja, see the yogas catalogue) turn this into strength.
-- **Own house:** a lord in its own house is stable and strengthens the house, though classical authors note a risk of over-focus.
+- **Own house:** a lord in its own house is stable and strengthens the house, though some practitioners note a risk of over-focus [unverified].
 - Lordship conflicts: when a planet rules two houses, its results blend; the stronger-sign (moolatrikona) house usually dominates.
 
 ## 1st lord in each house
@@ -136,12 +138,12 @@ Themes carried by the lord: service, health habits and competition.
 | 1 | Service and daily work are channelled through the self: directly personal and prominent. |
 | 2 | Service and daily work are channelled through resources and family: grounded in family, speech and material security. |
 | 3 | Service and daily work are channelled through effort and skills: improving steadily with effort (upachaya). |
-| 4 | Service and daily work are channelled through home and inner life: visible and well supported (kendra). |
-| 5 | Service and daily work are channelled through creativity and learning: carried by merit and good fortune (trikona). |
+| 4 | Service and daily work are channelled through home and inner life: visible placement, but the lord rules a dusthana, so the reading is mixed and chart-dependent (authorities differ). |
+| 5 | Service and daily work are channelled through creativity and learning: supported by the trikona placement, but the lord rules a dusthana, so the reading is mixed and chart-dependent (authorities differ). |
 | 6 | Strong ability to manage competition and routine; steady health discipline. |
-| 7 | Service and daily work are channelled through partnership: visible and well supported (kendra). |
+| 7 | Service and daily work are channelled through partnership: visible placement, but the lord rules a dusthana, so the reading is mixed and chart-dependent (authorities differ). |
 | 8 | Difficulties turn into depth; Viparita Raja possibility (see yogas catalogue). |
-| 9 | Service and daily work are channelled through purpose and fortune: carried by merit and good fortune (trikona). |
+| 9 | Service and daily work are channelled through purpose and fortune: supported by the trikona placement, but the lord rules a dusthana, so the reading is mixed and chart-dependent (authorities differ). |
 | 10 | Career in service, health, law or problem-solving. |
 | 11 | Service and daily work are channelled through gains and networks: improving steadily with effort (upachaya). |
 | 12 | Obstacles dissolve through letting go; Viparita Raja possibility. |
@@ -174,13 +176,13 @@ Themes carried by the lord: transformation, research and shared resources.
 | 1 | Depth and change are channelled through the self: directly personal and prominent. |
 | 2 | Depth and change are channelled through resources and family: grounded in family, speech and material security. |
 | 3 | Depth and change are channelled through effort and skills: improving steadily with effort (upachaya). |
-| 4 | Depth and change are channelled through home and inner life: visible and well supported (kendra). |
-| 5 | Depth and change are channelled through creativity and learning: carried by merit and good fortune (trikona). |
+| 4 | Depth and change are channelled through home and inner life: visible placement, but the lord rules a dusthana, so the reading is mixed and chart-dependent (authorities differ). |
+| 5 | Depth and change are channelled through creativity and learning: supported by the trikona placement, but the lord rules a dusthana, so the reading is mixed and chart-dependent (authorities differ). |
 | 6 | Transformation through work and effort; Viparita Raja possibility. |
-| 7 | Depth and change are channelled through partnership: visible and well supported (kendra). |
+| 7 | Depth and change are channelled through partnership: visible placement, but the lord rules a dusthana, so the reading is mixed and chart-dependent (authorities differ). |
 | 8 | Strong research and endurance themes; classical sign of longevity. |
-| 9 | Depth and change are channelled through purpose and fortune: carried by merit and good fortune (trikona). |
-| 10 | Depth and change are channelled through career and standing: visible and well supported (kendra). |
+| 9 | Depth and change are channelled through purpose and fortune: supported by the trikona placement, but the lord rules a dusthana, so the reading is mixed and chart-dependent (authorities differ). |
+| 10 | Depth and change are channelled through career and standing: visible placement, but the lord rules a dusthana, so the reading is mixed and chart-dependent (authorities differ). |
 | 11 | Depth and change are channelled through gains and networks: improving steadily with effort (upachaya). |
 | 12 | Hidden matters and letting go; Viparita Raja possibility. |
 
@@ -250,12 +252,12 @@ Themes carried by the lord: retreat, expenditure, foreign lands and spirituality
 | 1 | A private, imaginative self; energy to be conserved. |
 | 2 | Retreat and letting go are channelled through resources and family: grounded in family, speech and material security. |
 | 3 | Retreat and letting go are channelled through effort and skills: improving steadily with effort (upachaya). |
-| 4 | Retreat and letting go are channelled through home and inner life: visible and well supported (kendra). |
-| 5 | Retreat and letting go are channelled through creativity and learning: carried by merit and good fortune (trikona). |
+| 4 | Retreat and letting go are channelled through home and inner life: visible placement, but the lord rules a dusthana, so the reading is mixed and chart-dependent (authorities differ). |
+| 5 | Retreat and letting go are channelled through creativity and learning: supported by the trikona placement, but the lord rules a dusthana, so the reading is mixed and chart-dependent (authorities differ). |
 | 6 | Expenses linked to service and health; losses transmuted into skill (Viparita style). |
-| 7 | Retreat and letting go are channelled through partnership: visible and well supported (kendra). |
+| 7 | Retreat and letting go are channelled through partnership: visible placement, but the lord rules a dusthana, so the reading is mixed and chart-dependent (authorities differ). |
 | 8 | Depth, occult and research interests; Viparita Raja possibility. |
-| 9 | Retreat and letting go are channelled through purpose and fortune: carried by merit and good fortune (trikona). |
-| 10 | Retreat and letting go are channelled through career and standing: visible and well supported (kendra). |
+| 9 | Retreat and letting go are channelled through purpose and fortune: supported by the trikona placement, but the lord rules a dusthana, so the reading is mixed and chart-dependent (authorities differ). |
+| 10 | Retreat and letting go are channelled through career and standing: visible placement, but the lord rules a dusthana, so the reading is mixed and chart-dependent (authorities differ). |
 | 11 | Retreat and letting go are channelled through gains and networks: improving steadily with effort (upachaya). |
 | 12 | Strong inner life and capacity for solitude; spending is easeful. |

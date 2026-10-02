@@ -60,7 +60,7 @@ async def test_happy_path_grounded_answer(chart):
     assert [c["factor_id"] for c in res["citations"]] == CITES
     assert res["citations"][0]["label"].startswith("Natal Sun in Cancer")
     md = res["metadata"]
-    assert md["outcome"] == "ok" and md["prompt_version"] == "chat@v6" and md["validator_flags"] == []
+    assert md["outcome"] == "ok" and md["prompt_version"] == "chat@v7" and md["validator_flags"] == []
     assert md["chart_engine_version"] == "1.0.0-synthetic" and "factor_ids_provided" in md
     assert res["tokens_used"] == 150
 
@@ -291,15 +291,17 @@ async def test_facade_daily_personal(facade):
     assert "score" not in req.response_schema["properties"]
 
 
-async def test_personal_unknown_citation_or_invented_position_repaired_then_fails(facade):
+async def test_personal_unknown_citation_is_fixed_in_code_and_invented_position_repaired(facade):
     _, daily = facade
-    daily.push(pjson(citations=["N.MADE.UP"]), pjson(citations=["N.MADE.UP"]))
-    with pytest.raises(LLMUnavailable):
-        await generate_daily_personal(PFACTS)
+    # citations are metadata: unknown ids are dropped, an empty list is filled from the top factors, no repair call
+    daily.push(pjson(citations=["N.MADE.UP"]))
+    out = await generate_daily_personal(PFACTS)
+    assert out["generated_by"] == "llm" and out["citations"] == ["T.MOON.H6", "V.MD.JUPITER"] and len(daily.calls) == 1
+    # an invented placement is still repaired (one extra call)
     daily.push(pjson(overview="With Venus in Aries pushing hard today you should act boldly and quickly on every idea."),
               pjson())
     assert (await generate_daily_personal(PFACTS))["generated_by"] == "llm"
-    assert len(daily.calls) == 4
+    assert len(daily.calls) == 3
 
 
 async def test_personal_requires_factors_and_blocks_unsafe(facade):

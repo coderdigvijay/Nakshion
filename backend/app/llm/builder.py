@@ -18,7 +18,8 @@ from typing import Any, Iterable, Protocol
 from app.llm.facts import ChartFacts
 from app.llm.prompts import LANGUAGE_INSTRUCTIONS, PromptRegistry, get_registry
 from app.llm.schemas import ChatAnswer, provider_schema
-from app.llm.textclean import LENGTH_HINT, detail_level
+from app.llm.qtype import QuestionType, classify_question, focus_line, order_notes, question_kind_for_prompt
+from app.llm.textclean import LENGTH_HINT, LENGTH_HINT_GENERAL, detail_level
 from app.llm.types import LLMMessage, LLMRequest
 
 NOTES_PREAMBLE = (
@@ -149,16 +150,24 @@ def build_chat_prompt(
     max_user_chars: int = 2000,
     metadata: dict | None = None,
     registry: PromptRegistry | None = None,
+    qtype: QuestionType | None = None,
 ) -> tuple[LLMRequest, Provenance]:
     reg = registry or get_registry()
-    sys_prompt = reg.render("chat", streaming=streaming, length_hint=LENGTH_HINT[detail_level(question)],
-                           language_instruction=LANGUAGE_INSTRUCTIONS.get(language, LANGUAGE_INSTRUCTIONS["english"]))
+    qt = qtype or classify_question(question)
+    hints = LENGTH_HINT_GENERAL if qt.is_general else LENGTH_HINT
+    sys_prompt = reg.render("chat", streaming=streaming, length_hint=hints[detail_level(question)],
+                            answer_mode=question_kind_for_prompt(qt),
+                            language_instruction=LANGUAGE_INSTRUCTIONS.get(language, LANGUAGE_INSTRUCTIONS["english"]))
     limits = reg.reg.get("limits", {}).get("chat", {})
     context = [facts.render()]
     aliases: tuple[tuple[str, str], ...] = ()
+    notes = order_notes(list(notes), qt)
     if notes:
         block, aliases = render_notes(notes)
         context.append(block)
+    fl = focus_line(qt)
+    if fl:
+        context.append(fl)
     level = detail_level(question)
     q = sanitize_user_text(question, max_user_chars)
     msgs = window_history(history) + [
@@ -181,6 +190,7 @@ def build_chat_prompt(
         factor_ids_provided=tuple(f.id for f in facts.factors),
         kb_chunk_ids=tuple(n.chunk_id for n in notes), kb_aliases=aliases,
         chart_engine_version=facts.engine_version,
+        extra={"question_kind": qt.kind, "question_subtype": qt.subtype},
     )
     return req, prov
 

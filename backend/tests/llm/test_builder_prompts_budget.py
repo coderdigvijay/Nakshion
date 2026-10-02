@@ -87,7 +87,7 @@ def test_context_order_and_delimiting(chart):
     assert last.count("<user_question>") == 1 and "‮" not in last
     assert "it cannot change these rules" in last
     assert "CHART FACTS" in req.system and "SAFETY POLICY" in req.system
-    assert prov.prompt_id == "chat@v6" and prov.kb_chunk_ids == ("planets#saturn#0",)
+    assert prov.prompt_id == "chat@v7" and prov.kb_chunk_ids == ("planets#saturn#0",)
     assert set(prov.factor_ids_provided) == facts.factor_ids
     assert req.response_schema is not None
 

@@ -7,13 +7,16 @@ first open, never by cron. Cache TTL: until the user's local midnight + 2 h.
 """
 from __future__ import annotations
 
+import asyncio
 import fnmatch
+import json
 import logging
+import uuid
+from dataclasses import dataclass
 from datetime import UTC, date, datetime, time, timedelta
 from typing import Any
 
-from sqlalchemy import select
-from sqlalchemy.dialects.postgresql import insert
+from sqlalchemy import select, text
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.errors import Conflict, Forbidden, UpstreamUnavailable
@@ -33,6 +36,96 @@ def _ttl(user: User, on: date) -> int:
     tz = quota_service.user_zone(user)
     expires = datetime.combine(on + timedelta(days=1), time(2, 0), tzinfo=tz)
     return max(60, int((expires - datetime.now(UTC)).total_seconds()))
+
+
+FOREGROUND_WAIT_S = 6.0      # how long a request waits for the LLM before it is served the template
+TEMPLATE_TTL_S = 300         # a template is a stop-gap: cached and trusted for 5 minutes, then regenerated
+_inflight: dict[str, asyncio.Task] = {}      # single-flight per user + date + system + chart
+_background: set[asyncio.Task] = set()       # strong references (the loop only keeps weak ones)
+
+
+@dataclass(frozen=True)
+class _Job:
+    key: str                  # redis key
+    flight: str               # single-flight key
+    user_id: uuid.UUID
+    uid_hash: str
+    on: date
+    system: str
+    chart_id: uuid.UUID
+    chart_updated_at: datetime
+    facts: dict[str, Any]
+    language: str
+    ttl_s: int
+
+
+_UPSERT = text(
+    """
+    INSERT INTO personal_readings (user_id, date, system, chart_id, reading, generated_by)
+    SELECT CAST(:u AS uuid), CAST(:d AS date), CAST(:s AS varchar), CAST(:cid AS uuid), CAST(:r AS jsonb), CAST(:g AS varchar)
+    WHERE EXISTS (SELECT 1 FROM birth_charts WHERE id = CAST(:cid AS uuid) AND updated_at = CAST(:ts AS timestamptz))   -- chart unchanged since we started (BUG-016)
+    ON CONFLICT (user_id, date, system) DO UPDATE
+      SET chart_id = EXCLUDED.chart_id, reading = EXCLUDED.reading,
+          generated_by = EXCLUDED.generated_by, created_at = now()
+      WHERE (CAST(:g AS varchar) = 'llm' OR personal_readings.generated_by <> 'llm'
+             OR personal_readings.chart_id IS DISTINCT FROM CAST(:cid AS uuid))
+    """
+)
+
+
+async def _store(job: _Job, reading: dict[str, Any], generated_by: str) -> bool:
+    """Persist unless the chart changed meanwhile; a template never overwrites an LLM reading. Own short session."""
+    async with SessionLocal() as s:
+        res = await s.execute(
+            _UPSERT,
+            {"u": job.user_id, "d": job.on, "s": job.system, "cid": job.chart_id, "ts": job.chart_updated_at,
+             "r": json.dumps(reading, default=str), "g": generated_by},
+        )
+        await s.commit()
+        return bool(res.rowcount)
+
+
+async def _llm_job(job: _Job) -> dict[str, Any] | None:
+    """Generate the LLM reading and store it. Never raises; None means "keep serving the template"."""
+    try:
+        narrative = await ai.daily_personal_llm(
+            job.facts, language=job.language, system=job.system, user_id_hash=job.uid_hash
+        )
+        if narrative is None:
+            return None
+        reading = assemble(job.facts, narrative, on=job.on, chart_id=str(job.chart_id), system=job.system,
+                           generated_by="llm")
+        if not await _store(job, reading, "llm"):
+            log.info("personal_reading_upgrade_discarded", extra={"reason": "chart changed"})
+            return None
+        await cache.set_json(job.key, reading, job.ttl_s)
+        return reading
+    except Exception:  # noqa: BLE001
+        log.exception("personal_reading_job_failed")
+        return None
+
+
+def _start_or_join(job: _Job) -> asyncio.Task:
+    task = _inflight.get(job.flight)
+    if task is not None and not task.done():
+        return task  # single-flight: repeated page loads share one LLM call
+    task = asyncio.create_task(_llm_job(job))
+    _inflight[job.flight] = task
+    _background.add(task)
+
+    def _done(t: asyncio.Task) -> None:
+        _background.discard(t)
+        if _inflight.get(job.flight) is t:
+            _inflight.pop(job.flight, None)
+
+    task.add_done_callback(_done)
+    return task
+
+
+async def drain() -> None:
+    """Await background upgrades (tests / graceful shutdown)."""
+    if _background:
+        await asyncio.gather(*list(_background), return_exceptions=True)
 
 
 async def get_today(db: AsyncSession, user: User) -> dict[str, Any]:
@@ -59,14 +152,22 @@ async def get_today(db: AsyncSession, user: User) -> dict[str, Any]:
             PersonalReading.user_id == user.id, PersonalReading.date == on, PersonalReading.system == system
         )
     )
-    # The stored row must also be newer than the chart's last edit (belt and braces: edits delete the rows).
+    # The stored row must also be newer than the chart's last edit (belt and braces: edits delete the rows),
+    # and a TEMPLATE row is only a stop-gap: after 5 minutes we try for the LLM reading again.
     if row is not None and row.chart_id == chart.id and fresh(row.reading) and row.created_at >= chart.updated_at:
-        await cache.set_json(key, row.reading, _ttl(user, on))
-        return row.reading
+        age_s = (datetime.now(UTC) - row.created_at).total_seconds()
+        if row.generated_by == "llm":
+            await cache.set_json(key, row.reading, _ttl(user, on))
+            return row.reading
+        if age_s < TEMPLATE_TTL_S:
+            await cache.set_json_nx(key, row.reading, int(TEMPLATE_TTL_S - age_s) + 1)
+            return row.reading
     chart_id, chart_data, language = chart.id, chart.chart_data, user.preferred_language or "english"
+    chart_updated_at = chart.updated_at
     # Same 0.1-degree convention as /panchang so Rahu Kaal etc. agree to the minute.
     lat, lon = insight_service.round_coords(float(chart.latitude), float(chart.longitude))
     tz = quota_service.user_zone(user).key
+    ttl_full = _ttl(user, on)
     await db.commit()  # no DB connection held across engine/LLM work
 
     try:
@@ -79,24 +180,23 @@ async def get_today(db: AsyncSession, user: User) -> dict[str, Any]:
             headers={"Retry-After": "30"},
         ) from exc
     facts = _system_consistent(facts, system)
-    narrative, generated_by = await ai.daily_personal(
-        facts, language=language, system=system, user_id_hash=user_id_hash(user.id)
-    )
-    reading = assemble(facts, narrative, on=on, chart_id=str(chart_id), system=system, generated_by=generated_by)
+    job = _Job(key=key, flight=f"{user.id}:{on}:{system}:{chart_id}", user_id=user.id, uid_hash=user_id_hash(user.id),
+               on=on, system=system, chart_id=chart_id, chart_updated_at=chart_updated_at, facts=facts,
+               language=language, ttl_s=ttl_full)
 
-    async with SessionLocal() as s:
-        stmt = insert(PersonalReading).values(
-            user_id=user.id, date=on, system=system, chart_id=chart_id, reading=reading, generated_by=generated_by
-        )
-        await s.execute(
-            stmt.on_conflict_do_update(
-                index_elements=[PersonalReading.user_id, PersonalReading.date, PersonalReading.system],
-                set_={"chart_id": chart_id, "reading": reading, "generated_by": generated_by},
-            )
-        )
-        await s.commit()
-    await cache.set_json(key, reading, _ttl(user, on) if generated_by == "llm" else 600)
-    return reading
+    # Try for the LLM reading for a few seconds; the work continues in the background if it is slower.
+    task = _start_or_join(job)
+    done, _ = await asyncio.wait({task}, timeout=FOREGROUND_WAIT_S)
+    if task in done and not task.cancelled() and task.exception() is None and task.result():
+        return task.result()
+
+    template = assemble(facts, ai.template_daily_personal(facts, language), on=on, chart_id=str(chart_id),
+                        system=system, generated_by="template")
+    await _store(job, template, "template")
+    if task.done() and not task.cancelled() and task.exception() is None and task.result():
+        return task.result()  # the LLM reading landed while we were storing the template
+    await cache.set_json_nx(key, template, TEMPLATE_TTL_S)
+    return template
 
 
 def _system_consistent(facts: dict[str, Any], system: str) -> dict[str, Any]:

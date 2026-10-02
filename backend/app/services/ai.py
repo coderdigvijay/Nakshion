@@ -320,19 +320,53 @@ def _clean_strings(obj: Any) -> Any:
     return obj
 
 
+def template_daily_personal(facts: dict[str, Any], language: str = "english") -> dict[str, Any]:
+    """Deterministic reading text built from the engine facts (no LLM). Prefers the AI layer's template
+    (v2, area-aware); falls back to the adapter's own if that is unavailable."""
+    mod = _safe_module()
+    fn = getattr(mod, "template_daily_personal", None) if mod is not None else None
+    if fn is not None:
+        try:
+            out = fn(facts, language)
+            if isinstance(out, dict) and out.get("overview"):
+                return _clean_strings(out)
+        except Exception:  # noqa: BLE001
+            log.warning("template_daily_personal_failed")
+    return _personal_template(facts, language)
+
+
+def daily_budget_s() -> float:
+    mod = _safe_module()
+    return float(getattr(mod, "DAILY_BUDGET_S", 32.0)) if mod is not None else 32.0
+
+
+async def daily_personal_llm(
+    facts: dict[str, Any], *, language: str, system: str, user_id_hash: str
+) -> dict[str, Any] | None:
+    """LLM narrative or None. The outer timeout is the AI layer's budget + 3 s, as its contract requires."""
+    try:
+        fn = _fn("generate_daily_personal")
+        budget = daily_budget_s()
+        out = await asyncio.wait_for(
+            fn(facts, language=language, system=system, user_id_hash=user_id_hash, budget_s=budget),
+            timeout=budget + 3,
+        )
+    except Exception as exc:  # noqa: BLE001 - the caller serves the template
+        log.warning("daily_personal_llm_failed", extra={"exc_type": type(exc).__name__})
+        return None
+    if isinstance(out, dict) and out.get("overview") and out.get("generated_by") != "template":
+        return _clean_strings(out)
+    return None
+
+
 async def daily_personal(
     facts: dict[str, Any], *, language: str, system: str, user_id_hash: str
 ) -> tuple[dict[str, Any], str]:
     """Returns (narrative{headline, overview, areas{k:{text}}, affirmation}, generated_by)."""
-    try:
-        fn = _fn("generate_daily_personal")
-        out = await asyncio.wait_for(
-            fn(facts, language=language, system=system, user_id_hash=user_id_hash), timeout=20)
-        if isinstance(out, dict) and out.get("overview"):
-            return _clean_strings(out), "template" if out.get("generated_by") == "template" else "llm"
-    except Exception as exc:  # noqa: BLE001 - template fallback (llm-integration.md 7.3)
-        log.warning("daily_personal_llm_failed", extra={"exc_type": type(exc).__name__})
-    return _personal_template(facts, language), "template"
+    out = await daily_personal_llm(facts, language=language, system=system, user_id_hash=user_id_hash)
+    if out is not None:
+        return out, "llm"
+    return template_daily_personal(facts, language), "template"
 
 
 # ------------------------------------------------------------------ compatibility narrative

@@ -18,8 +18,13 @@ export default function OAuthCallback() {
     const params = new URLSearchParams(window.location.search);
     return { code: params.get("code"), failed: params.get("error") };
   });
+  const termsRequired = initial.failed === "terms_required";
   const [problem, setProblem] = useState<{ message: string; canRetry: boolean } | null>(
-    !initial.code || initial.failed ? { message: "Google sign-in didn't complete.", canRetry: false } : null,
+    termsRequired
+      ? { message: "New here? Create your account on the Sign up tab so you can agree to the Terms and Privacy Policy first.", canRetry: false }
+      : !initial.code || initial.failed
+        ? { message: "Google sign-in didn't complete.", canRetry: false }
+        : null,
   );
   const [busy, setBusy] = useState(!!initial.code && !initial.failed);
   const started = useRef(false);
@@ -64,7 +69,7 @@ export default function OAuthCallback() {
       {problem ? (
         <div className="text-center" role="alert">
           <AlertCircle aria-hidden="true" className="mx-auto size-12 text-danger" />
-          <h1 className="mt-4 text-h2 text-fg">Sign-in didn't finish</h1>
+          <h1 className="mt-4 text-h2 text-fg">{termsRequired ? "One more step" : "Sign-in didn't finish"}</h1>
           <p className="mt-2 text-body-sm text-fg-secondary">{problem.message}</p>
           <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
             {problem.canRetry && (
@@ -72,8 +77,8 @@ export default function OAuthCallback() {
                 Try again
               </Button>
             )}
-            <ButtonLink to="/auth" variant="primary">
-              Back to sign in
+            <ButtonLink to={termsRequired ? "/auth?mode=signup" : "/auth"} variant="primary">
+              {termsRequired ? "Create your account" : "Back to sign in"}
             </ButtonLink>
           </div>
         </div>

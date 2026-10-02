@@ -12,10 +12,20 @@ _DEV = re.compile(r"[ऀ-ॿ]")
 _LET = re.compile(r"[A-Za-zऀ-ॿ]")
 
 
+# A bare ID typed into a sentence ("... your VN.MOON.RASHI.CANCER placement ...") is not a leak worth a canned reply:
+# remove it (BUG-025: a repaired answer that named an ID was replaced by "I can't share how I'm set up").
+_ID_BARE = re.compile(r"[ \t]?(?<![\w.\[/])(?:META|VN|V|N|A|T|G|Y|D|P|W)\.[A-Z][A-Z0-9_]*(?:\.[A-Z0-9_]+)+(?![\w.]*[a-z])")
+
+
 def strip_fact_ids(text: str) -> tuple[str, list[str]]:
-    """Remove "[N.SUN.SIGN.CANCER]"-style markers. Returns (clean_text, ids_found)."""
+    """Remove "[N.SUN.SIGN.CANCER]"-style markers and bare IDs. Returns (clean_text, ids_found)."""
     found = [m.group(1) for m in _ID_BRACKET.finditer(text)]
-    return _ID_BRACKET.sub("", text), found
+    text = _ID_BRACKET.sub("", text)
+    bare = [m.group(0).strip() for m in _ID_BARE.finditer(text)]
+    if bare:
+        found += bare
+        text = re.sub(r"[ \t]{2,}", " ", _ID_BARE.sub("", text)).replace(" ,", ",").replace(" .", ".")
+    return text, found
 
 
 class BracketFilter:
@@ -126,6 +136,8 @@ def detail_level(question: str) -> str:
     return "normal"
 
 
+LENGTH_HINT_GENERAL = {"normal": "100 to 180 words in 2 to 4 short paragraphs", "detailed": "220 to 320 words, well organised",
+                       "brief": "40 to 90 words, short and direct"}
 LENGTH_HINT = {"normal": "120 to 220 words, concise", "detailed": "220 to 320 words, thorough and well organised",
                "brief": "40 to 90 words, short and direct"}
 
@@ -150,13 +162,14 @@ def neutralize_gender(text: str) -> str:
     """Rewrite feminine honorific verb forms addressed to the user ("आप कर सकती हैं") to the conventional
     gender-neutral honorific ("आप कर सकते हैं"). Only plural/honorific forms in sentences that address the
     user, so feminine nouns (राशि ... करती है) are untouched."""
-    parts = re.split(r"(?<=[.!?।])\s+", text)
+    # Keep the separators: paragraph breaks ("\n\n") must survive (chat@v7 asks for 2-3 short paragraphs).
+    parts = re.split(r"((?<=[.!?।])\s+)", text)
     out = []
     for sent in parts:
         if _ADDRESS.search(sent):
             sent = _FEM_PAT.sub(lambda m: f"{_FEM_FIX[m.group(1)]}{m.group(2)}{m.group(3)}", sent)
         out.append(sent)
-    return " ".join(out)
+    return "".join(out)
 
 
 # Common misspellings of dasha / nakshatra vocabulary (e.g. "अंतर्दृशा": दृश = "sight", not दशा) -> correct form.

@@ -91,7 +91,7 @@ One secondary source reports that, in a pooled count, about 8 percent of bhakoot
 
 **Reference points.** Later tradition counts the placement from the **Lagna (ascendant), the Moon and Venus**, each examined separately.
 
-**Primary text.** In the English BPHS edition consulted here, the verse says a woman becomes a widow if Mars is in the 12th, 4th, 7th or 8th from the Lagna without any benefic aspect or association, and the following verses say the same applies to a man and that the effect ceases when a man and woman who both have such a yoga marry. Another source quotes the same verse as including the Lagna itself. Chapter and verse numbers differ between editions (chapter 80 in this edition, 81 in others). The verse mentions Lagna only; the Moon and Venus reference points appear in later texts [secondary sources].
+**Primary text.** In the English BPHS edition consulted here, the verse states a severe outcome for the spouse's longevity (in absolute terms, which this knowledge base does not repeat as a prediction) if Mars is in the 12th, 4th, 7th or 8th from the Lagna without any benefic aspect or association, and the following verses say the same applies to a man and that the effect ceases when a man and woman who both have such a yoga marry. Another source quotes the same verse as including the Lagna itself. Chapter and verse numbers differ between editions (chapter 80 in this edition, 81 in others). The verse mentions Lagna only; the Moon and Venus reference points appear in later texts [secondary sources].
 
 **Cautions about frequency.** With three reference points and six houses, a large share of charts will qualify. One practitioner writes that about 80 percent do; this is an author estimate and not a statistic. Wikipedia describes the belief as a social superstition. Both observations support treating it as a flag to discuss, not a barrier.
 
@@ -99,7 +99,7 @@ One secondary source reports that, in a pooled count, about 8 percent of bhakoot
 
 **From the BPHS text itself:** benefic aspect or conjunction on Mars; and both partners having the yoga ("mutual cancellation").
 
-**Commonly cited sign-based rules** (Jataka Chandrika's house-wise table, via Ashish Desai):
+**Commonly cited sign-based rules** (Jataka Chandrika's house-wise table, as quoted by Ashish Desai; the quoted list was re-checked against that page on 2026-10-02, but other authors list different signs [single source; lists vary]):
 
 | Mars in house | Reduced when Mars is in |
 |---|---|

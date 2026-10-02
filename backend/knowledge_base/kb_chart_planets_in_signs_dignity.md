@@ -48,8 +48,8 @@ Moolatrikona is a special stretch inside a sign (always one of the planet's sign
 | Moon | Taurus | 3 to 30 (engine, Jataka Parijata); BPHS summaries also give 4 to 30 | Taurus 4-20 is also quoted |
 | Mars | Aries | 0 to 12 | none noted |
 | Mercury | Virgo | 15 to 20 (engine); BPHS summaries cite 16 to 20 | Jataka Parijata: first 15 degrees exaltation, next 10 degrees (15 to 25) moolatrikona, last 5 own |
-| Jupiter | Sagittarius | 0 to 10 | none noted |
-| Venus | Libra | 0 to 15 (engine) | Jataka Parijata gives a single shared range for Venus, Saturn, Sun and Jupiter (OCR unclear; likely 10 or 20 degrees) [unverified] |
+| Jupiter | Sagittarius | 0 to 10 | Jataka Parijata (ch. 2, slokas 26-28, read directly): first 20 degrees |
+| Venus | Libra | 0 to 15 (engine) | Jataka Parijata (read directly, OCR "£0" read as 20): first 20 degrees, the same stretch it gives for Saturn, Sun and Jupiter |
 | Saturn | Aquarius | 0 to 20 | none noted |
 
 The rest of each sign after the moolatrikona stretch counts as plain own sign. For the Moon, the first 3 degrees of Taurus count as exaltation, the rest as moolatrikona. Rahu is assigned Aquarius moolatrikona in Jataka Parijata and in some schools; the engine has none.
@@ -112,7 +112,7 @@ Contemporary practice: retrograde planets tend to act more internally, with them
 
 ## Planetary states (avasthas), basics
 
-**Baladi (age) avastha.** Each sign is split into five 6-degree bands: infant, youth, adult, old, dead (bala, kumara, yuva, vriddha, mrita). In odd signs the order runs from 0 to 30 degrees as listed; in even signs it is reversed. Results: the adult stage is strongest, the infant and old stages give about half, and the dead stage the least.
+**Baladi (age) avastha.** Each sign is split into five 6-degree bands: infant, youth, adult, old, dead (bala, kumara, yuva, vriddha, mrita). In odd signs the order runs from 0 to 30 degrees as listed; in even signs it is reversed. Results: the adult stage is strongest and the dead stage weakest; the fractions given to the infant, youth and old stages differ between texts [unverified].
 
 **Jagradadi avastha.** Wakeful (jagrat): planet in own or exaltation sign, full results. Dreaming (swapna): friend or neutral sign, moderate results. Sleeping (sushupti): enemy or debilitation sign, weak results.
 

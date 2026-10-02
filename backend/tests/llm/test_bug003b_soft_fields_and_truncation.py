@@ -95,7 +95,7 @@ async def test_truncation_gives_up_after_one_growth():
 def test_chat_default_budget_has_headroom():
     from app.llm.prompts import get_registry
     reg = get_registry()
-    assert reg.active_version("chat") == "v6" and reg.reg["limits"]["chat"]["max_output_tokens"] >= 1200
+    assert reg.active_version("chat") == "v7" and reg.reg["limits"]["chat"]["max_output_tokens"] >= 1200
     assert reg.verify() == []
 
 

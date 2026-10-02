@@ -364,6 +364,30 @@ def _summary(chart: dict, approx: bool, system: str = "both") -> list[str]:
     return out[:10]
 
 
+def focus_factors(chart: dict, planets: Iterable[str], *, system: str, approx: bool) -> list[FactorView]:
+    """Facts about the planets a QUESTION names (a dasha pair, a planet in a house): their own sign / nakshatra / house
+    from chart_data, and in the Vedic system the houses they rule (engine `house_lords`). Reformatting only; nothing is
+    computed. Lets a general answer end with an accurate "In your chart, Mars rules the 7th and 12th..." line without
+    the model deriving lordship itself."""
+    wanted = [canon_planet(p) or p for p in planets]
+    if not wanted:
+        return []
+    out: list[FactorView] = []
+    pool = derive_factors(chart, system=system)
+    for name in wanted:
+        slug = _slug(name)
+        out += [f for f in pool if f.id.startswith((f"VN.{slug}.RASHI.", f"N.{slug}.SIGN.", f"N.{slug}.H"))]
+        v = chart.get("vedic") or {}
+        if system in ("vedic", "both") and v and not approx:
+            ruled = sorted(h["house"] for h in (v.get("house_lords") or []) if canon_planet(str(h.get("lord", ""))) == name)
+            if ruled:
+                houses = " and ".join(f"{ordinal(int(h))}" for h in ruled) if len(ruled) <= 2 else \
+                    ", ".join(ordinal(int(h)) for h in ruled[:-1]) + " and " + ordinal(int(ruled[-1]))
+                out.append(FactorView(id=f"VN.{slug}.LORDS", kind="natal", weight=0.9,
+                                      label=f"{name} rules the {houses} house{'s' if len(ruled) > 1 else ''} (counted from the Lagna)"))
+    return out
+
+
 def build_chart_facts(
     chart: dict,
     *,
@@ -373,6 +397,7 @@ def build_chart_facts(
     today: date | None = None,
     k: int = 12,
     is_minor: bool = False,
+    focus_planets: Iterable[str] = (),
 ) -> ChartFacts:
     meta = chart.get("metadata", {}) or {}
     approx = bool(meta.get("approximate_time"))
@@ -382,7 +407,12 @@ def build_chart_facts(
     fs = apply_time_unknown(fs, approx)
     # keep dasha factors always (engine contract), then the top-k by weight
     must = [f for f in fs if f.kind == "dasha" or f.id == TIME_UNKNOWN.id]
-    rest = [f for f in fs if f not in must][: max(0, k - len(must))]
+    have = {f.id for f in must}
+    extra = [f for f in apply_time_unknown(focus_factors(chart, focus_planets, system=system, approx=approx), approx)
+             if f.id not in have and system_allows(f.id, system)]
+    have |= {f.id for f in extra}
+    rest = [f for f in fs if f not in must and f.id not in have][: max(0, k - len(must) - len(extra))]
+    must = must + extra
     return ChartFacts(
         display_name=display_name[:60] or "the user",
         system=system,

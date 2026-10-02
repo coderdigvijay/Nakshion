@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { AlertCircle, AlertTriangle, Bookmark, Check, ChevronRight, Clock, Copy, ThumbsDown, ThumbsUp } from "lucide-react";
 import { cn } from "../../lib/utils";
-import { formatClock } from "../../lib/format";
+import { formatClock, formatDateRangesInText } from "../../lib/format";
 import { spring } from "../../lib/motion";
 import { AiAvatar } from "../ui/Avatar";
 import { Badge } from "../ui/Badge";
@@ -131,7 +131,7 @@ export function ChatMessage({ role, content, status = "complete", createdAt, cit
   const busy = status === "thinking" || status === "streaming";
   const shown = status === "streaming" ? bufferPartial(content) : stripFactMarkers(content);
   // Prefer server citations; otherwise turn any markers the model wrote into chips at the end.
-  const chips = citations && citations.length > 0 ? citations.map((c) => ({ id: c.factor_id, label: c.label })) : extractFactMarkers(content).map((id) => ({ id, label: humaniseFactId(id) }));
+  const chips = citations && citations.length > 0 ? citations.map((c) => ({ id: c.factor_id, label: formatDateRangesInText(c.label, lang === "hi" ? "hi" : "en") })) : extractFactMarkers(content).map((id) => ({ id, label: formatDateRangesInText(humaniseFactId(id), lang === "hi" ? "hi" : "en") }));
 
   return (
     <motion.article

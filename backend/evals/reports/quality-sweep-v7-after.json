@@ -1,0 +1,1380 @@
+{
+ "summary": {
+  "n": 30,
+  "errors": 0,
+  "general_answer_first": "20/20",
+  "general_chart_led": "0/20",
+  "boilerplate_openings": 0,
+  "general_chart_ref_sentences_mean": 0.7,
+  "general_words_mean": 89.0,
+  "words_mean": 89.0,
+  "shape_flagged": "6/30",
+  "grounded": "30/30",
+  "language_ok": "30/30",
+  "kb_cited_any": "26/30",
+  "kb_provided_any": "30/30",
+  "first_draft_flagged": "8/30",
+  "outcome_ok": "22/30",
+  "latency_p50_s": 3.6,
+  "latency_p95_s": 15.0
+ },
+ "rows": [
+  {
+   "id": 1,
+   "q": "What does Mars mahadasha with Venus antardasha mean?",
+   "lang": "english",
+   "chart": "A",
+   "answer": "Mars Mahadasha with Venus Antardasha brings a meeting of drive and desire where relationships, property, and creative or sensual pursuits become active alongside moderate impulsiveness in love and spending. Traditions differ on the exact outcome, but this period tends to highlight passion and physical pursuits while requiring moderation to balance strong appetites and impatience. In your chart, this pairing unfolds against the backdrop of your sidereal Vrishabha lagna.",
+   "sources": [
+    {
+     "source_id": "85ae112d21",
+     "title": "Vimshottari Antardasha Combinations — All 81 Mahadasha/Antardasha Pairs",
+     "section": "rows Mars-Ketu to Mars-Moon",
+     "tier": 2
+    }
+   ],
+   "kind": "general",
+   "subtype": "dasha_pair",
+   "words": 68,
+   "paragraphs": 1,
+   "concept_first": true,
+   "chart_ref_sentences": 1,
+   "chart_led": false,
+   "first_sentence": "Mars Mahadasha with Venus Antardasha brings a meeting of drive and desire where relationships, property, and creative or sensual pursuits become active alongside moderate impulsiveness in love and spending.",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": true,
+   "kb_provided": 4,
+   "kb_cited": 1,
+   "factor_cites": 1,
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 3453,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 4
+   },
+   "prompt": "chat@v7"
+  },
+  {
+   "id": 2,
+   "q": "What is Gajakesari yoga and how does it form?",
+   "lang": "english",
+   "chart": "A",
+   "answer": "Gajakesari yoga is an auspicious planetary combination in Vedic astrology that forms when Jupiter occupies a kendra house from the sidereal Moon. Traditions differ on exact outcome details, but commentators generally associate this configuration with wisdom, a strong reputation, intelligence, and emotional resilience. In your chart, sidereal Jupiter in Simha is positioned in the fourth house from your sidereal Moon in Karka, forming this combination.",
+   "sources": [
+    {
+     "source_id": "65a05e87d2",
+     "title": "Yoga and Dosha Catalogue (engine-aligned)",
+     "section": "Gajakesari Yoga",
+     "tier": 2
+    }
+   ],
+   "kind": "general",
+   "subtype": "yoga",
+   "words": 65,
+   "paragraphs": 1,
+   "concept_first": true,
+   "chart_ref_sentences": 1,
+   "chart_led": false,
+   "first_sentence": "Gajakesari yoga is an auspicious planetary combination in Vedic astrology that forms when Jupiter occupies a kendra house from the sidereal Moon.",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": true,
+   "kb_provided": 4,
+   "kb_cited": 1,
+   "factor_cites": 2,
+   "outcome": "repaired",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [
+    "hedge"
+   ],
+   "latency_ms": 3924,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 4
+   },
+   "prompt": "chat@v7"
+  },
+  {
+   "id": 3,
+   "q": "What is the result of the Moon in the 7th house?",
+   "lang": "english",
+   "chart": "A",
+   "answer": "Moon in the 7th house tends to make a person emotionally invested in partnership, bringing a strong sensitivity to others and the public mood where relationships shape the sense of security. Traditions note that this placement highlights emotional engagement with interpersonal connections, though it can also bring fluctuating dynamics depending on life circumstances. In your chart, your sidereal Moon resides in Karka in the 3rd house rather than the 7th house.",
+   "sources": [
+    {
+     "source_id": "03671cc9b4",
+     "title": "The Nine Grahas in the Twelve Bhavas (Vedic emphasis)",
+     "section": "Moon in the 5th house / Moon in the 6th house / Moon in the 7th house / Moon in ",
+     "tier": 2
+    }
+   ],
+   "kind": "general",
+   "subtype": "planet_house",
+   "words": 71,
+   "paragraphs": 1,
+   "concept_first": true,
+   "chart_ref_sentences": 1,
+   "chart_led": false,
+   "first_sentence": "Moon in the 7th house tends to make a person emotionally invested in partnership, bringing a strong sensitivity to others and the public mood where relationships shape the sense of security.",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": true,
+   "kb_provided": 5,
+   "kb_cited": 1,
+   "factor_cites": 1,
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 1989,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 5
+   },
+   "prompt": "chat@v7"
+  },
+  {
+   "id": 4,
+   "q": "What is today's tithi and is it good for starting something new?",
+   "lang": "english",
+   "chart": "A",
+   "answer": "A tithi is a lunar day representing the time it takes the Moon to gain twelve degrees on the Sun, making up thirty tithis in a synodic month, and traditions vary across regions regarding specific observances. While daily panchangs list the current tithi and nakshatra to gauge the quality of time, specific daily values like today's tithi are not tracked here. In general, traditional muhurta practice advises looking at the specific class of a tithi—such as favoring Nanda or Purna tithis for celebrations and completions while viewing Rikta tithis or Amavasya as better suited for reflection, clearing, and inner work rather than launching new ventures.",
+   "sources": [
+    {
+     "source_id": "bcc3186b6c",
+     "title": "Panchang Five Limbs (Panchanga): Tithi, Vara, Nakshatra, Yoga, Karana",
+     "section": "Tithi: the lunar day",
+     "tier": 2
+    },
+    {
+     "source_id": "c243ddc24d",
+     "title": "Eclipses (Grahana) and Special Lunar Days: Ekadashi, Sankashti, Pradosha, Amavasya, Purnim",
+     "section": "Amavasya (new moon)",
+     "tier": 2
+    },
+    {
+     "source_id": "c6021e01da",
+     "title": "Panchang Five Limbs (Panchanga): Tithi, Vara, Nakshatra, Yoga, Karana",
+     "section": "Tithi classes (the five nature groups)",
+     "tier": 2
+    }
+   ],
+   "kind": "general",
+   "subtype": "panchang",
+   "words": 105,
+   "paragraphs": 1,
+   "concept_first": true,
+   "chart_ref_sentences": 0,
+   "chart_led": false,
+   "first_sentence": "A tithi is a lunar day representing the time it takes the Moon to gain twelve degrees on the Sun, making up thirty tithis in a synodic month, and traditions vary across regions regarding specific observances.",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": true,
+   "kb_provided": 4,
+   "kb_cited": 3,
+   "factor_cites": 0,
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 2244,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 4
+   },
+   "prompt": "chat@v7"
+  },
+  {
+   "id": 5,
+   "q": "Which remedies are traditionally suggested for a weak Saturn?",
+   "lang": "english",
+   "chart": "A",
+   "answer": "Remedies traditionally suggested for a weak Saturn in Vedic astrology include charity such as donating items associated with Saturn on Saturdays, observing fasts on Saturdays, performing fire ceremonies through qualified priests, and keeping sacred geometric diagrams known as yantras in the home or workplace. Traditions vary widely, and these optional practices are meant for personal reflection and discipline rather than as mandatory solutions.",
+   "sources": [
+    {
+     "source_id": "2c897b2d24",
+     "title": "Vedic astrology overview",
+     "section": "Other Remedies",
+     "tier": 1
+    }
+   ],
+   "kind": "general",
+   "subtype": "remedy",
+   "words": 63,
+   "paragraphs": 1,
+   "concept_first": true,
+   "chart_ref_sentences": 0,
+   "chart_led": false,
+   "first_sentence": "Remedies traditionally suggested for a weak Saturn in Vedic astrology include charity such as donating items associated with Saturn on Saturdays, observing fasts on Saturdays, performing fire ceremonies through qualified",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": true,
+   "kb_provided": 5,
+   "kb_cited": 1,
+   "factor_cites": 0,
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 2163,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 5
+   },
+   "prompt": "chat@v7"
+  },
+  {
+   "id": 6,
+   "q": "How does Ashtakoota matching work and what is a good score?",
+   "lang": "english",
+   "chart": "A",
+   "answer": "Ashtakoota matching is an eight-part traditional system that compares the birth nakshatras of two people to evaluate compatibility across thirty-six total points. Traditions differ on how heavily to weigh each factor, and alternative regional variants exist alongside the standard thirty-six point sum.",
+   "sources": [
+    {
+     "source_id": "5c441d73ce",
+     "title": "Ashtakoota Guna Milan: The Eight Kootas, Scoring Tables and Variants",
+     "section": "Tara (Dina) Koota (3 points)",
+     "tier": 2
+    },
+    {
+     "source_id": "dcd6fd1428",
+     "title": "Ashtakoota Guna Milan: The Eight Kootas, Scoring Tables and Variants",
+     "section": "Regional Variants",
+     "tier": 2
+    },
+    {
+     "source_id": "b255dc4c0a",
+     "title": "Vedic Compatibility by Relationship Type: Marriage, Friendship, Family and Business",
+     "section": "Limits of Ashtakoota for non-romantic use",
+     "tier": 2
+    }
+   ],
+   "kind": "general",
+   "subtype": "compat",
+   "words": 42,
+   "paragraphs": 1,
+   "concept_first": true,
+   "chart_ref_sentences": 0,
+   "chart_led": false,
+   "first_sentence": "Ashtakoota matching is an eight-part traditional system that compares the birth nakshatras of two people to evaluate compatibility across thirty-six total points.",
+   "shape_flags": [
+    "answer has 42 words; the target is 80 to 200"
+   ],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": true,
+   "kb_provided": 5,
+   "kb_cited": 3,
+   "factor_cites": 0,
+   "outcome": "repaired",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [
+    "hedge"
+   ],
+   "latency_ms": 4694,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 5
+   },
+   "prompt": "chat@v7"
+  },
+  {
+   "id": 7,
+   "q": "What does Saturn Mahadasha usually bring?",
+   "lang": "english",
+   "chart": "A",
+   "answer": "Saturn Mahadasha is a nineteen-year sidereal period governed by Shani that brings discipline, duty, patience, and long-term structure through demanding but formative life lessons. This span traditionally emphasizes responsibility, hard work, maturity, and the building of durable foundations, often rewarding steady effort after periods of delay. In your chart, Saturn rules the 9th and 10th houses and sits in Makara.",
+   "sources": [
+    {
+     "source_id": "77703a79bb",
+     "title": "The Nine Vimshottari Mahadashas — Themes, Life Areas and Constructive Framing",
+     "section": "Saturn Mahadasha (19 years)",
+     "tier": 2
+    }
+   ],
+   "kind": "general",
+   "subtype": "dasha",
+   "words": 60,
+   "paragraphs": 1,
+   "concept_first": true,
+   "chart_ref_sentences": 1,
+   "chart_led": false,
+   "first_sentence": "Saturn Mahadasha is a nineteen-year sidereal period governed by Shani that brings discipline, duty, patience, and long-term structure through demanding but formative life lessons.",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": true,
+   "kb_provided": 4,
+   "kb_cited": 1,
+   "factor_cites": 3,
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 2051,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 4
+   },
+   "prompt": "chat@v7"
+  },
+  {
+   "id": 8,
+   "q": "What is Sade Sati?",
+   "lang": "english",
+   "chart": "A",
+   "answer": "Sade Sati is a seven-and-a-half-year astrological period that occurs when transiting Saturn passes through the twelfth, first, and second signs from the natal Moon. Traditionally, this phase is viewed as a significant time of testing, personal restructuring, and maturation where long-term patience and disciplined effort are encouraged rather than feared. With your sidereal Moon in Karka, your relationship with these transits follows its own distinct timing.",
+   "sources": [
+    {
+     "source_id": "d1a582390f",
+     "title": "Sade Sati, Ashtama Shani and Kantaka Shani (Dhaiya) — Saturn Transit Periods",
+     "section": "What Sade Sati is",
+     "tier": 2
+    }
+   ],
+   "kind": "general",
+   "subtype": "sade_sati",
+   "words": 66,
+   "paragraphs": 1,
+   "concept_first": true,
+   "chart_ref_sentences": 1,
+   "chart_led": false,
+   "first_sentence": "Sade Sati is a seven-and-a-half-year astrological period that occurs when transiting Saturn passes through the twelfth, first, and second signs from the natal Moon.",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": true,
+   "kb_provided": 4,
+   "kb_cited": 1,
+   "factor_cites": 1,
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 1997,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 4
+   },
+   "prompt": "chat@v7"
+  },
+  {
+   "id": 9,
+   "q": "What does Rahu Mahadasha with Jupiter antardasha mean for me?",
+   "lang": "english",
+   "chart": "A",
+   "answer": "Rahu Mahadasha with Jupiter Antardasha is a period where ambition meets wisdom, where Jupiter's guidance can temper Rahu to support learning, advisory roles, and growth. Traditions suggest this combination tends to be more constructive than the main period alone, fostering growth through unconventional or foreign avenues while encouraging clear ethics. In your sidereal chart, your current period is actually Venus Mahadasha with Mercury Antardasha, so these specific Rahu and Jupiter themes are not your active timeline right now.",
+   "sources": [
+    {
+     "source_id": "0abba62faf",
+     "title": "Vimshottari Antardasha Combinations — All 81 Mahadasha/Antardasha Pairs",
+     "section": "rows Rahu-Venus to Rahu-Mars",
+     "tier": 2
+    },
+    {
+     "source_id": "a677a8cf0d",
+     "title": "Vimshottari Antardasha Combinations — All 81 Mahadasha/Antardasha Pairs",
+     "section": "rows Jupiter-Sun to Jupiter-Rahu",
+     "tier": 2
+    }
+   ],
+   "kind": "general",
+   "subtype": "dasha_pair",
+   "words": 78,
+   "paragraphs": 1,
+   "concept_first": true,
+   "chart_ref_sentences": 1,
+   "chart_led": false,
+   "first_sentence": "Rahu Mahadasha with Jupiter Antardasha is a period where ambition meets wisdom, where Jupiter's guidance can temper Rahu to support learning, advisory roles, and growth.",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": true,
+   "kb_provided": 4,
+   "kb_cited": 2,
+   "factor_cites": 2,
+   "outcome": "repaired_soft",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [
+    "hedge"
+   ],
+   "latency_ms": 3865,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 4
+   },
+   "prompt": "chat@v7"
+  },
+  {
+   "id": 10,
+   "q": "How is my career looking?",
+   "lang": "english",
+   "chart": "A",
+   "answer": "Your sidereal Mars in Kumbha sits in the 10th house from your lagna, bringing an ambitious and competitive drive to your vocational path. Traditions suggest that Mars in this position can point toward roles involving engineering, energy, or assertive leadership, alongside potential for dynamic engagement with authority. Keeping a steady daily rhythm and channeling your energy constructively will help ground these professional themes.",
+   "sources": [
+    {
+     "source_id": "630581078c",
+     "title": "Career in astrology",
+     "section": "Planets in the 10th House",
+     "tier": 1
+    }
+   ],
+   "kind": "personal",
+   "subtype": "other",
+   "words": 63,
+   "paragraphs": 1,
+   "concept_first": null,
+   "chart_ref_sentences": 1,
+   "chart_led": true,
+   "first_sentence": "Your sidereal Mars in Kumbha sits in the 10th house from your lagna, bringing an ambitious and competitive drive to your vocational path.",
+   "shape_flags": [
+    "answer has 63 words; the target is 90 to 270"
+   ],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": false,
+   "kb_provided": 4,
+   "kb_cited": 1,
+   "factor_cites": 2,
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 2026,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 4
+   },
+   "prompt": "chat@v7"
+  },
+  {
+   "id": 11,
+   "q": "What is my current dasha and what does it mean?",
+   "lang": "english",
+   "chart": "A",
+   "answer": "Your current running dasha is the Venus Mahadasha accompanied by the Mercury Antardasha. In Vedic astrology, a major period acts like a season of life shaped by the planet's general significations and its specific role in your birth chart, while the sub-period brings a secondary layer of themes into focus. Traditions vary on the exact nuances of timing, but generally this phase encourages you to reflect on personal values, relationships, and creative pursuits alongside intellectual or communicative themes. It can be a supportive time to balance aesthetic or relational growth with practical planning, keeping in mind that transits and personal choices ultimately shape how these energies unfold.",
+   "sources": [
+    {
+     "source_id": "6cc9df1d9d",
+     "title": "Vimshottari Dasha — Foundations, Calculation and Reading",
+     "section": "Reading a dasha with chart context",
+     "tier": 2
+    },
+    {
+     "source_id": "57c7d6bd8b",
+     "title": "Gochara (Transits) and Dasha Interplay — Double Transit, Ashtakavarga and Timing Windows",
+     "section": "The core idea: dasha sets the season, transit sets the moment",
+     "tier": 2
+    }
+   ],
+   "kind": "personal",
+   "subtype": "other",
+   "words": 107,
+   "paragraphs": 1,
+   "concept_first": null,
+   "chart_ref_sentences": 2,
+   "chart_led": true,
+   "first_sentence": "Your current running dasha is the Venus Mahadasha accompanied by the Mercury Antardasha.",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": true,
+   "kb_provided": 4,
+   "kb_cited": 2,
+   "factor_cites": 2,
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 2686,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 4
+   },
+   "prompt": "chat@v7"
+  },
+  {
+   "id": 12,
+   "q": "Will I get married soon?",
+   "lang": "english",
+   "chart": "A",
+   "answer": "Your current Venus Mahadasha combined with your Mercury Antardasha in the Vedic sidereal system is traditionally viewed as a supportive time for exploring connections, partnerships, and matters of the heart. Periods governed by Venus often focus attention on relationships and emotional fulfillment, while Mercury encourages communication and dialogue with others. It can be helpful to use this phase for self-reflection on what you truly value in a partner while keeping channels of conversation open.",
+   "sources": [],
+   "kind": "personal",
+   "subtype": "other",
+   "words": 74,
+   "paragraphs": 1,
+   "concept_first": null,
+   "chart_ref_sentences": 1,
+   "chart_led": true,
+   "first_sentence": "Your current Venus Mahadasha combined with your Mercury Antardasha in the Vedic sidereal system is traditionally viewed as a supportive time for exploring connections, partnerships, and matters of the heart.",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": true,
+   "kb_provided": 5,
+   "kb_cited": 0,
+   "factor_cites": 3,
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 2040,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 5
+   },
+   "prompt": "chat@v7"
+  },
+  {
+   "id": 13,
+   "q": "मंगल महादशा में शुक्र की अंतर्दशा का क्या मतलब होता है?",
+   "lang": "hindi",
+   "chart": "A",
+   "answer": "मंगल महादशा में शुक्र की अंतर्दशा ऊर्जा और इच्छा के मिलन का काल होती है, जिसमें रिश्ते, संपत्ति और रचनात्मक या भोग-संबद्ध गतिविधियां सक्रिय हो जाती हैं। परंपराओं के अनुसार, इस अवधि में प्रेम और व्यय के मामलों में थोड़ी जल्दबाजी या तेज प्रवृत्तियां देखने को मिल सकती हैं, इसलिए संयम और संतुलित सोच रखना फायदेमंद रहता है। आपकी कुंडली में शुक्र लग्न और छठे भाव के स्वामी के रूप में ग्यारहवें भाव में स्थित हैं, जो इन विषयों को एक अलग दिशा दे सकता है।",
+   "sources": [
+    {
+     "source_id": "f543ad61c1",
+     "title": "Vimshottari Antardasha Combinations — All 81 Mahadasha/Antardasha Pairs",
+     "section": "rows Mars-Ketu to Mars-Moon",
+     "tier": 2
+    }
+   ],
+   "kind": "general",
+   "subtype": "dasha_pair",
+   "words": 86,
+   "paragraphs": 1,
+   "concept_first": true,
+   "chart_ref_sentences": 1,
+   "chart_led": false,
+   "first_sentence": "मंगल महादशा में शुक्र की अंतर्दशा ऊर्जा और इच्छा के मिलन का काल होती है, जिसमें रिश्ते, संपत्ति और रचनात्मक या भोग-संबद्ध गतिविधियां सक्रिय हो जाती हैं।",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": true,
+   "kb_provided": 4,
+   "kb_cited": 1,
+   "factor_cites": 4,
+   "outcome": "repaired_soft",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [
+    "style"
+   ],
+   "latency_ms": 4127,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 4
+   },
+   "prompt": "chat@v7"
+  },
+  {
+   "id": 14,
+   "q": "शनि की साढ़ेसाती क्या होती है?",
+   "lang": "hindi",
+   "chart": "A",
+   "answer": "शनि की साढ़ेसाती वह सात-साढ़े सात वर्ष की अवधि है जब गोचर का शनि जन्मकालीन राशि से बारहवें, प्रथम और दूसरे भाव में भ्रमण करता है। यह समय सामान्यतः परीक्षण, अनुशासन और परिपक्वता का माना जाता है जहाँ जीवन के उन पहलुओं पर ध्यान जाता है जिन्हें अधिक स्थिरता की आवश्यकता होती है। परंपराओं के अनुसार इसे आपदा के रूप में नहीं बल्कि एक आत्म-चिंतन और धैर्य की परीक्षा के रूप में देखना चाहिए। आपकी कुंडली में शनि मकर राशि में स्थित है और नौवें तथा दसवें भाव का स्वामी है।",
+   "sources": [
+    {
+     "source_id": "3fde5832b4",
+     "title": "Vedic astrology overview",
+     "section": "Sade Sati (Saturn's 7.5-Year Transit)",
+     "tier": 1
+    },
+    {
+     "source_id": "d1a582390f",
+     "title": "Sade Sati, Ashtama Shani and Kantaka Shani (Dhaiya) — Saturn Transit Periods",
+     "section": "What Sade Sati is",
+     "tier": 2
+    }
+   ],
+   "kind": "general",
+   "subtype": "sade_sati",
+   "words": 91,
+   "paragraphs": 1,
+   "concept_first": true,
+   "chart_ref_sentences": 1,
+   "chart_led": false,
+   "first_sentence": "शनि की साढ़ेसाती वह सात-साढ़े सात वर्ष की अवधि है जब गोचर का शनि जन्मकालीन राशि से बारहवें, प्रथम और दूसरे भाव में भ्रमण करता है।",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": true,
+   "kb_provided": 4,
+   "kb_cited": 2,
+   "factor_cites": 2,
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 2458,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 4
+   },
+   "prompt": "chat@v7"
+  },
+  {
+   "id": 15,
+   "q": "मेरी कुंडली में अभी कौन सी दशा चल रही है?",
+   "lang": "hindi",
+   "chart": "A",
+   "answer": "आपकी कुंडली में वर्तमान में शुक्र महादशा और बुध अंतर्दशा चल रही है। विंशोत्तरी महादशा प्रणाली के अनुसार, यह काल ग्रहों की स्थिति और उनके संबंधों के आधार पर विशेष विषयों और अनुभवों को सक्रिय करता है। इस समयावधि का सदुपयोग अपने व्यक्तिगत विकास और आत्म-चिंतन के लिए करना अच्छा रहेगा।",
+   "sources": [
+    {
+     "source_id": "0832483341",
+     "title": "Hinglish Astrology Phrasebook - how users ask, and what concept it maps to",
+     "section": "E. Dasha and timing",
+     "tier": 1
+    }
+   ],
+   "kind": "personal",
+   "subtype": "other",
+   "words": 51,
+   "paragraphs": 1,
+   "concept_first": null,
+   "chart_ref_sentences": 1,
+   "chart_led": true,
+   "first_sentence": "आपकी कुंडली में वर्तमान में शुक्र महादशा और बुध अंतर्दशा चल रही है।",
+   "shape_flags": [
+    "answer has 51 words; the target is 90 to 270"
+   ],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": false,
+   "kb_provided": 5,
+   "kb_cited": 1,
+   "factor_cites": 2,
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 1903,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 5
+   },
+   "prompt": "chat@v7"
+  },
+  {
+   "id": 16,
+   "q": "Mangal mahadasha mein Shukra ki antardasha ka kya matlab hota hai?",
+   "lang": "hinglish",
+   "chart": "A",
+   "answer": "Mars Mahadasha mein Shukra ki antardasha energy aur desire ka ek aisa sangam hai jahan relationships, creative pursuits aur comforts par focus rehta hai, sath hi love ya spending mein thodi impulsiveness bhi aa sakti hai. Traditions kehti hain ki kyunki Mars aur Venus ek dusre ke prati neutral hain, isliye is period ke results মূলত house placement aur dignity par nirbhar karte hain. Aapki chart mein sidereal Venus 1st aur 6th houses ko rule karta hai jabki sidereal Mars 10th house mein sthit hai.",
+   "sources": [
+    {
+     "source_id": "f543ad61c1",
+     "title": "Vimshottari Antardasha Combinations — All 81 Mahadasha/Antardasha Pairs",
+     "section": "rows Mars-Ketu to Mars-Moon",
+     "tier": 2
+    }
+   ],
+   "kind": "general",
+   "subtype": "dasha_pair",
+   "words": 85,
+   "paragraphs": 1,
+   "concept_first": true,
+   "chart_ref_sentences": 1,
+   "chart_led": false,
+   "first_sentence": "Mars Mahadasha mein Shukra ki antardasha energy aur desire ka ek aisa sangam hai jahan relationships, creative pursuits aur comforts par focus rehta hai, sath hi love ya spending mein thodi impulsiveness bhi aa sakti hai",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": false,
+   "kb_provided": 4,
+   "kb_cited": 1,
+   "factor_cites": 5,
+   "outcome": "repaired_soft",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [
+    "style"
+   ],
+   "latency_ms": 4600,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 4
+   },
+   "prompt": "chat@v7"
+  },
+  {
+   "id": 17,
+   "q": "Rahu Kaal kya hota hai aur kya isme kaam shuru karna chahiye?",
+   "lang": "hinglish",
+   "chart": "A",
+   "answer": "Rahu Kaal din ka ek aisa samay hai jise kuch paramparaon mein naye kaamo ki shuruat ke liye avoid kiya jata hai. Yah samay saptah ke har din alag-alag sthan par padta hai, aur traditions differ hone ki vajah se ise sabhi jagah ek saman mahatwa nahi diya jata. Aam taur par is dauran naye shubh karya ya yatra shuru karne se bacha jata hai, jabki purane ya rojana ke kaam chalte rehte hain.",
+   "sources": [
+    {
+     "source_id": "79d2f7fb50",
+     "title": "Daily Timing Windows: Rahu Kaal, Yamaganda, Gulika, Abhijit, Brahma Muhurta and Hora",
+     "section": "Rahu Kaal (Rahu Kalam)",
+     "tier": 2
+    }
+   ],
+   "kind": "general",
+   "subtype": "panchang",
+   "words": 74,
+   "paragraphs": 1,
+   "concept_first": true,
+   "chart_ref_sentences": 0,
+   "chart_led": false,
+   "first_sentence": "Rahu Kaal din ka ek aisa samay hai jise kuch paramparaon mein naye kaamo ki shuruat ke liye avoid kiya jata hai.",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": true,
+   "kb_provided": 5,
+   "kb_cited": 1,
+   "factor_cites": 0,
+   "outcome": "repaired",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [
+    "hedge"
+   ],
+   "latency_ms": 4467,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 5
+   },
+   "prompt": "chat@v7"
+  },
+  {
+   "id": 18,
+   "q": "Meri Shani ki sade sati kaisi rahegi?",
+   "lang": "hinglish",
+   "chart": "B",
+   "answer": "Aapki sidereal Moon sign Meena (Pisces) ke anusaar, aap par is samay Sade Sati ka peak phase chal raha hai, kyunki birth time na hone ke karan ise ek anuman ke roop mein dekha jata hai. Sade Sati ke dauran, shani dev anushasan (discipline) aur mehnat par zor dete hain, jisase vyakti ko apni jeevan shaili aur karm mein sudhar karne ka avasar milta hai. Is samay sehat ka dhyan rakhna aur kisi bhi tarah ki jaldbazi se bachna achha rahega.",
+   "sources": [
+    {
+     "source_id": "3fde5832b4",
+     "title": "Vedic astrology overview",
+     "section": "Sade Sati (Saturn's 7.5-Year Transit)",
+     "tier": 1
+    }
+   ],
+   "kind": "personal",
+   "subtype": "sade_sati",
+   "words": 81,
+   "paragraphs": 1,
+   "concept_first": null,
+   "chart_ref_sentences": 1,
+   "chart_led": true,
+   "first_sentence": "Aapki sidereal Moon sign Meena (Pisces) ke anusaar, aap par is samay Sade Sati ka peak phase chal raha hai, kyunki birth time na hone ke karan ise ek anuman ke roop mein dekha jata hai.",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": false,
+   "kb_provided": 4,
+   "kb_cited": 1,
+   "factor_cites": 3,
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 2621,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 4
+   },
+   "prompt": "chat@v7"
+  },
+  {
+   "id": 19,
+   "q": "What is my Lagna and what does the 10th house say about my career?",
+   "lang": "english",
+   "chart": "B",
+   "answer": "Because your exact birth time is not known, your Ascendant (Lagna) and house placements cannot be determined. Your sidereal Moon is in Meena (Pisces) in Revati nakshatra, and you are currently running your Moon Mahadasha with Rahu Antardasha. Without birth time, traditions suggest focusing on your Moon sign for emotional themes and general life patterns rather than specific career houses. Consider reflecting on how your creative and intuitive side can guide your daily path right now.",
+   "sources": [],
+   "kind": "personal",
+   "subtype": "other",
+   "words": 76,
+   "paragraphs": 1,
+   "concept_first": null,
+   "chart_ref_sentences": 3,
+   "chart_led": true,
+   "first_sentence": "Because your exact birth time is not known, your Ascendant (Lagna) and house placements cannot be determined.",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": false,
+   "kb_provided": 5,
+   "kb_cited": 0,
+   "factor_cites": 5,
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 2093,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 5
+   },
+   "prompt": "chat@v7"
+  },
+  {
+   "id": 20,
+   "q": "What does Moon Mahadasha with Rahu Antardasha mean?",
+   "lang": "english",
+   "chart": "B",
+   "answer": "Moon Mahadasha with Rahu Antardasha is a period where emotional depth meets intense restlessness, bringing imagination, unconventional experiences, and a strong drive for novelty. Traditionally, this combination tends to stir the mind, sometimes causing worry or unclear thinking as the nurturing sensitivity of the Moon interacts with the amplifying, ambition-driven energy of Rahu. Establishing steady routines, practicing grounding habits, and maintaining patience help navigate any tendency toward overstimulation during this cycle. In your chart, this approximate period operates with your sidereal Moon in Meena and Rahu in Kumbha, prompting a blend of introspective sensitivity and forward-looking exploration.",
+   "sources": [
+    {
+     "source_id": "8bd466194a",
+     "title": "Vimshottari Antardasha Combinations — All 81 Mahadasha/Antardasha Pairs",
+     "section": "rows Moon-Moon to Moon-Saturn",
+     "tier": 2
+    }
+   ],
+   "kind": "general",
+   "subtype": "dasha_pair",
+   "words": 97,
+   "paragraphs": 1,
+   "concept_first": true,
+   "chart_ref_sentences": 1,
+   "chart_led": false,
+   "first_sentence": "Moon Mahadasha with Rahu Antardasha is a period where emotional depth meets intense restlessness, bringing imagination, unconventional experiences, and a strong drive for novelty.",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": true,
+   "kb_provided": 4,
+   "kb_cited": 1,
+   "factor_cites": 4,
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 3747,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 4
+   },
+   "prompt": "chat@v7"
+  },
+  {
+   "id": 21,
+   "q": "Is Manglik dosha a problem in marriage?",
+   "lang": "english",
+   "chart": "A",
+   "answer": "Manglik dosha is a traditional astrological configuration where Mars occupies specific houses from the Lagna, Moon, or Venus, and it is often discussed in relation to partnership compatibility. Traditions differ on its strictness, and many modern practitioners view it as a factor of drive and energy rather than a fatal barrier, noting that numerous cancellation conditions and mitigating sign placements can reduce its intensity. While your sidereal Vrishabha Lagna chart brings its own focus, the general view is that open communication and mutual understanding remain central to any relationship.",
+   "sources": [
+    {
+     "source_id": "f05a5a1995",
+     "title": "Vedic astrology overview",
+     "section": "Mangal Dosha (Mars Affliction)",
+     "tier": 1
+    },
+    {
+     "source_id": "598b6db792",
+     "title": "Matching Doshas (Nadi, Bhakoot, Gana, Manglik) and Their Cancellations",
+     "section": "Manglik (Kuja / Mangal) Dosha: the rule",
+     "tier": 2
+    },
+    {
+     "source_id": "a897ea7b1f",
+     "title": "Matching Doshas (Nadi, Bhakoot, Gana, Manglik) and Their Cancellations",
+     "section": "Manglik Dosha: cancellations",
+     "tier": 2
+    },
+    {
+     "source_id": "1d75abaa9b",
+     "title": "Matching Doshas (Nadi, Bhakoot, Gana, Manglik) and Their Cancellations",
+     "section": "How modern astrologers weigh doshas",
+     "tier": 2
+    }
+   ],
+   "kind": "general",
+   "subtype": "compat",
+   "words": 89,
+   "paragraphs": 1,
+   "concept_first": true,
+   "chart_ref_sentences": 1,
+   "chart_led": false,
+   "first_sentence": "Manglik dosha is a traditional astrological configuration where Mars occupies specific houses from the Lagna, Moon, or Venus, and it is often discussed in relation to partnership compatibility.",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": true,
+   "kb_provided": 5,
+   "kb_cited": 4,
+   "factor_cites": 1,
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 2316,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 5
+   },
+   "prompt": "chat@v7"
+  },
+  {
+   "id": 22,
+   "q": "Should I wear a blue sapphire for Saturn?",
+   "lang": "english",
+   "chart": "A",
+   "answer": "Deciding on gemstone recommendations such as a blue sapphire involves traditional views where Saturn rules the 9th and 10th houses and sits in Makara, but personal choices are best approached through reflection rather than purchasing remedies. Traditions vary widely on gemstone usage, and it is entirely optional to explore regular routines or mindful practices instead of physical stones.",
+   "sources": [],
+   "kind": "personal",
+   "subtype": "concept",
+   "words": 58,
+   "paragraphs": 1,
+   "concept_first": null,
+   "chart_ref_sentences": 0,
+   "chart_led": false,
+   "first_sentence": "Deciding on gemstone recommendations such as a blue sapphire involves traditional views where Saturn rules the 9th and 10th houses and sits in Makara, but personal choices are best approached through reflection rather th",
+   "shape_flags": [
+    "answer has 58 words; the target is 90 to 270"
+   ],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": true,
+   "kb_provided": 4,
+   "kb_cited": 0,
+   "factor_cites": 3,
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 5290,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 4
+   },
+   "prompt": "chat@v7"
+  },
+  {
+   "id": 23,
+   "q": "What does Venus in the 5th house mean?",
+   "lang": "english",
+   "chart": "C",
+   "answer": "Venus in the 5th house brings a natural charm, playful romance, and a strong creative spark to matters of the heart. This placement tends to show up as a joyful approach to dating, creative arts, and pleasure, often drawing admirers through artistic expression and a warm presence. Traditions suggest approaching romance with open-hearted fun while remaining mindful of expecting constant entertainment. In your chart, this placement connects with your tropical Aries rising, blending dynamic self-expression with playful romantic energy.",
+   "sources": [
+    {
+     "source_id": "346a9627f6",
+     "title": "Love and relationships",
+     "section": "5th House — Romance and Dating / 7th House — Marriage and Committed Partnership ",
+     "tier": 1
+    }
+   ],
+   "kind": "general",
+   "subtype": "planet_house",
+   "words": 79,
+   "paragraphs": 1,
+   "concept_first": true,
+   "chart_ref_sentences": 1,
+   "chart_led": false,
+   "first_sentence": "Venus in the 5th house brings a natural charm, playful romance, and a strong creative spark to matters of the heart.",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": true,
+   "kb_provided": 3,
+   "kb_cited": 1,
+   "factor_cites": 1,
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 17004,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 3
+   },
+   "prompt": "chat@v7"
+  },
+  {
+   "id": 24,
+   "q": "What does Ketu in the 12th house mean?",
+   "lang": "english",
+   "chart": "A",
+   "answer": "Ketu in the 12th house represents a strong moksha-oriented placement that brings deep spiritual inclination, retreat, meditation, and a natural tendency toward letting go of material ties. Traditions view this position as favouring inner exploration, solitude, and mystical or contemplative pursuits rather than conventional worldly accumulation. In your sidereal chart, with your sidereal Lagna in Vrishabha, this placement falls into a reflective part of your chart.",
+   "sources": [
+    {
+     "source_id": "d9b35b6572",
+     "title": "The Nine Grahas in the Twelve Bhavas (Vedic emphasis)",
+     "section": "Ketu in the 9th house / Ketu in the 10th house / Ketu in the 11th house / Ketu i",
+     "tier": 2
+    }
+   ],
+   "kind": "general",
+   "subtype": "planet_house",
+   "words": 66,
+   "paragraphs": 1,
+   "concept_first": true,
+   "chart_ref_sentences": 1,
+   "chart_led": false,
+   "first_sentence": "Ketu in the 12th house represents a strong moksha-oriented placement that brings deep spiritual inclination, retreat, meditation, and a natural tendency toward letting go of material ties.",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": false,
+   "kb_provided": 5,
+   "kb_cited": 1,
+   "factor_cites": 1,
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 15036,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 5
+   },
+   "prompt": "chat@v7"
+  },
+  {
+   "id": 25,
+   "q": "Explain Vimshottari dasha in detail",
+   "lang": "english",
+   "chart": "A",
+   "answer": "Vimshottari Dasha is a predictive timing system in Vedic astrology that divides a 120-year human life cycle into nine consecutive major periods, known as Mahadashas, each governed by one of the nine celestial bodies. This system is fundamentally based on the position of the Moon at birth, as the specific nakshatra the Moon occupies determines the starting point and sequence of these periods, which then unfold in a fixed, recurring order for every individual. By mapping planetary influences across time, the system highlights which specific planetary themes are currently emphasised in a person's life, serving as a primary tool for understanding the unfolding chapters of one's journey. Traditionally, each Mahadasha is further divided into smaller sub-periods called Antardashas, which provide finer detail and nuance to the overarching energy of the major period. These periods do not act in isolation but are interpreted alongside the strength and condition of the planets in a birth chart, including their house rulerships, their placements, and their relationships to the Lagna and the Moon. Practitioners often look at the Mahadasha lord's dignity and the houses it influences to gauge the nature of the experiences that may manifest. It is important to remember that these periods are not deterministic; they are viewed as a framework for understanding shifting patterns and opportunities, best used in conjunction with transits and other astrological factors to gain a comprehensive view of life's rhythm. While this system is widely used and deeply rooted in Parashari tradition, it is one of several historical timing methods, and its results are always read in the context of the entire birth chart. You are currently in the Venus Mahadasha and Mercury Antardasha.",
+   "sources": [
+    {
+     "source_id": "7904607018",
+     "title": "Hindi-English Jyotish Glossary (Devanagari, transliteration, English gloss)",
+     "section": "rows महादशा नाथ to दशा विचार",
+     "tier": 1
+    },
+    {
+     "source_id": "6bb6b48d12",
+     "title": "Vimshottari Dasha — Foundations, Calculation and Reading",
+     "section": "What the system is",
+     "tier": 2
+    }
+   ],
+   "kind": "general",
+   "subtype": "concept",
+   "words": 277,
+   "paragraphs": 1,
+   "concept_first": true,
+   "chart_ref_sentences": 0,
+   "chart_led": false,
+   "first_sentence": "Vimshottari Dasha is a predictive timing system in Vedic astrology that divides a 120-year human life cycle into nine consecutive major periods, known as Mahadashas, each governed by one of the nine celestial bodies.",
+   "shape_flags": [
+    "answer has 277 words; the target is 80 to 200"
+   ],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": true,
+   "kb_provided": 5,
+   "kb_cited": 2,
+   "factor_cites": 2,
+   "outcome": "repaired",
+   "model": "gemini-3.1-flash-lite",
+   "first_draft_flags": [
+    "hedge"
+   ],
+   "latency_ms": 11221,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 5
+   },
+   "prompt": "chat@v7"
+  },
+  {
+   "id": 26,
+   "q": "What is the Navamsa chart used for?",
+   "lang": "english",
+   "chart": "A",
+   "answer": "The Navamsa chart, or D9, serves as the most significant divisional chart in Vedic astrology, primarily used to assess the deeper fruition of the promises made in the birth chart and to provide detailed insight into partnership, dharma, and soul purpose. While the birth chart acts as the foundation for overall life patterns, the Navamsa reveals the underlying strength of planets and the specific quality of one's spiritual and relational path. Traditions often describe the relationship between the two charts by noting that the birth chart represents the tree, while the Navamsa represents the fruit it eventually produces. Practitioners consult the Navamsa to verify the long-term potential of planetary placements, particularly looking at the dignity of planets and the characteristics of a spouse. It is a tool for refining one's understanding of life's trajectory, offering a clearer view of how the potential indicated at birth manifests over time.",
+   "sources": [
+    {
+     "source_id": "a9f4323544",
+     "title": "Divisional Charts (Vargas): Purpose, Computation and Reading",
+     "section": "Worked example / Vargottama",
+     "tier": 2
+    },
+    {
+     "source_id": "a1c0d65ec8",
+     "title": "Vedic astrology overview",
+     "section": "The Navamsa Chart (D9)",
+     "tier": 1
+    },
+    {
+     "source_id": "18e2ca7c3d",
+     "title": "Classical Vedic principles (Parashari)",
+     "section": "The Navamsha (D-9): The Most Important Divisional Chart",
+     "tier": 2
+    }
+   ],
+   "kind": "general",
+   "subtype": "concept",
+   "words": 148,
+   "paragraphs": 1,
+   "concept_first": true,
+   "chart_ref_sentences": 0,
+   "chart_led": false,
+   "first_sentence": "The Navamsa chart, or D9, serves as the most significant divisional chart in Vedic astrology, primarily used to assess the deeper fruition of the promises made in the birth chart and to provide detailed insight into part",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": false,
+   "kb_provided": 5,
+   "kb_cited": 3,
+   "factor_cites": 0,
+   "outcome": "ok",
+   "model": "gemini-3.1-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 7889,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 5
+   },
+   "prompt": "chat@v7"
+  },
+  {
+   "id": 27,
+   "q": "Is today good for me to start a business?",
+   "lang": "english",
+   "chart": "A",
+   "answer": "Starting a new business is a significant step, and within the Vedic system, it is helpful to look at both your current dasha and the principles of auspicious timing. You are currently in the Venus Mahadasha with a Mercury Antardasha, a period that often highlights communication, trade, and intellectual pursuits in your professional life. Because business success is traditionally associated with the 7th house of partnerships, the 10th house of career, and the 11th house of gains, it is wise to ensure your plans align with these themes. Traditions regarding business ventures suggest evaluating the strength of Mercury for contracts and Jupiter for counsel. Since I do not have today's specific Panchang values or planetary transits relative to your chart, consider this a time for careful planning and reflection rather than an immediate launch. It is often recommended to avoid starting major initiatives during periods of uncertainty or when planetary conditions are not fully assessed for an auspicious start, known as Muhurta.",
+   "sources": [
+    {
+     "source_id": "2112229021",
+     "title": "Vedic Compatibility by Relationship Type: Marriage, Friendship, Family and Business",
+     "section": "Business partnership",
+     "tier": 2
+    },
+    {
+     "source_id": "01da99a7a7",
+     "title": "Hinglish Astrology Phrasebook - how users ask, and what concept it maps to",
+     "section": "rows career mein growth kab hogi to doctor banne ke yog",
+     "tier": 1
+    }
+   ],
+   "kind": "personal",
+   "subtype": "other",
+   "words": 162,
+   "paragraphs": 1,
+   "concept_first": null,
+   "chart_ref_sentences": 2,
+   "chart_led": true,
+   "first_sentence": "Starting a new business is a significant step, and within the Vedic system, it is helpful to look at both your current dasha and the principles of auspicious timing.",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": true,
+   "kb_provided": 5,
+   "kb_cited": 2,
+   "factor_cites": 2,
+   "outcome": "ok",
+   "model": "gemini-3.1-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 3812,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 5
+   },
+   "prompt": "chat@v7"
+  },
+  {
+   "id": 28,
+   "q": "How will my Saturn return affect me?",
+   "lang": "english",
+   "chart": "C",
+   "answer": "Your Saturn return occurs when transiting Saturn reaches your natal Saturn in Sagittarius, a significant period that typically marks a transition from one stage of life to another. Because your natal Saturn is in the 8th house, this transit often brings a focus on restructuring deep-seated psychological patterns, shared resources, or your relationship with intimacy and transformation. Traditions suggest this is a time when structures built on shaky foundations may be tested, encouraging you to move toward greater authenticity and personal maturity. It is common to experience a sense of reckoning regarding your long-term responsibilities, career direction, or personal identity. While this process can feel demanding, it is viewed as a constructive rite of passage that helps you align your life with your genuine self rather than external expectations. Focus on accepting the need for change and rebuilding your life on more solid, honest ground during this influential time.",
+   "sources": [
+    {
+     "source_id": "16b91233ff",
+     "title": "Transits and timing",
+     "section": "First Saturn Return (Ages 28-30) / Second Saturn Return (Ages 57-59) / Third Sat",
+     "tier": 1
+    },
+    {
+     "source_id": "f6dda32ee6",
+     "title": "Psychological astrology: Saturn",
+     "section": "First Saturn Return (Ages 28-30) / Second Saturn Return (Ages 57-59)",
+     "tier": 3
+    },
+    {
+     "source_id": "a5436b1010",
+     "title": "Planets reference",
+     "section": "Retrograde / Transit Effects / Speed & Orbital Period",
+     "tier": 1
+    }
+   ],
+   "kind": "personal",
+   "subtype": "concept",
+   "words": 149,
+   "paragraphs": 1,
+   "concept_first": null,
+   "chart_ref_sentences": 2,
+   "chart_led": true,
+   "first_sentence": "Your Saturn return occurs when transiting Saturn reaches your natal Saturn in Sagittarius, a significant period that typically marks a transition from one stage of life to another.",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": false,
+   "kb_provided": 4,
+   "kb_cited": 3,
+   "factor_cites": 2,
+   "outcome": "ok",
+   "model": "gemini-3.1-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 5516,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 4
+   },
+   "prompt": "chat@v7"
+  },
+  {
+   "id": 29,
+   "q": "Bhakoot dosha kya hota hai aur kya yeh cancel ho sakta hai?",
+   "lang": "hinglish",
+   "chart": "A",
+   "answer": "Bhakoot dosha tab banta hai jab do kundliyon ke चंद्रमा (Moons) ek doosre se vishesh sthanon par hote hain, aur traditions differ karti hain ki iske kaun se niyam sabse maane jayein. Yeh sthiti aam taur par parivarik talmel ya vicharon mein matbhed se jodi jati hai, lekin alag-alag srot iske parihar ke alag-alag niyam batate hain. Aapki Vedic sthiti mein aapki Chandra rashi Karka hai aur dasha Venus Mahadasha ke antargat Mercury Antardasha chal rahi hai.",
+   "sources": [
+    {
+     "source_id": "831401926c",
+     "title": "Matching Doshas (Nadi, Bhakoot, Gana, Manglik) and Their Cancellations",
+     "section": "Bhakoot Dosha",
+     "tier": 2
+    }
+   ],
+   "kind": "general",
+   "subtype": "compat",
+   "words": 77,
+   "paragraphs": 1,
+   "concept_first": true,
+   "chart_ref_sentences": 1,
+   "chart_led": false,
+   "first_sentence": "Bhakoot dosha tab banta hai jab do kundliyon ke चंद्रमा (Moons) ek doosre se vishesh sthanon par hote hain, aur traditions differ karti hain ki iske kaun se niyam sabse maane jayein.",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": true,
+   "kb_provided": 3,
+   "kb_cited": 1,
+   "factor_cites": 3,
+   "outcome": "repaired_soft",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [
+    "hedge"
+   ],
+   "latency_ms": 6910,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 3
+   },
+   "prompt": "chat@v7"
+  },
+  {
+   "id": 30,
+   "q": "Moon Venus ke saath hone ka kya matlab hai? Aur meri Moon kahan hai?",
+   "lang": "hinglish",
+   "chart": "A",
+   "answer": "Aapka sidereal Moon Karka rashi aur Ashlesha nakshatra mein sthit hai. Jab Chandrama aur Venus ek sath hote hain, toh yeh samanya roop se kalatmak ruchi, saundarya ke prati prem aur bhavuk sagrata ko badhava dete hain. Apne man ki shanti ke liye ek niyamit dhyan ya sangeet ka abhyas shuru karna laabhdayak ho sakta hai.",
+   "sources": [],
+   "kind": "personal",
+   "subtype": "concept",
+   "words": 56,
+   "paragraphs": 1,
+   "concept_first": null,
+   "chart_ref_sentences": 1,
+   "chart_led": true,
+   "first_sentence": "Aapka sidereal Moon Karka rashi aur Ashlesha nakshatra mein sthit hai.",
+   "shape_flags": [
+    "answer has 56 words; the target is 90 to 270"
+   ],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": false,
+   "kb_provided": 4,
+   "kb_cited": 0,
+   "factor_cites": 2,
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 2533,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 4
+   },
+   "prompt": "chat@v7"
+  }
+ ],
+ "cost_usd": 0.0701
+}

@@ -14,6 +14,8 @@ school_notes: "Verse-level results differ between BPHS, Saravali, Phaladeepika a
 
 # The Nine Grahas in the Twelve Bhavas
 
+> **Provenance warning.** The 108 planet-in-house entries below are SYNTHESISED, constructive characterisations. They are not quotations of BPHS, Saravali or Phaladeepika verses, which are often much starker and differ between texts. The "strong placement" labels follow common teaching (upachaya houses 3, 6, 10, 11 for malefics; digbala; Venus in the 12th; Jupiter in kendras/trikonas), and statements about nodes follow Parashari custom only (the nodes' results vary widely between teachers, so treat node rows as low-confidence [unverified]). Read each as a theme to reflect on, never as a prediction.
+
 Each entry describes a tendency for the planet in a house counted from the lagna (whole-sign). Read it alongside the planet's sign and dignity (see `kb_chart_planets_in_signs_dignity.md`), its aspects and conjunctions, the functional nature for the lagna (see `kb_chart_functional_nature_by_lagna.md`) and the running dasha. When birth time is unknown, house positions cannot be given; use the Moon-based reference (houses counted from the Moon) only with an explicit label.
 
 General principles used here:
@@ -116,7 +118,7 @@ Passion around home, property and roots; emotional intensity at home; classicall
 Competitive intelligence, sports and strategy; protective drive toward children; strong opinions in creative life.
 
 ### Mars in the 6th house
-Strong placement: overcomes rivals, ill health and obstacles; disciplined, service-driven energy.
+Strong placement: capacity to work through rivals, setbacks and obstacles; disciplined, service-driven energy.
 
 ### Mars in the 7th house
 Passionate, dynamic partnerships and business dealings; assertiveness in relationships calls for balance (Mangal Dosha house).

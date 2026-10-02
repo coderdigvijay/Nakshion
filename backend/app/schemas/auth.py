@@ -31,8 +31,15 @@ class RegisterIn(_EmailIn):
     # Passwords are NOT stripped: whitespace is significant.
     password: NewPassword
     name: CleanName = Field(min_length=1, max_length=100)
-    terms_accepted: bool | None = None
+    terms_accepted: bool = Field(default=False, validate_default=True)  # absent == not accepted (validator runs on the default)
     age_confirmed: bool | None = None
+
+    @field_validator("terms_accepted")
+    @classmethod
+    def _terms(cls, v: bool) -> bool:
+        if v is not True:
+            raise ValueError("TERMS_NOT_ACCEPTED|Please accept the Terms and Privacy Policy to create an account.")
+        return v
 
     @field_validator("name")
     @classmethod
@@ -73,3 +80,9 @@ class TokenOut(OutModel):
 
 class OAuthExchangeIn(InModel):
     code: str = Field(min_length=20, max_length=100)
+
+
+class PasswordChangedOut(OutModel):
+    message: str
+    access_token: str  # fresh token: the old one (and every other session) is revoked by the change
+    token_type: str = "bearer"

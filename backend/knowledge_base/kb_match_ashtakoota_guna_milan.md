@@ -42,6 +42,24 @@ Ashtakoota ("eight factors") is the best-known North Indian method of comparing 
 
 **Caveat in the source itself.** The Saravali documentation warns that Asta Koota "should not be the only source" for judging a partnership and that each natal chart should be studied on its own first (see the companion note on factors beyond the 36 points).
 
+## Which variant the Nakshion engine uses (audit 2026-10-02)
+
+The engine (`backend/app/astrology/data/ashtakoota.py`, `compatibility.py`) was compared cell by cell with this file by script: the Yoni 14x14 matrix, Vashya matrix A and Gana matrix A below are identical to the engine (196 + 25 + 9 cells, zero differences). Where sources disagree (see docs/kb-research/ashtakoota-verification.md, 15 or more cells), the engine choices are:
+
+| Koota | Engine uses | Main alternative(s) |
+|---|---|---|
+| Varna | Brahmin = water, Kshatriya = fire, Vaishya = earth, Shudra = air; groom rank at least bride rank scores 1 (majority of sources) | Saravali page: air = Vaishya, earth = Shudra |
+| Vashya | Matrix A (Saravali), Sagittarius and Capricorn split at 15 degrees | Matrix B (8 cells differ) |
+| Tara | Remainder 3, 5, 7 bad (1.5 per direction) | All odd remainders bad (also 1) |
+| Yoni | Saravali matrix, including asymmetric Horse/Deer and Lion/Buffalo cells | AAPS: symmetric at those pairs |
+| Graha Maitri | 5 / 4 / 3 / 1 / 0.5 / 0 scale, natural friendship | none material |
+| Gana | Matrix A; gana dosha flagged when score is 1 or less | AstroSaxena and Jagannath Hora variants |
+| Bhakoot | strict 0 or 7 | 4-point gradations on some sites |
+| Nadi | same nadi 0, else 8 | none |
+| Total bands | 33+ excellent, 25-32 good, 18-24 average, below 18 below average | other sites differ in labels only |
+
+Engine fixtures against an independent calculator (Prokerala or Drik) are still pending, so any single koota score may differ from another calculator's output for the reasons above. Say which convention is used when quoting a score.
+
 ## Varna Koota (1 point)
 
 Varna groups the 12 Moon signs into four classes by element and compares them. The rule: the groom's varna should be **equal to or higher than** the bride's; if so the couple gets 1 point, otherwise 0. Order from highest: Brahmin, Kshatriya, Vaishya, Shudra. In modern language it is a rough proxy for ego level and sense of "who leads", not a statement about social caste.
@@ -206,7 +224,7 @@ All sources agree that **18 is the traditional minimum** (half the maximum). The
 
 ## Regional Variants
 
-- **South Indian 10 Porutham:** Dina, Gana, Mahendra, Stree Deergha, Yoni, Rasi, Rasyadhipati (Graha Maitri), Vasya, Rajju and Vedha. Dina, Rasi, Gana, Yoni and Rajju are treated as the key five, with Rajju and Dina usually weighted most. It is pass or fail on each factor rather than a 36-point sum.
-- **Rajju Koota:** Saravali lists it as a ninth, optional koota, scoring 0 to 4 by the body-part group (foot, waist, navel, neck, head) of each nakshatra and whether it is ascending or descending.
-- **Kuta system with 12 factors:** some Western-language sources (for example Roeland de Looff at dirah.org) describe a 12-factor version where about 21 of 36 is suggested as a minimum.
+- **South Indian 10 Porutham:** Dina, Gana, Mahendra, Stree Deergha, Yoni, Rasi, Rasyadhipati (Graha Maitri), Vasya, Rajju and Vedha. Several sources treat Dina, Gana, Yoni, Rasi and Rajju as the most important, with Rajju often weighted heavily [unverified; lists vary]. It is pass or fail on each factor rather than a 36-point sum.
+- **Rajju Koota:** Saravali is reported to list it as a ninth, optional koota [unverified], scoring 0 to 4 by the body-part group (foot, waist, navel, neck, head) of each nakshatra and whether it is ascending or descending.
+- **Kuta system with 12 factors:** some Western-language sources (for example dirah.org) describe a 12-factor version where about 21 of 36 is suggested as a minimum [unverified].
 - **Bride-to-groom orientation:** in nearly every table the bride is the row; a few sites reverse this. Always check before comparing.

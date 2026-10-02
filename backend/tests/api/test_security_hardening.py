@@ -21,7 +21,7 @@ A = "/api/v1"
 # ---------------------------------------------------------------- 1. client IP behind a proxy
 async def test_rate_limit_buckets_per_forwarded_client(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setattr(settings, "TRUSTED_PROXY_HOPS", 1)
-    body = {"email": "a@example.com", "password": "correct horse battery", "name": "A"}
+    body = {"email": "a@example.com", "password": "correct horse battery", "name": "A", "terms_accepted": True}
     async with AsyncClient(transport=ASGITransport(app=app), base_url="http://test") as c:
         # 5 registrations/hour/IP: client X exhausts its bucket, client Y (same proxy peer) is unaffected.
         for i in range(5):
@@ -74,7 +74,7 @@ async def test_oauth_code_ttl_is_60s(client: AsyncClient, redis_client) -> None:
 
 # ---------------------------------------------------------------- 3. body size cap
 async def test_body_cap_content_length_and_streaming(client: AsyncClient, monkeypatch: pytest.MonkeyPatch) -> None:
-    big = {"email": "a@example.com", "password": "correct horse battery", "name": "A" * 70000}
+    big = {"email": "a@example.com", "password": "correct horse battery", "name": "A" * 70000, "terms_accepted": True}
     r = await client.post(f"{A}/auth/register", json=big)
     assert r.status_code == 413 and r.json()["code"] == "PAYLOAD_TOO_LARGE"
 

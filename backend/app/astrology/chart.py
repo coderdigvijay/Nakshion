@@ -16,6 +16,7 @@ from .vedic import (
     Graha, d9, d10, functional_nature, graha_drishti, house_from, house_lords, lagna_entry,
     nakshatra_of, planet_entry,
 )
+from .sensitivity import sensitivity
 from .version import ENGINE_VERSION
 from .western import (
     Point, aspects_between, compute_houses, house_of, sign_data, western_summary,
@@ -77,6 +78,15 @@ def _validate_types(dob, tob, exact, lat, lon, tz, fold, override, now) -> None:
         bad("utc_offset_override must be a number of minutes")
     if now is not None and (not isinstance(now, datetime) or now.tzinfo is None):
         bad("now_utc must be a timezone-aware datetime")
+
+
+def _birth_tzinfo(zone_name: str | None, offset_minutes: float, tz_source: str):
+    """Zone used to turn dasha / Sade Sati instants into the calendar dates users see."""
+    if tz_source == "zoneinfo" and zone_name:
+        from zoneinfo import ZoneInfo
+
+        return ZoneInfo(zone_name)
+    return timezone(timedelta(minutes=offset_minutes))
 
 
 def _offset_value(minutes: float) -> float | int:
@@ -274,6 +284,7 @@ def compute_natal_chart(
                 "planets": planets}
 
     birth_utc = rt.utc
+    date_tz = _birth_tzinfo(rt.timezone, rt.utc_offset_minutes, rt.tz_source)
     vedic = {
         # Reported as the MEAN Lahiri value (published/JH convention, J2000 = 23.8571). The
         # sidereal longitudes subtract the TRUE value from the apparent (true-equinox) tropical
@@ -287,7 +298,8 @@ def compute_natal_chart(
         "planets": v_planets,
         "moon_nakshatra": moon_nak,
         "dasha": dasha.compute(moon_sid, birth_utc, now_utc, approximate=time_unknown,
-                               moon_range=probes["Moon"]["sidlon"] if probes else None),
+                               moon_range=probes["Moon"]["sidlon"] if probes else None,
+                               tz=date_tz, tz_name=rt.timezone or f"UTC{rt.utc_offset_minutes:+g}min"),
         "yogas": yogas,
         "manglik": manglik,
         "house_lords": [] if lagna_sign is None else house_lords(lagna_sign, signs),
@@ -336,6 +348,7 @@ def compute_natal_chart(
         "has_exact_time": has_exact_time and not time_unknown,
         "snapshot_at": now_utc.astimezone(_utc()).strftime("%Y-%m-%dT%H:%M:%SZ"),
     }
+    metadata["sensitivity"] = None if time_unknown else sensitivity(jd, latitude, longitude)
     if time_unknown:
         metadata["time_basis"] = "local_noon"
         metadata["suppressed_when_time_unknown"] = [
@@ -378,10 +391,11 @@ def refresh_time_dependent(chart_data: dict, now_utc: datetime) -> dict:
     moon = d.get("moon_longitude")
     if moon is None:  # older snapshot: fall back to the (2-dp) planet longitude
         moon = next(p["longitude"] for p in vedic["planets"] if p["english"] == "Moon")
-    d.update(dasha.current(moon, birth_utc, now_utc, d.get("year_days", 365.25)))
+    date_tz = _birth_tzinfo(meta.get("timezone"), meta.get("utc_offset_minutes", 0), meta.get("tz_source", "user_override"))
+    d.update(dasha.current(moon, birth_utc, now_utc, d.get("year_days", 365.25), date_tz))
     if d.get("approximate"):  # unknown birth time: pointers stay flagged, candidates refreshed
-        dasha.mark_approximate(d, d.get("moon_range"), birth_utc, now_utc, d.get("year_days", 365.25))
+        dasha.mark_approximate(d, d.get("moon_range"), birth_utc, now_utc, d.get("year_days", 365.25), date_tz)
     moon_rashi = sign_index(next(p["rashi"] for p in vedic["planets"] if p["english"] == "Moon"))
-    vedic["sade_sati"] = transits.sade_sati(moon_rashi, now_utc, with_dates=True)
+    vedic["sade_sati"] = transits.sade_sati(moon_rashi, now_utc, with_dates=True, tz=date_tz)
     meta["snapshot_at"] = now_utc.astimezone(_utc()).strftime("%Y-%m-%dT%H:%M:%SZ")
     return out

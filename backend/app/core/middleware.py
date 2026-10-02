@@ -11,7 +11,7 @@ from starlette.types import ASGIApp, Message, Receive, Scope, Send
 
 from app.core import ratelimit
 from app.core.config import settings
-from app.core.clientip import ip_from_scope
+from app.core.clientip import UNKNOWN_IP, ip_from_scope, maybe_log_shape
 from app.core.logging import request_id_var
 
 log = logging.getLogger("app.access")
@@ -93,8 +93,12 @@ class GlobalRateLimitMiddleware:
 
     async def __call__(self, scope: Scope, receive: Receive, send: Send) -> None:
         if scope["type"] == "http" and scope.get("method") != "OPTIONS" and not scope["path"].startswith("/health"):
+            maybe_log_shape(scope)
             ip = ip_from_scope(scope)
-            if not ratelimit.check("global_ip", ip, self.limit, self.window_s):
+            # "unknown" is one bucket shared by everyone who could not be attributed: allow it more headroom
+            # for ordinary traffic (auth routes get tighter limits in deps.rate_limit).
+            limit = self.limit * 5 if ip == UNKNOWN_IP else self.limit
+            if not ratelimit.check("global_ip", ip, limit, self.window_s):
                 body = json.dumps({"detail": "Too many requests. Please slow down.", "code": "RATE_LIMITED"}).encode()
                 await send(
                     {

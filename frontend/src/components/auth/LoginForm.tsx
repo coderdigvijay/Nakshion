@@ -1,3 +1,4 @@
+import { safeNext } from "../../lib/safeNext";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -30,7 +31,7 @@ export function LoginForm({ next }: { next?: string }) {
       const user = await login(data.email, data.password);
       // Gap G-03: unverified users go to /verify first.
       if (user && !user.email_verified) navigate("/verify", { replace: true });
-      else navigate(next && next.startsWith("/") ? next : "/dashboard", { replace: true });
+      else navigate(safeNext(next), { replace: true });
     } catch (err) {
       // Errors persist inline (PRD §7.2); entered values are kept.
       setError(err instanceof Error ? err.message : "Sign in failed. Please try again.");

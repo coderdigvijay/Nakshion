@@ -1,0 +1,247 @@
+[
+ {
+  "case": [
+   "A",
+   "english",
+   "vedic"
+  ],
+  "result": "llm",
+  "seconds": 5.4,
+  "error": null,
+  "attempts": [
+   [
+    "gemini-3.5-flash-lite",
+    "ok",
+    2917,
+    ""
+   ]
+  ],
+  "headline": "Venus Mahadasha: steady energy for personal reflection",
+  "overview": "As you navigate the current sky within the sidereal zodiac, the planetary patterns invite a balanced and thoughtful approach to your daily life. With transiting Jupiter resting in Karka in the 1st house from your natal Moon, a supportive inner optimism tends to guide your steps. Meanwhile, transiting Saturn in Meena through the 9th house encourages quiet reflection on your broader path and long-term values. This is an opportune time to gently tune into your personal rhythms without any need for haste.",
+  "areas": {
+   "love": {
+    "text": "Your relationships experience a neutral and steady tempo today. It is a wonderful moment to listen actively to those you care about and share quiet, meaningful conversations that strengthen your bonds."
+   },
+   "career": {
+    "text": "Your professional life flows with a balanced rhythm today. This period encourages steady focus on your ongoing projects and thoughtful collaboration with colleagues, helping you handle daily tasks with ease."
+   },
+   "wellness": {
+    "text": "Your vitality finds a comfortable and even pace today. This is a gentle reminder to honour your body's need for rest, gentle movement, and simple routines that restore your inner calm."
+   },
+   "money": {
+    "text": "Financial matters move along with a balanced and stable current. It is a practical day to review your general budget and appreciate steady habits rather than making any sudden shifts."
+   }
+  },
+  "affirmation": "I embrace today's steady pace with an open and peaceful heart."
+ },
+ {
+  "case": [
+   "A",
+   "hindi",
+   "vedic"
+  ],
+  "result": "llm",
+  "seconds": 5.4,
+  "error": null,
+  "attempts": [
+   [
+    "gemini-3.5-flash-lite",
+    "ok",
+    2884,
+    ""
+   ]
+  ],
+  "headline": "शुक्र–बुध महादशा और अंतर्दशा: आंतरिक संतुलन का विशेष समय",
+  "overview": "आज का दिन आपके लिए एक संतुलित दृष्टिकोण लेकर आया है। निरन्तर चल रही शुक्र महादशा और उसके अंतर्गत चल रही बुध अंतर्दशा के प्रभाव से आपके जीवन में कलात्मक और बौद्धिक तालमेल बना हुआ है। निरन्तर हो रहे गोचर जैसे कि गुरु का गोचर आपके मानसिक विकास को प्रेरित कर रहा है, जिससे आप अपने व्यक्तिगत और व्यावसायिक जीवन में शांतिपूर्ण निर्णय ले सकते हैं। यह समय आत्म-चिंतन और धैर्य के साथ आगे बढ़ने के लिए बहुत अनुकूल है।",
+  "areas": {
+   "love": {
+    "text": "प्रेम और रिश्तों के मामलों में आज का दिन सौहार्दपूर्ण रहेगा। संवाद में स्पष्टता बनाए रखें और अपने प्रियजनों की बात को सुनें। यह समय आपसी समझ को और अधिक गहरा करने के लिए उत्तम है।"
+   },
+   "career": {
+    "text": "करियर के मोर्चे पर आपकी कार्यकुशलता और योजनाएं सही दिशा में आगे बढ़ेंगी। सहकर्मियों के साथ मिलकर काम करने से अच्छे परिणाम मिल सकते हैं। अपनी गति को स्थिर रखें और हर कदम सोच-समझकर उठाएं।"
+   },
+   "wellness": {
+    "text": "स्वास्थ्य की दृष्टि से यह दिन आपके लिए स्थिरता का संकेत देता है। अपनी दिनचर्या में थोड़ा विश्राम और हल्के व्यायाम को शामिल करें, जिससे ऊर्जा का स्तर संतुलित बना रहे और मन प्रसन्न रहे।"
+   },
+   "money": {
+    "text": "धन संबंधी मामलों में आज का दिन संयम बरतने का है। बजट का ध्यान रखते हुए वित्तीय योजनाओं की समीक्षा करें। अनावश्यक खर्चों से बचकर भविष्य के लिए छोटी बचत पर ध्यान देना लाभकारी रहेगा।"
+   }
+  },
+  "affirmation": "मैं अपने जीवन में शांति और संतुलन को सहजता से स्वीकार करता हूँ।"
+ },
+ {
+  "case": [
+   "A",
+   "hinglish",
+   "vedic"
+  ],
+  "result": "llm",
+  "seconds": 5.8,
+  "error": null,
+  "attempts": [
+   [
+    "gemini-3.5-flash-lite",
+    "ok",
+    3324,
+    ""
+   ]
+  ],
+  "headline": "शुक्र-बुध महादशा: wisdom aur steady flow",
+  "overview": "Namaste! Aaj ka din aapke liye ek balanced energy lekar aaya hai. Jab aap शुक्र महादशा aur बुध अंतर्दशा ke dauran chal rahe hain, toh mind aur heart mein ek accha तालमेल baithta hai. Sidereal zodiac ke anusaar, jab गुरु Karka rashi mein house 1 mein travel karte hain, toh yeh self-reflection aur inner growth ke liye ek bahut shaant samay hota hai. Har area mein scores moderate hain, jiska matlab hai ki aap apni pace par chal sakte hain bina kisi extra pressure ke.",
+  "areas": {
+   "love": {
+    "text": "Love aur relationships ke mamle mein aaj ka din balanced energy la raha hai. Transiting Ketu house 2 mein hone ki wajah se, communication mein thoda patience rakhna aur pyaar se baat karna aapke liye bahut beneficial rahega."
+   },
+   "career": {
+    "text": "Career ke kshetra mein steady progress ka samay hai. Aapka dhyan apne kaam par focused rahega aur aap apne goals ki taraf bina kisi hurry ke aage badhenge. Yeh naye ideas ko samajhne ke liye ek accha phase hai."
+   },
+   "wellness": {
+    "text": "Wellness aur health ke liye aaj thoda aaram karne aur mental peace par dhyan dene ki zaroorat hai. Transiting Saturn house 9 mein aapko apne daily routine mein thoda discipline aur self-care add karne ki salah deta hai."
+   },
+   "money": {
+    "text": "Finances ke mamle mein yeh ek sthir samay hai. Apne resources ko manage karte samay thodi mindful planning rakhiye, taaki long-term stability bani rahe. Har financial decision mein calm approach sabse behtar kaam karegi."
+   }
+  },
+  "affirmation": "Main apne andar ki shanti aur santulan ko poore vishwas ke sath apnata hoon."
+ },
+ {
+  "case": [
+   "B",
+   "english",
+   "vedic"
+  ],
+  "result": "llm",
+  "seconds": 5.1,
+  "error": null,
+  "attempts": [
+   [
+    "gemini-3.5-flash-lite",
+    "ok",
+    2577,
+    ""
+   ]
+  ],
+  "headline": "Moon-Rahu period: embracing steady reflection and inner growth",
+  "overview": "As you navigate this unique chapter under the sidereal zodiac, your inner world takes center stage. The interplay of your current planetary periods encourages you to honor your emotions and remain patient with yourself. Life moves at a thoughtful pace right now, inviting you to observe your patterns without judgment and trust the wisdom unfolding within you.",
+  "areas": {
+   "love": {
+    "text": "Your relationships invite a gentle and understanding approach today. Taking time to listen to those close to you fosters warmth and helps create a calm, supportive environment for everyone involved."
+   },
+   "career": {
+    "text": "Professional matters move forward with a steady and measured rhythm. This is a favorable time to focus on ongoing tasks and rely on your natural organizational skills rather than rushing new initiatives."
+   },
+   "wellness": {
+    "text": "This is a day to be gentle and patient with your physical energy. Prioritizing rest, quiet moments, and simple self-care routines will help you maintain your balance and inner peace."
+   },
+   "money": {
+    "text": "Financial themes benefit from a practical and mindful outlook. Keeping your focus on steady budgeting and long-term security helps maintain stability and peace of mind."
+   }
+  },
+  "affirmation": "I greet today with patience, trusting my inner strength and emotional wisdom."
+ },
+ {
+  "case": [
+   "C",
+   "english",
+   "western"
+  ],
+  "result": "llm",
+  "seconds": 5.3,
+  "error": null,
+  "attempts": [
+   [
+    "gemini-3.5-flash-lite",
+    "ok",
+    2798,
+    ""
+   ]
+  ],
+  "headline": "Transiting Saturn sextile natal Jupiter: steady growth",
+  "overview": "Hello! Today brings a supportive cosmic landscape that encourages balanced reflection and steady progress. As the Moon moves through the 8th house from your natal Sun sign in Gemini, you may find yourself naturally drawn to deeper introspection and quiet focus. At the same time, a helpful aspect between transiting Saturn and your natal Jupiter encourages disciplined optimism. This is an ideal moment to honor your inner rhythm, trust your ability to navigate subtle shifts, and gently tend to what matters most in your daily life.",
+  "areas": {
+   "love": {
+    "text": "Your relationships invite a gentle, reflective approach today. With moderate energetic flow, it is a wonderful time to listen closely to your partner or friends, allowing quiet moments to deepen your emotional bonds without rushing."
+   },
+   "career": {
+    "text": "Professional matters move forward with a relatively easy flow. Your ability to communicate clearly and stay organized is enhanced, making it a great day to handle practical tasks, tie up loose ends, and collaborate calmly."
+   },
+   "wellness": {
+    "text": "Your wellbeing benefits from quiet patience today. Take time to honor your need for rest and mental restoration, perhaps by stepping back from busy environments to recharge your energy through gentle movement or deep breathing."
+   },
+   "money": {
+    "text": "Financial themes call for a steady, mindful perspective. Rather than making rapid moves, focus on reviewing your current budget and making thoughtful, measured choices that support your long-term stability and peace of mind."
+   }
+  },
+  "affirmation": "I embrace today's quiet moments as a natural space for gentle growth and inner clarity."
+ },
+ {
+  "case": [
+   "A",
+   "english",
+   "vedic"
+  ],
+  "result": "llm",
+  "seconds": 5.2,
+  "error": null,
+  "attempts": [
+   [
+    "gemini-3.5-flash-lite",
+    "ok",
+    2732,
+    ""
+   ]
+  ],
+  "headline": "Venus Mahadasha and Mercury Antardasha: balanced daily rhythms",
+  "overview": "Welcome to your personal reading rooted in the sidereal zodiac. As you navigate the overarching current of the Venus Mahadasha alongside the Mercury Antardasha, you are invited to blend creativity with thoughtful communication. Transiting Jupiter sits in Karka, house 1 from your natal Moon, while transiting Saturn resides in Meena, house 9 from your natal Moon. This combination encourages steady reflection, gentle patience, and an open heart toward your daily routines, creating a harmonious environment for personal growth.",
+  "areas": {
+   "love": {
+    "text": "Your relationships find a steady, moderate rhythm today. It is a wonderful time to listen closely to loved ones and share your thoughts with kindness, supported by transiting Jupiter in Karka, house 1 from your natal Moon."
+   },
+   "career": {
+    "text": "Professional matters move forward at a manageable pace. Focus on organized planning and clear exchanges with colleagues, allowing your natural curiosity to guide you through daily tasks without feeling rushed."
+   },
+   "wellness": {
+    "text": "Your vitality is in a balanced place today. Take time to rest, breathe deeply, and nurture your physical well-being through gentle routines that ground your energy and restore your inner calm."
+   },
+   "money": {
+    "text": "Financial themes call for mindful organization. With transiting Saturn in Meena, house 9 from your natal Moon, patience is your best guide when reviewing your long-term budgets and resource management."
+   }
+  },
+  "affirmation": "I embrace today with a balanced mind, a patient heart, and steady focus."
+ },
+ {
+  "case": [
+   "A",
+   "hindi",
+   "vedic"
+  ],
+  "result": "llm",
+  "seconds": 5.7,
+  "error": null,
+  "attempts": [
+   [
+    "gemini-3.5-flash-lite",
+    "ok",
+    3184,
+    ""
+   ]
+  ],
+  "headline": "शुक्र-बुध महादशा: संतुलन और विचारों की स्पष्टता का समय",
+  "overview": "नमस्ते! आज का दिन आपके लिए आत्म-चिंतन और व्यक्तिगत विकास का एक संतुलित अवसर लेकर आया है। निरन्तर चल रही शुक्र महादशा और बुध अंतर्दशा के प्रभाव से आपके जीवन में कला, संवाद और तार्किकता का सुंदर समन्वय बन रहा है। गोचर में गुरु आपकी जन्म राशि से प्रथम भाव में विराजमान होकर आपको मानसिक स्पष्टता दे रहे हैं, जबकि शनि नौवें भाव से आपके दृष्टिकोण को परिपक्व कर रहे हैं। यह समय जल्दबाजी करने का नहीं, बल्कि शांति से अपनी प्राथमिकताओं को समझने का है।",
+  "areas": {
+   "love": {
+    "text": "प्रेम और रिश्तों के मामलों में आज का दिन संवाद को बेहतर बनाने का है। अपने मन की बात अपनों तक पहुंचाने के लिए यह समय अनुकूल है। दूसरों की बात को धैर्य से सुनें, जिससे आपसी समझ और आत्मीयता में वृद्धि होगी।"
+   },
+   "career": {
+    "text": "कार्यक्षेत्र में आपकी बौद्धिक क्षमता और रचनात्मकता की सराहना हो सकती है। सहकर्मियों के साथ मिलकर काम करने से अच्छे परिणाम सामने आएंगे। अपने विचारों को स्पष्टता से रखें और किसी भी नए प्रोजेक्ट की रूपरेखा शांत मन से तैयार करें।"
+   },
+   "wellness": {
+    "text": "स्वास्थ्य के दृष्टिकोण से यह समय अपनी दिनचर्या में संतुलन बनाए रखने का है। मानसिक शांति के लिए ध्यान या हल्के व्यायाम का सहारा लें। शरीर और मन को विश्राम देना आज आपकी ऊर्जा को बनाए रखने में मदद करेगा।"
+   },
+   "money": {
+    "text": "आर्थिक मामलों में समझदारी से कदम उठाने की आवश्यकता है। अपनी प्राथमिकताओं को ध्यान में रखते हुए ही व्यय की योजना बनाएं। धन से जुड़े किसी भी निर्णय में व्यावहारिक दृष्टिकोण अपनाना आपके लिए अधिक लाभकारी रहेगा।"
+   }
+  },
+  "affirmation": "मैं अपने जीवन में शांति, स्पष्टता और संतुलन का स्वागत करता हूँ।"
+ }
+]

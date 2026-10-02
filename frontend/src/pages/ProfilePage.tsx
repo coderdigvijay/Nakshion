@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -113,7 +113,7 @@ function PasswordRow() {
       onSuccess: () => {
         form.reset();
         setOpen(false);
-        toast.success(mode === "change" ? "Password changed" : "Password set");
+        toast.success(mode === "change" ? "Password changed. Other devices will need to sign in again." : "Password set");
       },
       onError: (err: unknown) => {
         const e = toApiError(err);
@@ -572,6 +572,10 @@ export default function ProfilePage() {
             <p className="text-body-sm text-fg-secondary">
               We store your account, the birth details you enter, the charts computed from them, your conversations and compatibility reports. AI providers receive computed chart facts, not your birth details.
             </p>
+            <p className="mt-2 flex flex-wrap gap-x-4 text-body-sm">
+              <Link to="/privacy" className="focus-ring inline-flex min-h-11 items-center rounded-[4px] text-accent-text underline underline-offset-4">Privacy Policy</Link>
+              <Link to="/terms" className="focus-ring inline-flex min-h-11 items-center rounded-[4px] text-accent-text underline underline-offset-4">Terms of Use</Link>
+            </p>
           </Card>
 
           {/* 7 · Danger zone */}
@@ -579,7 +583,7 @@ export default function ProfilePage() {
             <SectionTitle id="danger" icon={<AlertTriangle aria-hidden="true" className="size-5 text-danger" />}>
               Delete account
             </SectionTitle>
-            <p className="text-body-sm text-fg-secondary">Permanently delete your account, charts, conversations and reports. This can't be undone.</p>
+            <p className="text-body-sm text-fg-secondary">Permanently delete your account, charts, conversations and reports. This can't be undone. See what this removes in the <Link to="/privacy#rights" className="text-accent-text underline underline-offset-4">Privacy Policy</Link>.</p>
             <Button variant="secondary" className="mt-4 text-danger" onClick={() => setDeleteOpen(true)}>
               Delete account
             </Button>

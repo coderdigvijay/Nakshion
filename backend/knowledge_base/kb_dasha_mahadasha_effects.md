@@ -38,7 +38,7 @@ Each section gives the **natural significations** of the planet, what its Mahada
 
 **Themes.** Relationship focus, aesthetic and creative growth, material comfort, travel, cultural pursuits. For many charts it is a time of pursuing pleasure, partnerships and financial building. The long duration means all life stages can be involved, so the age at which it falls matters.
 
-**Placement notes.** Venus as lord of 1, 5, 9 or 10 (for Taurus, Libra Lagna, etc.) or well placed in kendra/trikona is supportive; as lord of 6, 8, 12 or afflicted, it points to relationship adjustment, indulgence, or health attention around reproductive and urinary systems in some traditions.
+**Placement notes.** Venus as lord of a kendra or trikona for the Lagna in question (for example 5th and 10th for Capricorn Lagna) or well placed in kendra/trikona is supportive; as lord of 6, 8, 12 or afflicted, it points to relationship adjustment, indulgence, or health attention around reproductive and urinary systems in some traditions.
 
 **Constructive framing.** Use the period to build lasting values in relationships and craft. Balance enjoyment with discipline in spending and commitments.
 

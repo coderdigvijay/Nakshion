@@ -75,3 +75,26 @@ export function initials(name: string | null | undefined): string {
   if (parts.length === 0) return "";
   return (parts[0][0] + (parts.length > 1 ? parts[parts.length - 1][0] : "")).toUpperCase();
 }
+
+const ISO_RANGE_RE = /\(?\s*(\d{4}-\d{2}-\d{2})\s*(?:to|–|—|-|से)\s*(\d{4}-\d{2}-\d{2})\s*\)?/g;
+
+/**
+ * Rewrites raw ISO ranges inside server-supplied labels, e.g.
+ * "Jupiter Mahadasha (2008-06-14 to 2028-06-14)" → "Jupiter Mahadasha (14 Jun 2008 – 14 Jun 2028)".
+ * Locale-aware month names; Latin digits in every locale (MASTER §4.3). Unparseable dates are left as-is.
+ */
+export function formatDateRangesInText(text: string, lang: "en" | "hi" = "en"): string {
+  const locale = lang === "hi" ? "hi-IN-u-nu-latn" : "en-IN";
+  const fmt = (iso: string): string | null => {
+    const d = parseCivilDate(iso);
+    const [y, m, day] = iso.split("-").map(Number);
+    if (!d || d.getFullYear() !== y || d.getMonth() + 1 !== m || d.getDate() !== day) return null;
+    return d ? d.toLocaleDateString(locale, { day: "numeric", month: "short", year: "numeric" }) : null;
+  };
+  return text.replace(ISO_RANGE_RE, (whole, a: string, b: string) => {
+    const from = fmt(a);
+    const to = fmt(b);
+    if (!from || !to) return whole;
+    return `(${from} – ${to})`;
+  });
+}

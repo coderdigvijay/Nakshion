@@ -1,9 +1,10 @@
 import { useEffect, useId, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { motion, useReducedMotion } from "framer-motion";
 import { AlertTriangle, Briefcase, Clock, Coins, Heart, Leaf, MoonStar, Sparkles } from "lucide-react";
 import type { DailyHoroscope, PersonalReading } from "../../types";
 import { findSign } from "../../lib/astro";
-import { formatCivilDate, formatClock } from "../../lib/format";
+import { formatCivilDate, formatClock, formatDateRangesInText } from "../../lib/format";
 import { Card } from "../ui/Card";
 import { Button } from "../ui/Button";
 import { Skeleton, SkeletonText, LoadingRegion } from "../ui/Skeleton";
@@ -103,7 +104,7 @@ function PersonalBody({ r }: { r: PersonalReading }) {
         <p className="mt-3 flex min-w-0 max-w-full flex-wrap items-center gap-2">
           <span className="text-caption text-fg-muted">Based on</span>
           {r.key_factors.slice(0, 4).map((f) => (
-            <Badge key={f.factor_id} className="max-w-full whitespace-normal break-words text-left [overflow-wrap:anywhere]">{f.label}</Badge>
+            <Badge key={f.factor_id} className="max-w-full whitespace-normal break-words text-left [overflow-wrap:anywhere]">{formatDateRangesInText(f.label)}</Badge>
           ))}
         </p>
       )}
@@ -155,6 +156,7 @@ export interface DailyReadingCardProps {
 
 export function DailyReadingCard({ preparing, personal, reading, isLoading, error, onRetry, retrying, sign }: DailyReadingCardProps) {
   const navigate = useNavigate();
+  const reduceMotion = useReducedMotion();
   const [expanded, setExpanded] = useState(false);
   const bodyId = useId();
   const signInfo = findSign(sign);
@@ -188,7 +190,14 @@ export function DailyReadingCard({ preparing, personal, reading, isLoading, erro
           </p>
           <Badge tone="ai">{personal.generated_by === "template" ? "Simplified reading" : "Your personal reading"}</Badge>
         </div>
-        <PersonalBody r={personal} />
+        {personal.generated_by && (
+          <p role="status" className="mt-3 min-h-5 text-caption text-fg-muted">
+            {personal.generated_by === "template" ? "Your full reading is being written…" : ""}
+          </p>
+        )}
+        <motion.div key={personal.generated_by} initial={reduceMotion || personal.generated_by === "template" ? false : { opacity: 0.3 }} animate={{ opacity: 1 }} transition={{ duration: 0.4 }}>
+          <PersonalBody r={personal} />
+        </motion.div>
         <div className="mt-5">
           <Button
             variant="ai"

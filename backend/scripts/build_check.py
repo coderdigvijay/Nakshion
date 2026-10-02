@@ -29,6 +29,13 @@ def main() -> int:
         return 1
     print(f"alembic single head: {heads[0]}")
 
+    # Prompt versions come ONLY from app/llm/prompts/registry.yaml (no env override), so the deployed
+    # version is whatever is committed. Fail the build if a pinned template is missing or was edited in place.
+    from app.llm.prompts import get_registry
+
+    reg = get_registry()
+    print("active prompts: " + ", ".join(f"{k}={v}" for k, v in reg.reg["active"].items()))
+
     if os.environ.get("EMBEDDINGS_RUNTIME", "local") == "local":
         from fastembed import TextEmbedding
 

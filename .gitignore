@@ -67,3 +67,6 @@ backend/knowledge_sources/
 
 # Separate template-kit repo (has its own .git); not part of Nakshion
 Elite_SDE_Team/
+
+# Private reports/fixtures that contain personal birth data (never committed)
+backend/tests/local_private/

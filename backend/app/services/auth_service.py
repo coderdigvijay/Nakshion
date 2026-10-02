@@ -39,6 +39,9 @@ RESET_TTL = timedelta(hours=1)
 LOGIN_FAIL_WINDOW_S = 900
 LOGIN_FAIL_PER_EMAIL = 10
 LOGIN_FAIL_PER_IP = 50
+# IP-independent backstops (X-Forwarded-For can be spoofed if the proxy passes client values through).
+LOGIN_FAIL_PER_EMAIL_ANY_IP = 10   # then 429 for the rest of the 15-minute window: short, to limit lock-out abuse
+EMAIL_CAP_PER_HOUR = 200           # all OTP / reset / deletion emails together: protects Brevo's 300/day free quota
 
 
 # ------------------------------------------------------------------ helpers
@@ -48,6 +51,11 @@ def _otp_hash(code: str) -> str:
 
 def _email_key(email: str) -> str:
     return hashlib.sha1(email.encode()).hexdigest()  # noqa: S324 - key derivation, not security
+
+
+async def email_budget_ok() -> bool:
+    """Global cap on transactional emails per hour (Redis, fail closed -> UpstreamUnavailable)."""
+    return await cache.counter_incr("emailcap", 3600) <= EMAIL_CAP_PER_HOUR
 
 
 async def _send_allowed(user: User, purpose: str = "otp") -> None:
@@ -61,6 +69,8 @@ async def _send_allowed(user: User, purpose: str = "otp") -> None:
 async def _issue_otp(user: User, purpose: str = "otp") -> None:
     """Create a fresh OTP (fail-closed on Redis) and email it in the background."""
     await _send_allowed(user, purpose)
+    if not await email_budget_ok():
+        raise RateLimited("We're sending a lot of email right now. Please try again in a little while.", retry_after=1800)
     code = f"{secrets.randbelow(1_000_000):06d}"
     await cache.secure_set_json(f"{purpose}:{user.id}", {"hash": _otp_hash(code)}, OTP_TTL_S)
     await cache.secure_delete(f"{purpose}_attempts:{user.id}")
@@ -109,7 +119,7 @@ async def reauthenticate_for_deletion(user: User, *, password: str | None, code:
 
 # ------------------------------------------------------------------ A1 register
 async def register(
-    db: AsyncSession, *, email: str, password: str, name: str, terms_accepted: bool | None, age_confirmed: bool | None
+    db: AsyncSession, *, email: str, password: str, name: str, terms_accepted: bool, age_confirmed: bool | None
 ) -> str:
     now = datetime.now(UTC)
     user = User(
@@ -118,6 +128,7 @@ async def register(
         name=name,
         email_verified=False,
         terms_accepted_at=now if terms_accepted else None,
+        terms_version=settings.TERMS_VERSION if terms_accepted else None,
         age_confirmed_at=now if age_confirmed else None,
         last_login_at=now,
     )
@@ -136,10 +147,13 @@ async def register(
 
 
 # ------------------------------------------------------------------ A2 login
-async def _login_fail_counts(ip: str, email: str) -> tuple[int, int] | None:
+async def _login_fail_counts(ip: str, email: str) -> tuple[int, int, int] | None:
     try:
-        per_email, per_ip = await cache.counters_get(f"authfail:{ip}:{_email_key(email)}", f"authfail:{ip}")
-        return per_email, per_ip
+        ek = _email_key(email)
+        per_email_ip, per_ip, per_email = await cache.counters_get(
+            f"authfail:{ip}:{ek}", f"authfail:{ip}", f"authfail_email:{ek}"
+        )
+        return per_email_ip, per_ip, per_email
     except UpstreamUnavailable:
         return None
 
@@ -147,8 +161,13 @@ async def _login_fail_counts(ip: str, email: str) -> tuple[int, int] | None:
 async def login(db: AsyncSession, *, email: str, password: str, ip: str) -> str:
     counts = await _login_fail_counts(ip, email)
     if counts is not None:
-        if counts[0] >= LOGIN_FAIL_PER_EMAIL or counts[1] >= LOGIN_FAIL_PER_IP:
-            raise RateLimited("Too many login attempts. Please wait 15 minutes and try again.", retry_after=LOGIN_FAIL_WINDOW_S)
+        if counts[0] >= LOGIN_FAIL_PER_EMAIL or counts[1] >= LOGIN_FAIL_PER_IP or counts[2] >= LOGIN_FAIL_PER_EMAIL_ANY_IP:
+            retry = LOGIN_FAIL_WINDOW_S
+            try:
+                retry = max(1, await cache.secure_ttl(f"authfail_email:{_email_key(email)}")) if counts[2] >= LOGIN_FAIL_PER_EMAIL_ANY_IP else retry
+            except UpstreamUnavailable:
+                pass
+            raise RateLimited("Too many login attempts. Please wait a few minutes and try again.", retry_after=retry)
     elif not ratelimit.check("login_fallback", ip, LOGIN_FAIL_PER_IP, LOGIN_FAIL_WINDOW_S):
         # Redis down: conservative in-process limit instead of failing every login.
         raise RateLimited("Too many login attempts. Please wait and try again.", retry_after=LOGIN_FAIL_WINDOW_S)
@@ -156,9 +175,11 @@ async def login(db: AsyncSession, *, email: str, password: str, ip: str) -> str:
     user = await db.scalar(select(User).where(User.email == email))
     ok = verify_password(password, user.password_hash if user else None)  # constant-ish timing
     if not ok or user is None:
+        ek = _email_key(email)
         try:
-            await cache.counter_incr(f"authfail:{ip}:{_email_key(email)}", LOGIN_FAIL_WINDOW_S)
+            await cache.counter_incr(f"authfail:{ip}:{ek}", LOGIN_FAIL_WINDOW_S)
             await cache.counter_incr(f"authfail:{ip}", LOGIN_FAIL_WINDOW_S)
+            await cache.counter_incr(f"authfail_email:{ek}", LOGIN_FAIL_WINDOW_S)  # regardless of source IP
         except UpstreamUnavailable:
             pass
         log.info("login_failed")
@@ -166,8 +187,8 @@ async def login(db: AsyncSession, *, email: str, password: str, ip: str) -> str:
 
     await db.execute(update(User).where(User.id == user.id).values(last_login_at=datetime.now(UTC)))
     await db.commit()
-    if counts and counts[0]:  # nothing to clear on the common path (saves a command per login)
-        await cache.delete(f"authfail:{ip}:{_email_key(email)}")
+    if counts and (counts[0] or counts[2]):  # nothing to clear on the common path (saves commands)
+        await cache.delete(f"authfail:{ip}:{_email_key(email)}", f"authfail_email:{_email_key(email)}")
     log.info("login_ok", extra={"user": user_id_hash(user.id)})
     return create_access_token(user.id, user.token_version)
 
@@ -201,6 +222,12 @@ async def forgot_password(db: AsyncSession, *, email: str, ip: str) -> str:
         return FORGOT_MESSAGE
     user = await db.scalar(select(User).where(User.email == email))
     if user is None:
+        return FORGOT_MESSAGE
+    try:
+        if not await email_budget_ok():  # Brevo free-quota guard: stay silent, same answer
+            log.warning("email_cap_reached", extra={"kind": "password_reset"})
+            return FORGOT_MESSAGE
+    except UpstreamUnavailable:
         return FORGOT_MESSAGE
     raw = new_url_token()
     db.add(PasswordReset(user_id=user.id, token=sha256_hex(raw), expires_at=datetime.now(UTC) + RESET_TTL))
@@ -236,17 +263,23 @@ async def reset_password(db: AsyncSession, *, token: str, new_password: str) -> 
 
 
 # ------------------------------------------------------------------ A10 / A11 / A12
-async def change_password(db: AsyncSession, user: User, *, current_password: str, new_password: str) -> str:
+async def change_password(db: AsyncSession, user: User, *, current_password: str, new_password: str) -> tuple[str, str]:
+    """Returns (message, fresh access token). Bumps token_version: every OTHER session (including a stolen token)
+    stops working; the caller keeps going with the returned token."""
     ratelimit.enforce("change_password", str(user.id), 10, 900, "Too many attempts. Please wait and try again.")
     if not user.password_hash:
         raise BadRequest("Your account uses Google sign-in. Set a password instead.", code="NO_PASSWORD_SET")
     if not verify_password(current_password, user.password_hash):
         raise BadRequest("Your current password is incorrect.", code="INVALID_CURRENT_PASSWORD")
-    # MVP: token_version is NOT bumped (api-contract A10 decision).
-    await db.execute(update(User).where(User.id == user.id).values(password_hash=hash_password(new_password)))
+    new_ver = await db.scalar(
+        update(User)
+        .where(User.id == user.id)
+        .values(password_hash=hash_password(new_password), token_version=User.token_version + 1)
+        .returning(User.token_version)
+    )
     await db.commit()
     log.info("password_changed", extra={"user": user_id_hash(user.id)})
-    return "Password changed"
+    return "Password changed", create_access_token(user.id, int(new_ver))
 
 
 async def set_password(db: AsyncSession, user: User, *, new_password: str) -> str:

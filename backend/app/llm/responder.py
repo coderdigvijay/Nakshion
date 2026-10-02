@@ -23,8 +23,9 @@ from app.llm.budget import BudgetGuard
 from app.llm.errors import LLMError, LLMUnavailable
 from app.llm.facts import ChartFacts, ChartIndex, build_chart_facts
 from app.llm.lexicon import detect_timeframe, detect_topic
+from app.llm.qtype import classify_question
 from app.llm.router import LLMRouter
-from app.llm.safety import canned_output, classify_input, static_reply
+from app.llm.safety import canned_output, classify_input, distress_signals, static_reply
 from app.llm.schemas import ChatAnswer, ChatMeta
 from app.llm.labels import localize_label, with_system
 from app.llm.textclean import BracketFilter, effective_language, deleak, detail_level, fix_terms, is_small_talk, neutralize_gender, strip_fact_ids, tidy_start, user_greeted
@@ -77,8 +78,10 @@ class ChatResponder:
     async def _prepare(self, inp: ChatInput, streaming: bool):
         q = sanitize_user_text(inp.question, self.router.s.max_user_message_chars)
         topic, timeframe = detect_topic(q), detect_timeframe(q)
+        qt = classify_question(q)
         facts = build_chart_facts(inp.chart_data, factors=inp.factors, system=inp.astrology_system,
-                                  display_name=inp.display_name, today=inp.today, is_minor=inp.is_minor)
+                                  display_name=inp.display_name, today=inp.today, is_minor=inp.is_minor,
+                                  focus_planets=qt.planets[:3], k=7 if qt.is_general else 12)
         notes: list[Any] = []
         rag: dict[str, Any] = {"used": False, "degraded": False, "reason": None, "hits": 0}
         if self.retriever is not None and not is_small_talk(q):
@@ -100,7 +103,7 @@ class ChatResponder:
         md = {"user_id": inp.user_id, "user_id_hash": inp.user_id_hash, "request_id": inp.request_id}
         req, prov = build_chat_prompt(facts=facts, notes=notes, history=inp.history, question=q,
                                       language=inp.language, streaming=streaming, metadata=md,
-                                      max_user_chars=self.router.s.max_user_message_chars)
+                                      max_user_chars=self.router.s.max_user_message_chars, qtype=qt)
         prov.extra["rag"] = rag
         prov.extra["sources_available"] = [
             {"alias": a, "source_id": hashlib.sha1(cid.encode()).hexdigest()[:10],
@@ -140,8 +143,9 @@ class ChatResponder:
 
     def _validate(self, ans: ChatAnswer, facts: ChartFacts, idx: ChartIndex, lang: str,
                   detail: str = "normal", question: str = "") -> list[Violation]:
-        return validate_answer(ans.answer, ans.citations, ans.topic, facts=facts, idx=idx, language=lang, detail=detail,
-                               question=question)
+        vs = validate_answer(ans.answer, ans.citations, ans.topic, facts=facts, idx=idx, language=lang, detail=detail,
+                             question=question, qtype=classify_question(question))
+        return [v for v in vs if v.kind != "length"]      # mild length drift is logged by the sweep, never repaired (latency)
 
     @staticmethod
     def _finalize(ans: ChatAnswer, result: LLMResult, facts: ChartFacts, prov, violations: list[Violation],
@@ -191,7 +195,9 @@ class ChatResponder:
         safety = [v for v in violations if v.kind.startswith("safety:")]
         if safety:
             cls = safety[0].kind.split(":", 1)[1]
-            safe = ChatAnswer(answer=canned_output(cls), citations=[], topic="general",  # type: ignore[arg-type]
+            if distress_signals(inp.question):
+                cls = "crisis"       # never answer a distressed message with a canned "I can't share how I'm set up"
+            safe = ChatAnswer(answer=canned_output(cls, inp.language), citations=[], topic="general",  # type: ignore[arg-type]
                               follow_ups=[], confidence="low")
             return safe, result, violations, "canned"
         kinds = {v.kind for v in violations}
@@ -211,6 +217,7 @@ class ChatResponder:
             v3 = self._validate(a3, facts, idx, inp.language, detail_level(inp.question), inp.question)
             if not v3:
                 return a3, r3, violations, "fallback"
+        log.warning("chat_validation_failed", extra={"kinds": sorted(kinds), "details": [v.detail[:90] for v in violations[:6]]})
         raise LLMUnavailable("no answer passed validation")
 
     # ------------------------------------------------------------------ non-streaming

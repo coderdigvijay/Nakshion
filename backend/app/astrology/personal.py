@@ -70,14 +70,19 @@ def _upper(s: str) -> str:
     return s.upper().replace(" ", "_")
 
 
-def _transit_factors(trs: list[dict]) -> list[dict]:
+def _local_date(iso_utc: str, zone) -> str:
+    """Calendar date of a UTC ISO instant in the viewer/birth zone (not the UTC date)."""
+    return datetime.fromisoformat(iso_utc.replace("Z", "+00:00")).astimezone(zone).date().isoformat()
+
+
+def _transit_factors(trs: list[dict], zone=_tz.utc) -> list[dict]:
     out = []
     for t in trs:
         tp, nat, asp = t["transiting"], t["natal"], t["type"]
         w = (BASE[tp] * BASE[nat] * (1 - t["orb"] / TRANSIT_ORB[tp]) ** 1.5 * SPEED.get(tp, 1.0))
         win = None
         if t.get("window_start") and t.get("window_end"):
-            win = [t["window_start"][:10], t["window_end"][:10]]
+            win = [_local_date(t["window_start"], zone), _local_date(t["window_end"], zone)]
         word = "applying" if t["applying"] else "separating"
         out.append(_factor(
             f"T.{_upper(tp)}.{_upper(asp)}.N.{_upper(nat)}", "transit",
@@ -159,7 +164,7 @@ def personal_day(chart_data: dict, on: date, *, system: str = "vedic", latitude:
     if system == "vedic" and not vedic:
         raise ValueError("vedic reading needs chart_data['vedic']")
     # One zodiac per reading: Western = tropical T.*/W.* factors, Vedic = sidereal G.*/V.*/P.*.
-    factors = _transit_factors(trs["western"]) if system == "western" else \
+    factors = _transit_factors(trs["western"], zone) if system == "western" else \
         _vedic_factors(chart, trs["vedic"], at, on)
 
     # Moon's transit house: vedic from the natal Moon rashi, western from the natal Sun sign.

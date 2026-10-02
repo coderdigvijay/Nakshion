@@ -30,7 +30,20 @@ export function Footer() {
         </nav>
         <div>
           <h2 className="font-sans text-body-sm font-semibold text-fg">Good to know</h2>
-          <p className="mt-3 text-caption text-fg-muted">
+          <ul className="mt-2 text-body-sm text-fg-secondary">
+            {[
+              ["/privacy", "Privacy Policy"],
+              ["/terms", "Terms of Use"],
+              ["/terms#astrology-and-ai", "Astrology and AI"],
+            ].map(([to, label]) => (
+              <li key={to}>
+                <Link to={to} className="focus-ring inline-flex min-h-11 items-center rounded-[4px] hover:text-fg">
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-1 text-caption text-fg-muted">
             Nakshion is not a substitute for medical, legal or financial advice. You can delete your account and data at any time from your profile.
           </p>
         </div>

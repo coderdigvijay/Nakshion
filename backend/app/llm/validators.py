@@ -74,11 +74,24 @@ def sentences(text: str) -> list[str]:
     return [s for s in _SENT_SPLIT.split(text) if s.strip()]
 
 
+def _aliases(token: str) -> tuple[str, ...]:
+    """A planet or sign by every name the lexicon knows: Cancer = Karka = कर्क, Mercury = Budha = बुध (BUG-025: a
+    daily reading that wrote "Jupiter in Cancer" for the fact "Jupiter in Karka" was rejected as an invented placement)."""
+    from app.llm.lexicon import PLANET_ALIASES, SIGN_ALIASES
+
+    t = token.lower()
+    for table in (PLANET_ALIASES, SIGN_ALIASES):
+        for canon, names in table.items():
+            if t == canon.lower() or t in names:
+                return tuple({canon.lower(), *names})
+    return (t,)
+
+
 def _factor_supports(facts: ChartFacts, *tokens: str) -> bool:
     """A claim is also supported when some provided factor label names all its tokens
-    (covers transit/compatibility facts that are not in natal chart_data)."""
-    toks = [t.lower() for t in tokens if t]
-    return any(all(t in f.label.lower() for t in toks) for f in facts.factors)
+    (covers transit/compatibility facts that are not in natal chart_data). Planet and sign names match by alias."""
+    toks = [_aliases(t) for t in tokens if t]
+    return any(all(any(a in f.label.lower() for a in alts) for alts in toks) for f in facts.factors)
 
 
 def _house_num(m: re.Match) -> int | None:
@@ -88,9 +101,17 @@ def _house_num(m: re.Match) -> int | None:
     return ORDINALS.get(w.lower()) if w else None
 
 
-def check_claims(answer: str, idx: ChartIndex, facts: ChartFacts, *, transit_exempt: bool = True) -> list[Violation]:
+_SECOND_PERSON = re.compile(r"\b(?:your|you|you're|you'll|yours|yourself|aap|aapki|aapka|aapke|apni|apna|apne)\b|आप|तुम|तेरी|तेरा", re.I)
+
+
+def check_claims(answer: str, idx: ChartIndex, facts: ChartFacts, *, transit_exempt: bool = True,
+                 generic: bool = False) -> list[Violation]:
     """`transit_exempt`: natal-chart answers may describe current transits that are not in the
-    natal data; for the daily sky (where the facts ARE the transits) pass False."""
+    natal data; for the daily sky (where the facts ARE the transits) pass False.
+    `generic`: the question is a general one ("what does Mars mahadasha with Venus antardasha mean"): a sentence that
+    does not address the user ("you", "your", आप) states a general meaning, not a chart fact, so a dasha / house /
+    placement named in it is not checked against this chart. Sentences about the user, and every year, still are.
+    (Before this, the claim checker "repaired" such answers into restating the user's own dasha: BUG-025.)"""
     out: list[Violation] = []
     allowed_years: set[int] = set()
     for f in facts.factors:
@@ -106,7 +127,11 @@ def check_claims(answer: str, idx: ChartIndex, facts: ChartFacts, *, transit_exe
         transit_ctx = transit_exempt and bool(_TRANSIT_WORDS.search(sent))
         unavail = bool(UNAVAIL.search(sent))   # "I can't see your lagna without your birth time" is the RIGHT answer
 
-        def bad(kind: str, detail: str) -> None:
+        general_sentence = generic and not _SECOND_PERSON.search(sent)
+
+        def bad(kind: str, detail: str, always: bool = False) -> None:
+            if general_sentence and not always:
+                return
             out.append(Violation(kind, detail, sent.strip()[:300]))
 
         # planet in sign
@@ -174,7 +199,7 @@ def check_claims(answer: str, idx: ChartIndex, facts: ChartFacts, *, transit_exe
         for m in YEAR.finditer(sent):
             y = int(m.group(1))
             if y not in allowed_years:
-                bad("claim", f"year {y} not in any provided factor window")
+                bad("claim", f"year {y} not in any provided factor window", always=True)
         # angles with unknown time (non-specific mentions)
         if idx.approximate_time and not FROM_MOON.search(sent) and not unavail:
             if HOUSE_ANY.search(sent) and not PLANET_IN_HOUSE.search(sent):
@@ -186,10 +211,11 @@ def check_claims(answer: str, idx: ChartIndex, facts: ChartFacts, *, transit_exe
     return out
 
 
-def check_citations(citations: list[str], facts: ChartFacts, topic: str) -> list[Violation]:
+def check_citations(citations: list[str], facts: ChartFacts, topic: str, kb_only_ok: bool = False) -> list[Violation]:
     unknown = [c for c in citations if c not in facts.citable_ids]
     out = [Violation("citation", f"unknown factor id {c}") for c in unknown]
-    if not any(c in facts.factor_ids for c in citations) and topic != "general" and facts.factors:
+    kb_ok = kb_only_ok and any(c in dict(facts.kb_aliases) for c in citations)   # a general answer citing only its notes
+    if not any(c in facts.factor_ids for c in citations) and topic != "general" and facts.factors and not kb_ok:
         out.append(Violation("citation", "no citations"))   # a factor ID is required; KB-only citations are not enough
     return out
 
@@ -212,8 +238,122 @@ def check_language(text: str, language: str) -> list[Violation]:
     return []
 
 
+_HINGLISH_WORDS = frozenset((
+    "hai", "hain", "ka", "ki", "ke", "ko", "mein", "aur", "kya", "nahi", "yeh", "woh", "hota", "hoti", "hote", "liye", "bhi",
+    "aap", "aapki", "aapke", "aapka", "jab", "tab", "iska", "iski", "unka", "kuch", "samay", "rehta", "rehti", "kaafi", "isliye",
+    "lekin", "agar", "toh", "se", "par", "wala", "wali", "jaata", "jaati", "karta", "karti", "karein", "kijiye", "rakhein"))
+
+
+def check_hinglish(text: str, language: str) -> list[Violation]:
+    """Hinglish is Hindi in Roman script. A plain-English reply to a Hinglish user passes the script check, so count
+    Romanised-Hindi function words. Soft ("style"): one repair, never a failed reply."""
+    if language != "hinglish":
+        return []
+    words = re.findall(r"[a-zA-Z]+", text.lower())
+    if len(words) < 25:
+        return []
+    share = sum(1 for w in words if w in _HINGLISH_WORDS) / len(words)
+    if share < 0.04:
+        return [Violation("style", "the user writes Hinglish: reply in Hinglish (Hindi in Roman script mixed with English), not plain English")]
+    return []
+
+
 def check_safety(text: str) -> list[Violation]:
     return [Violation(f"safety:{h.cls}", h.match) for h in scan_output(text)]
+
+
+# --- answer shape (BUG-025): answer-first for general questions, length bounds, boilerplate openings -------------------
+
+_BOILERPLATE_OPEN = re.compile(
+    r"^\W*(?:your|aapki|aapka|aapke|आपकी|आपका|आपके)\s+(?:birth|natal|janam|जन्म)\s*(?:chart|kundli|kundali|कुंडली|चार्ट)(?![\w\u0900-\u097F])"
+    r"|^\W*(?:based on|according to|looking at|as per|आपकी कुंडली के अनुसार|आपके चार्ट के अनुसार)\s+(?:your|the)\s+(?:birth\s+|natal\s+)?(?:chart|kundli)", re.I)
+_CHART_REF = re.compile(
+    r"\b(?:your|aapki|aapka|aapke|aap ki|aap ka)\b[^.!?\n]{0,40}?\b(?:chart|kundli|kundali|natal|dasha|mahadasha|antardasha|moon|sun|"
+    r"lagna|ascendant|rashi|nakshatra|saturn|jupiter|venus|mars|mercury|rahu|ketu)\b"
+    r"|(?:आपकी|आपका|आपके)\s+(?:\S+\s+){0,3}?(?:कुंडली|चार्ट|दशा|महादशा|अंतर्दशा|चंद्र|सूर्य|लग्न|राशि|नक्षत्र|शनि|गुरु|शुक्र|मंगल|बुध|राहु|केतु)"
+    r"|\bin your chart\b|\byour (?:current|present) ", re.I)
+
+# Word-count bounds per answer mode (normal detail). Soft: a breach is a "style" nit, never a failed reply.
+SHAPE_WORDS = {"general": (60, 230), "general_tie": (70, 250), "personal": (70, 300)}
+
+
+def paragraphs(text: str) -> list[str]:
+    return [p.strip() for p in re.split(r"\n\s*\n|\n", text) if p.strip()]
+
+
+def _anchor_hit(text: str, anchors: tuple[str, ...]) -> bool:
+    return any(re.search(a, text, re.I) for a in anchors)
+
+
+def first_paragraph(text: str) -> str:
+    ps = paragraphs(text)
+    return ps[0] if ps else ""
+
+
+def _hit(text: str, qt) -> bool:
+    if not qt.anchors:
+        return True
+    if qt.anchor_all:
+        return all(re.search(a, text, re.I) for a in qt.anchors)
+    return _anchor_hit(text, qt.anchors)
+
+
+def opens_with_concept(answer: str, qt) -> bool:
+    """True when the asked concept is named up front: in the first sentence, or in the first two sentences when the
+    first one is not a restatement of the user's own chart (every planet of a dasha pair must be named)."""
+    sents = sentences(answer)
+    if not sents or not qt.anchors:
+        return True
+    first = sents[0]
+    if _hit(first, qt):
+        return True
+    return not _CHART_REF.search(first) and _hit(" ".join(sents[:2]), qt)
+
+
+def check_answer_shape(answer: str, qt, detail: str = "normal") -> list[Violation]:
+    """Answer-first discipline (soft "style" violations; they trigger one repair and never fail a reply).
+
+    general   the asked concept is named in the first two sentences; the first sentence is not chart boilerplate;
+              at most 2 sentences refer to the user's own chart; 60-230 words; at most 5 paragraphs.
+    personal  the first sentence is not "Your birth chart is..." boilerplate; 70-300 words.
+    Detail requests (asked for "in detail" / "briefly") keep their own bounds in check_style."""
+    out: list[Violation] = []
+    if qt is None or qt.kind == "smalltalk":
+        return out
+    sents = sentences(answer)
+    first = sents[0] if sents else ""
+    if _BOILERPLATE_OPEN.search(first):
+        out.append(Violation("style", "do not open with \"Your birth chart is...\" boilerplate; start with the answer itself", first[:200]))
+    mode = "general" if qt.kind == "general" else "personal"
+    if qt.kind == "general":
+        if not opens_with_concept(answer, qt):
+            named = ", ".join(dict.fromkeys(qt.planets)) or "the concept asked about"
+            out.append(Violation("style", f"this is a general question: your FIRST sentence must answer it by naming {named} and "
+                                          "what it means; move any mention of the user's chart to one short last line", first[:200]))
+        refs = [s for s in sents if _CHART_REF.search(s)]
+        if len(refs) > 2:
+            out.append(Violation("style", f"{len(refs)} sentences talk about the user's own chart; a general question gets at most "
+                                          "one short personalisation line at the end", refs[0][:200]))
+        if len(paragraphs(answer)) > 5:
+            out.append(Violation("style", "use 2 to 4 short paragraphs"))
+        if qt.subtype in ("dasha_pair", "dasha") and not qt.wants_tie:
+            asked = set(qt.planets)
+            for s_ in sents:
+                lords = {canon_planet(m.group("p")) for m in DASHA.finditer(s_)} - {None}
+                if lords - asked and _SECOND_PERSON.search(s_):
+                    out.append(Violation("style", "the closing chart line talks about the user's own current period, which is not the "
+                                                  "pair asked about; tie it to the asked planets (their sign, house or houses ruled) or leave it out", s_[:200]))
+                    break
+        if "tie" in getattr(qt, "subtype", "") or getattr(qt, "wants_tie", False):
+            mode = "general_tie"
+    if detail == "normal":
+        lo, hi = SHAPE_WORDS[mode]
+        n = len(answer.split())
+        if n > hi * 1.25:
+            out.append(Violation("style", f"answer has {n} words; aim for {lo + 20} to {hi - 30} words"))
+        elif n < lo or n > hi:
+            out.append(Violation("length", f"answer has {n} words; the target is {lo + 20} to {hi - 30}"))
+    return out
 
 
 def check_style(answer: str, language: str, detail: str = "normal") -> list[Violation]:
@@ -249,6 +389,15 @@ _HEDGE = re.compile(
     r"kuch (?:log|paramparaon|sources)|alag alag|\bvaries\b", re.I)
 
 
+def check_distress(question: str, answer: str) -> list[Violation]:
+    """A question with hopelessness wording must get empathy + the crisis resources, not a prediction (BUG-025)."""
+    from app.llm.safety import distress_signals, has_crisis_resources
+
+    if question and distress_signals(question) and not has_crisis_resources(answer):
+        return [Violation("safety:crisis", "the question shows distress; the reply must carry the crisis resources")]
+    return []
+
+
 def check_hedge(answer: str, citations: list[str], facts: ChartFacts) -> list[Violation]:
     """Claims taken from a low-confidence / [unverified] / schools-differ note must be hedged, never stated as fact."""
     cited = [c for c in citations if c in facts.kb_hedge]
@@ -267,13 +416,22 @@ def uncited_claims(answer: str, citations: list[str], idx: ChartIndex, facts: Ch
 
 
 def validate_answer(answer: str, citations: list[str], topic: str, *, facts: ChartFacts,
-                    idx: ChartIndex, language: str, detail: str = "normal", question: str = "") -> list[Violation]:
+                    idx: ChartIndex, language: str, detail: str = "normal", question: str = "",
+                    qtype=None) -> list[Violation]:
+    from app.llm.safety import distress_signals
+
+    # A caring reply to a distressed message cites no chart factor (it must contain no astrology).
+    cites = [] if (question and distress_signals(question)) else check_citations(
+        citations, facts, topic, kb_only_ok=bool(qtype and qtype.is_general))
     return (
-        check_citations(citations, facts, topic)
-        + check_claims(answer, idx, facts)
+        check_distress(question, answer)
+        + cites
+        + check_claims(answer, idx, facts, generic=bool(qtype and qtype.is_general))
         + check_safety(answer)
         + check_language(answer, language)
+        + check_hinglish(answer, language)
         + check_style(answer, language, detail)
+        + check_answer_shape(answer, qtype, detail)
         + check_system_blend(answer, facts.system, question)
         + check_hedge(answer, citations, facts)
     )

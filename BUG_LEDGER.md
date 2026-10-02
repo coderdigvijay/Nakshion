@@ -37,6 +37,31 @@ Template (copy above the first entry; this fenced block is not an entry):
 
 ## Entries
 
+## BUG-025: Chat answered a general question about the user's own dasha; the personal daily reading fell back to the template; crisis filter missed obfuscation (2026-10-02)
+
+- **Tier:** T2 - prompts, validators, safety policy and daily budgets (`.claude/ai_llm_rules.md`: prompt/safety/token-budget changes are T2).
+- **Symptom:** (1) Live: "What does Mars mahadasha with Venus antardasha mean?" was answered with the user's Venus/Mercury period. (2) Production Today card showed "Simplified reading" / "Venus period - steady focus today". (3) Security assessment: "unalive", "kms", "k!ll myself", spaced letters, Devanagari and Hinglish phrasings reached the model. [verified live with a synthetic chart on gemini-3.5-flash-lite; gemini-3.8-flash returned 429 on all 3 keys during the run]
+- **Root cause:** (1) `validators.check_claims` flagged "Mars Mahadasha" as "Mars dasha is not current"; the repair prompt then steered the model to restate the user's own dasha. The same claim check made "Moon in the 7th house" answers talk about the user's 3rd-house Moon. The prompt had no answer-first rule. (2) `_factor_supports` matched sign names literally ("Jupiter in Cancer" vs the fact "Jupiter in Karka"), the dasha context was not part of what the checker accepted, unknown/empty citations failed the whole reading, and the whole path (retrieval up to RAG_TIMEOUT_S=10 s + model 12-20 s per attempt + repair) ran under the 20 s `asyncio.wait_for` in `app/services/ai.py::daily_personal`; 2 of 7 readings became the template before the fix. (3) `safety.classify_input` ran plain regexes on the raw text. Also found: `neutralize_gender` re-joined sentences with a space, so every answer lost its paragraph breaks; the `jati` caste output rule fired on Hinglish "jati hai" (canned caste reply to a Sade Sati answer); a bare fact ID in a repaired answer produced the canned "I can't share how I'm set up" reply; the final canned reply for a distressed message could be the leak text. [verified]
+- **Evidence:** `evals/quality_sweep.py` (30 questions, EN/HI/Hinglish, 3 synthetic charts, production retriever read-only) and `evals/daily_sweep.py`; before/after JSON in `backend/evals/reports/`. Chat v6 -> v7 on the same model: general questions with a chart-led opening 10/18 -> 0/20; concept named first 8/18 -> 20/20; errors (503) 2/30 -> 0/30; canned replies 2 -> 0; first-try ok 16/28 -> 22/30; KB note cited 19/28 -> 26/30; claim-grounded 28/28 -> 30/30; p50 3.3 s -> 3.6 s. Daily: LLM readings 5/7 -> 7/7 (7/7 with 10 s of injected retrieval latency, 5.4 s median).
+- **Fix:** New `app/llm/qtype.py` (rule-based question type, no extra model call): general vs personal vs smalltalk, subtype, dasha-pair lords, anchors. `chat@v7` (+ `_partials/safety_v2.j2`; v6 and v1 stay locked) renders an ANSWER SHAPE per type (concept first, 2-3 short paragraphs, at most one chart line, no "Your birth chart is..." opening, never today's Panchang values), plus a deterministic QUESTION FOCUS block, pair-row-first note order and compact facts with the asked planets' own sign/house/houses ruled (`facts.focus_factors`). Validators: `check_answer_shape` (concept in the first sentence, boilerplate opening, chart sentences, own-period closing line, length: soft `length` kind never repaired, `style` repaired once and never fails a reply), generic-claim exemption for sentences that do not address the user, alias-aware `_factor_supports`, `check_hinglish`, `check_distress`. Daily: `daily_personal@v2` (shorter, 1200 tokens, 12 s per attempt), `DAILY_BUDGET_S=32` with retrieval capped at 2.5 s, repair skipped when no time is left, citations repaired in code, unsupported sentences dropped (or the area's template line used), dasha context accepted, and `template_daily_personal` (language-aware, built from scores, dasha and Moon transit). Safety: `normalize_variants` (NFKC, zero-width, leetspeak, spaced letters, repeats, Devanagari nukta/chandrabindu) plus a much wider EN/HI/Hinglish crisis set, soft `distress_signals` that require empathy + Tele-MANAS 14416 / 1-800-891-4416 / findahelpline.com (the numbers in docs section 8.1) or the static crisis reply, one distress line in the system prompt.
+- **Blast radius:** Chat answers for general questions change shape (shorter, concept first). Daily readings: readings that would have been the template are now LLM text. The crisis filter flags more messages (false-positive tests cover "killing my career", "kill time", "Mars kills Jupiter's effect"). Callers must still wrap `generate_daily_personal` in a timeout of at least `DAILY_BUDGET_S + 3` (the adapter's 20 s is shorter than the budget; see report).
+- **Files:** backend/app/llm/{qtype,daily_template,safety,validators,facts,builder,responder,service,textclean}.py, prompts/chat/v7.j2, prompts/daily_personal/v2.j2, prompts/_partials/safety_v2.j2, prompts/registry.yaml; backend/evals/{quality_sweep,daily_sweep}.py; tests/llm/test_bug025_*.py (renamed from bug023 draft names).
+- **Verified:** `pytest backend/tests/llm tests/rag tests/unit -q` 502 passed, 7 skipped; `tests/api -k "ai or chat or personal or daily"` 45 passed. Live: 30 chat answers and 7 daily readings before/after; 6 extra live checks for distress and obfuscated crisis phrasing (static reply for explicit phrases; hopelessness inside an astrology question gets the static crisis reply, never a prediction or the leak text).
+- **Regression guard:** `test_bug025_answer_first.py` (classifier on the live question + 24 more, generic claims, shape validators, prompt locks, responder repair paths), `test_bug025_safety_obfuscation.py` (90+ crisis phrases, 35 benign phrases), `test_bug025_daily_personal.py` (alias, citations, salvage, retrieval cap, budget, template). Rules: a general question never gets its dasha/house/placement checked against the user's chart unless the sentence addresses the user; a soft field (citation, length, style) never fails a reply; every task has an overall time budget shorter than its caller's timeout; the crisis path runs on normalised text and never ends in a non-crisis canned reply.
+- **Committed:** not yet
+
+## BUG-023: Dasha / Sade Sati dates shown as UTC calendar dates, one day off in the birth zone (2026-10-02)
+
+- **Tier:** T2 - data users see; stored charts change.
+- **Symptom:** independent chart verification: Venus MD start 2008-06-15 05:22 IST showed 2008-06-14; Mercury AD end 2027-04-16 02:22 IST showed 2027-04-15; 44 of 180 boundaries differed from the IST date. [verified]
+- **Root cause:** `dasha._fmt` formatted `dt.astimezone(utc).date()`; Sade Sati dates and personal-reading windows did the same. [verified]
+- **Fix:** engine 2.1.1: dates formatted in the birth zone (`tz` threaded through dasha, `sade_sati`, `refresh_time_dependent`; personal windows use the request zone), `*_utc` instants kept, panchang `end_local_date` added. New additive `metadata.sensitivity` (near-cusp flags). Docs note that functional-nature lists are one convention.
+- **Blast radius:** every stored chart's dasha/Sade Sati dates (version bump to 2.1.1 recomputes them); no positions changed.
+- **Files:** backend/app/astrology/dasha.py, chart.py, transits.py, personal.py, panchang.py, sensitivity.py, version.py
+- **Verified:** `pytest backend/tests/astrology -q` 341 passed.
+- **Regression guard:** `test_local_dates_sensitivity.py::test_dasha_dates_are_local_calendar_dates`, `::test_every_boundary_local_date_matches_its_utc_instant` (180 boundaries). Rule: a calendar date shown to a user is always computed in a named zone, with the UTC instant kept alongside.
+- **Committed:** not yet
+
 ## BUG-022: `python -m app.rag.ingest --database-url <Neon URL>` crashed with "connect() got an unexpected keyword argument 'sslmode'" (2026-10-01)
 
 - **Tier:** T1 - first production data load (deploy runbook step) failed.
@@ -75,6 +100,28 @@ Template (copy above the first entry; this fenced block is not an entry):
 - **Committed:** not yet
 
 <!-- Newest first. Prepend BUG-001 here. -->
+
+## BUG-026: Personal reading blocked the request until the LLM finished, then fell back to a template that stayed for the day (2026-10-02)
+
+- **Tier:** T1 - user-visible reliability (backend half of BUG-025)
+- **Symptom:** "Simplified reading" shown on Today when the model took longer than the adapter's 20 s timeout; the template row was then served for the rest of the day [verified by tests]
+- **Root cause:** `services/ai.py` wrapped `generate_daily_personal` in a 20 s timeout (the AI layer now needs `DAILY_BUDGET_S + 3`) and `get_today` always generated in the foreground; a template result was persisted and trusted indefinitely
+- **Fix:** the adapter passes `budget_s` and waits `budget + 3`; `get_today` waits up to 6 s, then serves `template_daily_personal` immediately (cached 5 min) while a single-flight background task (one per user, date, system, chart, strong-ref set) writes the LLM reading to the row and the cache. The write is one conditional SQL statement: it is skipped if the chart's `updated_at` changed (BUG-016) and a template never overwrites an LLM row. Template rows older than 5 minutes are regenerated on the next request
+- **Files:** backend/app/services/{ai,personal_reading_service,cache}.py, backend/scripts/build_check.py
+- **Verified:** `tests/api/test_personal_background.py` (6: slow LLM upgrade, fast path, single-flight, chart edit discards stale upgrade, failed LLM not retried per page load, template never overwrites LLM)
+- **Regression guard:** same file. Rule: never block a request on a model call longer than a few seconds when a deterministic answer exists; background results must re-validate against the current chart before writing
+- **Committed:** not yet
+
+## BUG-024: Rate limits bypassable via forged X-Forwarded-For; stolen token survived a password change; terms flag skipped when omitted (2026-10-02)
+
+- **Tier:** T1 - abuse protection and consent
+- **Symptom:** On Render, 14 reset-password and 13 failed-login requests with different forged `X-Forwarded-For` values were never limited; `change-password` left the old token valid; `terms_accepted` omitted from the body registered fine [verified by the live assessment and by tests]
+- **Root cause:** (1) `clientip.py` fell back to the socket peer (or trusted a short/forged header), so attribution failed open and every limit was IP-only; (2) change-password did not bump `token_version`; (3) a Pydantic field validator does not run on a field's default, so `terms_accepted: bool = False` accepted a missing value
+- **Fix:** client IP now fails closed (a shared strict "unknown" bucket, optional single trusted `CLIENT_IP_HEADER`, malformed values rejected, production refuses to boot without a trust setting); IP-independent backstops (10 failures per email per 15 min, global 200 emails/hour); change-password bumps the version and returns a fresh token; `validate_default=True` on the terms field; `/health/ready` minimal and rate limited
+- **Files:** backend/app/core/{clientip,deps,middleware,config}.py, services/auth_service.py, schemas/auth.py, routers/health.py
+- **Verified:** `tests/api/test_live_assessment_fixes.py`, `tests/unit/test_clientip.py`, `tests/unit/test_config_prod.py`
+- **Regression guard:** those tests. Rules: never fall back to the proxy peer; every abuse limit needs an IP-independent backstop; field validators do not run on defaults (use `validate_default=True`)
+- **Committed:** not yet
 
 ## BUG-021: New knowledge files: retrieval skipped for most questions, denied Gemini key poisoned the pool, metadata-only re-ingest ignored (2026-10-01)
 

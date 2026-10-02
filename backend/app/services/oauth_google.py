@@ -46,14 +46,16 @@ def _b64url(b: bytes) -> str:
     return base64.urlsafe_b64encode(b).rstrip(b"=").decode()
 
 
-async def authorization_url() -> str:
+async def authorization_url(terms_accepted: bool = False) -> str:
+    """``terms_accepted`` is the user's explicit consent to the Terms/Privacy Policy given on OUR page before
+    the redirect to Google; it is stored with the single-use state and required only to create a NEW account."""
     if not settings.GOOGLE_CLIENT_ID:
         return failure_redirect()
     state = secrets.token_urlsafe(32)
     verifier = secrets.token_urlsafe(64)
     challenge = _b64url(hashlib.sha256(verifier.encode()).digest())
     try:
-        await cache.secure_set_json(f"oauth_state:{state}", {"v": verifier}, STATE_TTL_S)
+        await cache.secure_set_json(f"oauth_state:{state}", {"v": verifier, "terms": bool(terms_accepted)}, STATE_TTL_S)
     except UpstreamUnavailable:
         return failure_redirect()
     params = {
@@ -69,8 +71,8 @@ async def authorization_url() -> str:
     return f"{AUTH_URL}?{urlencode(params)}"
 
 
-def failure_redirect() -> str:
-    return f"{settings.FRONTEND_URL.rstrip('/')}/auth/callback?error=oauth_failed"
+def failure_redirect(reason: str = "oauth_failed") -> str:
+    return f"{settings.FRONTEND_URL.rstrip('/')}/auth/callback?error={reason}"
 
 
 CODE_TTL_S = 60
@@ -126,8 +128,8 @@ async def _verify_id_token(client: httpx.AsyncClient, id_token: str) -> dict:
     raise OAuthFailed("unknown kid")
 
 
-async def exchange_code(code: str, state: str) -> dict:
-    """Consume state, exchange the code with PKCE, verify the ID token. Returns claims."""
+async def exchange_code(code: str, state: str) -> tuple[dict, bool]:
+    """Consume state, exchange the code with PKCE, verify the ID token. Returns (claims, terms_accepted)."""
     record = await cache.secure_pop_json(f"oauth_state:{state}")
     if not record:
         raise OAuthFailed("state missing or reused")
@@ -153,10 +155,10 @@ async def exchange_code(code: str, state: str) -> dict:
         raise OAuthFailed("google email not verified")
     if not claims.get("sub") or not claims.get("email"):
         raise OAuthFailed("missing claims")
-    return claims
+    return claims, bool(record.get("terms"))
 
 
-async def upsert_google_user(db: AsyncSession, claims: dict) -> User:
+async def upsert_google_user(db: AsyncSession, claims: dict, terms_accepted: bool = False) -> User:
     sub = str(claims["sub"])
     email = str(claims["email"]).strip().lower()
     now = datetime.now(UTC)
@@ -177,6 +179,8 @@ async def upsert_google_user(db: AsyncSession, claims: dict) -> User:
             await db.commit()
             await db.refresh(user)
         else:
+            if not terms_accepted:
+                raise OAuthFailed("terms_required")  # no account without explicit acceptance
             user = User(
                 email=email,
                 password_hash=None,
@@ -186,6 +190,7 @@ async def upsert_google_user(db: AsyncSession, claims: dict) -> User:
                 oauth_id=sub,
                 avatar_url=claims.get("picture"),
                 terms_accepted_at=now,
+                terms_version=settings.TERMS_VERSION,
             )
             db.add(user)
             try:
@@ -203,9 +208,12 @@ async def handle_callback(db: AsyncSession, *, code: str | None, state: str | No
     if error or not code or not state:
         return failure_redirect()
     try:
-        claims = await exchange_code(code, state)
-        user = await upsert_google_user(db, claims)
-    except (OAuthFailed, jwt.PyJWTError, httpx.HTTPError, AppError, KeyError, ValueError) as exc:
+        claims, terms = await exchange_code(code, state)
+        user = await upsert_google_user(db, claims, terms)
+    except OAuthFailed as exc:
+        log.warning("oauth_failed", extra={"reason": str(exc)[:40]})
+        return failure_redirect("terms_required" if str(exc) == "terms_required" else "oauth_failed")
+    except (jwt.PyJWTError, httpx.HTTPError, AppError, KeyError, ValueError) as exc:
         log.warning("oauth_failed", extra={"reason": type(exc).__name__})
         return failure_redirect()
     try:

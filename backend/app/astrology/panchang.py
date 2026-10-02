@@ -128,6 +128,11 @@ def panchang(day: date, latitude: float, longitude: float, timezone_name: str | 
             return None
         return (jd_to_datetime(jd) + timedelta(seconds=30)).astimezone(zone).strftime("%H:%M")
 
+    def local_date(jd: float | None) -> str | None:
+        if jd is None:
+            return None
+        return (jd_to_datetime(jd) + timedelta(seconds=30)).astimezone(zone).date().isoformat()
+
     def stamp(jd):
         return iso_minute(jd) if jd is not None else None
 
@@ -148,15 +153,18 @@ def panchang(day: date, latitude: float, longitude: float, timezone_name: str | 
         "day_boundary": "sunrise" if sunrise_available else "local_06:00 (no sunrise)",
         "vara": VARAS[vara_idx],
         "tithi": {"number": st["tithi"], "name": tithi_name(st["tithi"]), "paksha": paksha,
-                  "end": stamp(ends["tithi"]), "end_local": local_hm(ends["tithi"]),
+                  "end": stamp(ends["tithi"]), "end_local": local_hm(ends["tithi"]), "end_local_date": local_date(ends["tithi"]),
                   "next": tithi_name(nxt["tithi"]) if nxt else None},
         "nakshatra": {"name": NAKSHATRAS[st["nak"]].name, "pada": st["pada"],
                       "lord": NAKSHATRAS[st["nak"]].lord,
-                      "end": stamp(ends["nakshatra"]), "end_local": local_hm(ends["nakshatra"])},
+                      "end": stamp(ends["nakshatra"]), "end_local": local_hm(ends["nakshatra"]),
+                      "end_local_date": local_date(ends["nakshatra"])},
         "yoga": {"number": st["yoga"] + 1, "name": YOGAS[st["yoga"]],
-                 "end": stamp(ends["yoga"]), "end_local": local_hm(ends["yoga"])},
+                 "end": stamp(ends["yoga"]), "end_local": local_hm(ends["yoga"]),
+                 "end_local_date": local_date(ends["yoga"])},
         "karana": {"number": st["karana"], "name": karana_name(st["karana"]),
-                   "end": stamp(ends["karana"]), "end_local": local_hm(ends["karana"])},
+                   "end": stamp(ends["karana"]), "end_local": local_hm(ends["karana"]),
+                   "end_local_date": local_date(ends["karana"])},
         "rahu_kaal": rahu,
         "conventions": {"sunrise": "Sun upper limb, refraction 1013.25 hPa/15C, sea level (Drik convention)",
                         "zodiac": "sidereal Lahiri (nakshatra, yoga)", "elements_at": "sunrise"},

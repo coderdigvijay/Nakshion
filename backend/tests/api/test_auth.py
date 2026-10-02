@@ -36,12 +36,12 @@ async def test_register_login_me(client: AsyncClient) -> None:
 
 async def test_register_duplicate_is_409(client: AsyncClient) -> None:
     await register(client)
-    r = await client.post(f"{A}/register", json={"email": "asha@example.com", "password": "correct horse battery", "name": "A"})
+    r = await client.post(f"{A}/register", json={"email": "asha@example.com", "password": "correct horse battery", "name": "A", "terms_accepted": True})
     assert r.status_code == 409 and r.json()["code"] == "EMAIL_EXISTS"
 
 
 async def test_validation_detail_is_string(client: AsyncClient) -> None:
-    r = await client.post(f"{A}/register", json={"email": "nope", "password": "correct horse battery", "name": "A"})
+    r = await client.post(f"{A}/register", json={"email": "nope", "password": "correct horse battery", "name": "A", "terms_accepted": True})
     body = r.json()
     assert r.status_code == 422 and isinstance(body["detail"], str)
     assert body["code"] == "VALIDATION_ERROR" and body["errors"][0]["field"] == "email"
@@ -49,11 +49,11 @@ async def test_validation_detail_is_string(client: AsyncClient) -> None:
 
 async def test_password_policy_codes(client: AsyncClient) -> None:
     long_pw = "é" * 40  # 80 bytes > 72
-    r = await client.post(f"{A}/register", json={"email": "a@example.com", "password": long_pw, "name": "A"})
+    r = await client.post(f"{A}/register", json={"email": "a@example.com", "password": long_pw, "name": "A", "terms_accepted": True})
     assert r.status_code == 422 and r.json()["code"] == "PASSWORD_TOO_LONG"
-    r = await client.post(f"{A}/register", json={"email": "a@example.com", "password": "12345678", "name": "A"})
+    r = await client.post(f"{A}/register", json={"email": "a@example.com", "password": "12345678", "name": "A", "terms_accepted": True})
     assert r.status_code == 422 and r.json()["code"] == "PASSWORD_TOO_COMMON"
-    r = await client.post(f"{A}/register", json={"email": "a@example.com", "password": "pw", "name": "A", "is_admin": True})
+    r = await client.post(f"{A}/register", json={"email": "a@example.com", "password": "pw", "name": "A", "terms_accepted": True, "is_admin": True})
     assert r.status_code == 422
 
 
@@ -143,8 +143,10 @@ async def test_change_and_set_password(client: AsyncClient) -> None:
     r = await client.post(f"{A}/change-password", json={"current_password": "nope nope", "new_password": "fresh password 1"}, headers=h)
     assert r.status_code == 400 and r.json()["code"] == "INVALID_CURRENT_PASSWORD"
     r = await client.post(f"{A}/change-password", json={"current_password": "correct horse battery", "new_password": "fresh password 1"}, headers=h)
-    assert r.status_code == 200
-    assert (await client.get(f"{A}/me", headers=h)).status_code == 200  # MVP: no token bump
+    assert r.status_code == 200 and r.json()["token_type"] == "bearer"
+    assert (await client.get(f"{A}/me", headers=h)).status_code == 401  # the old (possibly stolen) token is revoked
+    h = {"Authorization": f"Bearer {r.json()['access_token']}"}  # the response carries a fresh one
+    assert (await client.get(f"{A}/me", headers=h)).status_code == 200
     r = await client.post(f"{A}/set-password", json={"new_password": "fresh password 2"}, headers=h)
     assert r.status_code == 409 and r.json()["code"] == "PASSWORD_ALREADY_SET"
 

@@ -14,7 +14,9 @@ Per-user chat quotas: `get_service().quota.reserve/release` (call before / on fa
 
 from __future__ import annotations
 
+import asyncio
 import logging
+import time
 from dataclasses import dataclass
 from datetime import date as Date
 from typing import Any, AsyncIterator
@@ -161,20 +163,48 @@ def _template_daily(sign: str, items: list[FactorView]) -> dict:
     }
 
 
-async def _structured(svc: AIService, req: LLMRequest, schema, check) -> tuple[Any, Any]:
-    """generate -> content check -> one repair -> raise. `check(obj) -> list[str]` problems."""
+async def _structured(svc: AIService, req: LLMRequest, schema, check, *, deadline_s: float | None = None,
+                      normalize=None, salvage=None) -> tuple[Any, Any]:
+    """generate -> content check -> one repair -> raise. `check(obj) -> list[str]` problems.
+
+    deadline_s   overall wall-clock budget for the first call plus the repair (default: twice the attempt timeout).
+                 The repair is skipped when too little is left.
+    normalize    obj -> obj, applied before checking (soft fields: citations are metadata and are repaired in code)
+    salvage      (obj, problems) -> obj | None, tried when the repair fails: drop only what is wrong instead of
+                 discarding the whole answer. Must return a fully valid object or None."""
     from app.llm.builder import repair_messages
 
-    res = await svc.router.generate(req, schema=schema, deadline_s=max(req.timeout_s * 2, 20))
+    start = time.monotonic()
+    total = deadline_s if deadline_s else max(req.timeout_s * 2, 20)
+    res = await svc.router.generate(req, schema=schema, deadline_s=total)
     obj = schema.model_validate(res.parsed)
+    if normalize:
+        obj = normalize(obj)
     problems = check(obj)
-    if problems:
-        res = await svc.router.generate(repair_messages(req, res.text, problems), schema=schema,
-                                        models=[res.model], deadline_s=max(req.timeout_s * 2, 20))
-        obj = schema.model_validate(res.parsed)
-        if check(obj):
-            raise LLMUnavailable("structured output failed content checks after repair")
-    return obj, res
+    if not problems:
+        return obj, res
+    left = total - (time.monotonic() - start)
+    if left > 4.0:
+        try:
+            res2 = await svc.router.generate(repair_messages(req, res.text, problems), schema=schema,
+                                             models=[res.model], deadline_s=left)
+        except LLMError:
+            if salvage is None:
+                raise
+            res2 = None
+        if res2 is not None:
+            obj2 = schema.model_validate(res2.parsed)
+            if normalize:
+                obj2 = normalize(obj2)
+            problems2 = check(obj2)
+            if not problems2:
+                return obj2, res2
+            obj, res, problems = obj2, res2, problems2
+    if salvage is not None:
+        fixed = salvage(obj, problems)
+        if fixed is not None and not check(fixed):
+            return fixed, res
+    raise LLMUnavailable("structured output failed content checks after repair")
 
 
 # ----------------------------------------------------------------------------- daily sign
@@ -339,6 +369,21 @@ async def generate_compat_narrative(report: dict, relationship_type: str, *, lan
 
 PERSONAL_AREAS = ("love", "career", "wellness", "money")
 
+# Time budget (BUG-025). On the free Render CPU the whole path (retrieval + model + one repair) used to run under a
+# 20 s outer timeout with a 10 s retrieval timeout inside it, so a slow embed left the model almost no time and the
+# card fell back to the template. Now: retrieval is capped at 2.5 s and skipped on timeout, each model attempt gets
+# 12 s, and the whole call stops at DAILY_BUDGET_S (callers wrap it in a timeout of at least budget + 3 s).
+DAILY_BUDGET_S = 32.0
+DAILY_RAG_CAP_S = 2.5
+
+
+async def _notes_capped(svc: AIService, keys: list[str], system: str, topic: str, cap_s: float) -> list[Any]:
+    try:
+        return await asyncio.wait_for(_notes(svc, keys, system, topic), cap_s)
+    except (TimeoutError, asyncio.TimeoutError):
+        log.warning("daily retrieval exceeded its cap; continuing without notes", extra={"cap_s": cap_s})
+        return []
+
 
 def _kf(f: Any) -> tuple[str, str, float]:
     get = f.get if isinstance(f, dict) else (lambda k, d=None: getattr(f, k, d))
@@ -346,7 +391,7 @@ def _kf(f: Any) -> tuple[str, str, float]:
 
 
 async def generate_daily_personal(facts: dict, *, language: str = "english", system: str | None = None,
-                                  user_id_hash: str | None = None) -> dict:
+                                  user_id_hash: str | None = None, budget_s: float | None = None) -> dict:
     """R3 narrative text. `facts` is the engine's `personal_day` output:
 
         {areas: {love|career|wellness|money: {score 1..5}}, key_factors: [{factor_id, label, weight}],
@@ -355,8 +400,14 @@ async def generate_daily_personal(facts: dict, *, language: str = "english", sys
     Returns {headline, overview, areas: {k: {text}}, affirmation, citations, generated_by: "llm", metadata}.
     Scores, key_factors, timing, lucky and dasha_context are NOT produced here: the caller merges
     them from `facts` (see personal_reading_service.assemble). The caller caches for 24 h.
-    Raises LLMUnavailable (or another LLMError) when no valid reading can be produced; the caller
-    falls back to its template."""
+    `budget_s` bounds the whole call (default DAILY_BUDGET_S). Raises LLMUnavailable (or another LLMError) when no valid
+    reading can be produced in time; the caller falls back to `template_daily_personal(facts, language)`.
+
+    Soft fields never fail a reading: unknown or missing citation ids are repaired in code, and a sentence that
+    states an unsupported placement is dropped (or that one area gets its template line) instead of discarding the
+    whole reading. Safety hits and an empty reading still fail."""
+    t0 = time.monotonic()
+    budget = budget_s or DAILY_BUDGET_S
     svc = get_service()
     await svc.budget.admit("daily_personal", "free")
     kfs = [_kf(f) for f in (facts.get("key_factors") or [])][:8]
@@ -374,6 +425,7 @@ async def generate_daily_personal(facts: dict, *, language: str = "english", sys
     sys_p = reg.render("daily_personal", system_label="sidereal zodiac" if system == "vedic" else "tropical zodiac",
                        language_instruction=LANGUAGE_INSTRUCTIONS.get(language, "English."))
     lim = reg.reg["limits"]["daily_personal"]
+
     def _tag(i: str) -> str:
         fs = system if i.startswith("T.MOON.H") else factor_system(i)
         return f" ({SYSTEM_TAG[fs]})" if fs in SYSTEM_TAG else ""
@@ -393,34 +445,75 @@ async def generate_daily_personal(facts: dict, *, language: str = "english", sys
         block.append("Birth time is NOT known: do not mention the Ascendant, Lagna, house numbers or exact dasha dates.")
     keys = [k for kf in (facts.get("key_factors") or [])[:4]
             for k in (kf.get("kb_keys", []) if isinstance(kf, dict) else [])] or ["daily guidance"]
-    notes = await _notes(svc, ["daily guidance"] + keys, "vedic" if system == "vedic" else "western", "timing")
+    notes = await _notes_capped(svc, ["daily guidance"] + keys, "vedic" if system == "vedic" else "western", "timing",
+                                min(DAILY_RAG_CAP_S, max(0.5, budget / 4)))
     if notes:
-        block.append(render_notes(notes)[0])
+        block.append(render_notes(notes[:3])[0])      # three notes are plenty for a 250-word reading
     req = LLMRequest(task="daily_personal", system=sys_p.text, context_blocks=tuple(block),
                      messages=({"role": "user", "content": "Write today's personal reading."},),
                      max_output_tokens=lim["max_output_tokens"], response_schema=provider_schema(PersonalReadingText),
                      temperature=lim["temperature"], timeout_s=lim["timeout_s"], prompt_id=sys_p.prompt_id,
                      metadata={"user_id_hash": user_id_hash})
-    ids = {i for i, _, _ in kfs}
+    ids = [i for i, _, _ in kfs]
+    idset = set(ids)
     cf = ChartFacts("", system, bool(facts.get("approximate_time")), "", "", "", on, (),
                     tuple(FactorView(id=i, kind="transit", label=label, weight=w) for i, label, w in kfs))
     idx = ChartIndex(approximate_time=bool(facts.get("approximate_time")))
+    # The engine's dasha context is authoritative too: "Mercury Antardasha" must not be flagged as an invented dasha.
+    idx.maha, idx.antar = canon_planet(str(dc.get("maha") or "")), canon_planet(str(dc.get("antar") or ""))
+
+    def fields(o: PersonalReadingText) -> dict[str, str]:
+        return {"headline": o.headline, "overview": o.overview, "affirmation": o.affirmation,
+                **{f"areas.{k}": getattr(getattr(o.areas, k), "text") for k in PERSONAL_AREAS}}
+
+    def field_problems(text: str) -> list[str]:
+        out = [f"safety:{h.cls}" for h in scan_output(text)]
+        out += [f"{v.kind}: {v.detail}" for v in check_claims(text, idx, cf, transit_exempt=False)
+                if v.kind in ("claim", "time_unknown")]
+        return out
+
+    def normalize(o: PersonalReadingText) -> PersonalReadingText:
+        good = [c for c in dict.fromkeys(o.citations) if c in idset]
+        return o.model_copy(update={"citations": good or ids[:2]})      # citations are metadata: repaired in code
 
     def check(o: PersonalReadingText) -> list[str]:
-        text = " ".join([o.headline, o.overview, o.affirmation, *[getattr(getattr(o.areas, k), "text") for k in PERSONAL_AREAS]])
-        probs = [f"unknown factor id {c}" for c in o.citations if c not in ids]
-        if not any(c in ids for c in o.citations):
-            probs.append("cite at least one provided factor id")
-        probs += [f"safety:{h.cls}" for h in scan_output(text)]
-        probs += [f"{v.kind}: {v.detail}" for v in check_claims(text, idx, cf, transit_exempt=False)
-                  if v.kind in ("claim", "time_unknown")]
-        return probs
+        return [p for text in fields(o).values() for p in field_problems(text)]
 
-    obj, res = await _structured(svc, req, PersonalReadingText, check)
+    def salvage(o: PersonalReadingText, problems: list[str]) -> PersonalReadingText | None:
+        """Drop only the sentences that state an unsupported placement; a field left too short gets the template line."""
+        from app.llm.daily_template import template_daily_personal
+        from app.llm.validators import strip_violating_sentences
+
+        if any(p.startswith("safety:") for p in problems):
+            return None
+        tpl = template_daily_personal(facts, language)
+        floor = {"headline": 3, "overview": 40, "affirmation": 3}
+        new: dict[str, str] = {}
+        for name, text in fields(o).items():
+            viol = [v for v in check_claims(text, idx, cf, transit_exempt=False) if v.kind in ("claim", "time_unknown")]
+            if not viol:
+                new[name] = text
+                continue
+            kept, _ = strip_violating_sentences(text, viol)
+            if len(kept) >= floor.get(name, 10):
+                new[name] = kept
+            elif name.startswith("areas."):
+                new[name] = tpl["areas"][name.split(".", 1)[1]]["text"]
+            else:
+                new[name] = tpl[name]
+        try:
+            return PersonalReadingText.model_validate({
+                "headline": new["headline"], "overview": new["overview"], "affirmation": new["affirmation"],
+                "areas": {k: {"text": new[f"areas.{k}"]} for k in PERSONAL_AREAS}, "citations": o.citations})
+        except Exception:  # noqa: BLE001
+            return None
+
+    obj, res = await _structured(svc, req, PersonalReadingText, check, deadline_s=max(2.0, budget - (time.monotonic() - t0)),
+                                 normalize=normalize, salvage=salvage)
     d = obj.model_dump()
     d["areas"] = {k: {"text": d["areas"][k]["text"]} for k in PERSONAL_AREAS}
     d["generated_by"] = "llm"
     d["metadata"] = {"prompt_version": sys_p.prompt_id, "provider": res.provider, "model": res.model,
-                     "kb_chunk_ids": [n.chunk_id for n in notes], "tokens_used": res.input_tokens + res.output_tokens,
-                     "factor_ids_provided": sorted(ids)}
+                     "kb_chunk_ids": [n.chunk_id for n in notes[:3]], "tokens_used": res.input_tokens + res.output_tokens,
+                     "factor_ids_provided": sorted(idset), "elapsed_s": round(time.monotonic() - t0, 1)}
     return d

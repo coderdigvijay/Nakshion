@@ -12,6 +12,7 @@ GOOD = dict(
     JWT_SECRET_KEY="j" * 40, CRON_SECRET="c" * 40, OTP_PEPPER="o" * 40,
     CORS_ORIGINS="https://nakshion.vercel.app", FRONTEND_URL="https://nakshion.vercel.app",
     API_PUBLIC_URL="https://nakshion-api.onrender.com",
+    TRUSTED_PROXY_HOPS=1,
 )
 
 
@@ -41,6 +42,7 @@ def test_good_production_config_boots() -> None:
         ({"FRONTEND_URL": "http://localhost:5175"}, "FRONTEND_URL"),
         ({"API_PUBLIC_URL": "http://nakshion-api.onrender.com"}, "API_PUBLIC_URL"),
         ({"RATE_LIMIT_ENABLED": False}, "RATE_LIMIT_ENABLED"),
+        ({"TRUSTED_PROXY_HOPS": 0}, "TRUSTED_PROXY_HOPS"),
     ],
 )
 def test_unsafe_production_config_refuses_to_boot(over: dict, needle: str) -> None:
@@ -75,3 +77,15 @@ def test_plaintext_redis_only_with_explicit_private_network_flag() -> None:
     assert make(REDIS_URL=url, REDIS_ALLOW_PLAINTEXT=True).is_production
     with pytest.raises(ValidationError):
         make(REDIS_URL="redis://localhost:6379", REDIS_ALLOW_PLAINTEXT=True)  # flag never legitimises localhost
+
+
+def test_client_ip_header_can_replace_proxy_hops_in_production() -> None:
+    assert make(TRUSTED_PROXY_HOPS=0, CLIENT_IP_HEADER="cf-connecting-ip").is_production
+    with pytest.raises(ValidationError):
+        make(CLIENT_IP_HEADER="bad header!")
+
+
+def test_default_token_lifetime_is_two_days_and_build_version_is_short_sha() -> None:
+    s = make(RENDER_GIT_COMMIT="0123456789abcdef")
+    assert Settings.model_fields["JWT_ACCESS_TOKEN_EXPIRE_MINUTES"].default == 2880  # class default (a local .env may override)
+    assert s.build_version == "0123456"

@@ -197,7 +197,7 @@ async def client() -> AsyncIterator[AsyncClient]:
 
 async def register(client: AsyncClient, email: str = "asha@example.com", password: str = "correct horse battery",
                    name: str = "Asha", verified: bool = True) -> dict[str, str]:
-    r = await client.post("/api/v1/auth/register", json={"email": email, "password": password, "name": name})
+    r = await client.post("/api/v1/auth/register", json={"email": email, "password": password, "name": name, "terms_accepted": True})
     assert r.status_code == 201, r.text
     if verified:
         async with SessionLocal() as s:

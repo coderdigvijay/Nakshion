@@ -1,8 +1,8 @@
 active:
-  chat: v6
+  chat: v7
   repair: v1
   daily_sign: v1
-  daily_personal: v1
+  daily_personal: v2
   compat: v4
   judge: v1
 limits:
@@ -17,9 +17,9 @@ limits:
     temperature: 0.7
     timeout_s: 20
   daily_personal:
-    max_output_tokens: 1400
+    max_output_tokens: 1200
     temperature: 0.7
-    timeout_s: 20
+    timeout_s: 12
   compat:
     max_output_tokens: 2200
     temperature: 0.6
@@ -31,17 +31,20 @@ limits:
 released:
   _partials/persona_v1.j2: 1c64c49f96850b841cbd15c6e384f6a046824b1ad026f45f0496f1dacfa226e4
   _partials/safety_v1.j2: 47b857b924db745c61baac43e79a22c6c9c16c88164ad1f6261c1c60dddfb006
+  _partials/safety_v2.j2: ba3b49524aacb76af2fbf774478a2a361d382038f2e93ac79c948c7ddb497495
   chat/v1.j2: 9a2becf5702cf150a653795580d5e825412909dbfa019198a19d4df049060d4e
   chat/v2.j2: a3b6f3b721625fef1295c3d455e00c4fafc5382bf7a64cf772aa8ea69f7d9f45
   chat/v3.j2: 4b4bf5b04d56ef171fd811a8e68d95f55a13a7444e0301aebcad6499c701e194
   chat/v4.j2: 2ced3fe85a0d7b35b603167b5a4603f3d1ce048956b58aa38df251ddba1af803
   chat/v5.j2: c455239609a9cdbb3cfdf10cab5dd3e832f17cca8c3249b4a2c28a52dd5d5755
   chat/v6.j2: f875aeee40b59d9af883c3edce1ec9e931da4d96f2ba74d80d1a7eacb97f6917
+  chat/v7.j2: 5de5394f79e25124b8af66b4db65c8e43c9826b22909e636807d7ddd384ec269
   compat/v1.j2: 3d86c2a93f6640eb68cb2c7cda88e64ca3670cb5e259b2a427504354d9037164
   compat/v2.j2: d8288ba77e99255996e8197878cbf7016cdc77dd3f66245ca53a905a42561a56
   compat/v3.j2: 6e12d7da58baac445963d81f2c76f402ab629d005098ee0508963f084fa4b33f
   compat/v4.j2: 32d8c673b6e6351610338a57cc50705809fde95cfffb45c2cb9507a425ea1c12
   daily_personal/v1.j2: b8629b7b4b50b3131462e684b34b96ea5891c98cc354e173108d55ca38bb58aa
+  daily_personal/v2.j2: 82c37e20e2f606208a6f3b8f435d59bd42da4cb4199dc73f14e22cdcbc8ffd00
   daily_sign/v1.j2: 9db0e8e47de7281c04f6719866c63d174d11768f4b279a3a31719baa79928cf6
   judge/v1.j2: 6490105e711a6dcb5b195b97201ed04705423a6241cec80bba061a571f909f97
   repair/v1.j2: 1218c97bbf769756d1428a29f84eab7de139d895086d5337b7dfcc77ad0341f4

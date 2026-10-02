@@ -75,7 +75,7 @@ The frontend reads only `error.response.data.detail` and expects a **string** (s
 
 - HS256, signed with `JWT_SECRET_KEY` (at least 32 random bytes in production; refuse to boot with the example value when `APP_ENV=production`).
 - Claims: `sub` (user id), `iat`, `exp`, `ver` (the user's `token_version`, used for revocation; see `architecture.md` §5), `typ: "access"`.
-- Lifetime: `JWT_ACCESS_TOKEN_EXPIRE_MINUTES`, default 10080 (7 days). This matches the frontend, which has no refresh flow. [v2-change] Section 12 covers the short-lived access token plus refresh cookie.
+- Lifetime: `JWT_ACCESS_TOKEN_EXPIRE_MINUTES`, default **2880 (2 days; v1.1, was 7)**. This matches the frontend, which has no refresh flow. [v2-change] Section 12 covers the short-lived access token plus refresh cookie.
 - The token is rejected (401) when `ver` ≠ the user's current `token_version`. Password reset, password change and "log out everywhere" increment it.
 
 ---
@@ -269,6 +269,7 @@ Request `{ "email": string, "password": string, "name": string }`
 | email | RFC-valid, trimmed, lower-cased, ≤ 255 |
 | password | 8 chars to **72 UTF-8 bytes** (bcrypt limit; over → 422 `PASSWORD_TOO_LONG`, never silently truncated). Reject if it's in the bundled top-10k breached list (`PASSWORD_TOO_COMMON`). No composition rules (NIST 800-63B style). Same rule for every `new_password` field |
 | name | trimmed, 1–100 chars, no control characters |
+| terms_accepted | **[v1.1] required, must be `true`** (Terms + Privacy Policy). Missing or false gives 422 `TERMS_NOT_ACCEPTED`. Stored as `users.terms_accepted_at` and `users.terms_version` |
 
 - **201** `{ "access_token": string, "token_type": "bearer" }`. The user is created with `email_verified=false` and a 6-digit OTP is emailed (Brevo). The frontend (`SignUpForm`) navigates to `/verify` next.
 - **409** `EMAIL_EXISTS`: "An account with this email already exists. Try logging in." This is a deliberate usability trade-off (account enumeration), mitigated by the rate limit below.
@@ -318,6 +319,8 @@ Request `{ "token": string, "new_password": string }`
 
 ### A8 `GET /auth/oauth/google`
 
+> **[v1.1]** `GET /auth/oauth/google?terms=1`: `terms=1` means the user ticked the Terms/Privacy checkbox on our page. It is required to **create a new account**; without it a first-time Google user is redirected to `/auth/callback?error=terms_required` and no account is created. Existing users sign in without it. The acceptance and `TERMS_VERSION` are stored on the new user.
+
 - **302** to Google's authorization endpoint with `scope=openid email profile`, `state` (random, stored at `oauth_state:{state}` in Redis, TTL 10 min) and PKCE (`code_challenge`, S256).
 - The redirect URI is `${API_PUBLIC_URL}/api/v1/auth/oauth/google/callback`. `API_PUBLIC_URL` is a new env var (see `architecture.md` §9).
 
@@ -341,7 +344,7 @@ Request `{ "token": string, "new_password": string }`
 
 Request `{ "current_password": string, "new_password": string }`
 
-- **200** `{ "message": "Password changed" }`. **Decision:** in MVP, change-password does **not** bump `token_version`. The frontend keeps using its current token and has no way to receive a new one, so bumping would log the user out mid-session. [v2-change] Section 12 has it bump the version and return a fresh `access_token`.
+- **[v1.1] 200** `{ "message": "Password changed", "access_token": string, "token_type": "bearer" }`. The change **bumps `token_version`**, so the old token (and every other session) stops working; the SPA must store the returned `access_token`. *(Superseded MVP decision: change-password did not bump `token_version`.)* Old text: 200 `{ "message": "Password changed" }`. The frontend keeps using its current token and has no way to receive a new one, so bumping would log the user out mid-session. [v2-change] Section 12 has it bump the version and return a fresh `access_token`.
 - **400** `INVALID_CURRENT_PASSWORD` (not 401; see §1.4).
 - **400** `NO_PASSWORD_SET`: "Your account uses Google sign-in. Set a password instead."
 
@@ -583,6 +586,8 @@ Auth required; uses the primary chart. Returns a `PersonalReading`:
 
 Cached at `daily_personal:{user_id}:{date}` until local midnight + 2 h, and persisted to `personal_readings` (migration 004) for history.
 
+**[v1.1] `generated_by` and refetching.** `GET /horoscopes/personal/today` answers within a few seconds, always with a complete reading. `generated_by` is `"llm"` (written by the model) or `"template"` (deterministic text from the same engine facts and area scores, in the user's own system and language; the UI may label it "Simplified reading"). When the model is slower than ~6 s the template is served immediately and the model reading is generated **in the background** (once per user, day, system and chart; the budget guard still applies). While `generated_by == "template"`, clients should **refetch once or twice, about 10-15 s apart**, and swap in the LLM reading when it arrives; a template is trusted for 5 minutes, after which a new request tries for the LLM reading again. The upgrade is discarded if the primary chart was edited in the meantime (the reading always matches the current chart).
+
 **[v1.1] Freshness and failure rules.** A stored reading is served only if it was generated from the *current* primary chart (`chart_id`), in the user's *current* `system`, by the *current* engine version (`engine_version` is part of the object), and after the chart's last edit; editing or deleting a chart deletes its stored readings. If the engine cannot produce the facts the endpoint answers **503 `PERSONAL_READING_UNAVAILABLE`** with `Retry-After: 30`: the client shows a retry state and must **not** substitute a generic or other-system horoscope (R1 is Western/tropical by default; never present it as the user's own reading). If only the LLM is down the reading is a template **in the same system** (`generated_by: "template"`). `system` is always `"vedic"` or `"western"` and labels every figure in the reading.
 
 ---
@@ -634,6 +639,8 @@ Steps:
 Returns `{ "status": "ok", "version": "<git sha>" }`. It **must not touch Postgres or Redis**. The cron-job.org keep-awake ping hits this every 14 min; touching Neon would keep its compute awake 24/7 and burn the free CU-hours (`architecture.md` §8).
 
 ### G3 `GET /health/ready`
+
+> **[v1.1]** Public response is only `{"status": "ok" | "degraded"}` (503 when degraded), rate-limited to 10/min/client. The per-dependency detail (`checks`: database, redis, engine, rag) is returned only when the `X-Cron-Secret` header matches. `/health/live` returns `{status, version}` where `version` is the 7-character deploy commit.
 
 Checks the DB (`SELECT 1`), Redis `PING` and the engine self-test. Returns 200 or 503. Used by Render's health check, not by the pinger.
 

@@ -44,7 +44,7 @@ Because Saturn is slow and sometimes retrograde, it may cross a sign boundary, r
 
 **Kantaka Shani** ("thorn" Saturn) refers to Saturn in the **4th, 7th and 10th** from the Moon in most traditions (some add the 1st; others merge the 8th with it). Common themes: domestic and emotional pressure (4th), relationship and partnership tests (7th), and career and reputation pressure (10th).
 
-**Dhaiya** ("two and a half") is the popular term for 2.5-year Saturn periods. Most often "small Panoti" (also called Laghu Kalyani) means Saturn in the 4th from Moon, and "Dhaiya" generally refers to the 4th and 8th. Usage differs, so always state which houses are meant.
+**Dhaiya** ("two and a half") is the popular term for 2.5-year Saturn periods. Most often "small Panoti" (also called Laghu Kalyani [unverified alias]) means Saturn in the 4th from Moon, and "Dhaiya" generally refers to the 4th and 8th. Usage differs, so always state which houses are meant.
 
 Because Saturn is in houses 12, 1, 2 (Sade Sati) or 4, 8 (Dhaiya) from the Moon, the two cannot overlap. Saturn in 3, 6 and 11 from the Moon is classically favourable. Sources differ on Saturn in the 5th and 9th from the Moon; some list them as difficult, others as mixed.
 

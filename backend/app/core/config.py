@@ -55,7 +55,7 @@ class Settings(BaseSettings):
     # Auth
     JWT_SECRET_KEY: str
     JWT_ALGORITHM: str = "HS256"
-    JWT_ACCESS_TOKEN_EXPIRE_MINUTES: int = 10080
+    JWT_ACCESS_TOKEN_EXPIRE_MINUTES: int = 2880  # 2 days (no refresh flow yet: users sign in again after this)
     BCRYPT_ROUNDS: int = 12
     OTP_PEPPER: str = ""
     CRON_SECRET: str = ""
@@ -75,6 +75,13 @@ class Settings(BaseSettings):
     # Number of trusted reverse proxies in front of the app (Render: 1). 0 = use the socket peer.
     # The client IP is the entry N hops from the RIGHT of X-Forwarded-For (never the spoofable left side).
     TRUSTED_PROXY_HOPS: int = Field(default=0, ge=0, le=5)
+    # Single-value header carrying the real client IP, set by an edge you control (e.g. cf-connecting-ip, true-client-ip).
+    # When set, ONLY this header is trusted and X-Forwarded-For is ignored. See docs/deployment.md.
+    CLIENT_IP_HEADER: str = Field(default="", pattern=r"^[A-Za-z0-9-]{0,40}$")
+    # Log the SHAPE (never the addresses) of proxy headers for the first 20 requests, to learn what Render sends.
+    LOG_CLIENT_IP_DEBUG: bool = False
+    TERMS_VERSION: str = "2026-10-01"  # recorded with every acceptance of the Terms/Privacy Policy
+    RENDER_GIT_COMMIT: str = ""  # set automatically by Render; shown (short) by /health/live
     MAX_BODY_BYTES: int = 65536
 
     # Product
@@ -114,6 +121,8 @@ class Settings(BaseSettings):
             problems.append("JWT_SECRET_KEY, CRON_SECRET and OTP_PEPPER must all be different values")
         if not self.RATE_LIMIT_ENABLED:
             problems.append("RATE_LIMIT_ENABLED cannot be false")
+        if self.TRUSTED_PROXY_HOPS < 1 and not self.CLIENT_IP_HEADER:
+            problems.append("set TRUSTED_PROXY_HOPS (>=1) or CLIENT_IP_HEADER, otherwise every client shares the proxy's IP")
 
         db = urlsplit(self.DATABASE_URL)
         if not db.hostname or db.hostname in _LOCAL_HOSTS:
@@ -149,6 +158,10 @@ class Settings(BaseSettings):
     @property
     def cors_origins_list(self) -> list[str]:
         return [o.strip() for o in self.CORS_ORIGINS.split(",") if o.strip()]
+
+    @property
+    def build_version(self) -> str:
+        return self.RENDER_GIT_COMMIT[:7] if self.RENDER_GIT_COMMIT else self.APP_VERSION
 
     @property
     def otp_pepper(self) -> str:

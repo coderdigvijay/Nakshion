@@ -33,7 +33,7 @@ The **7th house** (Kalatra bhava, house of the partner) is the first place any P
 - **Planets in the 7th**: benefics are read as supporting harmony; malefics (Saturn, Mars, Rahu, Ketu) are read as adding intensity, delay or friction depending on dignity and aspects.
 - The 7th is also checked **from the Moon and from Venus** in many traditions, and the 2nd (family) and 8th (the depth and continuity of the bond) are looked at alongside it.
 
-The two charts are then compared: for example whether one partner's 7th lord is well placed in the other's chart, and whether the two Lagnas or Moons stand in supportive signs (5/9 and same sign are usually taken as good; 3/11 is workable).
+The two charts are then compared: for example whether one partner's 7th lord is well placed in the other's chart, and whether the two Lagnas or Moons stand in supportive signs (5/9 and same sign are usually taken as good in general practice, although Ashtakoota's Bhakoot koota scores 5/9 as 0 and some authors dispute that; 3/11 is workable).
 
 ## Venus and Jupiter as relationship significators
 

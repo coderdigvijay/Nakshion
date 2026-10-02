@@ -22,6 +22,8 @@ const ChatPage = lazy(() => import("./pages/ChatPage"));
 const CompatibilityPage = lazy(() => import("./pages/CompatibilityPage"));
 const ProfilePage = lazy(() => import("./pages/ProfilePage"));
 const ChartPage = lazy(() => import("./pages/ChartPage"));
+const PrivacyPage = lazy(() => import("./pages/PrivacyPage"));
+const TermsPage = lazy(() => import("./pages/TermsPage"));
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 
 const queryClient = new QueryClient({
@@ -70,6 +72,8 @@ function AppRoutes() {
         <Route path="/compatibility" element={guard(<CompatibilityPage />)} />
         <Route path="/chart" element={guard(<ChartPage />)} />
         <Route path="/profile" element={guard(<ProfilePage />)} />
+        <Route path="/privacy" element={<PrivacyPage />} />
+        <Route path="/terms" element={<TermsPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Suspense>

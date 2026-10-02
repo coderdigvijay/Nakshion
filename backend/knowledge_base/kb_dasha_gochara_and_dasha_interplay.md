@@ -39,7 +39,7 @@ Classically, transit results are counted from the **natal Moon sign** (Chandra L
 | Mercury | 2, 4, 6, 8, 10, 11 [unverified here] |
 | Venus | 1, 2, 3, 4, 5, 8, 9, 11, 12 [unverified here] |
 
-Saturn is listed as difficult from the Moon in 1, 2, 4, 5, 8, 12 and Jupiter in 3, 6, 8, 12 (one source). This is a baseline, which the other factors below refine.
+Saturn is listed as difficult from the Moon in 1, 2, 4, 5, 8, 12 (some also add 7, 9, 10), and Jupiter in all houses not listed above (1, 3, 4, 6, 8, 10, 12; one source gave only 3, 6, 8, 12). This is a baseline, which the other factors below refine.
 
 ## Vedha (obstruction)
 

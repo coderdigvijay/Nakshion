@@ -39,6 +39,9 @@ from app.services import ai, cache, chart_service, engine, quota_service
 
 log = logging.getLogger("app.chat")
 
+# Privacy: no name (the chart label can be a real person's name) is sent to the LLM provider.
+PROVIDER_DISPLAY_NAME = "the user"
+
 CATEGORIES = {"general", "love", "career", "health", "timing", "spiritual", "compatibility"}
 HISTORY_MESSAGES = 12  # last 6 turns
 DETAIL_MESSAGES = 200
@@ -241,7 +244,7 @@ async def send_message(db: AsyncSession, user: User, conv_id: uuid.UUID, data: S
             language=data.language,
             user_id_hash=user_id_hash(uid),
             astrology_system=user.astrology_system,
-            display_name=ctx.chart_name,
+            display_name=PROVIDER_DISPLAY_NAME,
             user_id=str(uid),
             tier=user.subscription_tier,
             deadline_s=settings.CHAT_DEADLINE_S,
@@ -324,7 +327,7 @@ async def _stream(
             language=data.language,
             user_id_hash=user_id_hash(uid),
             astrology_system=user.astrology_system,
-            display_name=ctx.chart_name,
+            display_name=PROVIDER_DISPLAY_NAME,
             user_id=str(user.id),
             tier=user.subscription_tier,
             deadline_s=settings.CHAT_DEADLINE_S,

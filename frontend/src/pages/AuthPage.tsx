@@ -1,5 +1,6 @@
-import { useSearchParams } from "react-router-dom";
-import { AlertTriangle, CheckCircle2 } from "lucide-react";
+import { useState } from "react";
+import { Link, useSearchParams } from "react-router-dom";
+import { AlertTriangle, Check, CheckCircle2 } from "lucide-react";
 import { AuthLayout } from "../components/auth/AuthLayout";
 import { GoogleButton, OrDivider } from "../components/auth/SocialLogin";
 import { LoginForm } from "../components/auth/LoginForm";
@@ -10,6 +11,7 @@ type Mode = "login" | "signup";
 
 export default function AuthPage() {
   const [params, setParams] = useSearchParams();
+  const [googleConsent, setGoogleConsent] = useState(false);
   const mode: Mode = params.get("mode") === "signup" ? "signup" : "login";
   const next = params.get("next") ?? undefined;
   const deleted = params.get("deleted") === "1";
@@ -49,7 +51,27 @@ export default function AuthPage() {
         ]}
       />
       <TabPanel idBase="auth" value={mode} className="pt-6">
-        <GoogleButton />
+        <GoogleButton termsAccepted={mode === "signup" && googleConsent} disabled={mode === "signup" && !googleConsent} />
+        {mode === "signup" && (
+          <label className="mt-3 flex min-h-11 cursor-pointer items-start gap-3 py-1.5">
+            <span className="relative mt-0.5 inline-flex size-5 shrink-0">
+              <input
+                type="checkbox"
+                checked={googleConsent}
+                onChange={(e) => setGoogleConsent(e.target.checked)}
+                className="peer focus-ring size-5 cursor-pointer appearance-none rounded-[6px] border border-border-strong bg-field checked:border-ai checked:bg-ai-fill"
+              />
+              <Check aria-hidden="true" className="pointer-events-none absolute inset-0.5 size-4 text-on-ai opacity-0 peer-checked:opacity-100" />
+            </span>
+            <span className="text-body-sm text-fg-secondary">
+              To sign up with Google, tick to agree to the{" "}
+              <Link to="/terms" target="_blank" rel="noopener" className="focus-ring rounded-[4px] text-accent-text underline underline-offset-4">Terms<span className="sr-only"> (opens in a new tab)</span></Link>{" "}
+              and{" "}
+              <Link to="/privacy" target="_blank" rel="noopener" className="focus-ring rounded-[4px] text-accent-text underline underline-offset-4">Privacy Policy<span className="sr-only"> (opens in a new tab)</span></Link>
+              , and confirm you are 18 or older.
+            </span>
+          </label>
+        )}
         <OrDivider />
         {mode === "login" ? <LoginForm next={next} /> : <SignUpForm />}
       </TabPanel>

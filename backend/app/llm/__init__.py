@@ -14,7 +14,9 @@ from app.llm.errors import (
     LLMUnavailable,
     QuotaExceeded,
 )
+from app.llm.daily_template import template_daily_personal
 from app.llm.service import (
+    DAILY_BUDGET_S,
     configure,
     generate_chat_reply,
     generate_compat_narrative,
@@ -26,6 +28,6 @@ from app.llm.service import (
 
 __all__ = [
     "configure", "get_service", "generate_chat_reply", "stream_chat_reply", "generate_daily_sign",
-    "generate_compat_narrative", "generate_daily_personal", "LLMError", "LLMUnavailable", "LLMBudgetUnavailable", "LLMTimeout",
+    "generate_compat_narrative", "generate_daily_personal", "template_daily_personal", "DAILY_BUDGET_S", "LLMError", "LLMUnavailable", "LLMBudgetUnavailable", "LLMTimeout",
     "LLMRateLimited", "LLMBlocked", "LLMOutputInvalid", "QuotaExceeded",
 ]

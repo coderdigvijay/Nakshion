@@ -38,6 +38,7 @@ class User(Base):
     preferred_language: Mapped[str] = mapped_column(String(10), nullable=False, server_default="english", default="english")
     astrology_system: Mapped[str] = mapped_column(String(10), nullable=False, server_default="vedic", default="vedic")
     terms_accepted_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    terms_version: Mapped[str | None] = mapped_column(String(40), nullable=True)  # 010
     age_confirmed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
     ai_consent_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
     ai_consent_withdrawn_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)

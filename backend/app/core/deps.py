@@ -9,7 +9,7 @@ from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core import ratelimit
-from app.core.clientip import ip_from_scope
+from app.core.clientip import UNKNOWN_IP, ip_from_scope
 from app.core.errors import Unauthenticated
 from app.core.security import decode_access_token
 from app.db.session import get_db
@@ -73,6 +73,8 @@ def rate_limit(scope: str, limit: int, window_s: int, *, per: str = "user") -> C
         return _dep_user
 
     async def _dep_ip(request: Request) -> None:
-        ratelimit.enforce(scope, client_ip(request), limit, window_s)
+        ip = client_ip(request)
+        # Fail closed: an unattributable client shares ONE bucket with half the limit.
+        ratelimit.enforce(scope, ip, max(1, limit // 2) if ip == UNKNOWN_IP else limit, window_s)
 
     return _dep_ip

@@ -9,6 +9,7 @@
 from __future__ import annotations
 
 import re
+import unicodedata
 from dataclasses import dataclass
 from typing import Literal
 
@@ -28,13 +29,80 @@ def _rx(*parts: str) -> re.Pattern[str]:
     return re.compile("|".join(parts), re.I)
 
 
+# --- normalisation (BUG-025): obfuscated phrasing must not slip past the crisis filter ------------------------------
+
+_ZERO_WIDTH = re.compile("[​-‏‪-‮⁠-⁤﻿­᠎]")
+_LEET = str.maketrans({"0": "o", "1": "i", "3": "e", "4": "a", "5": "s", "7": "t", "@": "a", "$": "s", "!": "i", "|": "i", "¡": "i"})
+_LEET_CHARS = "013457@$!|¡"
+_LEET_IN_WORD = re.compile(rf"(?<=[a-z])[{re.escape(_LEET_CHARS)}]|[{re.escape(_LEET_CHARS)}](?=[a-z])")
+_INTRA_PUNCT = re.compile(r"(?<=[a-z])[*.\-_~^`+·•](?=[a-z])")
+_SPACED_LETTERS = re.compile(r"(?<![a-z])(?:[a-z][\s.\-_*]+){2,}[a-z](?![a-z])")
+_REPEATS = re.compile(r"([a-zऀ-ॿ])\1+")
+_NON_LETTER = re.compile(r"[^a-zऀ-ॿ]+")
+# Devanagari variants: nukta forms, chandrabindu, ZWJ/ZWNJ, candrabindu vs anusvara.
+_DEV_MAP = str.maketrans({"ँ": "ं", "़": None, "‌": None, "‍": None, "ऑ": "ॉ"})
+_DEV_ALIASES = [("ख़", "ख")]
+
+
+def normalize_variants(text: str) -> list[str]:
+    """Lower-cased, NFKC, zero-width stripped, Devanagari nukta/chandrabindu folded. Returns the variants the crisis
+    patterns run on: base, leet+punctuation folded, spaced letters joined, repeated letters collapsed (Hinglish
+    spellings: jeene/jine, mann/man), and a letters-only squash for the few unambiguous long tokens."""
+    t = unicodedata.normalize("NFKC", text or "")
+    t = _ZERO_WIDTH.sub("", t).lower()
+    t = unicodedata.normalize("NFD", t).translate(_DEV_MAP)           # nukta lives in NFD
+    t = unicodedata.normalize("NFC", t)
+    t = re.sub(r"\s+", " ", t)
+    base = t
+    folded = _INTRA_PUNCT.sub("", _LEET_IN_WORD.sub(lambda m: m.group(0).translate(_LEET), t))
+    spaced = _SPACED_LETTERS.sub(lambda m: re.sub(r"[\s.\-_*]+", "", m.group(0)), folded)
+    repeats = _REPEATS.sub(r"\1", spaced)
+    squash = _NON_LETTER.sub("", spaced)
+    out: list[str] = []
+    for v in (base, folded, spaced, repeats):
+        if v not in out:
+            out.append(v)
+    # The squash (letters only, no boundaries) runs only when obfuscation was actually undone, so ordinary text such as
+    # "skill myself" is never glued into "killmyself".
+    return out + (["\x00" + squash] if (folded != base or spaced != folded) else [])
+
+
 _INPUT_RULES: list[tuple[InputClass, re.Pattern[str]]] = [
     ("crisis", _rx(
-        r"\b(kill|hurt|harm)\s+(myself|me)\b", r"\bsuicid", r"\bend\s+(my|it)\s+(life|all)\b",
-        r"\bwant\s+to\s+die\b", r"\bdon'?t\s+want\s+to\s+(live|be\s+alive)\b", r"\bno\s+reason\s+to\s+live\b",
-        r"\bself[-\s]?harm", r"\bcut(ting)?\s+myself\b", r"\bkhud\s*kushi\b", r"\bkhudkushi\b",
-        r"\bmarna\s+chaht[aie]\b", r"\bjaan\s+de\s+(dunga|dungi|du)\b", r"\bmar\s+jaun\b",
-        r"आत्महत्या", r"ख़ुदकुशी", r"खुदकुशी", r"मरना\s+चाहत", r"जान\s+दे\s+दूं", r"जीना\s+नहीं\s+चाहत",
+        # English (explicit)
+        r"\b(kill|hurt|harm|cut|hang|drown|poison|end|off)(?:ing)?\s*(myself|my\s*self)\b", r"\bkill\s+me\b",
+        r"\bsuicid", r"\bsu[i1]?c[iy]+d(?:e|al)?\b", r"\bsuic?ied\b", r"\bsucide\b", r"\bsuiside\b", r"\bsicide\b",
+        r"\bend\s+(my|it)\s+(life|all)\b", r"\bend(?:ing)?\s+(?:it\s+all|everything|this\s+life)\b",
+        r"\btake\s+my\s+(?:own\s+)?life\b", r"\btak(?:e|ing)\s+my\s+own\s+life\b",
+        r"\bwant\s+to\s+die\b", r"\bwanna\s+die\b", r"\bwish\s+i\s+(?:was|were)\s+(?:dead|never\s+born)\b", r"\bwish\s+i\s+(?:never|wasn'?t)\s+(?:born|existed)\b",
+        r"\b(?:better|rather)\s+(?:off\s+)?dead\b", r"\bdon'?t\s+want\s+to\s+(live|be\s+alive|exist|wake\s+up)\b",
+        r"\bno\s+reason\s+to\s+(?:live|go\s+on|be\s+alive)\b", r"\bnot\s+worth\s+living\b", r"\blife\s+(?:is\s+)?(?:not|isn'?t)\s+worth\b",
+        r"\b(?:tired|sick|done|finished)\s+(?:of|with)\s+(?:living|life|being\s+alive)\b", r"\bcan'?t\s+go\s+on\s+(?:living|like\s+this|anymore)\b",
+        r"\bdon'?t\s+want\s+to\s+(?:be\s+here|exist)\s+anymore\b", r"\bwant\s+to\s+disappear\s+forever\b",
+        r"\bself[-\s]?harm", r"\bself[-\s]?injur", r"\bcut(ting)?\s+(?:myself|my\s+wrists?)\b", r"\bslit(?:ting)?\s+my\s+wrists?\b",
+        r"\bjump(?:ing)?\s+(?:off|from)\s+(?:a|the|my)?\s*(?:bridge|building|roof|terrace|balcony|cliff)\b",
+        r"\b(?:take|swallow|taking)\s+(?:all\s+)?(?:my|the|a\s+bunch\s+of)\s+(?:pills|tablets|sleeping\s+pills)\b",
+        r"\bhang(?:ing)?\s+myself\b", r"\bsewer\s*slid",
+        # obfuscations / euphemisms
+        r"\bkms\b", r"\bun\s*-?\s*aliv(?:e|ing|ed)\b", r"\bunaliv", r"\bkys\b(?=.*\b(?:myself|me|i)\b)",
+        # Hinglish (matched on a letters-collapsed variant too: jeene/jine, mann/man)
+        r"\bkhud\s*kushi\b", r"\bkhudkushi\b", r"\bkhud\s*khushi\b", r"\baa?tma?\s*hatya\b", r"\bsuside\b",
+        r"\bmarna\s+chaht[aie]\b", r"\bmarn[ae]\s+(?:hai|h)\b", r"\b(?:mujhe|mai|main|me|mein)\s+(?:\w+\s+){0,2}marn[ae]\b",
+        r"\bjaan\s+de\s+(dunga|dungi|du|dun)\b", r"\bapn[ei]\s+jaan\s+(?:de|le|lu|lun|dun|du)\b", r"\bmar\s+j[aou]+n?\b(?=\s*(?:ga|gi|chaht|ch[ae]h|hai|h\b|$|[.!,]))",
+        r"\bmar\s+jaun\b", r"\bmar\s+jau\b", r"\bmar\s+jaaun\b", r"\bmar\s+jaon\b", r"\bmar\s+jan[ae]\s+(?:ch[ae]h|hai|h\b)",
+        r"\bj[ei]+n[ei]?\s+(?:ka|ki|ke)\s+(?:(?:koi|bhi|ab|aur)\s+)*(?:mann?|mn|dil|ichh?a|icha|matlab|fayda|faida|maksad|maqsad|reason|wajah|point|raas)\s+(?:\w+\s+){0,2}(?:nahi|nhi|nhin|nai|na\s+rah)\b",
+        r"\bj[ei]+n[aei]?\s+nahi\s+ch[ae]h?t", r"\bnahi\s+j[ei]+n[aei]?\s+ch[ae]h?t", r"\bj[ei]+n[aei]?\s+nahi\s+h[ae]i?\b",
+        r"\bzind[ae]gi\s+(?:khatam|khtm|khatm|khtam|samapt)\b", r"\bkhatam\s+kar\s+(?:du|dun|dunga|dungi|lu|lun|lunga|lungi)\s+(?:apni|ye|yeh|sab|sb|zindagi|jaan)",
+        r"\b(?:sab|sb|sabkuch|sabkush)\s+khatam\s+kar\s+(?:du|dun|dunga|dungi)\b", r"\bkhud\s*ko\s+(?:khatam|maar|nuksan|hurt|chot)\b",
+        r"\bzind[ae]gi\s+se\s+thak\s+(?:gay[ae]|gayi|gaya)\b", r"\bthak\s+(?:gay[ae]|gayi|gaya)\s+(?:hu|hoon|hun)\s+(?:is\s+)?(?:zind[ae]gi|jeene)\b",
+        r"\bzinda\s+(?:rehna|rahna)\s+nahi\b", r"\bjee\s+kar\s+kya\s+(?:karu|karunga|karungi)\b",
+        # Devanagari (nukta and chandrabindu are folded before matching)
+        r"आत्महत्या", r"आत्म\s*हत्या", r"खुद्?\s*कुशी", r"आत्मघात", r"खुदकुशी", r"खुद\s*कुशी", r"खुदखुशी", r"सुसाइड", r"सुइसाइड", r"सुसाईड",
+        r"मरना\s+चाहत", r"मर\s+जाना\s+चाहत", r"मर\s+जाऊं", r"मर\s+जाऊ\b", r"मर\s+जाने\s+का\s+मन", r"मर\s+जाना\s+है", r"मरना\s+है",
+        r"जान\s+दे\s+दूं", r"जान\s+दे\s+दूँ", r"जान\s+दे\s+दूंगी", r"जान\s+दे\s+दूंगा", r"अपनी\s+जान\s+(?:ले|दे)",
+        r"जीना\s+नहीं\s+चाहत", r"जीने\s+का\s+(?:मन|दिल|कोई\s+मतलब|कोई\s+फ़?ायदा|कोई\s+फायदा)\s+(?:भी\s+)?(?:नहीं|नही)", r"जीने\s+की\s+(?:इच्छा|चाह)\s+(?:भी\s+)?(?:नहीं|नही)",
+        r"जिंदगी\s+(?:खत्म|ख़त्म|खतम)", r"ज़िंदगी\s+(?:खत्म|खतम)", r"जिंदगी\s+से\s+थक", r"खुद\s+को\s+(?:खत्म|खतम|मार|नुकसान|चोट)",
+        r"सब\s+(?:कुछ\s+)?(?:खत्म|खतम)\s+कर", r"जीवन\s+(?:समाप्त|खत्म|खतम)", r"जी\s+कर\s+क्या\s+करूं",
     )),
     ("medical_emergency", _rx(
         r"\bchest\s+pain\b", r"\bcan'?t\s+breathe\b", r"\b(heart\s+attack|stroke)\s+(now|right now|happening)\b",
@@ -89,11 +157,48 @@ STATIC_REPLIES: dict[InputClass, dict[str, str]] = {
 }
 
 
+_SQUASH = re.compile(r"killmyself|killingmyself|unalive|suicid|hangmyself|hurtmyself|harmmyself|selfharm|cutmywrist|slitmywrist|"
+                     r"takemyownlife|sewerslid|khudkushi|atmahatya|aatmahatya|jeenekamannahi|jenekamannahi")
+
+
 def classify_input(text: str) -> InputClass | None:
+    variants = normalize_variants(text)
     for cls, pat in _INPUT_RULES:
-        if pat.search(text):
-            return cls
+        for v in variants:
+            if v.startswith("\x00"):
+                if cls == "crisis" and _SQUASH.search(v[1:]):
+                    return cls
+                continue
+            if pat.search(v):
+                return cls
     return None
+
+
+# --- soft distress (hopelessness without an explicit self-harm phrase): the model must lead with care + resources ---
+_DISTRESS = re.compile(
+    r"\bhopeless(?:ness)?\b|\bworthless\b|\bno\s+point\s+(?:in\s+)?(?:anything|going\s+on|trying|living|life)\b|\bnothing\s+matters\b|"
+    r"\bgive\s+up\s+on\s+(?:life|everything|myself)\b|\bcan'?t\s+(?:take|handle|cope)\s+(?:it|this|anything)\s+anymore\b|"
+    r"\b(?:a\s+)?burden\s+(?:to|on|for)\s+(?:everyone|my\s+family|them|others)\b|\beveryone\s+(?:would\s+be\s+)?better\s+off\s+without\s+me\b|"
+    r"\b(?:nobody|no\s+one)\s+(?:cares|would\s+(?:notice|miss))\b|\blife\s+(?:is\s+)?(?:pointless|meaningless)\b|"
+    r"\bwhat'?s\s+the\s+point\s+of\s+(?:living|life|anything|it\s+all)\b|\bi\s*(?:feel|am|'m)\s+(?:completely\s+)?(?:broken|empty\s+inside|so\s+alone|trapped)\b|"
+    r"\bkoi\s+fayd[ae]\s+nahi\s+(?:hai\s+)?(?:jeene|zindagi)\b|\bsab\s+bekaar\b|\bzind[ae]gi\s+bekaar\b|\bkisi\s+ko\s+meri\s+parwah\b|"
+    r"\bbahut\s+(?:akela|akeli)\s+(?:hu|hoon|feel)\b|"
+    r"निराश|हताश|कोई\s+फायदा\s+नहीं|सब\s+बेकार|ज़िंदगी\s+बेकार|जिंदगी\s+बेकार|अकेला\s+(?:महसूस|हूं|हूँ)|अकेली\s+(?:महसूस|हूं|हूँ)|"
+    r"किसी\s+को\s+मेरी\s+परवाह|बोझ\s+(?:हूं|हूँ|बन)",
+    re.I)
+
+
+def distress_signals(text: str) -> bool:
+    """Soft lexicon: hopelessness / isolation wording that is not an explicit self-harm phrase. Used to require that the
+    model's reply carries empathy and the crisis resources instead of astrology predictions."""
+    return any(_DISTRESS.search(v) for v in normalize_variants(text) if not v.startswith("\x00"))
+
+
+CRISIS_RESOURCE = re.compile(r"14416|1-800-891-4416|findahelpline", re.I)
+
+
+def has_crisis_resources(text: str) -> bool:
+    return bool(CRISIS_RESOURCE.search(text or ""))
 
 
 def static_reply(cls: InputClass, language: str) -> str:
@@ -129,7 +234,10 @@ _OUTPUT_RULES: list[tuple[OutputClass, re.Pattern[str]]] = [
         r"\b(book|pay for|sponsor)\s+(a\s+)?(puja|pooja|havan|homa|yagna|ritual)\b",
         r"\b(consult|book|pay)\s+(an?\s+)?(astrologer|pandit|jyotishi)\b",
     )),
-    ("caste", _rx(r"\b(brahmin|brahman|kshatriya|vaishya|shudra|sudra|caste|jati|dalit)\b", r"जाति")),
+    ("caste", _rx(r"\b(brahmin|brahman|kshatriya|vaishya|shudra|sudra|caste|dalit)\b",
+                 # Hinglish "jati hai" / "chali jati" is the verb "goes": only the caste noun in caste contexts counts
+                 r"\bj[a]+ti\s+(?:system|vyavastha|bhed|bhedbhav|ke\s+(?:aadhar|adhar|hisaab)|wala|wali)\b", r"\bnich(?:i)?\s+jati\b",
+                 r"जाति(?!\s+है|\s+हैं)")),
     ("leak", _rx(
         r"\bsystem\s+prompt\b", r"\bas per (my|the) (guidelines|instructions|rules|programming)\b",
         r"\b(my|these|the) (guidelines|instructions)\s+(say|state|require|tell|are)\b",
@@ -176,5 +284,9 @@ def scan_output(text: str) -> list[SafetyHit]:
     return hits
 
 
-def canned_output(cls: OutputClass) -> str:
-    return CANNED_OUTPUT[cls]
+def canned_output(cls: str, language: str = "english") -> str:
+    """Fixed reply for a violated output class. "crisis" (a distressed question whose reply lacked the resources)
+    returns the static crisis reply in the user's language."""
+    if cls == "crisis":
+        return static_reply("crisis", language)  # type: ignore[arg-type]
+    return CANNED_OUTPUT[cls]  # type: ignore[index]

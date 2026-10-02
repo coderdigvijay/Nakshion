@@ -118,7 +118,10 @@ async def test_ready_reports_rag_as_information_only(client: AsyncClient, monkey
 
     monkeypatch.setattr(engine, "_self_test_result", True)  # the lifespan (which sets it) does not run in this client
     monkeypatch.setattr(ai, "_rag_status", {"checked": True, "ok": False, "problems": ["no active index version"]})
-    r = await client.get("/health/ready")
+    from app.services import health_service
+
+    health_service.reset_ready_cache()
+    r = await client.get("/health/ready", headers={"X-Cron-Secret": "test-cron-secret"})
     assert r.status_code == 200  # a degraded index never fails readiness
     assert r.json()["checks"]["rag"]["ok"] is False and r.json()["status"] == "ok"
     live = await client.get("/health/live")

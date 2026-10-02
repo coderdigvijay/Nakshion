@@ -54,7 +54,7 @@ The two systems differ in **where the month ends**:
 - **Karka Sankranti** (about 16 July): the start of **Dakshinayana** (southward course).
 - **Tula Sankranti** (about 17 October) and **Vrishchika Sankranti** (about 16 November), and **Dhanu Sankranti** (about 16 December), after which the Kharmas period traditionally pauses weddings in North India.
 
-The date shifts by about a day every few decades because of precession (the sidereal ayanamsa drifts about 50 arc-seconds a year, whereas the sidereal year is used for the Hindu solar calendar). Different conventions about "which side of sunrise or midnight" the ingress falls also shift the observed day.
+Sankranti dates drift later in the Gregorian calendar by about one day every 70 years or so, because the Hindu solar calendar follows the sidereal year (about 365.2564 days) while the Gregorian calendar follows the tropical year (about 365.2425 days); equivalently the ayanamsa grows about 50 arc-seconds a year. Different conventions about "which side of sunrise or midnight" the ingress falls also shift the observed day.
 
 ## Major astronomically tied festivals (brief)
 

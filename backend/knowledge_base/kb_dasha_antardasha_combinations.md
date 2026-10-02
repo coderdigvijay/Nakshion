@@ -8,7 +8,7 @@ sources:
   - "Brihat Parashara Hora Shastra, Vimshottari chapters (via secondary summaries: https://astrosutras.in/index.php/2025/02/27/nakshatra-based-dasha-systems-in-brihat-parashara-hora-shastra/)"
   - "https://jagannathhora.com/vimshottari-mahadasha-calculation-step-by-step/ (antardasha proportion formula)"
   - "https://www.myzodiaq.in/en/online-library/panchang/vimshottari-and-yogini/calculating-vimshottari-dasha-the-120-year-roadmap-of-your-life"
-  - "Brihat Jataka of Varahamihira, tr. Swami Vijnananda (1912), ch. VIII, archive.org BrihatJatakaOfVarahamihiraBySwamiVijnananda (public domain; used to confirm that sub-period logic rests on friendship/placement from the dasha lord)"
+  - "Brihat Jataka of Varahamihira, tr. Swami Vijnananda (1912), ch. VIII, archive.org BrihatJatakaOfVarahamihiraBySwamiVijnananda (public domain; ch. VIII describes a non-Vimshottari dasha where placement from the dasha lord scales sub-period lengths; it does not give Vimshottari antardasha characterisations)"
   - "Parashara's natural friendship table (BPHS ch. 3), as summarised in standard references"
 confidence: medium
 school_notes: "The 81 characterisations are synthesised by this knowledge base from planetary natures and the standard friend/neutral/enemy table; they are not quotations from any classical text. Rahu and Ketu have no friendship table in BPHS; most modern practitioners treat them like Saturn (friends Mercury, Venus, Saturn; enemies Sun, Moon, Mars). Some schools use temporary (tatkalika) friendship by house position as well; the table here uses natural friendship only."
@@ -39,7 +39,7 @@ Friendship is not symmetric in this table (for example the Sun regards Mercury a
 
 ## Reading hint: sub-period lord relative to the Mahadasha lord
 
-Brihat Jataka (Varahamihira) already ties sub-period results to the sub-lord's position counted from the dasha lord (same sign, 5th/9th, 7th, 4th/8th). Many practitioners still check this: a sub-lord in 1, 5, 9 from the dasha lord tends to harmonise; 6, 8, 12 positions tend to create friction or need for adjustment. Treat this as a second-level refinement.
+Brihat Jataka ch. VIII (Varahamihira) is a different dasha scheme from Vimshottari (it ranks periods by the strongest of Lagna/Sun/Moon and kendra/panaphara/apoklima occupants) and uses the sub-lord's placement from the dasha lord (same sign, 5th/9th, 7th, 4th/8th) only to scale sub-period LENGTHS (1/2, 1/3, 1/7, 1/4), not to judge results. Later Parashari practice, as commonly taught today, also reads the sub-lord's house counted from the dasha lord: 1, 5, 9 (and often 3, 11) tend to be read as harmonious; 6, 8, 12 as friction or adjustment [unverified against a specific BPHS verse]. Treat this as a second-level refinement.
 
 ## Ketu Mahadasha (7 years) — Antardashas
 

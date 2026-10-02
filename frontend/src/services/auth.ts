@@ -2,7 +2,7 @@ import api, { API_BASE_URL } from "./api";
 import type { User } from "../types";
 
 export const authService = {
-  register: (data: { email: string; password: string; name: string }) =>
+  register: (data: { email: string; password: string; name: string; terms_accepted: true }) =>
     api.post<{ access_token: string }>("/auth/register", data),
 
   login: (data: { email: string; password: string }) =>
@@ -28,5 +28,6 @@ export const authService = {
 
   getMe: () => api.get<User>("/auth/me"),
 
-  googleOAuthUrl: () => `${API_BASE_URL}/auth/oauth/google`,
+  /** `termsAccepted` adds ?terms=1, which the backend requires to create a NEW account. */
+  googleOAuthUrl: (termsAccepted = false) => `${API_BASE_URL}/auth/oauth/google${termsAccepted ? "?terms=1" : ""}`,
 };

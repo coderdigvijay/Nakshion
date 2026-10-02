@@ -8,6 +8,7 @@ from app.schemas.auth import (
     ChangePasswordIn,
     ForgotPasswordIn,
     LoginIn,
+    PasswordChangedOut,
     OAuthExchangeIn,
     RegisterIn,
     ResetPasswordIn,
@@ -67,8 +68,9 @@ async def me(db: DB, user: CurrentUser) -> UserOut:
 
 
 @router.get("/oauth/google", dependencies=[Depends(rate_limit("oauth_start", 20, 600, per="ip"))])
-async def oauth_google_start() -> RedirectResponse:
-    return RedirectResponse(await oauth_google.authorization_url(), status_code=302)
+async def oauth_google_start(terms: bool = False) -> RedirectResponse:
+    # ?terms=1 : the user ticked the Terms/Privacy checkbox on our page (required to create a NEW account)
+    return RedirectResponse(await oauth_google.authorization_url(terms), status_code=302)
 
 
 @router.get("/oauth/google/callback")
@@ -84,11 +86,12 @@ async def oauth_exchange(body: OAuthExchangeIn, db: DB) -> TokenOut:
     return TokenOut(access_token=await oauth_google.exchange_login_code(db, body.code))
 
 
-@router.post("/change-password", response_model=MessageOut)
-async def change_password(body: ChangePasswordIn, db: DB, user: CurrentUser) -> MessageOut:
-    return MessageOut(
-        message=await auth_service.change_password(db, user, current_password=body.current_password, new_password=body.new_password)
+@router.post("/change-password", response_model=PasswordChangedOut)
+async def change_password(body: ChangePasswordIn, db: DB, user: CurrentUser) -> PasswordChangedOut:
+    message, token = await auth_service.change_password(
+        db, user, current_password=body.current_password, new_password=body.new_password
     )
+    return PasswordChangedOut(message=message, access_token=token)
 
 
 @router.post("/set-password", response_model=MessageOut)

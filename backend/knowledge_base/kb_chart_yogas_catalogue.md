@@ -91,7 +91,7 @@ When birth time is unknown the lagna is unknown, so every lagna-dependent yoga (
 
 **Tendencies.** Opportunity, authority, influence, the ability to convert effort into position. Timing is read through the dashas of the planets involved, so the yoga often "activates" during their periods.
 
-**Strength and cancellation.** Raja yogas weaken when the participants are debilitated, combust, or placed in dusthanas (6, 8, 12). A planet that is both a kendra and a dusthana lord (for instance Mercury for Gemini ascendants, or Jupiter for Capricorn in some readings) carries mixed results.
+**Strength and cancellation.** Raja yogas weaken when the participants are debilitated, combust, or placed in dusthanas (6, 8, 12). A planet that rules both a kendra and a dusthana (for instance Mars for Taurus ascendants: 7th and 12th) carries mixed results.
 
 **How to see it.** Identify the lords of houses 1, 4, 5, 7, 9, 10 and look for them together in one sign, in opposition, or swapped.
 
@@ -203,7 +203,7 @@ When birth time is unknown the lagna is unknown, so every lagna-dependent yoga (
 
 **Tendencies.** Intensity and assertiveness in partnerships, a need to channel drive without conflict, and a call for matching energy levels with a partner. Compatibility traditions treat it as a factor to be balanced, not a barrier; many cancellations exist.
 
-**Cancellations (not evaluated by the engine).** Mars in its own or exalted sign; Mars in Cancer/Leo for some; Jupiter or Venus aspecting or joined with Mars; the partner having a comparable Mars placement; Mars in particular house/sign combinations (for instance 2nd house in Gemini/Virgo; 4th in Aries/Scorpio; 7th in Capricorn; 8th in Sagittarius/Pisces; 12th in Taurus/Libra). Parity matching is the widely used practical remedy.
+**Cancellations (not evaluated by the engine).** Mars in its own or exalted sign; Mars in Cancer/Leo for some [unverified; lists vary]; Jupiter or Venus aspecting or joined with Mars; the partner having a comparable Mars placement; Mars in particular house/sign combinations (for instance 2nd house in Gemini/Virgo; 4th in Aries/Scorpio; 7th in Capricorn; 8th in Sagittarius/Pisces; 12th in Taurus/Libra). Parity matching is the widely used practical remedy.
 
 **How to see it.** Count the house of Mars from lagna and Moon.
 

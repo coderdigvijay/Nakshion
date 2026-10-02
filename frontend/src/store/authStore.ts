@@ -61,12 +61,13 @@ export const useAuthStore = create<AuthState>((set, get) => ({
 
   register: async (email, password, name) => {
     try {
-      const res = await authService.register({ email, password, name });
+      const res = await authService.register({ email, password, name, terms_accepted: true });
       writeToken(res.data.access_token);
       set({ token: res.data.access_token, isAuthenticated: true });
       void get().fetchUser();
     } catch (err) {
-      throw new Error(toApiError(err).detail);
+      const e = toApiError(err);
+      throw new Error(e.code === "TERMS_NOT_ACCEPTED" ? "Please agree to the Terms and Privacy Policy to create an account." : e.detail);
     }
   },
 

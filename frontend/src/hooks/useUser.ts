@@ -13,14 +13,23 @@ export function useUpdateName() {
 }
 
 export function useChangePassword() {
+  // The backend bumps token_version, so the old token is dead: store the fresh one at once.
+  const setToken = useAuthStore((s) => s.setToken);
   return useMutation({
     mutationFn: async (v: { current: string; next: string }) => (await userService.changePassword(v.current, v.next)).data,
+    onSuccess: (data) => {
+      if (data.access_token) setToken(data.access_token);
+    },
   });
 }
 
 export function useSetPassword() {
+  const setToken = useAuthStore((s) => s.setToken);
   return useMutation({
     mutationFn: async (next: string) => (await userService.setPassword(next)).data,
+    onSuccess: (data) => {
+      if (data.access_token) setToken(data.access_token);
+    },
   });
 }
 

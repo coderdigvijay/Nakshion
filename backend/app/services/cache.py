@@ -129,6 +129,14 @@ async def set_json(key: str, value: Any, ttl_s: int) -> None:
         log.warning("cache_write_failed", extra={"key_prefix": key.split(":", 1)[0], "err": type(exc).__name__})
 
 
+async def set_json_nx(key: str, value: Any, ttl_s: int) -> bool:
+    """Set only if absent (fail open). Used so a short-lived fallback never overwrites a better value."""
+    try:
+        return bool(await get_client().set(key, json.dumps(value, default=str, separators=(",", ":")), ex=int(ttl_s), nx=True))
+    except (RedisError, OSError, asyncio.TimeoutError):
+        return False
+
+
 async def delete(*keys: str) -> None:
     if not keys:
         return

@@ -6,6 +6,7 @@
 #
 # Optional:
 #   FRONTEND_ORIGIN=https://your-app.vercel.app   verify CORS allows it (and refuses an unknown origin)
+#   CRON_SECRET=...                                also check database/redis/engine detail (never echoed)
 #   EXPECT_PROD=1                                  also assert docs are disabled, HSTS is sent, source link present
 set -u
 BASE_URL="${BASE_URL:?set BASE_URL, e.g. https://nakshion-api.onrender.com}"
@@ -24,11 +25,16 @@ check "GET /health/live" "$(status "$BASE_URL/health/live")" 200
 has "$(body "$BASE_URL/health/live")" '"status":"ok"' && ok "live body" || bad "live body"
 check "GET /health (alias)" "$(status "$BASE_URL/health")" 200
 
-echo "== readiness (database, redis, engine)"
+echo "== readiness (public body is only ok/degraded; set CRON_SECRET to see the per-dependency detail)"
 ready="$(body "$BASE_URL/health/ready")"
-has "$ready" '"database":true' && ok "database up" || bad "database: $ready"
-has "$ready" '"redis":true'    && ok "redis up"    || bad "redis: $ready"
-has "$ready" '"engine":true'   && ok "ephemeris engine up" || bad "engine: $ready"
+has "$ready" '"status":"ok"' && ok "ready: ok" || bad "ready: $ready"
+has "$ready" '"checks"' && bad "public /health/ready leaks details" || ok "no internals in the public body"
+if [ -n "${CRON_SECRET:-}" ]; then
+  detail="$(body "$BASE_URL/health/ready" -H "X-Cron-Secret: $CRON_SECRET")"
+  has "$detail" '"database":true' && ok "database up" || bad "database: $detail"
+  has "$detail" '"redis":true'    && ok "redis up"    || bad "redis: $detail"
+  has "$detail" '"engine":true'   && ok "ephemeris engine up" || bad "engine: $detail"
+fi
 
 echo "== public endpoints"
 check "daily horoscope" "$(status "$API/horoscopes/daily?sign=leo")" 200

@@ -1,0 +1,1213 @@
+{
+ "summary": {
+  "n": 30,
+  "errors": 2,
+  "general_answer_first": "15/18",
+  "boilerplate_openings": 1,
+  "general_chart_ref_sentences_mean": 1.39,
+  "general_words_mean": 85.0,
+  "words_mean": 82,
+  "shape_flagged": "9/28",
+  "grounded": "28/28",
+  "language_ok": "28/28",
+  "kb_cited_any": "19/28",
+  "kb_provided_any": "28/28",
+  "first_draft_flagged": "12/28",
+  "outcome_ok": "16/28",
+  "latency_p50_s": 3.3,
+  "latency_p95_s": 7.7
+ },
+ "rows": [
+  {
+   "id": 1,
+   "q": "What does Mars mahadasha with Venus antardasha mean?",
+   "lang": "english",
+   "chart": "A",
+   "answer": "Traditions describe the combination of Mars and Venus as a blend of drive and desire where relationships, creative pursuits, and property matters become active. However, your current planetary cycle is actually Venus Mahadasha with Mercury Antardasha rather than a Mars period. This phase tends to favour social connection, creative communication, skill-building, and commerce. To align with these themes, consider setting aside time each week for creative writing or structured planning in your projects.",
+   "sources": [
+    {
+     "source_id": "23fef301f2",
+     "title": "Vimshottari Antardasha Combinations — All 81 Mahadasha/Antardasha Pairs",
+     "section": "rows Venus-Jupiter to Venus-Ketu",
+     "tier": 2
+    },
+    {
+     "source_id": "f543ad61c1",
+     "title": "Vimshottari Antardasha Combinations — All 81 Mahadasha/Antardasha Pairs",
+     "section": "rows Mars-Ketu to Mars-Moon",
+     "tier": 2
+    }
+   ],
+   "kind": "general",
+   "subtype": "dasha_pair",
+   "words": 73,
+   "paragraphs": 1,
+   "concept_first": true,
+   "chart_ref_sentences": 1,
+   "first_sentence": "Traditions describe the combination of Mars and Venus as a blend of drive and desire where relationships, creative pursuits, and property matters become active.",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": true,
+   "kb_provided": 4,
+   "kb_cited": 2,
+   "factor_cites": 2,
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 3330,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 4
+   },
+   "prompt": "chat@v6"
+  },
+  {
+   "id": 2,
+   "q": "What is Gajakesari yoga and how does it form?",
+   "lang": "english",
+   "chart": "A",
+   "answer": "Gajakesari yoga forms when Jupiter occupies a kendra house, specifically the 1st, 4th, 7th, or 10th, counted directly from the sidereal Moon. Traditions differ on the exact weight of secondary factors, but the classic formation relies purely on this angular distance between Jupiter and the Moon. In your sidereal chart, your Moon is in Karka and your Jupiter sits in Simha, placing Jupiter in the 4th house from your Moon. This configuration is traditionally associated with inner stability, sound counsel, and a resilient emotional foundation. As a gentle practice, consider spending a few minutes each day in quiet meditation to center your mind.",
+   "sources": [
+    {
+     "source_id": "65a05e87d2",
+     "title": "Yoga and Dosha Catalogue (engine-aligned)",
+     "section": "Gajakesari Yoga",
+     "tier": 2
+    }
+   ],
+   "kind": "general",
+   "subtype": "yoga",
+   "words": 103,
+   "paragraphs": 1,
+   "concept_first": true,
+   "chart_ref_sentences": 1,
+   "first_sentence": "Gajakesari yoga forms when Jupiter occupies a kendra house, specifically the 1st, 4th, 7th, or 10th, counted directly from the sidereal Moon.",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": true,
+   "kb_provided": 4,
+   "kb_cited": 1,
+   "factor_cites": 2,
+   "outcome": "repaired",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [
+    "hedge"
+   ],
+   "latency_ms": 3982,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 4
+   },
+   "prompt": "chat@v6"
+  },
+  {
+   "id": 3,
+   "q": "What is the result of the Moon in the 7th house?",
+   "lang": "english",
+   "chart": "A",
+   "answer": "Your sidereal Moon is located in Karka within the third house rather than the seventh house, with your Vrishabha lagna setting up a chart where emotional security and daily effort connect through communication and curiosity. Traditions note that having the Moon in the third house brings a curious, communicative, and mentally versatile nature, encouraging strong bonds with siblings and neighbours. You are currently navigating your Venus mahadasha combined with the mercury antardasha, a period that invites you to blend relational grace with intellectual exploration. Consider taking a few minutes each day to write down your shifting thoughts to ground your mental energy.",
+   "sources": [
+    {
+     "source_id": "b4f9d5cb1c",
+     "title": "The Nine Grahas in the Twelve Bhavas (Vedic emphasis)",
+     "section": "Moon in the 1st house / Moon in the 2nd house / Moon in the 3rd house / Moon in ",
+     "tier": 2
+    }
+   ],
+   "kind": "general",
+   "subtype": "planet_house",
+   "words": 102,
+   "paragraphs": 1,
+   "concept_first": true,
+   "chart_ref_sentences": 2,
+   "first_sentence": "Your sidereal Moon is located in Karka within the third house rather than the seventh house, with your Vrishabha lagna setting up a chart where emotional security and daily effort connect through communication and curios",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": false,
+   "kb_provided": 5,
+   "kb_cited": 1,
+   "factor_cites": 4,
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 2146,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 5
+   },
+   "prompt": "chat@v6"
+  },
+  {
+   "id": 4,
+   "q": "What is today's tithi and is it good for starting something new?",
+   "lang": "english",
+   "chart": "A",
+   "answer": "I can't share how I'm set up internally, but I'm happy to keep exploring your chart with you.",
+   "sources": [],
+   "kind": "general",
+   "subtype": "panchang",
+   "words": 18,
+   "paragraphs": 1,
+   "concept_first": false,
+   "chart_ref_sentences": 1,
+   "first_sentence": "I can't share how I'm set up internally, but I'm happy to keep exploring your chart with you.",
+   "shape_flags": [
+    "this is a general question: your FIRST sentence must answer it by naming the concept asked",
+    "answer has 18 words; aim for 80 to 200 words"
+   ],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": false,
+   "kb_provided": 4,
+   "kb_cited": 0,
+   "factor_cites": 0,
+   "outcome": "canned",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [
+    "safety:leak"
+   ],
+   "latency_ms": 4021,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 4
+   },
+   "prompt": "chat@v6"
+  },
+  {
+   "id": 5,
+   "q": "Which remedies are traditionally suggested for a weak Saturn?",
+   "lang": "english",
+   "chart": "A",
+   "answer": "Traditional Vedic practices associated with Saturn often include offering support through charity on Saturdays, observing quiet contemplation or fasting on that day, and keeping sacred geometric diagrams in your workspace. Since your chart features your sidereal Saturn placed in Makara in the ninth house, you might also reflect on how disciplined routines and steady mentorship support your long-term path. Establishing a consistent daily practice of reflection is a wonderful way to work with these themes.",
+   "sources": [
+    {
+     "source_id": "2c897b2d24",
+     "title": "Vedic astrology overview",
+     "section": "Other Remedies",
+     "tier": 1
+    }
+   ],
+   "kind": "general",
+   "subtype": "remedy",
+   "words": 75,
+   "paragraphs": 1,
+   "concept_first": true,
+   "chart_ref_sentences": 1,
+   "first_sentence": "Traditional Vedic practices associated with Saturn often include offering support through charity on Saturdays, observing quiet contemplation or fasting on that day, and keeping sacred geometric diagrams in your workspac",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": false,
+   "kb_provided": 5,
+   "kb_cited": 1,
+   "factor_cites": 2,
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 2873,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 5
+   },
+   "prompt": "chat@v6"
+  },
+  {
+   "id": 6,
+   "q": "How does Ashtakoota matching work and what is a good score?",
+   "lang": "english",
+   "chart": "A",
+   "answer": "Ashtakoota matching is a traditional Vedic system that compares two birth charts by examining the distance and relationship between the Moon signs and nakshatras of both individuals. Traditions differ on certain scoring variants and rule interpretations, but the method evaluates compatibility across eight different categories totaling 36 possible points. Many practitioners view a score above 18 as a baseline of general compatibility, while higher totals point to greater harmony in shared life themes. Beyond the numerical sum, individual factors such as Dina and Gana koota are often reviewed to understand daily communication and temperament patterns. For reflection, consider how mutual respect, shared values, and open dialogue remain central to any partnership regardless of numerical totals.",
+   "sources": [
+    {
+     "source_id": "5c441d73ce",
+     "title": "Ashtakoota Guna Milan: The Eight Kootas, Scoring Tables and Variants",
+     "section": "Tara (Dina) Koota (3 points)",
+     "tier": 2
+    },
+    {
+     "source_id": "dcd6fd1428",
+     "title": "Ashtakoota Guna Milan: The Eight Kootas, Scoring Tables and Variants",
+     "section": "Regional Variants",
+     "tier": 2
+    },
+    {
+     "source_id": "b255dc4c0a",
+     "title": "Vedic Compatibility by Relationship Type: Marriage, Friendship, Family and Business",
+     "section": "Limits of Ashtakoota for non-romantic use",
+     "tier": 2
+    }
+   ],
+   "kind": "general",
+   "subtype": "compat",
+   "words": 115,
+   "paragraphs": 1,
+   "concept_first": true,
+   "chart_ref_sentences": 0,
+   "first_sentence": "Ashtakoota matching is a traditional Vedic system that compares two birth charts by examining the distance and relationship between the Moon signs and nakshatras of both individuals.",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": true,
+   "kb_provided": 5,
+   "kb_cited": 3,
+   "factor_cites": 1,
+   "outcome": "repaired",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [
+    "hedge"
+   ],
+   "latency_ms": 5067,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 5
+   },
+   "prompt": "chat@v6"
+  },
+  {
+   "id": 7,
+   "q": "What does Saturn Mahadasha usually bring?",
+   "lang": "english",
+   "chart": "A",
+   "answer": "While your chart is currently experiencing a Venus Mahadasha and Mercury Antardasha, understanding Saturn periods highlights the importance of steady effort, accountability, and caring for your health. A helpful practice during demanding phases is to establish a grounded daily routine and practice patience with long-term projects.",
+   "sources": [],
+   "kind": "general",
+   "subtype": "dasha",
+   "words": 46,
+   "paragraphs": 1,
+   "concept_first": true,
+   "chart_ref_sentences": 1,
+   "first_sentence": "While your chart is currently experiencing a Venus Mahadasha and Mercury Antardasha, understanding Saturn periods highlights the importance of steady effort, accountability, and caring for your health.",
+   "shape_flags": [
+    "answer has 46 words; aim for 80 to 200 words"
+   ],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": false,
+   "kb_provided": 4,
+   "kb_cited": 0,
+   "factor_cites": 2,
+   "outcome": "stripped",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [
+    "claim"
+   ],
+   "latency_ms": 3734,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 4
+   },
+   "prompt": "chat@v6"
+  },
+  {
+   "id": 8,
+   "q": "What is Sade Sati?",
+   "lang": "english",
+   "chart": "A",
+   "answer": "Sade Sati is a transit period where Saturn moves through the twelfth, first, and second signs from your natal sidereal Moon in Karka. Lasting approximately seven and a half years, this cycle acts as a time of testing, maturity, and personal consolidation rather than a foreordained crisis. Saturn rewards patience, discipline, and honest effort while encouraging you to restructure areas of life that have become fragile. For reflection, consider keeping a simple daily journal to track your personal growth and evolving responsibilities.",
+   "sources": [
+    {
+     "source_id": "d1a582390f",
+     "title": "Sade Sati, Ashtama Shani and Kantaka Shani (Dhaiya) — Saturn Transit Periods",
+     "section": "What Sade Sati is",
+     "tier": 2
+    }
+   ],
+   "kind": "general",
+   "subtype": "sade_sati",
+   "words": 82,
+   "paragraphs": 1,
+   "concept_first": true,
+   "chart_ref_sentences": 1,
+   "first_sentence": "Sade Sati is a transit period where Saturn moves through the twelfth, first, and second signs from your natal sidereal Moon in Karka.",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": false,
+   "kb_provided": 4,
+   "kb_cited": 1,
+   "factor_cites": 1,
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 2019,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 4
+   },
+   "prompt": "chat@v6"
+  },
+  {
+   "id": 9,
+   "q": "What does Rahu Mahadasha with Jupiter antardasha mean for me?",
+   "lang": "english",
+   "chart": "A",
+   "answer": "Your birth chart features your sidereal Lagna in Vrishabha, and you are currently experiencing your Venus Mahadasha with a Mercury Antardasha. While you asked about a different planetary period, your current active cycle invites a strong focus on analytical tasks, media, and communication themes as your Mercury Antardasha unfolds. Your sidereal Sun sits in Meena in the eleventh house, while your sidereal Moon resides in Karka in the third house within the Ashlesha nakshatra. To support your daily focus during this phase, consider keeping a regular journaling routine to reflect on your goals.",
+   "sources": [],
+   "kind": "general",
+   "subtype": "dasha_pair",
+   "words": 93,
+   "paragraphs": 1,
+   "concept_first": false,
+   "chart_ref_sentences": 3,
+   "first_sentence": "Your birth chart features your sidereal Lagna in Vrishabha, and you are currently experiencing your Venus Mahadasha with a Mercury Antardasha.",
+   "shape_flags": [
+    "do not open with \"Your birth chart is...\" boilerplate; start with the answer itself",
+    "this is a general question: your FIRST sentence must answer it by naming Rahu, Jupiter and",
+    "3 sentences talk about the user's own chart; a general question gets at most one short per"
+   ],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": false,
+   "kb_provided": 4,
+   "kb_cited": 0,
+   "factor_cites": 6,
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 2172,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 4
+   },
+   "prompt": "chat@v6"
+  },
+  {
+   "id": 10,
+   "q": "How is my career looking?",
+   "lang": "english",
+   "chart": "A",
+   "answer": "Your sidereal chart places Mars in Kumbha in the tenth house, infusing your professional path with ambitious drive and a strong focus on impactful work. With your sidereal Jupiter residing in Simha in the fourth house, you find steady support and natural growth through foundational stability and inner confidence. Furthermore, you are currently moving through the Venus Mahadasha coupled with the Mercury antardasha, a dynamic phase that brings a blend of relational refinement and sharp intellectual engagement to your daily endeavors. To ground this energy productive, consider setting aside quiet time each week to map out your long-term professional milestones with clarity and patience.",
+   "sources": [
+    {
+     "source_id": "f98ecc1202",
+     "title": "Career in astrology",
+     "section": "Jupiter — The Expander / Saturn — The Master Builder",
+     "tier": 1
+    }
+   ],
+   "kind": "personal",
+   "subtype": "other",
+   "words": 104,
+   "paragraphs": 1,
+   "concept_first": null,
+   "chart_ref_sentences": 2,
+   "first_sentence": "Your sidereal chart places Mars in Kumbha in the tenth house, infusing your professional path with ambitious drive and a strong focus on impactful work.",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": false,
+   "kb_provided": 4,
+   "kb_cited": 1,
+   "factor_cites": 5,
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 3316,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 4
+   },
+   "prompt": "chat@v6"
+  },
+  {
+   "id": 11,
+   "q": "What is my current dasha and what does it mean?",
+   "lang": "english",
+   "chart": "A",
+   "answer": "Your chart is currently running your Venus Mahadasha, paired with the Mercury Antardasha. Within the Vedic sidereal system, your Venus period sets a broad season for personal values and relational reflection, while your Mercury sub-period brings a strong focus toward intellectual pursuits, communication, and planning. With your sidereal Sun and Mercury both positioned in Meena in the eleventh house, this phase tends to highlight collaborative networks, long-term aspirations, and meaningful dialogue with friends or professional circles. As a practical suggestion for this season, consider journaling your long-term goals regularly to bring added clarity to your ambitions.",
+   "sources": [
+    {
+     "source_id": "0832483341",
+     "title": "Hinglish Astrology Phrasebook - how users ask, and what concept it maps to",
+     "section": "E. Dasha and timing",
+     "tier": 1
+    }
+   ],
+   "kind": "personal",
+   "subtype": "other",
+   "words": 96,
+   "paragraphs": 1,
+   "concept_first": null,
+   "chart_ref_sentences": 3,
+   "first_sentence": "Your chart is currently running your Venus Mahadasha, paired with the Mercury Antardasha.",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": true,
+   "kb_provided": 4,
+   "kb_cited": 1,
+   "factor_cites": 4,
+   "outcome": "repaired",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [
+    "hedge"
+   ],
+   "latency_ms": 4215,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 4
+   },
+   "prompt": "chat@v6"
+  },
+  {
+   "id": 12,
+   "q": "Will I get married soon?",
+   "lang": "english",
+   "chart": "A",
+   "answer": "Your sidereal chart shows your Taurus ascendant paired with a sidereal Moon in Cancer and Ashlesha nakshatra. You are currently navigating your Venus Mahadasha and Mercury Antardasha period, which tends to bring themes of communication, connections, and personal reflection to the forefront of your daily life. While astrology cannot predict exact calendar events like the timing of marriage, periods influenced by Venus often invite you to examine what you truly value in partnerships and companionship. It can be helpful to focus on self-understanding and cultivating clear communication in your current connections rather than looking for fixed timelines.",
+   "sources": [],
+   "kind": "personal",
+   "subtype": "other",
+   "words": 97,
+   "paragraphs": 1,
+   "concept_first": null,
+   "chart_ref_sentences": 3,
+   "first_sentence": "Your sidereal chart shows your Taurus ascendant paired with a sidereal Moon in Cancer and Ashlesha nakshatra.",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": true,
+   "kb_provided": 5,
+   "kb_cited": 0,
+   "factor_cites": 5,
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 2240,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 5
+   },
+   "prompt": "chat@v6"
+  },
+  {
+   "id": 13,
+   "q": "मंगल महादशा में शुक्र की अंतर्दशा का क्या मतलब होता है?",
+   "lang": "hindi",
+   "chart": "A",
+   "error": "LLMUnavailable",
+   "latency_ms": 8182
+  },
+  {
+   "id": 14,
+   "q": "शनि की साढ़ेसाती क्या होती है?",
+   "lang": "hindi",
+   "chart": "A",
+   "answer": "शनि की साढ़ेसाती वह सात-साढ़े सात साल की अवधि होती है जब गोचर का शनि चंद्र राशि से बारहवें, पहले और दूसरे भाव से गुजरता है। आपकी वैदिक राशि कर्क है और आपके चार्ट में शनि मकर राशि में स्थित है। इस समयावधि को जीवन में अनुशासन, धैर्य और परीक्षा का समय माना जाता है, जो चक्र के रूप में आती है। यह किसी भी तरह का अभिशाप या आपदा नहीं है, बल्कि पुरानी आदतों को सुधारने तथा आंतरिक मजबूती लाने का अवसर प्रदान करती है। इस दौरान स्वास्थ्य का ध्यान रखना और शांत रहना बेहतर रहेगा।",
+   "sources": [
+    {
+     "source_id": "d1a582390f",
+     "title": "Sade Sati, Ashtama Shani and Kantaka Shani (Dhaiya) — Saturn Transit Periods",
+     "section": "What Sade Sati is",
+     "tier": 2
+    }
+   ],
+   "kind": "general",
+   "subtype": "sade_sati",
+   "words": 97,
+   "paragraphs": 1,
+   "concept_first": true,
+   "chart_ref_sentences": 1,
+   "first_sentence": "शनि की साढ़ेसाती वह सात-साढ़े सात साल की अवधि होती है जब गोचर का शनि चंद्र राशि से बारहवें, पहले और दूसरे भाव से गुजरता है।",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": true,
+   "kb_provided": 4,
+   "kb_cited": 1,
+   "factor_cites": 2,
+   "outcome": "repaired_soft",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [
+    "style"
+   ],
+   "latency_ms": 4064,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 4
+   },
+   "prompt": "chat@v6"
+  },
+  {
+   "id": 15,
+   "q": "मेरी कुंडली में अभी कौन सी दशा चल रही है?",
+   "lang": "hindi",
+   "chart": "A",
+   "answer": "वर्तमान में आपकी विंशोत्तरी महादशा शुक्र की चल रही है और इसके अंतर्गत बुध की अंतर्दशा चल रही है। यह समय आपके जीवन में रचनात्मकता, संवाद और नए विचारों को बढ़ावा देने वाला हो सकता है। अपने दैनिक जीवन में कुछ समय कला या लेखन के लिए निकालें, जिससे आपको आंतरिक शांति और स्पष्टता मिल सके।",
+   "sources": [
+    {
+     "source_id": "0832483341",
+     "title": "Hinglish Astrology Phrasebook - how users ask, and what concept it maps to",
+     "section": "E. Dasha and timing",
+     "tier": 1
+    },
+    {
+     "source_id": "7904607018",
+     "title": "Hindi-English Jyotish Glossary (Devanagari, transliteration, English gloss)",
+     "section": "rows महादशा नाथ to दशा विचार",
+     "tier": 1
+    }
+   ],
+   "kind": "personal",
+   "subtype": "other",
+   "words": 56,
+   "paragraphs": 1,
+   "concept_first": null,
+   "chart_ref_sentences": 1,
+   "first_sentence": "वर्तमान में आपकी विंशोत्तरी महादशा शुक्र की चल रही है और इसके अंतर्गत बुध की अंतर्दशा चल रही है।",
+   "shape_flags": [
+    "answer has 56 words; aim for 90 to 270 words"
+   ],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": false,
+   "kb_provided": 5,
+   "kb_cited": 2,
+   "factor_cites": 2,
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 1826,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 5
+   },
+   "prompt": "chat@v6"
+  },
+  {
+   "id": 16,
+   "q": "Mangal mahadasha mein Shukra ki antardasha ka kya matlab hota hai?",
+   "lang": "hinglish",
+   "chart": "A",
+   "error": "LLMUnavailable",
+   "latency_ms": 7720
+  },
+  {
+   "id": 17,
+   "q": "Rahu Kaal kya hota hai aur kya isme kaam shuru karna chahiye?",
+   "lang": "hinglish",
+   "chart": "A",
+   "answer": "Rahu Kaal din ka ek aisa samay hai jise kai panchang aur paramparaon mein naye kaamo ki shuruat ke liye avoid kiya jata hai, halanki traditions differ karti hain kyunki yah mukhya shastron ki bajaye kshetriya manniyatha hai. Aapke chart ke anusar aapki Venus mahadasha aur Mercury antardasha chal rahi hai, jiske dauran aap apani rashi aur nakshatra ke anukul chintan kar sakte hain. Is avdhi mein naye karya aarambh karne se bacha jata hai jabki routine ke kaam chalte rehte hain.",
+   "sources": [
+    {
+     "source_id": "79d2f7fb50",
+     "title": "Daily Timing Windows: Rahu Kaal, Yamaganda, Gulika, Abhijit, Brahma Muhurta and Hora",
+     "section": "Rahu Kaal (Rahu Kalam)",
+     "tier": 2
+    }
+   ],
+   "kind": "general",
+   "subtype": "panchang",
+   "words": 82,
+   "paragraphs": 1,
+   "concept_first": true,
+   "chart_ref_sentences": 1,
+   "first_sentence": "Rahu Kaal din ka ek aisa samay hai jise kai panchang aur paramparaon mein naye kaamo ki shuruat ke liye avoid kiya jata hai, halanki traditions differ karti hain kyunki yah mukhya shastron ki bajaye kshetriya manniyatha ",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": true,
+   "kb_provided": 5,
+   "kb_cited": 1,
+   "factor_cites": 3,
+   "outcome": "repaired_soft",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [
+    "citation",
+    "hedge",
+    "style"
+   ],
+   "latency_ms": 4805,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 5
+   },
+   "prompt": "chat@v6"
+  },
+  {
+   "id": 18,
+   "q": "Meri Shani ki sade sati kaisi rahegi?",
+   "lang": "hinglish",
+   "chart": "B",
+   "answer": "I describe compatibility in terms of temperament and values, not caste or community.",
+   "sources": [],
+   "kind": "personal",
+   "subtype": "sade_sati",
+   "words": 13,
+   "paragraphs": 1,
+   "concept_first": null,
+   "chart_ref_sentences": 0,
+   "first_sentence": "I describe compatibility in terms of temperament and values, not caste or community.",
+   "shape_flags": [
+    "answer has 13 words; aim for 90 to 270 words"
+   ],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": false,
+   "kb_provided": 4,
+   "kb_cited": 0,
+   "factor_cites": 0,
+   "outcome": "canned",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [
+    "safety:caste"
+   ],
+   "latency_ms": 4689,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 4
+   },
+   "prompt": "chat@v6"
+  },
+  {
+   "id": 19,
+   "q": "What is my Lagna and what does the 10th house say about my career?",
+   "lang": "english",
+   "chart": "B",
+   "answer": "Your birth time is not known, so your Ascendant, Lagna, houses, and house-based details cannot be determined. Your sidereal Moon is in Meena (Pisces) within Revati nakshatra, and your sidereal Sun is in Karka (Cancer). You are currently running your Moon Mahadasha with Rahu Antardasha. To explore your chart further, it can be helpful to focus on your emotional patterns and general tendencies rather than specific house matters. Consider taking a quiet moment each day for reflective journaling to help navigate your current dasha periods with greater ease.",
+   "sources": [],
+   "kind": "personal",
+   "subtype": "other",
+   "words": 88,
+   "paragraphs": 1,
+   "concept_first": null,
+   "chart_ref_sentences": 5,
+   "first_sentence": "Your birth time is not known, so your Ascendant, Lagna, houses, and house-based details cannot be determined.",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": false,
+   "kb_provided": 5,
+   "kb_cited": 0,
+   "factor_cites": 5,
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 2023,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 5
+   },
+   "prompt": "chat@v6"
+  },
+  {
+   "id": 20,
+   "q": "What does Moon Mahadasha with Rahu Antardasha mean?",
+   "lang": "english",
+   "chart": "B",
+   "answer": "Your birth time is not known, so specific house placements and exact dates cannot be determined, but your approximate chart shows your sidereal Moon in Meena with Revati nakshatra during your current Moon Mahadasha and Rahu Antardasha. This period tends to bring a restless mind, active imagination, and unconventional experiences, which can sometimes lead to worry or unclear thinking. Engaging in steady routines and grounding practices can be particularly supportive right now.",
+   "sources": [
+    {
+     "source_id": "8bd466194a",
+     "title": "Vimshottari Antardasha Combinations — All 81 Mahadasha/Antardasha Pairs",
+     "section": "rows Moon-Moon to Moon-Saturn",
+     "tier": 2
+    }
+   ],
+   "kind": "general",
+   "subtype": "dasha_pair",
+   "words": 72,
+   "paragraphs": 1,
+   "concept_first": true,
+   "chart_ref_sentences": 1,
+   "first_sentence": "Your birth time is not known, so specific house placements and exact dates cannot be determined, but your approximate chart shows your sidereal Moon in Meena with Revati nakshatra during your current Moon Mahadasha and R",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": true,
+   "kb_provided": 4,
+   "kb_cited": 1,
+   "factor_cites": 5,
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 1937,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 4
+   },
+   "prompt": "chat@v6"
+  },
+  {
+   "id": 21,
+   "q": "Is Manglik dosha a problem in marriage?",
+   "lang": "english",
+   "chart": "A",
+   "answer": "Your sidereal Mars is in Kumbha in the tenth house from your Vrishabha lagna, and traditional guidelines consider various placements when evaluating Manglik dosha. Traditions differ widely on cancellations and severity, and many modern practitioners view this configuration as just one factor to weigh alongside overall chart compatibility, communication, and shared values rather than a fixed barrier. Take time to reflect on your own personal growth and relationship patterns.",
+   "sources": [
+    {
+     "source_id": "f05a5a1995",
+     "title": "Vedic astrology overview",
+     "section": "Mangal Dosha (Mars Affliction)",
+     "tier": 1
+    },
+    {
+     "source_id": "598b6db792",
+     "title": "Matching Doshas (Nadi, Bhakoot, Gana, Manglik) and Their Cancellations",
+     "section": "Manglik (Kuja / Mangal) Dosha: the rule",
+     "tier": 2
+    }
+   ],
+   "kind": "general",
+   "subtype": "compat",
+   "words": 69,
+   "paragraphs": 1,
+   "concept_first": true,
+   "chart_ref_sentences": 1,
+   "first_sentence": "Your sidereal Mars is in Kumbha in the tenth house from your Vrishabha lagna, and traditional guidelines consider various placements when evaluating Manglik dosha.",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": true,
+   "kb_provided": 5,
+   "kb_cited": 2,
+   "factor_cites": 2,
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 1885,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 5
+   },
+   "prompt": "chat@v6"
+  },
+  {
+   "id": 22,
+   "q": "Should I wear a blue sapphire for Saturn?",
+   "lang": "english",
+   "chart": "A",
+   "answer": "Your sidereal Saturn resides in Makara in the 9th house from your Vrishabha Lagna, bringing a focused and disciplined influence to higher learning and philosophy. Traditional astrology often discusses gemstones like blue sapphire for strengthening Saturn, but it is best to avoid purchasing paid remedies or gemstones. Instead, you might explore quieter personal routines or consistent self-reflection to connect with Saturn's grounding themes.",
+   "sources": [],
+   "kind": "personal",
+   "subtype": "concept",
+   "words": 63,
+   "paragraphs": 1,
+   "concept_first": null,
+   "chart_ref_sentences": 1,
+   "first_sentence": "Your sidereal Saturn resides in Makara in the 9th house from your Vrishabha Lagna, bringing a focused and disciplined influence to higher learning and philosophy.",
+   "shape_flags": [
+    "answer has 63 words; aim for 90 to 270 words"
+   ],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": false,
+   "kb_provided": 4,
+   "kb_cited": 0,
+   "factor_cites": 3,
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 2000,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 4
+   },
+   "prompt": "chat@v6"
+  },
+  {
+   "id": 23,
+   "q": "What does Venus in the 5th house mean?",
+   "lang": "english",
+   "chart": "C",
+   "answer": "With your tropical Sun and tropical Saturn both placed in the 8th house, your journey tends to center around deep transformation, shared resources, and profound psychological exploration rather than standard romantic entertainment. A helpful practice for navigating this intense energy is to channel your focus into reflective writing or structured creative outlets that allow you to process deep feelings safely.",
+   "sources": [],
+   "kind": "general",
+   "subtype": "planet_house",
+   "words": 60,
+   "paragraphs": 1,
+   "concept_first": false,
+   "chart_ref_sentences": 1,
+   "first_sentence": "With your tropical Sun and tropical Saturn both placed in the 8th house, your journey tends to center around deep transformation, shared resources, and profound psychological exploration rather than standard romantic ent",
+   "shape_flags": [
+    "this is a general question: your FIRST sentence must answer it by naming Venus and what it"
+   ],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": true,
+   "kb_provided": 4,
+   "kb_cited": 0,
+   "factor_cites": 5,
+   "outcome": "stripped",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [
+    "claim"
+   ],
+   "latency_ms": 6599,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 4
+   },
+   "prompt": "chat@v6"
+  },
+  {
+   "id": 24,
+   "q": "What does Ketu in the 12th house mean?",
+   "lang": "english",
+   "chart": "A",
+   "answer": "Your sidereal Ketu is in Mithuna located in the 2nd house from your Vrishabha lagna, rather than the 12th house. With Ketu in the 2nd house, traditions suggest a natural sense of detachment regarding material resources and family matters, often bringing an unconventional approach to speech and finances. You are currently running your Venus mahadasha with Mercury antardasha, which invites a focus on learning, communication, and connections with others. Consider setting aside quiet time daily to reflect on your personal values without external pressures.",
+   "sources": [
+    {
+     "source_id": "7ddc840b73",
+     "title": "The Nine Grahas in the Twelve Bhavas (Vedic emphasis)",
+     "section": "Ketu in the 1st house / Ketu in the 2nd house / Ketu in the 3rd house / Ketu in ",
+     "tier": 2
+    }
+   ],
+   "kind": "general",
+   "subtype": "planet_house",
+   "words": 84,
+   "paragraphs": 1,
+   "concept_first": true,
+   "chart_ref_sentences": 2,
+   "first_sentence": "Your sidereal Ketu is in Mithuna located in the 2nd house from your Vrishabha lagna, rather than the 12th house.",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": false,
+   "kb_provided": 5,
+   "kb_cited": 1,
+   "factor_cites": 4,
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 1876,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 5
+   },
+   "prompt": "chat@v6"
+  },
+  {
+   "id": 25,
+   "q": "Explain Vimshottari dasha in detail",
+   "lang": "english",
+   "chart": "A",
+   "answer": "Vimshottari is a nakshatra-based planetary period system that divides a 120-year human life into nine consecutive major periods known as Mahadashas, each ruled by one of the nine grahas. This framework acts as a timing mechanism, highlighting which planetary themes are currently active in your life rather than operating as a standalone prediction machine. At birth, the exact placement of your sidereal Moon in the Ashlesha nakshatra determines your starting period and the sequence of subsequent lords. For your sidereal Taurus Ascendant chart, you are currently moving through your Venus Mahadasha accompanied by the Mercury Antardasha. When evaluating these periods, traditions consider multiple layers including the houses a planet rules, its sign placement, and the condition of the nakshatra lord. For instance, your sidereal Sun and Mercury reside in Meena in the eleventh house, while your sidereal Moon occupies Karka in the third house. Meanwhile, your sidereal Saturn sits in Makara in the ninth house, bringing its own structural influence to your timeline. As you reflect on these cycles, consider keeping a personal journal to track how the shifting sub-periods resonate with your daily experiences and creative aspirations.",
+   "sources": [
+    {
+     "source_id": "6bb6b48d12",
+     "title": "Vimshottari Dasha — Foundations, Calculation and Reading",
+     "section": "What the system is",
+     "tier": 2
+    }
+   ],
+   "kind": "general",
+   "subtype": "concept",
+   "words": 188,
+   "paragraphs": 1,
+   "concept_first": true,
+   "chart_ref_sentences": 4,
+   "first_sentence": "Vimshottari is a nakshatra-based planetary period system that divides a 120-year human life into nine consecutive major periods known as Mahadashas, each ruled by one of the nine grahas.",
+   "shape_flags": [
+    "4 sentences talk about the user's own chart; a general question gets at most one short per"
+   ],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": false,
+   "kb_provided": 5,
+   "kb_cited": 1,
+   "factor_cites": 4,
+   "outcome": "repaired",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [
+    "hedge"
+   ],
+   "latency_ms": 4649,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 5
+   },
+   "prompt": "chat@v6"
+  },
+  {
+   "id": 26,
+   "q": "What is the Navamsa chart used for?",
+   "lang": "english",
+   "chart": "A",
+   "answer": "In Vedic astrology, the Navamsa chart is considered the most important divisional chart, consulted alongside your birth chart to understand deeper themes. It is widely used to explore relationship and marriage dynamics, your spiritual path and soul purpose, and the long-term fruition of planetary potentials under your current Venus Mahadasha and Mercury Antardasha. While your main chart shows the overall promise of your placements, the Navamsa reveals how those themes manifest and deliver results over time. You might reflect on how your inner values shape your partnerships.",
+   "sources": [
+    {
+     "source_id": "a9f4323544",
+     "title": "Divisional Charts (Vargas): Purpose, Computation and Reading",
+     "section": "Worked example / Vargottama",
+     "tier": 2
+    },
+    {
+     "source_id": "a1c0d65ec8",
+     "title": "Vedic astrology overview",
+     "section": "The Navamsa Chart (D9)",
+     "tier": 1
+    },
+    {
+     "source_id": "18e2ca7c3d",
+     "title": "Classical Vedic principles (Parashari)",
+     "section": "The Navamsha (D-9): The Most Important Divisional Chart",
+     "tier": 2
+    }
+   ],
+   "kind": "general",
+   "subtype": "concept",
+   "words": 87,
+   "paragraphs": 1,
+   "concept_first": true,
+   "chart_ref_sentences": 3,
+   "first_sentence": "In Vedic astrology, the Navamsa chart is considered the most important divisional chart, consulted alongside your birth chart to understand deeper themes.",
+   "shape_flags": [
+    "3 sentences talk about the user's own chart; a general question gets at most one short per"
+   ],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": false,
+   "kb_provided": 5,
+   "kb_cited": 3,
+   "factor_cites": 2,
+   "outcome": "repaired",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [
+    "citation"
+   ],
+   "latency_ms": 3689,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 5
+   },
+   "prompt": "chat@v6"
+  },
+  {
+   "id": 27,
+   "q": "Is today good for me to start a business?",
+   "lang": "english",
+   "chart": "A",
+   "answer": "Your sidereal Vrishabha lagna pairs with your sidereal Karka Moon in Ashlesha nakshatra, while your current Venus mahadasha combined with your mercury antardasha highlights intellectual enterprise and trade. Tradition views venture planning through active periods and supportive transits, but daily success also relies on clear agreements and steady preparation rather than timing alone. It is wise to review your contracts carefully and ensure your financial groundwork is solid before taking any major commercial steps.",
+   "sources": [
+    {
+     "source_id": "2112229021",
+     "title": "Vedic Compatibility by Relationship Type: Marriage, Friendship, Family and Business",
+     "section": "Business partnership",
+     "tier": 2
+    }
+   ],
+   "kind": "personal",
+   "subtype": "other",
+   "words": 74,
+   "paragraphs": 1,
+   "concept_first": null,
+   "chart_ref_sentences": 1,
+   "first_sentence": "Your sidereal Vrishabha lagna pairs with your sidereal Karka Moon in Ashlesha nakshatra, while your current Venus mahadasha combined with your mercury antardasha highlights intellectual enterprise and trade.",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": false,
+   "kb_provided": 5,
+   "kb_cited": 1,
+   "factor_cites": 5,
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 2091,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 5
+   },
+   "prompt": "chat@v6"
+  },
+  {
+   "id": 28,
+   "q": "How will my Saturn return affect me?",
+   "lang": "english",
+   "chart": "C",
+   "answer": "With your natal Saturn in Sagittarius in the 8th house, your Saturn return highlights a deep period of personal restructuring around shared resources, emotional depth, and long-term commitments. Your tropical Aries rising and your tropical Sun in Scorpio bring intensity and a drive for authentic transformation, encouraging you to release old structures that no longer serve your growth. This phase invites you to confront inner limitations with honesty and build enduring security on your own terms. Consider setting aside quiet time each week to journal about which responsibilities truly align with your personal values.",
+   "sources": [
+    {
+     "source_id": "16b91233ff",
+     "title": "Transits and timing",
+     "section": "First Saturn Return (Ages 28-30) / Second Saturn Return (Ages 57-59) / Third Sat",
+     "tier": 1
+    }
+   ],
+   "kind": "personal",
+   "subtype": "concept",
+   "words": 94,
+   "paragraphs": 1,
+   "concept_first": null,
+   "chart_ref_sentences": 2,
+   "first_sentence": "With your natal Saturn in Sagittarius in the 8th house, your Saturn return highlights a deep period of personal restructuring around shared resources, emotional depth, and long-term commitments.",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": false,
+   "kb_provided": 5,
+   "kb_cited": 1,
+   "factor_cites": 4,
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 2216,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 5
+   },
+   "prompt": "chat@v6"
+  },
+  {
+   "id": 29,
+   "q": "Bhakoot dosha kya hota hai aur kya yeh cancel ho sakta hai?",
+   "lang": "hinglish",
+   "chart": "A",
+   "answer": "Bhakoot dosha tab banta hai jab do kundliyon ke Moon signs aapas me khaas sthano par hote hain, jise aam taur par talmel aur vicharo me antar se joda jata hai. Traditions differ iske parihara aur cancellation ke niyamo par, aur kuch srot mante hain ki agar rashiyo ke swami mitra hon ya samaan hon, to iska prabhav kam ho sakta hai. Yeh vishesh roop se parivarik aur gharelu talmel ke aakalan me dekha jata hai. Is vishay par aur adhik vichar karne ke liye apni patri ke anusar sanchalan dekhein.",
+   "sources": [
+    {
+     "source_id": "831401926c",
+     "title": "Matching Doshas (Nadi, Bhakoot, Gana, Manglik) and Their Cancellations",
+     "section": "Bhakoot Dosha",
+     "tier": 2
+    }
+   ],
+   "kind": "general",
+   "subtype": "compat",
+   "words": 91,
+   "paragraphs": 1,
+   "concept_first": true,
+   "chart_ref_sentences": 0,
+   "first_sentence": "Bhakoot dosha tab banta hai jab do kundliyon ke Moon signs aapas me khaas sthano par hote hain, jise aam taur par talmel aur vicharo me antar se joda jata hai.",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": true,
+   "kb_provided": 3,
+   "kb_cited": 1,
+   "factor_cites": 1,
+   "outcome": "repaired",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [
+    "hedge"
+   ],
+   "latency_ms": 4684,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 3
+   },
+   "prompt": "chat@v6"
+  },
+  {
+   "id": 30,
+   "q": "Moon Venus ke saath hone ka kya matlab hai? Aur meri Moon kahan hai?",
+   "lang": "hinglish",
+   "chart": "A",
+   "answer": "Aapki sidereal Moon Karka rashi mein Ashlesha nakshatra mein sthit hai. Jahan tak Moon aur Venus ke sath hone ki baat hai, aapke chart mein dono ek sath nahi hain, balki aapki sidereal Moon Karka mein hai aur aapki mahadasha Venus ki chal rahi hai, jo ki ek anukul samay hai creative aur relationship growth ke liye. Apne man ki shanti ke liye meditation aur artistic hobbies par dhyan dena ek accha vikalp rahega.",
+   "sources": [],
+   "kind": "personal",
+   "subtype": "concept",
+   "words": 74,
+   "paragraphs": 1,
+   "concept_first": null,
+   "chart_ref_sentences": 2,
+   "first_sentence": "Aapki sidereal Moon Karka rashi mein Ashlesha nakshatra mein sthit hai.",
+   "shape_flags": [],
+   "grounded": true,
+   "claim_viol": [],
+   "language_ok": true,
+   "hedged": false,
+   "kb_provided": 4,
+   "kb_cited": 0,
+   "factor_cites": 2,
+   "outcome": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "first_draft_flags": [],
+   "latency_ms": 2094,
+   "rag": {
+    "used": true,
+    "degraded": false,
+    "reason": null,
+    "hits": 4
+   },
+   "prompt": "chat@v6"
+  }
+ ],
+ "cost_usd": 0.0857
+}

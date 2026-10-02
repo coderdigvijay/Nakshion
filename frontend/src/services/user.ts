@@ -6,13 +6,13 @@ export const userService = {
     api.put<User>("/users/me", { name }),
 
   changePassword: (currentPassword: string, newPassword: string) =>
-    api.post<{ message: string }>("/auth/change-password", {
+    api.post<{ message: string; access_token?: string }>("/auth/change-password", {
       current_password: currentPassword,
       new_password: newPassword,
     }),
 
   setPassword: (newPassword: string) =>
-    api.post<{ message: string }>("/auth/set-password", {
+    api.post<{ message: string; access_token?: string }>("/auth/set-password", {
       new_password: newPassword,
     }),
 

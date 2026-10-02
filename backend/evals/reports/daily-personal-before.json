@@ -1,0 +1,233 @@
+[
+ {
+  "case": [
+   "A",
+   "english",
+   "vedic"
+  ],
+  "result": "template",
+  "seconds": 5.9,
+  "error": "LLMUnavailable",
+  "attempts": [
+   [
+    "gemini-3.5-flash-lite",
+    "ok",
+    3558,
+    ""
+   ],
+   [
+    "gemini-3.5-flash-lite",
+    "ok",
+    2206,
+    ""
+   ]
+  ],
+  "headline": null,
+  "overview": null,
+  "areas": null,
+  "affirmation": null
+ },
+ {
+  "case": [
+   "A",
+   "hindi",
+   "vedic"
+  ],
+  "result": "llm",
+  "seconds": 3.5,
+  "error": null,
+  "attempts": [
+   [
+    "gemini-3.5-flash-lite",
+    "ok",
+    3494,
+    ""
+   ]
+  ],
+  "headline": "सन्तुलन और आंतरिक विकास का सुंदर दिन",
+  "overview": "आज का दिन आपके जीवन में एक स्थिर और संतुलित ऊर्जा लेकर आया है। वैदिक (sidereal) प्रणाली के अनुसार, वर्तमान में शुक्र की महादशा और बुध का अंतरदशा चल रहा है, जो आपके बौद्धिक और रचनात्मक विकास के लिए एक अनुकूल समय है। कर्क राशि (sidereal zodiac) में बृहस्पति का गोचर आपके दृष्टिकोण को विस्तृत कर रहा है, जबकि मीन राशि (sidereal zodiac) में शनि का गोचर आपको अपने लक्ष्यों के प्रति अनुशासित रहने की प्रेरणा दे रहा है। जीवन के सभी प्रमुख क्षेत्रों में ऊर्जा का प्रवाह सुचारू है, इसलिए इस समय का उपयोग आत्म-चिंतन और व्यक्तिगत प्राथमिकताओं को स्पष्ट करने के लिए करें। हर क्षेत्र में संतुलित दृष्टिकोण अपनाना आज आपके लिए सबसे अधिक लाभदायक रहेगा।",
+  "areas": {
+   "love": {
+    "text": "प्रेम और संबंधों के क्षेत्र में आज का दिन सामान्य और सुखद गति से आगे बढ़ रहा है। रिश्तों में सौहार्द बनाए रखने के लिए खुलकर बातचीत करना और अपने साथी की भावनाओं को समझना मददगार साबित होगा। यह समय अपने प्रियजनों के साथ शांतिपूर्ण क्षण बिताने और आपसी समझ को और अधिक गहरा करने के लिए उत्तम है।"
+   },
+   "career": {
+    "text": "करियर के मोर्चे पर आज चीजें स्थिर गति से आगे बढ़ रही हैं। कार्यक्षेत्र में अपनी जिम्मेदारियों को पूरी निष्ठा के साथ निभाएं और सहकर्मियों के साथ तालमेल बनाए रखें। यह समय बड़े बदलाव करने के बजाय अपनी वर्तमान योजनाओं को बेहतर बनाने और व्यावसायिक कौशल को निखारने पर ध्यान केंद्रित करने का है।"
+   },
+   "wellness": {
+    "text": "स्वास्थ्य और तंदुरुस्ती के मामले में आज का दिन आपको अपने शरीर और मन के संकेतों को सुनने का अवसर देता है। अपनी दिनचर्या में विश्राम, हल्का व्यायाम और मानसिक शांति के लिए कुछ समय अवश्य निकालें। संतुलित जीवनशैली अपनाने से आपकी ऊर्जा का स्तर पूरे दिन स्थिर और सकारात्मक बना रहेगा।"
+   },
+   "money": {
+    "text": "आर्थिक मामलों में आज संयम और समझदारी से काम लेने की आवश्यकता है। अपनी वित्तीय प्राथमिकताओं की समीक्षा करें और भविष्य के लिए एक सुव्यवस्थित योजना बनाएं। यह समय किसी भी बड़े आर्थिक निर्णय या निवेश से पहले पूरी सावधानी बरतने और केवल आवश्यक खर्चों पर ही ध्यान केंद्रित करने का है।"
+   }
+  },
+  "affirmation": "मैं अपने जीवन में शांति, संतुलन और सकारात्मकता का स्वागत करता हूँ।"
+ },
+ {
+  "case": [
+   "A",
+   "hinglish",
+   "vedic"
+  ],
+  "result": "llm",
+  "seconds": 4.8,
+  "error": null,
+  "attempts": [
+   [
+    "gemini-3.5-flash-lite",
+    "ok",
+    4756,
+    ""
+   ]
+  ],
+  "headline": "A balanced day of inner growth and mindful steady progress",
+  "overview": "Aaj ka din aapke liye ek santulan bhara samay lekar aaya hai jahan aap apne jeevan ke vibhinn pahluon ko aaram se samajh sakte hain. Venus Mahadasha aur Mercury Antardasha ke prabhav se aapki buddhi aur srijanatmakta dono active hain, jo aapko har kaam mein samajhdari se aage badhne mein madad karti hain. Yeh samay apne andar jhaankne aur aage ki yojana banane ke liye bahut hi anukool hai, isliye har kadam shanti aur dhairya ke sath rakhein.",
+  "areas": {
+   "love": {
+    "text": "Rishton ke mamle mein aaj ka din ek sahaj pravah lekar aaya hai. Apne partner ke sath samay bitane aur apne vichaaron ko khulkar rakhne ke liye yah samay achha hai. Thoda dhairya rakhein aur dusron ki baat ko bhi dhyaan se sunein taaki aapka aapas ka rishta aur bhi majboot ho sake."
+   },
+   "career": {
+    "text": "Career ke kshetra mein aaj ka din aaram se aage badhne ka hai. Apne daayitvon ko poora karte samay thoda dhairya banaye rakhein. Yeh samay naye vichar sochene aur apni karyakshamta ko behtar banane ke liye ek shant vatavaran pradan karta hai, jisse aap apne lakshya ki taraf bina kisi jaldbaazi ke badh sakein."
+   },
+   "wellness": {
+    "text": "Swasthya ke drishtikon se aaj ka din apmaan aur aaram par dhyan dene ka hai. Apni dainik dincharya mein thoda samay dhyan ya halki shanti ke liye nikalein. Apne sharir aur man dono ko aaram dena aaj ke din aapko urja aur sakaratmakta se bhar dega, isliye khud ke liye thoda waqt zaroor nikalein."
+   },
+   "money": {
+    "text": "Arthik mamlon mein aaj ka din samanya roop se sthir rahne wala hai. Kharchon aur nivesh ko lekar koi bhi jaldbaazi na karein aur apne budget ka dhyan rakhein. Ek samajhdari bhara drishtikon aapko aarthik roop se surakshit mehsoos karwayega aur bhavishya ki yojanaon ke liye ek achhi neev rakhega."
+   }
+  },
+  "affirmation": "Main apne jeevan mein dhairya aur santulan ke sath har naye kadam ko swikaar karta hoon."
+ },
+ {
+  "case": [
+   "B",
+   "english",
+   "vedic"
+  ],
+  "result": "llm",
+  "seconds": 2.8,
+  "error": null,
+  "attempts": [
+   [
+    "gemini-3.5-flash-lite",
+    "ok",
+    2791,
+    ""
+   ]
+  ],
+  "headline": "Navigating Growth and Reflection Under the Sidereal Sky",
+  "overview": "You find yourself navigating a rich inner landscape today as major planetary cycles invite deep reflection. The overarching currents of your current major and sub-periods encourage you to look closely at your personal growth and ambitions. With expansive planetary transits in the sidereal zodiac highlighting wisdom and creativity, alongside more foundational structural influences asking for patience, today blends moments of natural ease with invitations for gentle self-care.",
+  "areas": {
+   "love": {
+    "text": "Matters of the heart flow with a steady, moderate pace today. It is a wonderful day to listen closely to loved ones and share honest thoughts without needing to force any resolutions. Give space for mutual understanding to develop naturally."
+   },
+   "career": {
+    "text": "Your professional life invites balanced focus and steady participation. Instead of rushing toward distant milestones, concentrate on refining your current tasks and collaborating smoothly with colleagues. Consistency will serve you better than sudden leaps today."
+   },
+   "wellness": {
+    "text": "With wellness asking for a gentler approach, prioritize rest and restoration above all else. Listen to the subtle signals of your body and take time to slow down, allowing yourself moments of quiet peace to recharge your physical and mental energy."
+   },
+   "money": {
+    "text": "Financial themes call for a mindful and grounded perspective. Keep your focus on practical budgeting and long-term stability rather than impulsive choices. Thoughtful handling of resources ensures a peaceful and secure day."
+   }
+  },
+  "affirmation": "I embrace today's lessons with patience, trusting my inner strength and steady growth."
+ },
+ {
+  "case": [
+   "C",
+   "english",
+   "western"
+  ],
+  "result": "llm",
+  "seconds": 2.9,
+  "error": null,
+  "attempts": [
+   [
+    "gemini-3.5-flash-lite",
+    "ok",
+    2911,
+    ""
+   ]
+  ],
+  "headline": "Structured Growth and Subtle Shifts in the Tropical Sky",
+  "overview": "Today brings a wonderful blend of grounded productivity and fresh perspective as the tropical zodiac offers supportive planetary alignments. With steady influences active in your chart, you may find yourself balancing deep introspection with constructive progress across your daily routines. It is a day to honor your inner wisdom, allowing patience to guide your choices while remaining open to unexpected moments of inspiration that gently cross your path.",
+  "areas": {
+   "love": {
+    "text": "Heart connections invite a steady and measured approach today. Rather than rushing into new emotional territories, take your time to appreciate the stability already present in your relationships. Being patient with both yourself and others fosters a calm, reassuring space for genuine warmth and understanding to naturally unfold."
+   },
+   "career": {
+    "text": "Professional matters experience a particularly smooth flow today, making it an excellent moment to tackle details and organize your long-term goals. Clear thinking and steady dedication help you navigate tasks with ease. Trust in your ability to communicate effectively and build solid foundations for whatever projects come next."
+   },
+   "wellness": {
+    "text": "Your vitality calls for gentle care and mindful pacing today. Listen closely to the subtle signals of your body and carve out quiet moments to recharge your energy. Engaging in relaxing practices or simply taking time for peaceful reflection will keep you centered and deeply refreshed."
+   },
+   "money": {
+    "text": "Financial matters benefit from a calm, deliberate mindset today. Avoid impulsive decisions and instead focus on reviewing your resources with a practical and patient perspective. Taking a steady, thoughtful approach to your budget ensures lasting peace of mind and reinforces your long-term security."
+   }
+  },
+  "affirmation": "I embrace steady growth and trust the unfolding rhythm of my journey."
+ },
+ {
+  "case": [
+   "A",
+   "english",
+   "vedic"
+  ],
+  "result": "template",
+  "seconds": 5.6,
+  "error": "LLMUnavailable",
+  "attempts": [
+   [
+    "gemini-3.5-flash-lite",
+    "ok",
+    3055,
+    ""
+   ],
+   [
+    "gemini-3.5-flash-lite",
+    "ok",
+    2500,
+    ""
+   ]
+  ],
+  "headline": null,
+  "overview": null,
+  "areas": null,
+  "affirmation": null
+ },
+ {
+  "case": [
+   "A",
+   "hindi",
+   "vedic"
+  ],
+  "result": "llm",
+  "seconds": 3.2,
+  "error": null,
+  "attempts": [
+   [
+    "gemini-3.5-flash-lite",
+    "ok",
+    3115,
+    ""
+   ]
+  ],
+  "headline": "सकारात्मक ऊर्जा और संतुलन का दिन",
+  "overview": "आज का दिन आपके जीवन में एक सुंदर संतुलन और स्थिरता लेकर आया है। वैदिक (sidereal) ज्योतिष के अनुसार, शुक्र की महादशा और बुध की अंतरदशा के प्रभाव से आपके विचारों में स्पष्टता और रिश्तों में मिठास बनी रहेगी। वर्तमान समय में बृहस्पति का कर्क राशि में गोचर (house 1 from your natal Moon) आपके आत्मविश्वास को बढ़ा रहा है, जबकि शनि का मीन राशि में गोचर (house 9 from your natal Moon) आपको अपने उच्च लक्ष्यों और ज्ञान के प्रति समर्पित रहने की प्रेरणा दे रहा है। यह दिन आत्ममंथन और अपनी प्राथमिकताओं को तय करने के लिए बहुत अनुकूल है।",
+  "areas": {
+   "love": {
+    "text": "प्रेम और रिश्तों के मामलों में आज का दिन सामान्य और सुखद गति से आगे बढ़ेगा। सिंह राशि में केतु का गोचर (house 2 from your natal Moon) आपको अपनी भावनाओं को गहराई से समझने के लिए प्रेरित कर रहा है। अपने साथी के साथ संवाद में नरमी बरतें और उनके दृष्टिकोण को भी समझें।"
+   },
+   "career": {
+    "text": "करियर के मोर्चे पर आज का दिन आपके लिए निरंतरता और प्रगति का है। आपकी बौद्धिक क्षमता और कार्यकुशलता में वृद्धि होगी। सहकर्मियों के साथ तालमेल बनाए रखें और अपने लक्ष्यों पर पूरी तरह केंद्रित रहें। किसी भी नए कार्य की शुरुआत करने से पहले उसकी रूपरेखा अवश्य तैयार कर लें।"
+   },
+   "wellness": {
+    "text": "स्वास्थ्य की दृष्टि से आज का दिन संतुलित ऊर्जा का अनुभव कराएगा। अपनी दिनचर्या में योग, ध्यान या हल्की सैर को शामिल करना आपके मानसिक और शारीरिक स्वास्थ्य के लिए बहुत फायदेमंद रहेगा। अपने खान-पान का ध्यान रखें और पर्याप्त विश्राम करें ताकि ऊर्जा का स्तर बना रहे।"
+   },
+   "money": {
+    "text": "धन और वित्त से जुड़े मामलों में आज सोच-समझकर निर्णय लेने की आवश्यकता है। सिंह राशि में केतु का गोचर (house 2 from your natal Moon) आपकी वाणी और संचित धन को प्रभावित कर रहा है, इसलिए अनावश्यक खर्चों से बचें और बजट के अनुसार ही अपने वित्तीय विषयों को संभालें।"
+   }
+  },
+  "affirmation": "मैं अपने भीतर की शांति और संतुलन को स्वीकार करता हूँ।"
+ }
+]

@@ -1,14 +1,15 @@
 import { authService } from "../../services/auth";
 
 /** Google first (PRD §7.2). Google's mark keeps its brand colours (MASTER §11 exception). */
-export function GoogleButton() {
+export function GoogleButton({ termsAccepted = false, disabled = false }: { termsAccepted?: boolean; disabled?: boolean }) {
   return (
     <button
       type="button"
       onClick={() => {
-        window.location.href = authService.googleOAuthUrl();
+        window.location.href = authService.googleOAuthUrl(termsAccepted);
       }}
-      className="focus-ring flex min-h-12 w-full cursor-pointer items-center justify-center gap-3 rounded-control border border-border-strong bg-surface text-[0.9375rem] font-semibold text-fg transition-colors hover:bg-elevated"
+      disabled={disabled}
+      className="focus-ring flex min-h-12 w-full cursor-pointer items-center justify-center gap-3 rounded-control border border-border-strong bg-surface text-[0.9375rem] font-semibold text-fg transition-colors hover:bg-elevated disabled:cursor-not-allowed disabled:opacity-60"
     >
       <svg aria-hidden="true" className="size-5" viewBox="0 0 24 24">
         <path d="M12 5.04c1.9 0 3.61.65 4.95 1.93l3.71-3.71C18.41 1.3 15.42 0 12 0 7.33 0 3.28 2.67 1.25 6.57l4.13 3.21c1-2.97 3.76-5.14 6.62-5.14z" fill="#EA4335" />

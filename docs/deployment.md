@@ -65,7 +65,7 @@ no chromadb, no torch.
 * **Keep-alive plan:** cron-job.org `GET https://<api>/health/live` every **14 minutes** (Render idles out at 15). That is ~744 instance-hours/month, inside the
   750-hour allowance only because this is the workspace's single free web service.
 * `/health/live` touches neither Postgres nor Redis (covered by `test_health_live_never_touches_db_or_redis`), so pinging does not wake Neon.
-  `healthCheckPath` in `render.yaml` is also `/health/live`. `/health/ready` checks DB + Redis + engine and is for humans and the smoke script.
+  `healthCheckPath` in `render.yaml` is also `/health/live`. `/health/ready` checks DB + Redis + engine (result cached 5 s, 10 requests/min per client). Its public body is only `{"status":"ok"|"degraded"}`; send `X-Cron-Secret` to see the per-dependency detail. `/health/live` shows the 7-character deploy commit (`RENDER_GIT_COMMIT`).
 
 ## 5. Migrations on Render free (no pre-deploy command)
 
@@ -89,6 +89,26 @@ API docs (`/docs`, `/openapi.json`) are off in production. Validation errors nev
 Connection notes:
 * **Neon:** use the *pooled* host (`...-pooler...`) in `DATABASE_URL` with `?sslmode=require&channel_binding=require`. The app strips the libpq-only parameters for asyncpg, enables TLS, and turns off prepared statements (pgbouncer transaction mode). Use the *direct* host in `MIGRATION_DATABASE_URL`.
 * **Upstash:** copy the `rediss://default:<password>@<host>:6379` URL (TLS). Pick the same region as Render.
+
+## 6a. Client IP and abuse limits (read this before the first deploy)
+
+**What Render sends is not yet known.** A live test suggested the right-most `X-Forwarded-For` entry can be client-supplied. Until verified, assume it is, and rely on three layers:
+
+1. **Fail-closed derivation** (`backend/app/core/clientip.py`). With `TRUSTED_PROXY_HOPS=N` the client is the Nth entry from the *right* of `X-Forwarded-For`; if the header is shorter than N or malformed the client is **"unknown"**, never the socket peer (that is the proxy). "unknown" is one shared bucket with *half* the normal limit on auth routes (and 5x on the global limit) so a bypass attempt degrades to strict limits instead of disabling them. `CLIENT_IP_HEADER` (below) is the better option when available. Production refuses to boot with neither `TRUSTED_PROXY_HOPS>=1` nor `CLIENT_IP_HEADER`.
+2. **IP-independent backstops:** 10 failed logins per **email** per 15 minutes from any IP (then 429 with `Retry-After`, generic copy; the window is short so an attacker can lock a victim out for at most 15 minutes, and success clears it); per-email limits on forgot-password and OTP resend; a global **200 emails/hour** cap on OTP/reset/deletion emails (protects Brevo's 300/day free quota; password-reset requests over the cap are dropped silently with the usual 200 answer).
+3. **Diagnostic:** `LOG_CLIENT_IP_DEBUG=1` (set in `render.yaml` for the first deploy) logs one `client_ip_shape` line for each of the first 20 requests: number of `X-Forwarded-For` entries, whether each is public/private/loopback, which of `x-real-ip`, `true-client-ip`, `cf-connecting-ip`, `x-forwarded-proto`, `forwarded` are present, whether the peer is private, and every address masked to /24 (IPv4) or /48 (IPv6). No full address is logged.
+
+**How to decide once you have read the logs** (Render dashboard > Logs, filter `client_ip_shape`; send one request from your phone and one from your laptop, with and without a forged `X-Forwarded-For: 1.2.3.4` header):
+
+| What the log shows | Setting |
+|---|---|
+| A forged value appears as the **right-most** entry, or the real client is not the last entry | the right side is attacker-controlled: do **not** rely on XFF. Put Cloudflare (or similar) in front and use its header, see next row |
+| A single header carries the real client (`true-client-ip` or `cf-connecting-ip`) and it is not forgeable | `CLIENT_IP_HEADER=true-client-ip` (or `cf-connecting-ip`); XFF is then ignored |
+| The real client is always the **last** XFF entry and a forged left entry stays to the left of it | keep `TRUSTED_PROXY_HOPS=1` |
+| Two proxies (CDN + Render) append, real client second from the right | `TRUSTED_PROXY_HOPS=2` |
+| Nothing useful (`derived_is_unknown: true` for all requests) | per-IP limits cannot be trusted; every client shares the strict "unknown" bucket. The per-email and global backstops still protect accounts and Brevo; consider a paid plan or a CDN in front |
+
+After deciding, delete `LOG_CLIENT_IP_DEBUG` and re-run the smoke test. Never enable `uvicorn --proxy-headers`.
 
 ## 7. Upstash command budget (500K / month) — measured per route
 
@@ -137,7 +157,10 @@ Set in the Render dashboard (secrets are `sync: false` in `render.yaml` and prom
 | `API_PUBLIC_URL` | yes | `https://<service>.onrender.com` (no trailing slash) |
 | `FRONTEND_URL` | yes | your Vercel production URL or custom domain |
 | `CORS_ORIGINS` | yes | same exact origin(s), comma separated, https only |
-| `TRUSTED_PROXY_HOPS` | yes | `1` (Render's proxy; see BUG-007) |
+| `TRUSTED_PROXY_HOPS` / `CLIENT_IP_HEADER` | yes (one of them) | `1` until the logs say otherwise; see section 6a |
+| `LOG_CLIENT_IP_DEBUG` | temporary | `1` for the first deploy only (section 6a) |
+| `JWT_ACCESS_TOKEN_EXPIRE_MINUTES` | set | `2880` (2 days; there is no refresh flow yet, so users sign in again every 2 days) |
+| `TERMS_VERSION` | set | `2026-10-01`; recorded with each acceptance, bump when Terms/Privacy change |
 | `GEMINI_API_KEY` | yes | Google AI Studio, on a **billing-enabled** project (the free tier may train on prompts) |
 | `ANTHROPIC_API_KEY` | optional | console.anthropic.com (fallback provider) |
 | `LOCATIONIQ_API_KEY` | yes | locationiq.com dashboard (show "Search by LocationIQ.com" in the UI) |
@@ -227,3 +250,11 @@ Infrastructure is $0 on the free tiers (until a limit above is hit). LLM spend i
 ## 15. Not verified locally (needs the real cloud)
 
 Render accepting `PYTHON_VERSION=3.14.3` and the `autoDeployTrigger: checksPass` key; Linux RSS and real boot time on 0.1 vCPU; first-request latency after a Neon scale-to-zero; Upstash TLS (`rediss://`) connectivity; Render `bash scripts/start.sh` under their runtime; the cron-job.org to Render wake-up round trip; the CSP in a real browser against the deployed frontend; Google OAuth with production redirect URIs; Brevo delivery with the IP restriction removed; GitHub Actions (the YAML parses; the steps were run locally, not on GitHub); `pip-audit` / `npm audit` results.
+
+## 16. Security and privacy notes (live assessment follow-ups)
+
+* **Sessions:** access tokens last 2 days. `change-password` and `reset-password` bump `token_version`, which revokes every other session (a stolen token dies); `change-password` returns a fresh token so the user stays signed in. `POST /auth/logout-all` revokes everything. **Single-session logout is not implemented:** it needs a per-request Redis denylist lookup (one extra Upstash command per authenticated request); the client simply drops its token.
+* **Dependencies:** `pydantic-settings==2.15.0` (the advisory needs >= 2.14.2). Re-run `pip-audit -r backend/requirements.txt` before each release (CI runs it, informational).
+* **Terms/Privacy:** password sign-up requires `terms_accepted: true`; Google sign-up requires `?terms=1` for a new account (the SPA shows the checkbox first). Stored as `users.terms_accepted_at` + `users.terms_version`.
+* **Deletion log:** `deletion_log` has exactly three columns: `id`, `user_id_sha256` (SHA-256 of the random user UUID) and `deleted_at`. No email, name or birth data.
+* **What is sent to Gemini/Anthropic** (chat): the question and the last 6 turns of that conversation (free text typed by the user); a "CHART FACTS" block with computed placements (signs, nakshatra, current dasha and transit labels, house numbers, whether birth time is known), the preferred system and language, today's date; and retrieved reference notes. **Not sent:** email, user id (only a 12-character hash in logs/usage rows, never in the request), the chart name (a constant "the user" is sent; the chart label is often a real person's name), birth date, birth time, birthplace, coordinates, timezone. Daily and compatibility readings send only computed factors and scores. Free text the user types can of course contain anything; the safety layer handles crisis phrases only.

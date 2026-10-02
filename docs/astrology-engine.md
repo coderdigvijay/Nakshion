@@ -181,6 +181,11 @@ For each body: `xx, ret = swe.calc_ut(jd_ut, body, flags)` → `lon = xx[0]`, `l
   - Western: find the cusp interval containing its longitude (handle the wrap at 360°).
   - Vedic: `((sign_idx − lagna_idx) mod 12) + 1`.
 
+### 3.4a Dates and birth-time sensitivity (engine 2.1.1)
+
+- Every calendar date derived from an instant (dasha MD/AD/PD `start`/`end`, Sade Sati `start`/`end`, personal-reading factor windows, panchang `end_local_date`) is the date **in the chart's birth time zone** (or the fixed offset for an override), never the UTC date. Dasha periods also carry `start_utc`/`end_utc` ISO instants; `dasha.date_timezone` names the zone. Before 2.1.1 dasha dates were UTC dates and could read one day early (a 05:20 IST boundary showed the previous day).
+- `metadata.sensitivity` (null when the birth time is unknown): `{window_minutes: 5, near_cusp: [{point, kind, minutes_to_boundary, flips_if_birth_time_is: "earlier"|"later", from, to}], robust, ...flat *_minutes keys}` for the tropical Ascendant, Midheaven, sidereal lagna (sign and pada), Moon (tropical sign, rashi, nakshatra pada). The UI and LLM must hedge any listed point ("your rising sign is close to a boundary; double-check your birth time").
+
 ### 3.5 Unknown birth time (`time_of_birth=null`) - engine 2.0.0
 
 Follows `astrology_accuracy_rules.md` section 6: **nothing time-sensitive is presented as fact.**
@@ -262,6 +267,7 @@ These are computed and stored under `chart_data.western_summary` [v1-add]:
   - 2 and 12 alone: 0 (neutral; "takes the result of its other house").
 
   Score > 0 → `functional_benefics`; score < 0 → `functional_malefics`. A planet owning both a kendra and a trikona (excluding the 1st house) is flagged as `yogakaraka` [v1-add]. Rahu and Ketu are excluded.
+  > **Convention note.** `functional_benefics` / `functional_malefics` follow the simplified scoring above, which is one stated convention; Parashari authors and software differ. Example: for **Cancer lagna** Jupiter rules both the 6th (Sagittarius) and the 9th (Pisces) house; this engine scores the 9th-lord trikona +2 and the 6th -2, so the net is 0 and Jupiter is listed as neither benefic nor malefic, while many texts call Jupiter a functional benefic (9th lord) for Cancer and others treat it as mixed. The engine does not claim the other traditions are wrong. UI and LLM copy must present these lists as "by this engine's convention", never as the one true reading.
   > This must be reviewed by a practising astrologer against the standard per-lagna tables. A fixed table of 12 expected outputs is kept in `tests/astro/fixtures/functional_nature.json`.
 
 ### 5.5 Graha drishti (Vedic aspects, whole-sign)

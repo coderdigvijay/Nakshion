@@ -323,7 +323,7 @@ indian_bphs.md and the kb_lang_core_topics_hi.md summaries).
 | दुरुधरा योग | durudhara yog | planets on both sides of Moon |
 | अमला योग | amala yog | benefic in 10th from Moon or lagna |
 | पर्वत योग | parvat yog | benefic-strong kendras |
-| शकट योग | shakat yog | Moon in 6th/8th from Jupiter |
+| शकट योग | shakat yog | Moon in the 6th/8th/12th from Jupiter (many modern sources state it as Jupiter in 6/8/12 from the Moon; texts differ) |
 | कालसर्प योग / दोष | kaalsarp yog, dosh | all planets between Rahu and Ketu (modern concept, not in BPHS) |
 | ग्रहण योग | grahan yog | Moon or Sun with a node |
 | चांडाल योग | chandal yog | Jupiter with Rahu |
@@ -377,7 +377,7 @@ indian_bphs.md and the kb_lang_core_topics_hi.md summaries).
 | अभिजित मुहूर्त | abhijit muhurat | midday auspicious window |
 | राहुकाल | rahukaal, rahu kaal | daily ~90-minute Rahu period |
 | गुलिक काल | gulika kaal | Gulika period |
-| यमगंड | yamghant, yamaganda | Yamaganda period |
+| यमगंड | yamgand, yamaganda | Yamaganda period (not the same as यमघंट yamghant, a separate weekday-nakshatra yoga) |
 | चौघड़िया | choghadiya | eight-part day division (Gujarat/North India) |
 | होरा | hora | planetary hour |
 | विवाह मुहूर्त | vivah muhurat | wedding date selection |

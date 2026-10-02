@@ -15,6 +15,9 @@ export function usePersonalReading(enabled: boolean) {
     enabled,
     staleTime: 60 * 60 * 1000,
     retry: false,
+    // A quick template reading is upgraded to the AI one in the background: poll quietly (initial
+    // fetch + 3 retries). Background tabs are skipped (refetchIntervalInBackground defaults to false).
+    refetchInterval: (query) => (query.state.data?.generated_by === "template" && query.state.dataUpdateCount < 4 ? 12_000 : false),
   });
 }
 

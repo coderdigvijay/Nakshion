@@ -52,7 +52,7 @@ In Jaimini's system, significators are assigned by relative degree rather than f
 | 7 | Gnatikaraka (GK) | relatives, obstacles, competition |
 | 8 (lowest) | Darakaraka (DK) | spouse, partnership |
 
-Note: some texts omit Pitrikaraka in the seven-karaka version, so that the Putrakaraka falls at rank 5 [school difference]. The eight-karaka version includes Rahu, whose degree is measured backward (30 minus its degree in the sign), because Rahu moves in reverse. The seven-karaka version uses the Sun to Saturn only and brings in Rahu when two planets share the same degree. Ketu is not given a karaka role. This count (7 vs 8) is a standing debate among Jaimini scholars; the app, if it uses chara karakas, should state which it uses.
+Note: some texts omit Pitrikaraka in the seven-karaka version, so that the Putrakaraka falls at rank 5 [school difference]. The eight-karaka version includes Rahu, whose degree is measured backward (30 minus its degree in the sign), because Rahu moves in reverse. The seven-karaka version uses the Sun to Saturn only and brings in Rahu when two planets share the same degree [unverified; school-specific]. Ketu is not given a karaka role. This count (7 vs 8) is a standing debate among Jaimini scholars; the app, if it uses chara karakas, should state which it uses.
 
 **Practical reading.** The AK is the "planet of the soul". Its sign, house and condition describe what the person is working through; a strong AK shows a purposeful orientation, a challenged AK shows where lessons are most intense. The DK describes the qualities of the spouse or partner; the AmK describes the working life. These are tendencies to explore, not fixed identities.
 
