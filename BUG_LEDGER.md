@@ -53,7 +53,7 @@ Template (copy above the first entry; this fenced block is not an entry):
 ## BUG-023: Dasha / Sade Sati dates shown as UTC calendar dates, one day off in the birth zone (2026-10-02)
 
 - **Tier:** T2 - data users see; stored charts change.
-- **Symptom:** independent chart verification: Venus MD start 2008-06-15 05:22 IST showed 2008-06-14; Mercury AD end 2027-04-16 02:22 IST showed 2027-04-15; 44 of 180 boundaries differed from the IST date. [verified]
+- **Symptom:** independent chart verification: dasha boundaries falling between 00:00 and 05:30 IST showed the previous calendar day (UTC date); 44 of 180 boundaries differed from the local date on the verified chart. [verified]
 - **Root cause:** `dasha._fmt` formatted `dt.astimezone(utc).date()`; Sade Sati dates and personal-reading windows did the same. [verified]
 - **Fix:** engine 2.1.1: dates formatted in the birth zone (`tz` threaded through dasha, `sade_sati`, `refresh_time_dependent`; personal windows use the request zone), `*_utc` instants kept, panchang `end_local_date` added. New additive `metadata.sensitivity` (near-cusp flags). Docs note that functional-nature lists are one convention.
 - **Blast radius:** every stored chart's dasha/Sade Sati dates (version bump to 2.1.1 recomputes them); no positions changed.
